@@ -18,12 +18,14 @@ public class BalloonButton extends JComponent{
 	public BalloonButton(Coord aCoord){
 		this.label = aCoord.toString();
 		this.color = null;
+		this.highlight = false;
 		
 	}
 	
 	public BalloonButton(Balloon.Color aColor){
 		this.label = aColor.toString();
 		this.color = null;
+		this.highlight = false;
 		switch (aColor){
 			case BLUE: this.color = Color.BLUE; break;
 			case GREEN: this.color = Color.GREEN; break;
@@ -32,6 +34,11 @@ public class BalloonButton extends JComponent{
 			case YELLOW: this.color = Color.YELLOW; break;
 			case EMPTY: this.color = Color.WHITE; break;
 		}
+	}
+	
+	public void highlight(boolean aHighlight){
+		this.highlight = aHighlight;
+		repaint();
 	}
 
 	protected void paintComponent(Graphics g){
@@ -58,10 +65,16 @@ public class BalloonButton extends JComponent{
 		double ascent = -bounds.getY();
 		double baseY = y + ascent;
 		g.drawString(this.label, (int)x, (int)baseY);
+		
+		if (this.highlight){
+			g.setColor(Color.ORANGE);
+			g.drawOval(1, 1, getWidth()-3, getHeight()-3);
+		}
 	}
 	
 	private final String label;
 	private Color color;
+	private boolean highlight;
 	static final long serialVersionUID = new Random().nextInt(50000);
 	/**
 	 * @param args

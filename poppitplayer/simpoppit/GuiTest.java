@@ -33,8 +33,9 @@ public class GuiTest extends JFrame{
 			//panel.add(new JButton(t.toString()));
 			//panel.add(new BalloonButton(t));
 			BalloonButton balloon = new BalloonButton(game.color(t));
-			balloon.addMouseMotionListener(new MouseMotionHandler());
-			panel.add(new BalloonButton(game.color(t)));
+			//balloon.addMouseMotionListener(new MouseMotionHandler());
+			balloon.addMouseListener(new MouseHandler());
+			panel.add(balloon);
 		}
         Container contentPane = getContentPane();
         contentPane.add(panel);
@@ -87,7 +88,7 @@ class GuiTestPanel extends JPanel {
 //			this.add(new JButton(t.toString()));
 //		}
 		
-        System.out.print(game);
+        //System.out.print(game);
         //System.out.println(getWidth());
         //System.out.println(getHeight());
         //System.out.println(balloonWidth);

@@ -10,7 +10,7 @@ import java.awt.event.*;
 public class MouseMotionHandler implements MouseMotionListener{
 
 	public void mouseMoved(MouseEvent event){
-		
+		System.out.println("Mouse moved.");
 	}
 	
 	public void mouseDragged(MouseEvent event){

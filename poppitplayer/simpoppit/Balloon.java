@@ -11,10 +11,10 @@
 import java.util.*;
 public class Balloon {
     public Balloon() {
-        ArrayList temp = new ArrayList();
+        ArrayList<Color> temp = new ArrayList<Color>();
         temp.addAll(Arrays.asList(Color.values()));
         temp.remove(Color.EMPTY);
-        Collections.shuffle(temp);
+        Collections.shuffle(temp, new Random());
         this.color = (Color) temp.get(0);
     }
 
@@ -28,15 +28,27 @@ public class Balloon {
         }
         return false;
     }
+    
+    public void Pop(){
+        this.color = Color.EMPTY;
+    }
 
     private Balloon(Color aColor){
         this.color = aColor;
     }
 
     public static enum Color { BLUE, RED, YELLOW, PURPLE, GREEN, EMPTY }
-    private final Color color;
+    private Color color;
+    
     public static void main(String[] args) {
         Balloon test = new Balloon();
         System.out.println( "My balloon is " + test.color());
+        System.out.println( "Popping balloon...");
+        test.Pop();
+        if(test.isPopped()){
+            System.out.println("My balloon is popped!");
+        }else{
+            System.out.println("My balloon is NOT popped...oops!");
+        }
     }
 }

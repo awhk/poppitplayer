@@ -29,13 +29,12 @@ public class GuiTest extends JFrame{
         panel.GameVars(game);
         panel.setBackground(Color.WHITE);
 		panel.setLayout(new GridLayout(panel.getGameY()+1, panel.getGameX()+1));
-//		for (BalloonColumn t : game.getColumns()){
-//          for (Balloon v : t.getBalloons()){
 		for (Coord t : game.getGridAsListByRow()){
 			//panel.add(new JButton(t.toString()));
 			//panel.add(new BalloonButton(t));
+			BalloonButton balloon = new BalloonButton(game.color(t));
+			balloon.addMouseMotionListener(new MouseMotionHandler());
 			panel.add(new BalloonButton(game.color(t)));
-//		  }
 		}
         Container contentPane = getContentPane();
         contentPane.add(panel);
@@ -89,8 +88,8 @@ class GuiTestPanel extends JPanel {
 //		}
 		
         System.out.print(game);
-        System.out.println(getWidth());
-        System.out.println(getHeight());
+        //System.out.println(getWidth());
+        //System.out.println(getHeight());
         //System.out.println(balloonWidth);
         //System.out.println(balloonHeight);
     }

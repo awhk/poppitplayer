@@ -13,73 +13,54 @@ import javax.swing.*;
  *
  */
 
-public class BalloonButton extends JComponent{
+public class BalloonButton extends JComponent implements GameListener{
 	
-	public BalloonButton(GameGrid aGame, Coord aCoord, JPanel aPanel){
+	public BalloonButton(GameInterface aGame, Coord aCoord){
 		this.game = aGame;
 		this.coord = aCoord;
-		this.parentPanel = aPanel;
-		this.label = game.color(this.coord).toString();
+		this.label = game.getBalloon(this.coord).toString();
 		this.color = null;
 		this.highlight = false;
-		switch (game.color(this.coord)){
-			case BLUE: this.color = Color.BLUE; break;
-			case GREEN: this.color = Color.GREEN; break;
-			case PURPLE: this.color = Color.MAGENTA; break;
-			case RED: this.color = Color.RED; break;
-			case YELLOW: this.color = Color.YELLOW; break;
-			case EMPTY: this.color = Color.WHITE; break;
-		}
+		this.color = this.convertColor(game.getBalloon(this.coord).color());
 	}
+    
+    public void gameEventReceived(GameEvent event){
+        if (!event.getCoords().contains(this.coord)) return;
+        if (event.getAction() == "update" | event.getAction() == "pop"){
+            this.color = this.convertColor(this.game.getBalloon(this.coord).color());
+        }
+//        if (event.getAction() == "pop"){
+//            this.color = this.convertColor(this.game.getBalloon(this.coord).color());
+//            //this.color = Color.WHITE;
+//        }
+        if (event.getAction() == "highlight"){
+            this.highlight = true;
+        }
+        if (event.getAction() == "unhighlight"){
+            this.highlight = false;
+        }
+        repaint();
+    }
 	
 	public void highlight(boolean aHighlight){
-		this.highlight = aHighlight;
-		GuiTestPanel p = (GuiTestPanel)this.parentPanel;
-		p.highlightNeighbors(this.coord);
+        if (aHighlight & this.highlight) return;
+        if (aHighlight){
+            this.game.highlight(this.coord);
+        }else{
+            this.game.unHighlight(this.coord);
+        }
 		repaint();
 	}
 	
-	public void simpleHighlight(boolean aHighlight){
-		this.highlight = aHighlight;
-		repaint();
-	}
-	
-	public boolean isHighlighted(){
-		return this.highlight;
-	}
 	
 	public Coord getCoord(){
 		return this.coord;
 	}
 	
-	public void setColor(Balloon.Color aColor){
-		switch (aColor){
-		case BLUE: this.color = Color.BLUE; break;
-		case GREEN: this.color = Color.GREEN; break;
-		case PURPLE: this.color = Color.MAGENTA; break;
-		case RED: this.color = Color.RED; break;
-		case YELLOW: this.color = Color.YELLOW; break;
-		case EMPTY: this.color = Color.WHITE; break;
-		}
-		repaint();
-	}
+    protected void pop(){
+        this.game.pop(this.coord);
+    }
 	
-	public void pop(){
-		GuiTestPanel p = (GuiTestPanel)this.parentPanel;
-		if (!(game.hasLikeColoredNeighbors(this.coord))) return;
-		game.popChain(game.likeColoredNeighborChain(this.coord));
-		game.pop(this.coord);
-		//p.repaintGame();
-//		try{
-//			Thread.sleep(1000);
-//		}
-//		catch (Exception e){
-//			System.out.println("Couldn't sleep!");
-//		}
-		game.squeezeAll();
-		p.repaintGame();
-	}
-
 	protected void paintComponent(Graphics g){
 		if (isOpaque()){
             g.setColor(getBackground());
@@ -91,7 +72,23 @@ public class BalloonButton extends JComponent{
 		}
 
 		g.setColor(this.color);
+        if (this.highlight) {
+            int red = g.getColor().getRed()+175;
+            int green = g.getColor().getGreen()+175;
+            int blue = g.getColor().getBlue()+175;
+            if (red > 255) red = 255;
+            if (green > 255) green = 255;
+            if (blue > 255) blue = 255;
+            g.setColor(new Color(red, green, blue));
+            //g.setColor(Color.LIGHT_GRAY);
+            //System.out.println("Highlighting " + this.coord + " to color " + g.getColor());
+        }
 		g.fillOval(0, 0, getWidth(), getHeight());
+        if (this.highlight){
+            g.setColor(Color.GRAY);
+            g.drawOval(0, 0, getWidth(), getHeight());
+            g.drawOval(1, 1, getWidth()-2, getHeight()-2);
+        }
 		
 //		g.setColor(Color.BLACK);
 //		Graphics2D g2 = (Graphics2D)g;
@@ -105,19 +102,27 @@ public class BalloonButton extends JComponent{
 //		double baseY = y + ascent;
 //		g.drawString(this.label, (int)x, (int)baseY);
 		
-		if (this.highlight & this.game.hasLikeColoredNeighbors().contains(this.coord)){
-			g.setColor(Color.BLACK);
-			g.drawOval(1, 1, getWidth()-3, getHeight()-3);
-			g.drawOval(0, 0, getWidth()-1, getHeight()-1);
-		}
 	}
+    
+    private Color convertColor(Balloon.Color aColor){
+        Color result;
+        switch (aColor){
+        case BLUE: result = Color.BLUE; break;
+        case GREEN: result = Color.GREEN; break;
+        case PURPLE: result = Color.MAGENTA; break;
+        case RED: result = Color.RED; break;
+        case YELLOW: result = Color.YELLOW; break;
+        case EMPTY: result = Color.WHITE; break;
+        default: result = Color.LIGHT_GRAY;
+        }
+        return result;
+    }
 	
 	private final String label;
 	private final Coord coord;
-	private final JPanel parentPanel;
 	private Color color;
 	private boolean highlight;
-	private GameGrid game;
+	private GameInterface game;
 	static final long serialVersionUID = new Random().nextInt(50000);
 	/**
 	 * @param args

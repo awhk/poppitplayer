@@ -41,7 +41,7 @@ public class Balloon {
         if (this.color == aBalloon.color()) return true;
         return false;
     }
-    
+
     public void pop(){
         this.color = Color.EMPTY;
     }

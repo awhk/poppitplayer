@@ -14,16 +14,13 @@ public class poplet extends JApplet{
 
 	public void init(){
 		Container contentPane = getContentPane();
-		GuiTestPanel panel = new GuiTestPanel();
-		GameGrid game = new GameGrid();
-        panel.GameVars(game);
+		PoppitPanel panel = new PoppitPanel();
+		GameInterface game = new GameInterface();
         panel.setBackground(Color.WHITE);
-		panel.setLayout(new GridLayout(panel.getGameY()+1, panel.getGameX()+1));
-		for (Coord t : game.getGridAsListByRow()){
-			//panel.add(new JButton(t.toString()));
-			//panel.add(new BalloonButton(t));
-			BalloonButton balloon = new BalloonButton(game, t, panel);
-			//balloon.addMouseMotionListener(new MouseMotionHandler());
+        panel.setLayout(new GridLayout(game.getGrid().gridSize().getY()+1, game.getGrid().gridSize().getX()+1));
+		for (Coord t : game.getGrid().getGridAsListByRow()){
+			BalloonButton balloon = new BalloonButton(game, t);
+			balloon.addMouseMotionListener(new MouseMotionHandler());
 			balloon.addMouseListener(new MouseHandler());
 			panel.add(balloon);
 		}

@@ -139,6 +139,11 @@ public class GameGrid {
         return result;
     }
     
+    public boolean hasLikeColoredNeighbors(Coord aBalloon){
+        if (this.likeColoredNeighbors(aBalloon).size()>0) return true;
+        return false;
+    }
+    
     public void pop(Coord aBalloon){
         this.grid[aBalloon.getX()].pop(aBalloon.getY());
     }
@@ -223,11 +228,6 @@ public class GameGrid {
             this.grid[i] = myGrid.get(i);
         }
         if (swapped) squeezeRows();
-    }
-    
-    public boolean hasLikeColoredNeighbors(Coord aBalloon){
-        if (this.likeColoredNeighbors(aBalloon).size()>0) return true;
-        return false;
     }
     
     private BalloonColumn[] grid;

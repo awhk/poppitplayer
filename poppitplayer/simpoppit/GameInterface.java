@@ -13,13 +13,14 @@ import java.util.*;
 public class GameInterface {
 	
 	public GameInterface(){
-		this.location = new Coord(0,0);
-		this.gameBoard = new GameGrid();
+		this(15, 10);
 	}
 	
 	public GameInterface(int aX, int aY){
-		this.location = new Coord(0,0);
 		this.gameBoard = new GameGrid(aX, aY);
+        this.action = "none";
+        this.coordList = new ArrayList<Coord>();
+        this.gameListeners = new LinkedList<GameListener>();
 	}
 	
 	public ArrayList<Coord> possibleMoves(){
@@ -27,16 +28,73 @@ public class GameInterface {
 	}
 	
 	public boolean isPoppable(Coord aBalloon){
-		if (this.possibleMoves().contains(aBalloon)) return true;
+		//if (this.possibleMoves().contains(aBalloon)) return true;
+        if (this.gameBoard.hasLikeColoredNeighbors(aBalloon)) return true;
 		return false;
 	}
     
     public GameGrid getGrid(){
         return this.gameBoard;
     }
+    
+    public Balloon getBalloon(Coord aBalloon){
+        return this.gameBoard.getBalloon(aBalloon);
+    }
+    
+    public boolean pop(Coord aBalloon){
+        if (!this.isPoppable(aBalloon)) return false;
+        this.unHighlight(aBalloon);
+        ArrayList<Coord> myBalloons = new ArrayList<Coord>();
+        myBalloons.addAll(this.gameBoard.likeColoredNeighborChain(aBalloon));
+        myBalloons.add(aBalloon);
+        this.coordList.addAll(myBalloons);
+        this.action = "pop";
+        this.gameBoard.popChain(myBalloons);
+        this.fireGameEvent();
+        this.gameBoard.squeezeAll();
+        this.coordList.addAll(this.gameBoard.getGridAsList());
+        this.action = "update";
+        this.fireGameEvent();
+        return true;
+    }
+    
+    public void highlight(Coord aBalloon){
+        if (!this.isPoppable(aBalloon)) return;
+        this.coordList.addAll(this.gameBoard.likeColoredNeighborChain(aBalloon));
+        this.coordList.add(aBalloon);
+        this.action = "highlight";
+        this.fireGameEvent();
+    }
+    
+    public void unHighlight(Coord aBalloon){
+        //if (!this.isPoppable(aBalloon)) return;
+        this.coordList.addAll(this.gameBoard.likeColoredNeighborChain(aBalloon));
+        this.coordList.add(aBalloon);
+        this.action = "unhighlight";
+        this.fireGameEvent();
+    }
+    
+    public synchronized void addGameListener( GameListener listener ) {
+        this.gameListeners.add( listener );
+    }
+    
+    public synchronized void removeGameListener( GameListener listener ) {
+        this.gameListeners.remove( listener );
+    }
+    
+    private synchronized void fireGameEvent(){
+        GameEvent event = new GameEvent(this, this.coordList, this.action);
+        for (GameListener t : this.gameListeners){
+            t.gameEventReceived(event);
+        }
+        this.coordList.clear();
+        this.action = "none";
+    }
 	
-	private Coord location;
 	private GameGrid gameBoard;
+    private ArrayList<Coord> coordList;
+    private String action;
+    private LinkedList<GameListener> gameListeners;
 
     /**
      * @param args

@@ -57,10 +57,50 @@ public class GameGrid {
         ArrayList<Coord> result = new ArrayList<Coord>();
         for (int i=-1; i<=1; i++){
             for (int j=-1; j<=1; j++){
-                if (bottomRight.isBeyond(new Coord(aBalloon.GetX()+i, aBalloon.GetY()+j)) && !(i == j) && !(aBalloon.isDiagonalTo(new Coord(aBalloon.GetX()+i, aBalloon.GetY()+j))) ){
+                Coord myTestPoint = new Coord(aBalloon.GetX()+i, aBalloon.GetY()+j);
+                if (bottomRight.isBeyond(myTestPoint) && !(i == j) && !(aBalloon.isDiagonalTo(myTestPoint)) ){
                     result.add(new Coord(aBalloon.GetX()+i, aBalloon.GetY()+j));
                 }
             }
+        }
+        return result;
+    }
+    
+    public ArrayList<Coord> likeColoredNeighbors(Coord aBalloon){
+        ArrayList<Coord> result = new ArrayList<Coord>();
+        for (int i=-1; i<=1; i++){
+            for (int j=-1; j<=1; j++){
+                Coord myTestPoint = new Coord(aBalloon.GetX()+i, aBalloon.GetY()+j);
+                if (bottomRight.isBeyond(myTestPoint) && !(i == j) && !(aBalloon.isDiagonalTo(myTestPoint)) && (this.Color(myTestPoint) == this.Color(aBalloon)) ){
+                    result.add(new Coord(aBalloon.GetX()+i, aBalloon.GetY()+j));
+                }
+            }
+        }
+        return result;
+    }
+    
+    public ArrayList<Coord> likeColoredNeighborChain(Coord aBalloon){
+        ArrayList<Coord> result = new ArrayList<Coord>();
+        ArrayList<Coord> AlreadyVisited = new ArrayList<Coord>();
+        Stack<Coord> ToBeTested = new Stack<Coord>();
+        ArrayList<Coord> Temp = new ArrayList<Coord>();
+        Coord TestCoord = new Coord();
+                AlreadyVisited.add(aBalloon);
+        ToBeTested.push(aBalloon);
+        while (!(ToBeTested.isEmpty())){
+            Temp = this.likeColoredNeighbors(ToBeTested.pop());
+            boolean AlreadyVisitedFlag = false;
+            for (Coord t : Temp){
+                //if (AlreadyVisited.contains(t)) continue;
+                for (Coord r : AlreadyVisited){
+                    if (t.Equals(r)) AlreadyVisitedFlag = true;
+                }
+                if (!AlreadyVisitedFlag){
+                    ToBeTested.push(t);
+                    AlreadyVisited.add(t);
+                    result.add(t);
+                }
+             }
         }
         return result;
     }
@@ -92,7 +132,7 @@ public class GameGrid {
      * @param args
      */
     public static void main(String[] args) {
-        GameGrid test = new GameGrid(5,5);
+        GameGrid test = new GameGrid(9,9);
         System.out.println(test);
         System.out.print("Center column is ");
         System.out.println(test.CenterColumn());
@@ -100,7 +140,16 @@ public class GameGrid {
         System.out.println(test.Color(2,2));
         System.out.print("Ballon at bottom right is ");
         System.out.println(test.Color(test.GridSize()));
+        System.out.println("Neighboring balloons to (3,3) are:");
         for (Coord t : test.Neighbors(new Coord(3,3))){
+            System.out.println(t);
+        }
+        System.out.println("Like-colored neighboring balloons to (3,3) are:");
+        for (Coord t : test.likeColoredNeighbors(new Coord(3,3))){
+            System.out.println(t);
+        }
+        System.out.println("Like-colored neighbor chain for (3,3) is:");
+        for (Coord t : test.likeColoredNeighborChain(new Coord(3,3))){
             System.out.println(t);
         }
     }

@@ -10,6 +10,10 @@
  */
 public class Coord {
     
+    public Coord(){
+        this(0,0);
+    }
+    
     public Coord(int aX, int aY){
         this.x = aX;
         this.y = aY;

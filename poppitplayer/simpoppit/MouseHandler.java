@@ -24,6 +24,12 @@ public class MouseHandler extends MouseAdapter{
 		//System.out.println("Mouse exited.");
 	}
 	
+	public void mouseClicked(MouseEvent event){
+		Object b = event.getComponent();
+		BalloonButton c = (BalloonButton) b;
+		c.pop();
+	}
+	
 	/**
 	 * @param args
 	 */

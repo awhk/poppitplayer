@@ -32,7 +32,7 @@ public class GuiTest extends JFrame{
 		for (Coord t : game.getGridAsListByRow()){
 			//panel.add(new JButton(t.toString()));
 			//panel.add(new BalloonButton(t));
-			BalloonButton balloon = new BalloonButton(game.color(t));
+			BalloonButton balloon = new BalloonButton(game, t, panel);
 			//balloon.addMouseMotionListener(new MouseMotionHandler());
 			balloon.addMouseListener(new MouseHandler());
 			panel.add(balloon);
@@ -101,6 +101,32 @@ class GuiTestPanel extends JPanel {
         this.yMaxGame = game.gridSize().getY();
     }
 	
+	public void highlightNeighbors(Coord aCoord){
+		
+		this.coord = aCoord;
+		
+		for (Component t : this.getComponents()){
+			BalloonButton b = (BalloonButton)t;
+			if (game.likeColoredNeighborChain(this.coord).contains(b.getCoord()) | b.getCoord() == this.coord){
+				//System.out.print("Highlighting ");
+				//System.out.println(b.getCoord());
+				b.simpleHighlight(true);
+			}else{
+				//System.out.print("Unhighlighting ");
+				//System.out.println(b.getCoord());
+				b.simpleHighlight(false);
+			}
+		}
+	}
+	
+	public void repaintGame(){
+		for (Component t : this.getComponents()){
+			BalloonButton b = (BalloonButton)t;
+			b.simpleHighlight(false);
+			b.setColor(game.color(b.getCoord()));
+		}
+	}
+	
 	public int getGameX(){
 		return this.xMaxGame;
 	}
@@ -109,6 +135,7 @@ class GuiTestPanel extends JPanel {
 		return this.yMaxGame;
 	}
     
+	private Coord coord;
     private int xMaxWindow;
     private int yMaxWindow;
     private int xMaxGame;

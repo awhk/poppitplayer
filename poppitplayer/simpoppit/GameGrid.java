@@ -188,9 +188,11 @@ public class GameGrid {
             if (myGrid.get(i).isEmpty()){
                 if (i == 0 || i == this.xMax || i == this.centerColumn()) continue;
                 if (i < this.centerColumn()){
+					if (myGrid.get(i).isEmpty() & myGrid.get(i-1).isEmpty()) continue;
                     Collections.swap(myGrid, i-1, i);
                     swapped = true;
                 }else{
+					if (myGrid.get(i).isEmpty() & myGrid.get(i+1).isEmpty()) continue;
                     Collections.swap(myGrid, i+1, i);
                     swapped = true;
                 }
@@ -203,7 +205,7 @@ public class GameGrid {
         if (swapped) squeezeRows();
     }
     
-    private boolean hasLikeColoredNeighbors(Coord aBalloon){
+    public boolean hasLikeColoredNeighbors(Coord aBalloon){
         if (this.likeColoredNeighbors(aBalloon).size()>0) return true;
         return false;
     }

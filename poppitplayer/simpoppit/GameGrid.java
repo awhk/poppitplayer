@@ -184,6 +184,26 @@ public class GameGrid {
         for (int i=0; i<this.columns(); i++){
             myGrid.add(i, this.grid[i]);
         }
+		int leftOfCenter = 0;
+		int rightOfCenter = 0;
+		for (int i=0; i<this.columns(); i++){
+			if (myGrid.get(i).isEmpty()) continue;
+			if (i < this.centerColumn()){
+				leftOfCenter++;
+			}else{
+				rightOfCenter++;
+			}
+		}
+		if (leftOfCenter == 0 & rightOfCenter ==0){
+			return;
+		}
+		if (myGrid.get(this.centerColumn()).isEmpty()){
+			if (leftOfCenter > rightOfCenter){
+				Collections.swap(myGrid, this.centerColumn()-1, this.centerColumn());
+			}else{
+				Collections.swap(myGrid, this.centerColumn()+1, this.centerColumn());
+			}
+		}
         for (int i=0; i<this.columns(); i++){
             if (myGrid.get(i).isEmpty()){
                 if (i == 0 || i == this.xMax || i == this.centerColumn()) continue;

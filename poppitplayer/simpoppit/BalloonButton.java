@@ -65,11 +65,18 @@ public class BalloonButton extends JComponent{
 	}
 	
 	public void pop(){
+		GuiTestPanel p = (GuiTestPanel)this.parentPanel;
 		if (!(game.hasLikeColoredNeighbors(this.coord))) return;
 		game.popChain(game.likeColoredNeighborChain(this.coord));
 		game.pop(this.coord);
+		//p.repaintGame();
+//		try{
+//			Thread.sleep(1000);
+//		}
+//		catch (Exception e){
+//			System.out.println("Couldn't sleep!");
+//		}
 		game.squeezeAll();
-		GuiTestPanel p = (GuiTestPanel)this.parentPanel;
 		p.repaintGame();
 	}
 

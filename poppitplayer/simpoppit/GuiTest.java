@@ -125,6 +125,8 @@ class GuiTestPanel extends JPanel {
 			b.simpleHighlight(false);
 			b.setColor(game.color(b.getCoord()));
 		}
+		repaint();
+		//System.out.println(game);
 	}
 	
 	public int getGameX(){

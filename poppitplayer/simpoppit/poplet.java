@@ -49,7 +49,7 @@ public class poplet extends JApplet implements GameListener{
     
     public void gameEventReceived(GameEvent event){
         if (event.getAction() == "gameover"){
-            int answer = JOptionPane.showConfirmDialog(this, "Play another game?");
+            int answer = JOptionPane.showConfirmDialog(this, "Out of moves!  Play another game?");
             if (answer == JOptionPane.YES_OPTION) {
                 this.game.resetGame();
             }else if (answer == JOptionPane.NO_OPTION) {

@@ -33,10 +33,6 @@ public class Balloon {
         this.color = Color.EMPTY;
     }
 
-    private Balloon(Color aColor){
-        this.color = aColor;
-    }
-
     public static enum Color { BLUE, RED, YELLOW, PURPLE, GREEN, EMPTY }
     private Color color;
     

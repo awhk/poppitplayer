@@ -13,9 +13,7 @@ import java.util.*;
 
 public class BalloonColumn {
     public BalloonColumn(){
-        for (int i=0; i<10; i++){
-            this.column.add(new Balloon());
-        }
+        this(10);
     }
     
     public BalloonColumn(int aLength){

@@ -54,6 +54,10 @@ public class BalloonColumn {
         return false;
     }
     
+    public Balloon getBalloon(int aBalloon){
+        return this.column.get(aBalloon);
+    }
+    
     public void pop(int aBalloon){
         this.column.get(aBalloon).pop();
     }

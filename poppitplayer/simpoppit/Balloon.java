@@ -1,5 +1,7 @@
 import java.util.*;
 /**
+ * The balloon class models a ballon, offering the ability to find the color of the balloon, as well as to pop the balloon.
+ * 
  * <p>Title: Balloon</p>
  *
  * <p>Description: Balloon class</p>
@@ -11,6 +13,10 @@ import java.util.*;
  */
 
 public class Balloon {
+
+    /**
+     * 
+     */
     public Balloon() {
         ArrayList<Color> temp = new ArrayList<Color>();
         temp.addAll(Arrays.asList(Color.values()));
@@ -27,6 +33,12 @@ public class Balloon {
         if (color == Color.EMPTY){
             return true;
         }
+        return false;
+    }
+    
+    public boolean sameColor(Balloon aBalloon){
+        if (this.isPopped() || aBalloon.isPopped()) return false;
+        if (this.color == aBalloon.color()) return true;
         return false;
     }
     

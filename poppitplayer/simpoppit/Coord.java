@@ -73,6 +73,8 @@ public class Coord {
         System.out.println(test1.equals(test2));
         System.out.print("testlist contains test2 is ");
         System.out.println(testlist.contains(test2));
+        System.out.print("null == null is ");
+        System.out.println(null == null);
 
     }
 

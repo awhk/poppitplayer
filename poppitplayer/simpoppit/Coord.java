@@ -1,3 +1,4 @@
+import java.util.*;
 /**
  * <p>Title: Coord</p>
  *
@@ -19,30 +20,30 @@ public class Coord {
         this.y = aY;
     }
     
-    public int GetX(){
+    public int getX(){
         return x;
     }
     
-    public int GetY(){
+    public int getY(){
         return y;
     }
     
     public boolean isBeyond(Coord aPoint){
-        if (aPoint.GetX() > this.x) return false;
-        if (aPoint.GetY() > this.y) return false;
+        if (aPoint.getX() > this.x) return false;
+        if (aPoint.getY() > this.y) return false;
         return true;
     }
     
-    public boolean Equals(Coord aPoint){
-        if (aPoint.GetX() == this.x & aPoint.GetY() == this.y) return true;
+    public boolean equals(Object aPoint){
+        if ((aPoint instanceof Coord) && (((Coord)aPoint).getX() == this.x & ((Coord)aPoint).getY() == this.y) ) return true;
         return false;
     }
     
     public boolean isDiagonalTo(Coord aPoint){
-        if (aPoint.GetX() == this.x-1 & aPoint.GetY() == this.y-1) return true;
-        if (aPoint.GetX() == this.x+1 & aPoint.GetY() == this.y-1) return true;
-        if (aPoint.GetX() == this.x-1 & aPoint.GetY() == this.y+1) return true;
-        if (aPoint.GetX() == this.x+1 & aPoint.GetY() == this.y+1) return true;
+        if (aPoint.getX() == this.x-1 & aPoint.getY() == this.y-1) return true;
+        if (aPoint.getX() == this.x+1 & aPoint.getY() == this.y-1) return true;
+        if (aPoint.getX() == this.x-1 & aPoint.getY() == this.y+1) return true;
+        if (aPoint.getX() == this.x+1 & aPoint.getY() == this.y+1) return true;
         return false;
     }
     
@@ -64,7 +65,14 @@ public class Coord {
      * @param args
      */
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+        Coord test1 = new Coord(3,3);
+        Coord test2 = new Coord(3,3);
+        ArrayList<Coord> testlist = new ArrayList<Coord>();
+        testlist.add(test1);
+        System.out.print("test1 = test2 is ");
+        System.out.println(test1.equals(test2));
+        System.out.print("testlist contains test2 is ");
+        System.out.println(testlist.contains(test2));
 
     }
 

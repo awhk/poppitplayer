@@ -1,3 +1,4 @@
+import java.util.*;
 /**
  * <p>Title: Balloon</p>
  *
@@ -8,7 +9,7 @@
  * @author Andrew W. Henry
  * @version 1.0
  */
-import java.util.*;
+
 public class Balloon {
     public Balloon() {
         ArrayList<Color> temp = new ArrayList<Color>();
@@ -29,7 +30,7 @@ public class Balloon {
         return false;
     }
     
-    public void Pop(){
+    public void pop(){
         this.color = Color.EMPTY;
     }
 
@@ -40,7 +41,7 @@ public class Balloon {
         Balloon test = new Balloon();
         System.out.println( "My balloon is " + test.color());
         System.out.println( "Popping balloon...");
-        test.Pop();
+        test.pop();
         if(test.isPopped()){
             System.out.println("My balloon is popped!");
         }else{

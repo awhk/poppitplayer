@@ -1,3 +1,4 @@
+import java.util.*;
 /**
  * <p>Title: BalloonColumn</p>
  *
@@ -8,8 +9,6 @@
  * @author Andrew W. Henry
  * @version 1.0
  */
-
-import java.util.*;
 
 public class BalloonColumn {
     public BalloonColumn(){
@@ -27,7 +26,9 @@ public class BalloonColumn {
         return this.column.size();
     }
     
-    public Balloon.Color Color(int aBalloon){
+    public Balloon.Color color(int aBalloon){
+        //System.out.print("Accessing color for balloon ");
+        //System.out.println(aBalloon);
         return this.column.get(aBalloon).color();
     }
     
@@ -53,11 +54,11 @@ public class BalloonColumn {
         return false;
     }
     
-    public void Pop(int aBalloon){
-        this.column.get(aBalloon).Pop();
+    public void pop(int aBalloon){
+        this.column.get(aBalloon).pop();
     }
     
-    public void Squeeze (){
+    public void squeeze(){
         if (this.isEmpty()) return;
         boolean sawPopped = false;
         for (Balloon t : this.column){
@@ -67,7 +68,7 @@ public class BalloonColumn {
             }
             if (sawPopped){
                 Collections.swap(this.column, this.column.indexOf(t)-1, this.column.indexOf(t));
-                Squeeze();
+                squeeze();
                 break;
             }
         }
@@ -79,29 +80,29 @@ public class BalloonColumn {
      * @param args
      */
     public static void main(String[] args) {
-        BalloonColumn test = new BalloonColumn();
+        BalloonColumn test = new BalloonColumn(8);
         System.out.println(test);
         System.out.println("Popping all balloons in column...");
         for (int i=0; i<test.count(); i++){
-            test.Pop(i);
+            test.pop(i);
         }
         System.out.print("Column empty?  ");
         System.out.println(test.isEmpty());
         System.out.println("Making new column...");
-        test = new BalloonColumn();
+        test = new BalloonColumn(8);
         System.out.println(test);
         System.out.println("Popping balloon 5...");
-        test.Pop(4);
+        test.pop(4);
         System.out.println(test);
         System.out.println("Squeezing...");
-        test.Squeeze();
+        test.squeeze();
         System.out.println(test);
         System.out.println("Popping balloons 2 and 3...");
-        test.Pop(1);
-        test.Pop(2);
+        test.pop(1);
+        test.pop(2);
         System.out.println(test);
         System.out.println("Squeezing...");
-        test.Squeeze();
+        test.squeeze();
         System.out.println(test);
     }
 

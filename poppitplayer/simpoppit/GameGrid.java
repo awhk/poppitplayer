@@ -8,6 +8,9 @@
  * @author Andrew W. Henry
  * @version 1.0
  */
+
+import java.util.*;
+
 public class GameGrid {
 
     public GameGrid(){
@@ -50,10 +53,22 @@ public class GameGrid {
         return this.grid[aBalloon.GetX()].Color(aBalloon.GetY());
     }
     
+    public ArrayList<Coord> Neighbors(Coord aBalloon){
+        ArrayList<Coord> result = new ArrayList<Coord>();
+        for (int i=-1; i<=1; i++){
+            for (int j=-1; j<=1; j++){
+                if (bottomRight.isBeyond(new Coord(aBalloon.GetX()+i, aBalloon.GetY()+j)) && !(i == j) && !(aBalloon.isDiagonalTo(new Coord(aBalloon.GetX()+i, aBalloon.GetY()+j))) ){
+                    result.add(new Coord(aBalloon.GetX()+i, aBalloon.GetY()+j));
+                }
+            }
+        }
+        return result;
+    }
+    
     public String toString(){
         String result = "";
-        for (int i=0; i<this.xMax+1; i++){
-            for (int j=0; j<this.yMax+1; j++){
+        for (int i=0; i<=this.xMax; i++){
+            for (int j=0; j<=this.yMax; j++){
                 result += this.grid[j].Color(i);
                 result += "\t";
             }
@@ -85,6 +100,9 @@ public class GameGrid {
         System.out.println(test.Color(2,2));
         System.out.print("Ballon at bottom right is ");
         System.out.println(test.Color(test.GridSize()));
+        for (Coord t : test.Neighbors(new Coord(3,3))){
+            System.out.println(t);
+        }
     }
 
 }

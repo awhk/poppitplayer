@@ -22,6 +22,35 @@ public class Coord {
     public int GetY(){
         return y;
     }
+    
+    public boolean isBeyond(Coord aPoint){
+        if (aPoint.GetX() > this.x) return false;
+        if (aPoint.GetY() > this.y) return false;
+        return true;
+    }
+    
+    public boolean Equals(Coord aPoint){
+        if (aPoint.GetX() == this.x & aPoint.GetY() == this.y) return true;
+        return false;
+    }
+    
+    public boolean isDiagonalTo(Coord aPoint){
+        if (aPoint.GetX() == this.x-1 & aPoint.GetY() == this.y-1) return true;
+        if (aPoint.GetX() == this.x+1 & aPoint.GetY() == this.y-1) return true;
+        if (aPoint.GetX() == this.x-1 & aPoint.GetY() == this.y+1) return true;
+        if (aPoint.GetX() == this.x+1 & aPoint.GetY() == this.y+1) return true;
+        return false;
+    }
+    
+    public String toString(){
+        String result = "";
+        result += "(";
+        result += this.x;
+        result += ",";
+        result += this.y;
+        result += ")";
+        return result;
+    }
 
     
     private int x;

@@ -61,6 +61,10 @@ public class GameGrid {
         return this.grid[aBalloon.getX()].getBalloon(aBalloon.getY());
     }
     
+    public BalloonColumn[] getColumns(){
+        return this.grid;
+    }
+    
     public ArrayList<Coord> neighbors(Coord aBalloon){
         ArrayList<Coord> result = new ArrayList<Coord>();
         for (int i=-1; i<=1; i++){

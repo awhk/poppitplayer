@@ -30,21 +30,10 @@ public class GameInterface {
 		if (this.possibleMoves().contains(aBalloon)) return true;
 		return false;
 	}
-	
-	class Move {
-		
-		public Move(){
-			Locations = GameInterface.this.gameBoard.getGridAsList();
-		}
-		
-		
-		private MoveType moveType;
-		private ArrayList<Coord> Locations;
-		private ArrayList<String> Test;
-		private ArrayList<String> Action;
-		private static enum MoveType{test, action};
-	}
-	
+    
+    public GameGrid getGrid(){
+        return this.gameBoard;
+    }
 	
 	private Coord location;
 	private GameGrid gameBoard;

@@ -62,6 +62,10 @@ public class BalloonColumn {
         this.column.get(aBalloon).pop();
     }
     
+    public ArrayList<Balloon> getBalloons(){
+        return this.column;
+    }
+    
     public void squeeze(){
         if (this.isEmpty()) return;
         boolean sawPopped = false;

@@ -60,7 +60,15 @@ public class SimPoppitGui extends JFrame implements GameListener{
         this.game.addGameListener(this);
 	}
     
+    public GameInterface getGame(){
+        return this.game;
+    }
+    
     public void gameEventReceived(GameEvent event){
+//        if (event.getAction() == "update"){
+//            System.out.println("Cloning game...");
+//            this.game = (GameInterface)this.game.clone();
+//        }
         if (event.getAction() == "gameover"){
             int answer = JOptionPane.showConfirmDialog(this, "Out of moves!  Play another game?");
             if (answer == JOptionPane.YES_OPTION) {

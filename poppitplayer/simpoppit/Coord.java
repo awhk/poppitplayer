@@ -9,7 +9,7 @@ import java.util.*;
  * @author Andrew W. Henry
  * @version 1.0
  */
-public class Coord {
+public class Coord implements Cloneable{
     
     public Coord(){
         this(0,0);
@@ -37,6 +37,11 @@ public class Coord {
     public boolean equals(Object aPoint){
         if ((aPoint instanceof Coord) && (((Coord)aPoint).getX() == this.x & ((Coord)aPoint).getY() == this.y) ) return true;
         return false;
+    }
+    
+    public Object clone(){
+        Coord result = new Coord(this.x, this.y);
+        return (Object)result;
     }
     
     public boolean isDiagonalTo(Coord aPoint){

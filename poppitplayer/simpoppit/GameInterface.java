@@ -10,7 +10,7 @@ import java.util.*;
  * @author Andrew W. Henry
  * @version 1.0
  */
-public class GameInterface {
+public class GameInterface implements Cloneable{
 	
 	public GameInterface(){
 		this(15, 10);
@@ -24,6 +24,19 @@ public class GameInterface {
         this.maxScore = aX * aY;
         this.score = 0;
 	}
+    
+    public GameInterface(GameGrid newGrid, ArrayList<Coord> newCoordList, LinkedList<GameListener> newGameListeners, int aScore){
+        this.gameBoard = newGrid;
+        this.coordList = newCoordList;
+        this.gameListeners = newGameListeners;
+        this.maxScore = (this.gameBoard.gridSize().getX()+1)*(this.gameBoard.gridSize().getY()+1);
+        this.action = "none";
+        this.score = aScore;
+    }
+    
+    public ArrayList<Coord> getCoordList(){
+        return this.coordList;
+    }
 	
 	public ArrayList<Coord> possibleMoves(){
 		return gameBoard.hasLikeColoredNeighbors();
@@ -54,6 +67,10 @@ public class GameInterface {
         return this.maxScore;
     }
     
+    public String getAction(){
+        return this.action;
+    }
+    
     public void resetGame(){
         this.gameBoard = new GameGrid(this.gameBoard.gridSize().getX()+1, this.gameBoard.gridSize().getY()+1);
         this.coordList.addAll(this.gameBoard.getGridAsList());
@@ -77,6 +94,7 @@ public class GameInterface {
     }
     
     public boolean pop(Coord aBalloon){
+        //System.out.println("Popping " + aBalloon);
         if (!this.isPoppable(aBalloon)) return false;
         this.unHighlight(aBalloon);
         ArrayList<Coord> myBalloons = new ArrayList<Coord>();
@@ -140,6 +158,10 @@ public class GameInterface {
         this.gameListeners.remove( listener );
     }
     
+    public LinkedList<GameListener> getListeners(){
+        return this.gameListeners;
+    }
+    
     private synchronized void fireGameEvent(){
         //System.out.println("Dispatching event " + this.action + " to " + this.gameListeners.size() + " listeners");
         GameEvent event = new GameEvent(this, this.coordList, this.action);
@@ -148,6 +170,22 @@ public class GameInterface {
         }
         this.coordList.clear();
         this.action = "none";
+    }
+    
+    public boolean equals(Object aGame){
+        if ((aGame instanceof GameInterface)
+                && (((GameInterface)aGame).getScore() == this.score)
+                //&& (((GameInterface)aGame).getMaxScore() == this.maxScore)
+                //&& (((GameInterface)aGame).getCoordList().equals(this.coordList))
+                && (((GameInterface)aGame).getGrid().equals(this.gameBoard))) return true;
+                //&& (((GameInterface)aGame).getAction().equals(this.action))
+                //&& (((GameInterface)aGame).getListeners().equals(this.gameListeners))) return true;
+        return false;
+    }
+    
+    public Object clone(){
+        GameInterface result = new GameInterface((GameGrid)this.gameBoard.clone(), (ArrayList<Coord>)this.coordList.clone(), (LinkedList<GameListener>)this.gameListeners.clone(), this.score);
+        return (Object)result;
     }
 	
     private int score;
@@ -162,11 +200,10 @@ public class GameInterface {
      */
     public static void main(String[] args) {
         GameInterface test = new GameInterface(5,5);
-		for (Coord t : test.possibleMoves()){
-			System.out.println(t);
-		}
-		System.out.print("(2,2) is poppable? ");
-		System.out.println(test.isPoppable(new Coord(2,2)));
+		GameInterface testClone = (GameInterface)test.clone();
+        test.pop(test.possibleMoves().get(0));
+        System.out.println("Test is " + test.getGrid());
+        System.out.println("TestClone is " + testClone.getGrid());
     }
 
 }

@@ -10,7 +10,7 @@ import java.util.*;
  * @version 1.0
  */
 
-public class BalloonColumn {
+public class BalloonColumn implements Cloneable{
     public BalloonColumn(){
         this(10);
     }
@@ -32,13 +32,17 @@ public class BalloonColumn {
         return this.column.get(aBalloon).color();
     }
     
+    public int getSize(){
+        return this.column.size();
+    }
+    
     public String toString() {
         String result = "";
-        for (Balloon t : this.column){
+        for (int i=0; i<this.getSize(); i++){
             result += "Row ";
-            result += this.column.indexOf(t) +  1;
+            result += i + 1;
             result += " has color ";
-            result += t.color();
+            result += this.getBalloon(i).color();
             result += "\n";
         }
         return result;
@@ -54,6 +58,15 @@ public class BalloonColumn {
         return false;
     }
     
+    public boolean equals(Object aColumn){
+        if (!(aColumn instanceof BalloonColumn)) return false;
+        if (!(((BalloonColumn)aColumn).getSize() == this.getSize())) return false;
+            for (int i=0; i<this.getSize(); i++){
+                if (!((BalloonColumn)aColumn).getBalloon(i).equals(this.getBalloon(i))) return false;
+            }
+        return true;
+    }
+    
     public Balloon getBalloon(int aBalloon){
         return this.column.get(aBalloon);
     }
@@ -66,21 +79,33 @@ public class BalloonColumn {
         return this.column;
     }
     
+    private void setBalloons(ArrayList<Balloon> aNewColumn){
+        for (int i=0; i<aNewColumn.size(); i++){
+            this.column.set(i, (Balloon)aNewColumn.get(i).clone());
+        }
+    }
+    
     public void squeeze(){
         if (this.isEmpty()) return;
 		
         boolean sawPopped = false;
-        for (Balloon t : this.column){
-            if (t.isPopped()){
+        for (int i=0; i<this.getSize(); i++){
+            if (this.getBalloon(i).isPopped()){
                 sawPopped = true;
                 continue;
             }
             if (sawPopped){
-                Collections.swap(this.column, this.column.indexOf(t)-1, this.column.indexOf(t));
+                Collections.swap(this.column, i-1, i);
                 squeeze();
                 break;
             }
         }
+    }
+    
+    public Object clone(){
+        BalloonColumn result = new BalloonColumn(this.getSize());
+        result.setBalloons(this.column);
+        return (Object)result;
     }
     
     private ArrayList<Balloon> column = new ArrayList<Balloon>(10);

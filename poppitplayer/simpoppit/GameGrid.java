@@ -11,7 +11,7 @@ import java.util.*;
  */
 
 
-public class GameGrid {
+public class GameGrid implements Cloneable{
 
     public GameGrid(){
         this(15);
@@ -26,7 +26,7 @@ public class GameGrid {
             System.out.println("Number of columns must be odd.  Incremented.");
         }
         this.grid = new BalloonColumn[aNumberOfColumns];
-        for (int i=0; i<this.columns(); i++){
+        for (int i=0; i<this.getSize(); i++){
             this.grid[i] = new BalloonColumn(aNumberOfRows);
         }
         this.xMax = aNumberOfColumns-1;
@@ -34,7 +34,7 @@ public class GameGrid {
         this.bottomRight = new Coord(aNumberOfColumns-1, aNumberOfRows-1);
     }
     
-    public int columns(){
+    public int getSize(){
         return grid.length;
     }
     
@@ -65,6 +65,10 @@ public class GameGrid {
         return this.grid;
     }
     
+    public BalloonColumn getColumn(int aColumn){
+        return this.grid[aColumn];
+    }
+    
     public ArrayList<Coord> neighbors(Coord aBalloon){
         ArrayList<Coord> result = new ArrayList<Coord>();
         for (int i=-1; i<=1; i++){
@@ -83,7 +87,7 @@ public class GameGrid {
         for (int i=-1; i<=1; i++){
             for (int j=-1; j<=1; j++){
                 Coord myTestPoint = new Coord(aBalloon.getX()+i, aBalloon.getY()+j);
-                if ( myTestPoint.getX()>=0 && myTestPoint.getY()>=0 && bottomRight.isBeyond(myTestPoint) && !(i == j) && !(aBalloon.isDiagonalTo(myTestPoint)) && (this.getBalloon(myTestPoint).sameColor(this.getBalloon(aBalloon))) ){
+                if ( myTestPoint.getX()>=0 && myTestPoint.getY()>=0 && bottomRight.isBeyond(myTestPoint) && !(i == j) && !(aBalloon.isDiagonalTo(myTestPoint)) && (this.getBalloon(myTestPoint).equals(this.getBalloon(aBalloon))) ){
                     result.add(new Coord(aBalloon.getX()+i, aBalloon.getY()+j));
                 }
             }
@@ -172,9 +176,15 @@ public class GameGrid {
     }
     
     private int centerColumn(){
-        int length = this.columns();
+        int length = this.getSize();
         if (length == 1) return 0;
         return ((length-1)/2);
+    }
+    
+    private void setColumns(BalloonColumn[] aNewGrid){
+        for (int i=0; i<this.getSize(); i++){
+            this.grid[i] = (BalloonColumn)aNewGrid[i].clone();
+        }
     }
     
     private void squeezeColumns(){
@@ -186,12 +196,12 @@ public class GameGrid {
     private void squeezeRows(){
         ArrayList<BalloonColumn> myGrid = new ArrayList<BalloonColumn>();
         boolean swapped = false;
-        for (int i=0; i<this.columns(); i++){
+        for (int i=0; i<this.getSize(); i++){
             myGrid.add(i, this.grid[i]);
         }
 		int leftOfCenter = 0;
 		int rightOfCenter = 0;
-		for (int i=0; i<this.columns(); i++){
+		for (int i=0; i<this.getSize(); i++){
 			if (myGrid.get(i).isEmpty()) continue;
 			if (i < this.centerColumn()){
 				leftOfCenter++;
@@ -209,7 +219,7 @@ public class GameGrid {
 				Collections.swap(myGrid, this.centerColumn()+1, this.centerColumn());
 			}
 		}
-        for (int i=0; i<this.columns(); i++){
+        for (int i=0; i<this.getSize(); i++){
             if (myGrid.get(i).isEmpty()){
                 if (i == 0 || i == this.xMax || i == this.centerColumn()) continue;
                 if (i < this.centerColumn()){
@@ -224,10 +234,25 @@ public class GameGrid {
             }
         }
         //this.grid = myGrid.toArray(BalloonColumn.class);
-        for (int i=0; i<this.columns(); i++){
+        for (int i=0; i<this.getSize(); i++){
             this.grid[i] = myGrid.get(i);
         }
         if (swapped) squeezeRows();
+    }
+    
+    public boolean equals(Object aGrid){
+        if (!(aGrid instanceof GameGrid)) return false;
+        if (!(((GameGrid)aGrid).getSize() == this.getSize())) return false;
+        for (int i=0; i<this.getSize(); i++){
+            if (!(((GameGrid)aGrid).getColumn(i).equals(this.getColumn(i)))) return false;
+        }
+        return true;
+    }
+    
+    public Object clone(){
+        GameGrid result = new GameGrid(this.gridSize().getX()+1, this.gridSize().getY()+1);
+        result.setColumns(this.grid);
+        return (Object)result;
     }
     
     private BalloonColumn[] grid;

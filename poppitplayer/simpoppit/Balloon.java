@@ -12,7 +12,7 @@ import java.util.*;
  * @version 1.0
  */
 
-public class Balloon {
+public class Balloon implements Cloneable{
 
     /**
      * 
@@ -23,6 +23,10 @@ public class Balloon {
         temp.remove(Color.EMPTY);
         Collections.shuffle(temp, new Random());
         this.color = (Color) temp.get(0);
+    }
+    
+    public Balloon(Color aColor){
+        this.color = aColor;
     }
 
     public Color color() { return color; }
@@ -36,14 +40,20 @@ public class Balloon {
         return false;
     }
     
-    public boolean sameColor(Balloon aBalloon){
-        if (this.isPopped() || aBalloon.isPopped()) return false;
-        if (this.color == aBalloon.color()) return true;
+    public boolean equals(Object aBalloon){
+        if (!(aBalloon instanceof Balloon)) return false;
+        if (this.isPopped() || ((Balloon)aBalloon).isPopped()) return false;
+        if (this.color == ((Balloon)aBalloon).color()) return true;
         return false;
     }
 
     public void pop(){
         this.color = Color.EMPTY;
+    }
+    
+    public Object clone(){
+        Balloon result = new Balloon(this.color());
+        return (Object)result;
     }
 
     public static enum Color { BLUE, RED, YELLOW, PURPLE, GREEN, EMPTY }

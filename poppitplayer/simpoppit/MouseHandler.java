@@ -10,23 +10,24 @@ import java.awt.event.*;
 public class MouseHandler extends MouseAdapter{
 
 	public void mouseEntered(MouseEvent event){
-		Object b = event.getComponent();
-		BalloonButton c = (BalloonButton) b;
-		c.highlight(true);
-		//System.out.print("Mouse entered ");
-		//System.out.println(event.getComponent());
+        if (event.getSource() instanceof BalloonButton){
+            ((BalloonButton)event.getSource()).highlight(true);
+        }
 	}
 	
 	public void mouseExited(MouseEvent event){
-		Object b = event.getComponent();
-		BalloonButton c = (BalloonButton) b;
-		c.highlight(false);
-		//System.out.println("Mouse exited.");
+        if (event.getSource() instanceof BalloonButton){
+            ((BalloonButton)event.getSource()).highlight(false);
+        }
 	}
 	
-	public void mouseClicked(MouseEvent event){
-		Object b = event.getComponent();
-		BalloonButton c = (BalloonButton) b;
-		c.pop();
-	}
+    public void mouseClicked(MouseEvent event){
+        if (event.getSource() instanceof BalloonButton){
+            if (event.getModifiersEx() == InputEvent.CTRL_DOWN_MASK){
+                ((BalloonButton)event.getSource()).popAll();
+            }else{
+                ((BalloonButton)event.getSource()).pop();
+            }
+        }
+    }
 }

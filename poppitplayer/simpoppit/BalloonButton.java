@@ -25,15 +25,14 @@ public class BalloonButton extends JComponent implements GameListener{
 	}
     
     public void gameEventReceived(GameEvent event){
-        //System.out.println("Button " + this.coord + " received event action " + event.getAction());
-        //if (!event.getCoords().contains(this.coord)) return;
-        if (event.getAction() == "update" | event.getAction() == "pop"){
+        if (!event.getCoords().contains(this.coord)) return;
+        if (event.getAction() == "update"){
             this.color = this.convertColor(this.game.getBalloon(this.coord).color());
         }
-//        if (event.getAction() == "pop"){
-//            this.color = this.convertColor(this.game.getBalloon(this.coord).color());
-//            //this.color = Color.WHITE;
-//        }
+        if (event.getAction() == "pop"){
+            this.highlight = false;
+            this.color = this.convertColor(this.game.getBalloon(this.coord).color());
+        }
         if (event.getAction() == "highlight"){
             this.highlight = true;
         }
@@ -45,6 +44,7 @@ public class BalloonButton extends JComponent implements GameListener{
 	
 	public void highlight(boolean aHighlight){
         if (aHighlight & this.highlight) return;
+        if (!aHighlight & !this.highlight) return;
         if (aHighlight){
             this.game.highlight(this.coord);
         }else{
@@ -60,6 +60,10 @@ public class BalloonButton extends JComponent implements GameListener{
 	
     protected void pop(){
         this.game.pop(this.coord);
+    }
+    
+    protected void popAll(){
+        this.game.popAll();
     }
 	
 	protected void paintComponent(Graphics g){

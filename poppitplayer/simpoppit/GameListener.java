@@ -9,6 +9,5 @@
 public interface GameListener {
 
     public void gameEventReceived(GameEvent event);
-    
-    public Coord getCoord();
+
 }

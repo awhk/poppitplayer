@@ -10,12 +10,14 @@ import java.awt.event.*;
 public class MouseMotionHandler implements MouseMotionListener{
 
 	public void mouseMoved(MouseEvent event){
-        Object b = event.getComponent();
-        BalloonButton c = (BalloonButton) b;
-        c.highlight(true);
+        if (event.getSource() instanceof BalloonButton){
+            ((BalloonButton)event.getSource()).highlight(true);
+        };
 	}
 	
 	public void mouseDragged(MouseEvent event){
-		
+//        if (event.getSource() instanceof BalloonButton){
+//            ((BalloonButton)event.getSource()).pop();
+//        }
 	}
 }

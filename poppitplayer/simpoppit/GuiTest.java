@@ -25,8 +25,18 @@ public class GuiTest extends JFrame{
 		setIconImage(img);
         
         GuiTestPanel panel = new GuiTestPanel();
-        panel.GameVars(new GameGrid());
+		GameGrid game = new GameGrid();
+        panel.GameVars(game);
         panel.setBackground(Color.WHITE);
+		panel.setLayout(new GridLayout(panel.getGameY()+1, panel.getGameX()+1));
+//		for (BalloonColumn t : game.getColumns()){
+//          for (Balloon v : t.getBalloons()){
+		for (Coord t : game.getGridAsListByRow()){
+			//panel.add(new JButton(t.toString()));
+			//panel.add(new BalloonButton(t));
+			panel.add(new BalloonButton(game.color(t)));
+//		  }
+		}
         Container contentPane = getContentPane();
         contentPane.add(panel);
 	}
@@ -51,34 +61,38 @@ class GuiTestPanel extends JPanel {
         this.yMaxWindow = getHeight();
         this.xMaxWindow = getWidth();
         
-        int balloonHeight = this.yMaxWindow/(this.yMaxGame+1);
-        int balloonWidth = this.xMaxWindow/(this.xMaxGame+1);
-        int startX = balloonWidth/2;
-        int startY = balloonHeight/2;
-        
-        for (BalloonColumn t : game.getColumns()){
-            for (Balloon v : t.getBalloons()){
-                switch (v.color()){
-                case BLUE: g.setColor(Color.BLUE); break;
-                case GREEN: g.setColor(Color.GREEN); break;
-                case PURPLE: g.setColor(Color.MAGENTA); break;
-                case RED: g.setColor(Color.RED); break;
-                case YELLOW: g.setColor(Color.YELLOW); break;
-                case EMPTY: g.setColor(Color.WHITE); break;
-                }
-                g.fillOval(startX-(balloonWidth/2), startY-(balloonHeight/2), balloonWidth, balloonHeight);
-                startY += balloonHeight;
-                g.setColor(Color.BLACK);
-            }
-            startX += balloonWidth;
-            startY = balloonHeight/2;
-        }
-        
+//        int balloonHeight = this.yMaxWindow/(this.yMaxGame+1);
+//        int balloonWidth = this.xMaxWindow/(this.xMaxGame+1);
+//        int startX = balloonWidth/2;
+//        int startY = balloonHeight/2;
+//        
+//        for (BalloonColumn t : game.getColumns()){
+//            for (Balloon v : t.getBalloons()){
+//                switch (v.color()){
+//                case BLUE: g.setColor(Color.BLUE); break;
+//                case GREEN: g.setColor(Color.GREEN); break;
+//                case PURPLE: g.setColor(Color.MAGENTA); break;
+//                case RED: g.setColor(Color.RED); break;
+//                case YELLOW: g.setColor(Color.YELLOW); break;
+//                case EMPTY: g.setColor(Color.WHITE); break;
+//                }
+//                g.fillOval(startX-(balloonWidth/2), startY-(balloonHeight/2), balloonWidth, balloonHeight);
+//                startY += balloonHeight;
+//                g.setColor(Color.BLACK);
+//            }
+//            startX += balloonWidth;
+//            startY = balloonHeight/2;
+//        }
+//        this.setLayout(new GridLayout(this.xMaxGame, this.yMaxGame));
+//		for (Coord t : game.getGridAsList()){
+//			this.add(new JButton(t.toString()));
+//		}
+		
         System.out.print(game);
         System.out.println(getWidth());
         System.out.println(getHeight());
-        System.out.println(balloonWidth);
-        System.out.println(balloonHeight);
+        //System.out.println(balloonWidth);
+        //System.out.println(balloonHeight);
     }
     
     public void GameVars(GameGrid aGame){
@@ -86,6 +100,14 @@ class GuiTestPanel extends JPanel {
         this.xMaxGame = game.gridSize().getX();
         this.yMaxGame = game.gridSize().getY();
     }
+	
+	public int getGameX(){
+		return this.xMaxGame;
+	}
+	
+	public int getGameY(){
+		return this.yMaxGame;
+	}
     
     private int xMaxWindow;
     private int yMaxWindow;

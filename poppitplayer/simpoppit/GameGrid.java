@@ -120,6 +120,16 @@ public class GameGrid {
         }
         return result;
     }
+	
+	public ArrayList<Coord> getGridAsListByRow(){
+		ArrayList<Coord> result = new ArrayList<Coord>(this.bottomRight.getX() * this.bottomRight.getY());
+        for (int i=0; i<=this.bottomRight.getY(); i++){
+            for (int j=0; j<=this.bottomRight.getX(); j++){
+                result.add(new Coord(j,i));
+            }
+        }
+        return result;
+	}
     
     public ArrayList<Coord> hasLikeColoredNeighbors(){
         ArrayList<Coord> result = new ArrayList<Coord>();

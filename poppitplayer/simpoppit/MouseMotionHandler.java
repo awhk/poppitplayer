@@ -18,13 +18,4 @@ public class MouseMotionHandler implements MouseMotionListener{
 	public void mouseDragged(MouseEvent event){
 		
 	}
-	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
 }

@@ -25,7 +25,8 @@ public class BalloonButton extends JComponent implements GameListener{
 	}
     
     public void gameEventReceived(GameEvent event){
-        if (!event.getCoords().contains(this.coord)) return;
+        //System.out.println("Button " + this.coord + " received event action " + event.getAction());
+        //if (!event.getCoords().contains(this.coord)) return;
         if (event.getAction() == "update" | event.getAction() == "pop"){
             this.color = this.convertColor(this.game.getBalloon(this.coord).color());
         }
@@ -73,6 +74,7 @@ public class BalloonButton extends JComponent implements GameListener{
 
 		g.setColor(this.color);
         if (this.highlight) {
+            //System.out.println("Highlighting button " + this.coord);
             int red = g.getColor().getRed()+175;
             int green = g.getColor().getGreen()+175;
             int blue = g.getColor().getBlue()+175;

@@ -60,6 +60,7 @@ public class GameInterface {
     
     public void highlight(Coord aBalloon){
         if (!this.isPoppable(aBalloon)) return;
+        //System.out.println("Highlighting " + aBalloon);
         this.coordList.addAll(this.gameBoard.likeColoredNeighborChain(aBalloon));
         this.coordList.add(aBalloon);
         this.action = "highlight";
@@ -83,8 +84,10 @@ public class GameInterface {
     }
     
     private synchronized void fireGameEvent(){
+        //System.out.println("Dispatching event " + this.action + " to " + this.gameListeners.size() + " listeners");
         GameEvent event = new GameEvent(this, this.coordList, this.action);
         for (GameListener t : this.gameListeners){
+            if (!this.coordList.contains(t.getCoord())) continue;
             t.gameEventReceived(event);
         }
         this.coordList.clear();

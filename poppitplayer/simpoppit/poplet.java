@@ -23,6 +23,7 @@ public class poplet extends JApplet{
 			balloon.addMouseMotionListener(new MouseMotionHandler());
 			balloon.addMouseListener(new MouseHandler());
 			panel.add(balloon);
+            game.addGameListener(balloon);
 		}
         contentPane.add(panel);
 	}

@@ -4,7 +4,7 @@ import java.awt.event.*;
  */
 
 /**
- * @author datacomm
+ * @author Andrew W. Henry
  *
  */
 public class MouseMotionHandler implements MouseMotionListener{

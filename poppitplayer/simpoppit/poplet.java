@@ -7,7 +7,7 @@ import javax.swing.*;
  */
 
 /**
- * @author datacomm
+ * @author Andrew W. Henry
  *
  */
 public class poplet extends JApplet{

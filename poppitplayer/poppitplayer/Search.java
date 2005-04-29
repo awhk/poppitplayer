@@ -1,4 +1,6 @@
 import java.util.*;
+
+import javax.swing.JFrame;
 /**
  * 
  */
@@ -76,16 +78,17 @@ public class Search {
     public void playbackSolution(){
         SearchNode myNode = this.bestNode;
         Stack<Coord> moves = new Stack<Coord>();
-        SimPoppitGui gui = new SimPoppitGui();
-        gui.main(null);
-        GameInterface myGame = gui.getGame();
+        //GameInterface myGame = gui.getGame();
         while(myNode.getAncestor() != null){
             moves.push(myNode.getOperator());
             myNode = myNode.getAncestor();
         }
+        SimPoppitGui gui = new SimPoppitGui(myNode.getState());
+        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gui.setVisible(true);
         System.out.println("Number of moves is " + moves.size());
         while(!(moves.isEmpty())){
-            myGame.pop(moves.pop());
+            gui.getGame().pop(moves.pop());
             try{
                 Thread.sleep(2000);
             }
@@ -107,7 +110,7 @@ public class Search {
      */
     public static void main(String[] args) {
         
-        Search test = new Search(new GameInterface());
+        Search test = new Search(new GameInterface(3,2));
         test.search();
         if (test.solutionFound()){
             System.out.println("Solution found in " + test.getNode().getDepth() + " moves.");

@@ -11,9 +11,9 @@ import java.util.*;
  */
 public class SimPoppitGui extends JFrame implements GameListener{
 	
-	public SimPoppitGui(){
+	public SimPoppitGui(GameInterface aGame){
         
-        this.game = new GameInterface();
+        this.game = aGame;
         
         Toolkit kit = Toolkit.getDefaultToolkit();
 		Dimension screensize = kit.getScreenSize();
@@ -84,7 +84,7 @@ public class SimPoppitGui extends JFrame implements GameListener{
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		SimPoppitGui frame = new SimPoppitGui();
+		SimPoppitGui frame = new SimPoppitGui(new GameInterface());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		//frame.show();

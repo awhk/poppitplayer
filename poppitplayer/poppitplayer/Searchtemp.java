@@ -1,7 +1,6 @@
-import java.util.Stack;
+import java.util.*;
 
 import javax.swing.JFrame;
-
 /**
  * 
  */
@@ -10,8 +9,18 @@ import javax.swing.JFrame;
  * @author Andrew
  *
  */
-public abstract class Search {
+public class Searchtemp {
 
+    public Searchtemp(GameInterface initialState){
+        this.node = new SearchNode(initialState);
+        this.unseenStates = new Stack<SearchNode>();
+        this.seenStates = new Stack<SearchNode>();
+        this.bestNode = null;
+        this.bestScore = 0;
+        this.solutionFound = false;
+        this.unseenStates.push(this.node);
+    }
+    
     public SearchNode getNode(){
         return this.node;
     }
@@ -30,22 +39,22 @@ public abstract class Search {
     }
     
     public void nextNode(){
-        if (this.UnseenEmpty()) this.node = null;
-        else this.node = this.DequeueUnseen();
+        if (this.unseenStates.isEmpty()) this.node = null;
+        else this.node = this.unseenStates.pop();
     }
     
     public void expand(){
         System.out.println("Pushing " + this.node.successors().size() + " nodes onto stack.");
         for (SearchNode t : this.node.successors()){
-            if (this.SeenContains(t)) continue;
-            this.EnqueueUnseen(t);
+            if (this.seenStates.contains(t)) continue;
+            this.unseenStates.push(t);
         }
     }
     
     public void search(){
-        while (!(this.UnseenEmpty())){
-            System.out.println("Tested " + this.SeenSize() + " nodes so far!");
-            System.out.println(this.UnseenSize() + " nodes remain in the current queue.");
+        while (!(this.unseenStates.isEmpty())){
+            System.out.println("Tested " + this.seenStates.size() + " nodes so far!");
+            System.out.println(this.unseenStates.size() + " nodes remain in the current queue.");
             System.out.print("Testing node...");
             if (this.goalState()){
                 System.out.println("found a solution!");
@@ -60,7 +69,7 @@ public abstract class Search {
             }else{
                 System.out.println("not a solution.");
             }
-            this.EnqueueSeen(this.node);
+            this.seenStates.push(this.node);
             this.expand();
             this.nextNode();
         }
@@ -80,37 +89,39 @@ public abstract class Search {
         gui.setVisible(true);
         System.out.println("Number of moves is " + moves.size());
         while(!(moves.isEmpty())){
+            gui.getGame().pop(moves.pop());
             try{
                 Thread.sleep(2000);
             }
             catch (Exception e){
                 System.out.println("Failed to sleep - " + e);
             }
-            gui.getGame().pop(moves.pop());
         }
     }
     
-    abstract public void EnqueueUnseen(SearchNode aNode);
+    private SearchNode node;
+    private Stack<SearchNode> unseenStates;
+    private Stack<SearchNode> seenStates;
+    //private Queue<SearchNode> unseenStates;
+    //private Queue<SearchNode> seenStates;
+    private SearchNode bestNode;
+    private int bestScore;
+    private boolean solutionFound;
     
-    abstract public void EnqueueSeen(SearchNode aNode);
-    
-    abstract public SearchNode DequeueUnseen();
-    
-    abstract public SearchNode DequeueSeen();
-    
-    abstract public boolean SeenEmpty();
-    
-    abstract public boolean UnseenEmpty();
-    
-    abstract public int UnseenSize();
-    
-    abstract public int SeenSize();
-    
-    abstract public boolean SeenContains(SearchNode aNode);
-    
-    protected SearchNode node;
-    protected SearchNode bestNode;
-    protected int bestScore;
-    protected boolean solutionFound;
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        
+        Searchtemp test = new Searchtemp(new GameInterface());
+        test.search();
+        if (test.solutionFound()){
+            System.out.println("Solution found in " + test.getNode().getDepth() + " moves.");
+            test.playbackSolution();
+        }else{
+            System.out.println("No solution found.");
+        }
+        
+    }
 
 }

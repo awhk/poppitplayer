@@ -41,7 +41,7 @@ public class Coord implements Cloneable{
     
     public Object clone(){
         Coord result = new Coord(this.x, this.y);
-        return (Object)result;
+        return result;
     }
     
     public boolean isDiagonalTo(Coord aPoint){

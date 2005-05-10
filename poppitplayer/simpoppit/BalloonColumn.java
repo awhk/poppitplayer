@@ -105,7 +105,7 @@ public class BalloonColumn implements Cloneable{
     public Object clone(){
         BalloonColumn result = new BalloonColumn(this.getSize());
         result.setBalloons(this.column);
-        return (Object)result;
+        return result;
     }
     
     private ArrayList<Balloon> column = new ArrayList<Balloon>(10);
@@ -115,6 +115,7 @@ public class BalloonColumn implements Cloneable{
      */
     public static void main(String[] args) {
         BalloonColumn test = new BalloonColumn(8);
+        BalloonColumn test2;
         System.out.println(test);
         System.out.println("Popping all balloons in column...");
         for (int i=0; i<test.count(); i++){
@@ -138,6 +139,16 @@ public class BalloonColumn implements Cloneable{
         System.out.println("Squeezing...");
         test.squeeze();
         System.out.println(test);
+        System.out.println("Making new column...");
+        test = new BalloonColumn(8);
+        System.out.println("Cloning new column...");
+        test2 = (BalloonColumn)test.clone();
+        System.out.println("Testing equality...");
+        if (test.equals(test2)){
+            System.out.println("Equal.");
+        }else{
+            System.out.println("Not equal");
+        }
     }
 
 }

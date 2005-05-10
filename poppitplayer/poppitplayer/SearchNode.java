@@ -33,20 +33,12 @@ public class SearchNode implements Cloneable{
         return this.ancestor;
     }
     
-    private void setAncestor(SearchNode aNode){
-        this.ancestor = aNode;
-    }
-    
     public Coord getOperator(){
         return this.operator;
     }
     
     public int getDepth(){
         return this.depth;
-    }
-    
-    private void setDepth(int aDepth){
-        this.depth = aDepth;
     }
     
     public int getPathCost(){
@@ -59,7 +51,9 @@ public class SearchNode implements Cloneable{
             for (Coord t : this.getState().possibleMoves()){
                 GameInterface tempState = (GameInterface)this.getState().clone();
                 tempState.pop(t);
-                result.add(new SearchNode((GameInterface)tempState.clone(), this, (Coord)t.clone(), this.depth+1, this.pathCost+1));
+                SearchNode tempNode = new SearchNode((GameInterface)tempState.clone(), this, (Coord)t.clone(), this.depth+1, this.pathCost+1);
+                if (result.contains(tempNode)) continue;
+                result.add(tempNode);
             }
         }
         return result;
@@ -67,7 +61,9 @@ public class SearchNode implements Cloneable{
     
     public boolean equals(Object aSearchNode){
         if ((aSearchNode instanceof SearchNode)
-                && (((SearchNode)aSearchNode).getState().equals(this.state)))return true;
+                && (((SearchNode)aSearchNode).getState().equals(this.state))){
+            return true;
+        }
                 //&& (((SearchNode)aSearchNode).getAncestor().equals(this.ancestor))
                 //&& (((SearchNode)aSearchNode).getAncestor() == this.ancestor))return true;
         return false;
@@ -92,7 +88,7 @@ public class SearchNode implements Cloneable{
         }else{
             result = new SearchNode((GameInterface)(this.state.clone()), this.ancestor, (Coord)(this.operator.clone()), this.depth, this.pathCost);
         }
-        return (Object)result;
+        return result;
     }
     
     private GameInterface state;
@@ -106,6 +102,11 @@ public class SearchNode implements Cloneable{
     public static void main(String[] args) {
         SearchNode test = new SearchNode(new GameInterface());
         SearchNode testClone = (SearchNode)test.clone();
+        if (test.equals(testClone)){
+            System.out.println("Equal");
+        }else{
+            System.out.println("Not equal");
+        }
 
     }
 

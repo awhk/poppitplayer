@@ -174,7 +174,7 @@ public class GameInterface implements Cloneable{
     
     public boolean equals(Object aGame){
         if ((aGame instanceof GameInterface)
-                && (((GameInterface)aGame).getScore() == this.score)
+                //&& (((GameInterface)aGame).getScore() == this.score)
                 //&& (((GameInterface)aGame).getMaxScore() == this.maxScore)
                 //&& (((GameInterface)aGame).getCoordList().equals(this.coordList))
                 && (((GameInterface)aGame).getGrid().equals(this.gameBoard))) return true;
@@ -185,7 +185,7 @@ public class GameInterface implements Cloneable{
     
     public Object clone(){
         GameInterface result = new GameInterface((GameGrid)this.gameBoard.clone(), (ArrayList<Coord>)this.coordList.clone(), (LinkedList<GameListener>)this.gameListeners.clone(), this.score);
-        return (Object)result;
+        return result;
     }
 	
     private int score;
@@ -201,9 +201,14 @@ public class GameInterface implements Cloneable{
     public static void main(String[] args) {
         GameInterface test = new GameInterface(5,5);
 		GameInterface testClone = (GameInterface)test.clone();
-        test.pop(test.possibleMoves().get(0));
+        //test.pop(test.possibleMoves().get(0));
         System.out.println("Test is " + test.getGrid());
         System.out.println("TestClone is " + testClone.getGrid());
+        if (test.equals(testClone)){
+            System.out.println("Equal");
+        }else{
+            System.out.println("Not equal");
+        }
     }
 
 }

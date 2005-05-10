@@ -22,7 +22,7 @@ public class Balloon implements Cloneable{
         temp.addAll(Arrays.asList(Color.values()));
         temp.remove(Color.EMPTY);
         Collections.shuffle(temp, new Random());
-        this.color = (Color) temp.get(0);
+        this.color = temp.get(0);
     }
     
     public Balloon(Color aColor){
@@ -42,7 +42,7 @@ public class Balloon implements Cloneable{
     
     public boolean equals(Object aBalloon){
         if (!(aBalloon instanceof Balloon)) return false;
-        if (this.isPopped() || ((Balloon)aBalloon).isPopped()) return false;
+        //if (this.isPopped() || ((Balloon)aBalloon).isPopped()) return false;
         if (this.color == ((Balloon)aBalloon).color()) return true;
         return false;
     }
@@ -53,7 +53,7 @@ public class Balloon implements Cloneable{
     
     public Object clone(){
         Balloon result = new Balloon(this.color());
-        return (Object)result;
+        return result;
     }
 
     public static enum Color { BLUE, RED, YELLOW, PURPLE, GREEN, EMPTY }

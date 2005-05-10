@@ -14,6 +14,7 @@ public class BreadthFirstSearch extends Search {
         this.node = new SearchNode(aGame);
         this.bestNode = null;
         this.bestScore = 0;
+        this.solutionsFound = 0;
         this.solutionFound = false;
         this.unseenStates = new LinkedList<SearchNode>();
         this.seenStates = new LinkedList<SearchNode>();
@@ -93,6 +94,14 @@ public class BreadthFirstSearch extends Search {
     public boolean SeenContains(SearchNode aNode) {
         return this.seenStates.contains(aNode);
     }
+    
+    /* (non-Javadoc)
+     * @see Search#UnseenContains(SearchNode)
+     */
+    @Override
+    public boolean UnseenContains(SearchNode aNode) {
+        return this.unseenStates.contains(aNode);
+    }
 
     
     private Queue<SearchNode> unseenStates;
@@ -102,7 +111,7 @@ public class BreadthFirstSearch extends Search {
      * @param args
      */
     public static void main(String[] args) {
-        Search test = new BreadthFirstSearch(new GameInterface(5,5));
+        Search test = new BreadthFirstSearch(new GameInterface(7,7));
         test.search();
         if (test.solutionFound()){
             System.out.println("Solution found in " + test.getNode().getDepth() + " moves.");

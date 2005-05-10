@@ -14,6 +14,7 @@ public class DepthFirstSearch extends Search {
         this.node = new SearchNode(aGame);
         this.bestNode = null;
         this.bestScore = 0;
+        this.solutionsFound = 0;
         this.solutionFound = false;
         this.unseenStates = new Stack<SearchNode>();
         this.seenStates = new Stack<SearchNode>();
@@ -93,6 +94,14 @@ public class DepthFirstSearch extends Search {
     public boolean SeenContains(SearchNode aNode) {
         return this.seenStates.contains(aNode);
     }
+    
+    /* (non-Javadoc)
+     * @see Search#UnseenContains(SearchNode)
+     */
+    @Override
+    public boolean UnseenContains(SearchNode aNode) {
+        return this.unseenStates.contains(aNode);
+    }
 
     private Stack<SearchNode> unseenStates;
     private Stack<SearchNode> seenStates;
@@ -101,7 +110,7 @@ public class DepthFirstSearch extends Search {
      * @param args
      */
     public static void main(String[] args) {
-        Search test = new DepthFirstSearch(new GameInterface(5,5));
+        Search test = new DepthFirstSearch(new GameInterface(7,7));
         test.search();
         if (test.solutionFound()){
             System.out.println("Solution found in " + test.getNode().getDepth() + " moves.");

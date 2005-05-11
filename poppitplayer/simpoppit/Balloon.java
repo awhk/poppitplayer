@@ -56,18 +56,21 @@ public class Balloon implements Cloneable{
         return result;
     }
 
-    public static enum Color { BLUE, RED, YELLOW, PURPLE, GREEN, EMPTY }
+    public static enum Color { EMPTY, RED, YELLOW, PURPLE, GREEN, BLUE }
     private Color color;
     
     public static void main(String[] args) {
         Balloon test = new Balloon();
-        System.out.println( "My balloon is " + test.color());
-        System.out.println( "Popping balloon...");
-        test.pop();
-        if(test.isPopped()){
-            System.out.println("My balloon is popped!");
-        }else{
-            System.out.println("My balloon is NOT popped...oops!");
-        }
+        Balloon test2 = new Balloon();
+        System.out.println( "My first balloon is " + test.color());
+        System.out.println( "My second balloon is " + test2.color());
+//        System.out.println( "Popping balloon...");
+//        test.pop();
+//        if(test.isPopped()){
+//            System.out.println("My balloon is popped!");
+//        }else{
+//            System.out.println("My balloon is NOT popped...oops!");
+//        }
+//        System.out.println(test2.subtract(test));
     }
 }

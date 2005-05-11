@@ -7,7 +7,7 @@ import java.util.*;
  * @author Andrew
  *
  */
-public class SearchNode implements Cloneable{
+public class SearchNode implements Cloneable, Comparable{
 
     public SearchNode(GameInterface aState){
         this.state = aState;
@@ -89,6 +89,10 @@ public class SearchNode implements Cloneable{
             result = new SearchNode((GameInterface)(this.state.clone()), this.ancestor, (Coord)(this.operator.clone()), this.depth, this.pathCost);
         }
         return result;
+    }
+    
+    public int compareTo(Object aNode){
+        return this.state.compareTo(((SearchNode)aNode).getState());
     }
     
     private GameInterface state;

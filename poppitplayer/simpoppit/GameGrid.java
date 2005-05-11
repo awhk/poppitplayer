@@ -17,7 +17,7 @@ import java.util.*;
  * @version 1.0
  */
 
-public class GameGrid implements Cloneable {
+public class GameGrid implements Cloneable, Comparable {
 
     public GameGrid() {
         this(15);
@@ -39,6 +39,7 @@ public class GameGrid implements Cloneable {
         this.xMax = aNumberOfColumns - 1;
         this.yMax = aNumberOfRows - 1;
         this.bottomRight = new Coord(aNumberOfColumns - 1, aNumberOfRows - 1);
+        this.balloonCount = aNumberOfColumns * aNumberOfRows;
     }
 
     public int getSize() {
@@ -47,6 +48,14 @@ public class GameGrid implements Cloneable {
 
     public Coord gridSize() {
         return this.bottomRight;
+    }
+    
+    public int getBalloonCount(){
+        return this.balloonCount;
+    }
+    
+    public void setBalloonCount(int aCount){
+        this.balloonCount = aCount;
     }
 
     public Balloon.Color color(int aX, int aY) {
@@ -176,6 +185,7 @@ public class GameGrid implements Cloneable {
 
     public void pop(Coord aBalloon) {
         this.grid[aBalloon.getX()].pop(aBalloon.getY());
+        this.balloonCount--;
     }
 
     public void popChain(ArrayList<Coord> balloonList) {
@@ -279,6 +289,7 @@ public class GameGrid implements Cloneable {
             return false;
         if (!(((GameGrid) aGrid).getSize() == this.getSize()))
             return false;
+        if (!(this.balloonCount == ((GameGrid)aGrid).getBalloonCount())) return false;
         for (int i = 0; i < this.getSize(); i++) {
             if (!(((GameGrid) aGrid).getColumn(i).equals(this.getColumn(i))))
                 return false;
@@ -290,7 +301,16 @@ public class GameGrid implements Cloneable {
         GameGrid result = new GameGrid(this.gridSize().getX() + 1, this
                 .gridSize().getY() + 1);
         result.setColumns(this.grid);
+        result.setBalloonCount(this.balloonCount);
         return result;
+    }
+    
+    public int compareTo(Object aGrid){
+        if (this.balloonCount != ((GameGrid)aGrid).getBalloonCount()) return this.balloonCount - ((GameGrid)aGrid).getBalloonCount();
+        if (this.equals(aGrid)){
+            return 0;
+        }
+        return 1;
     }
 
     private BalloonColumn[] grid;
@@ -300,6 +320,8 @@ public class GameGrid implements Cloneable {
     private int yMax;
 
     private Coord bottomRight;
+    
+    private int balloonCount;
 
     /**
      * @param args

@@ -10,7 +10,7 @@ import java.util.*;
  * @author Andrew W. Henry
  * @version 1.0
  */
-public class GameInterface implements Cloneable{
+public class GameInterface implements Cloneable, Comparable{
 	
 	public GameInterface(){
 		this(15, 10);
@@ -186,6 +186,10 @@ public class GameInterface implements Cloneable{
     public Object clone(){
         GameInterface result = new GameInterface((GameGrid)this.gameBoard.clone(), (ArrayList<Coord>)this.coordList.clone(), (LinkedList<GameListener>)this.gameListeners.clone(), this.score);
         return result;
+    }
+    
+    public int compareTo(Object aGame){
+        return this.gameBoard.compareTo(((GameInterface)aGame).getGrid());
     }
 	
     private int score;

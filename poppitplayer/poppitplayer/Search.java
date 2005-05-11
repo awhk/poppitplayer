@@ -1,4 +1,4 @@
-import java.util.Stack;
+import java.util.*;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -43,7 +43,9 @@ public abstract class Search {
             if (this.UnseenContains(t)) continue;
             this.EnqueueUnseen(t);
         }
+        this.totalNodes += (this.UnseenSize() - beforeSize);
         System.out.println("(Actually queued " + (this.UnseenSize() - beforeSize) + " nodes)");
+        System.out.println("Generated " + this.totalNodes + " total nodes so far.");
     }
     
     public void search(){
@@ -110,23 +112,29 @@ public abstract class Search {
         }
     }
     
+    public void EnqueueSeen(SearchNode aNode){
+        this.seenNodes.add(aNode);
+    }
+    
+    public boolean SeenEmpty(){
+        return this.seenNodes.isEmpty();
+    }
+    
+    public int SeenSize(){
+        return this.seenNodes.size();
+    }
+    
+    public boolean SeenContains(SearchNode aNode){
+        return this.seenNodes.contains(aNode);
+    }
+    
     abstract public void EnqueueUnseen(SearchNode aNode);
     
-    abstract public void EnqueueSeen(SearchNode aNode);
-    
     abstract public SearchNode DequeueUnseen();
-    
-    abstract public SearchNode DequeueSeen();
-    
-    abstract public boolean SeenEmpty();
     
     abstract public boolean UnseenEmpty();
     
     abstract public int UnseenSize();
-    
-    abstract public int SeenSize();
-    
-    abstract public boolean SeenContains(SearchNode aNode);
     
     abstract public boolean UnseenContains(SearchNode aNode);
     
@@ -135,5 +143,7 @@ public abstract class Search {
     protected int bestScore;
     protected int solutionsFound;
     protected boolean solutionFound;
+    protected int totalNodes;
+    protected TreeSet<SearchNode> seenNodes;
 
 }

@@ -1,4 +1,4 @@
-import java.util.Stack;
+import java.util.*;
 
 /**
  * 
@@ -17,8 +17,10 @@ public class DepthFirstSearch extends Search {
         this.solutionsFound = 0;
         this.solutionFound = false;
         this.unseenStates = new Stack<SearchNode>();
-        this.seenStates = new Stack<SearchNode>();
+//        this.seenStates = new Stack<SearchNode>();
+        this.seenNodes = new TreeSet<SearchNode>();
         this.EnqueueUnseen(this.node);
+        this.totalNodes = 1;
     }
     
     /* (non-Javadoc)
@@ -30,14 +32,14 @@ public class DepthFirstSearch extends Search {
 
     }
 
-    /* (non-Javadoc)
-     * @see Search#EnqueueSeen(SearchNode)
-     */
-    @Override
-    public void EnqueueSeen(SearchNode aNode) {
-        this.seenStates.push(aNode);
-
-    }
+//    /* (non-Javadoc)
+//     * @see Search#EnqueueSeen(SearchNode)
+//     */
+//    @Override
+//    public void EnqueueSeen(SearchNode aNode) {
+//        this.seenStates.push(aNode);
+//
+//    }
 
     /* (non-Javadoc)
      * @see Search#DequeueUnseen()
@@ -47,21 +49,21 @@ public class DepthFirstSearch extends Search {
         return this.unseenStates.pop();
     }
 
-    /* (non-Javadoc)
-     * @see Search#DequeueSeen()
-     */
-    @Override
-    public SearchNode DequeueSeen() {
-        return this.seenStates.pop();
-    }
+//    /* (non-Javadoc)
+//     * @see Search#DequeueSeen()
+//     */
+//    @Override
+//    public SearchNode DequeueSeen() {
+//        return this.seenStates.pop();
+//    }
 
-    /* (non-Javadoc)
-     * @see Search#SeenEmpty()
-     */
-    @Override
-    public boolean SeenEmpty() {
-        return this.seenStates.empty();
-    }
+//    /* (non-Javadoc)
+//     * @see Search#SeenEmpty()
+//     */
+//    @Override
+//    public boolean SeenEmpty() {
+//        return this.seenStates.empty();
+//    }
 
     /* (non-Javadoc)
      * @see Search#UnseenEmpty()
@@ -79,21 +81,21 @@ public class DepthFirstSearch extends Search {
         return this.unseenStates.size();
     }
 
-    /* (non-Javadoc)
-     * @see Search#SeenSize()
-     */
-    @Override
-    public int SeenSize() {
-        return this.seenStates.size();
-    }
+//    /* (non-Javadoc)
+//     * @see Search#SeenSize()
+//     */
+//    @Override
+//    public int SeenSize() {
+//        return this.seenStates.size();
+//    }
 
-    /* (non-Javadoc)
-     * @see Search#SeenContains(SearchNode)
-     */
-    @Override
-    public boolean SeenContains(SearchNode aNode) {
-        return this.seenStates.contains(aNode);
-    }
+//    /* (non-Javadoc)
+//     * @see Search#SeenContains(SearchNode)
+//     */
+//    @Override
+//    public boolean SeenContains(SearchNode aNode) {
+//        return this.seenStates.contains(aNode);
+//    }
     
     /* (non-Javadoc)
      * @see Search#UnseenContains(SearchNode)
@@ -104,7 +106,7 @@ public class DepthFirstSearch extends Search {
     }
 
     private Stack<SearchNode> unseenStates;
-    private Stack<SearchNode> seenStates;
+//    private Stack<SearchNode> seenStates;
     
     /**
      * @param args

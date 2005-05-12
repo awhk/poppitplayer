@@ -40,6 +40,10 @@ public class Balloon implements Cloneable{
         return false;
     }
     
+    public int getNumber(){
+        return (this.color.ordinal() + 1);
+    }
+    
     public boolean equals(Object aBalloon){
         if (!(aBalloon instanceof Balloon)) return false;
         //if (this.isPopped() || ((Balloon)aBalloon).isPopped()) return false;

@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.zip.CRC32;
 
 /**
  * <p>
@@ -39,7 +40,9 @@ public class GameGrid implements Cloneable, Comparable {
         this.xMax = aNumberOfColumns - 1;
         this.yMax = aNumberOfRows - 1;
         this.bottomRight = new Coord(aNumberOfColumns - 1, aNumberOfRows - 1);
-        this.balloonCount = aNumberOfColumns * aNumberOfRows;
+        //this.balloonCount = (aNumberOfRows * aNumberOfColumns);
+        this.checksum = new CRC32();
+        this.computeChecksum();
     }
 
     public int getSize() {
@@ -50,13 +53,17 @@ public class GameGrid implements Cloneable, Comparable {
         return this.bottomRight;
     }
     
-    public int getBalloonCount(){
-        return this.balloonCount;
+    public CRC32 getChecksum(){
+        return this.checksum;
     }
     
-    public void setBalloonCount(int aCount){
-        this.balloonCount = aCount;
+    public void setChecksum(CRC32 aSum){
+        this.checksum = aSum;
     }
+    
+//    public void setBalloonCount(int aCount){
+//        this.balloonCount = aCount;
+//    }
 
     public Balloon.Color color(int aX, int aY) {
         return this.color(new Coord(aX, aY));
@@ -185,7 +192,7 @@ public class GameGrid implements Cloneable, Comparable {
 
     public void pop(Coord aBalloon) {
         this.grid[aBalloon.getX()].pop(aBalloon.getY());
-        this.balloonCount--;
+        //this.balloonCount--;
     }
 
     public void popChain(ArrayList<Coord> balloonList) {
@@ -197,10 +204,12 @@ public class GameGrid implements Cloneable, Comparable {
     public void squeezeAll() {
         this.squeezeColumns();
         this.squeezeRows();
+        this.computeChecksum();
     }
 
     public String toString() {
         String result = "";
+        result += "Checksum is " + Long.toString(this.checksum.getValue()) + "\n";
         for (int i = 0; i <= this.yMax; i++) {
             for (int j = 0; j <= this.xMax; j++) {
                 result += this.grid[j].color(i);
@@ -228,6 +237,16 @@ public class GameGrid implements Cloneable, Comparable {
         for (BalloonColumn t : this.grid) {
             t.squeeze();
         }
+    }
+    
+    private void computeChecksum(){
+        this.checksum.reset();
+        String myString = "";
+        for (int i=0; i<this.getSize(); i++){
+            myString += this.grid[i].getChecksum();
+        }
+        this.checksum.update(myString.getBytes());
+        //System.out.println("Checksum for string " + myString + " is " + this.checksum.getValue());
     }
 
     private void squeezeRows() {
@@ -289,7 +308,33 @@ public class GameGrid implements Cloneable, Comparable {
             return false;
         if (!(((GameGrid) aGrid).getSize() == this.getSize()))
             return false;
-        if (!(this.balloonCount == ((GameGrid)aGrid).getBalloonCount())) return false;
+        if (this.checksum.getValue() != ((GameGrid)aGrid).getChecksum().getValue()){
+//            if ((this.oldEquals(aGrid))){
+//                System.out.println("Uh-oh...equal, but thought not");
+//                System.out.println(this);
+//                System.out.println(aGrid);
+//                System.exit(1);
+//            }
+            return false;
+        }
+//        for (int i = 0; i < this.getSize(); i++) {
+//            if (!(((GameGrid) aGrid).getColumn(i).equals(this.getColumn(i))))
+//                return false;
+//        }
+//        if (!(this.oldEquals(aGrid))){
+//            System.out.println("Uh-oh...not equal, but thought was");
+//            System.out.println(this);
+//            System.out.println(aGrid);
+//            System.exit(1);
+//        }
+        return true;
+    }
+    
+    private boolean oldEquals(Object aGrid){
+        if (!(aGrid instanceof GameGrid))
+            return false;
+        if (!(((GameGrid) aGrid).getSize() == this.getSize()))
+            return false;
         for (int i = 0; i < this.getSize(); i++) {
             if (!(((GameGrid) aGrid).getColumn(i).equals(this.getColumn(i))))
                 return false;
@@ -301,27 +346,25 @@ public class GameGrid implements Cloneable, Comparable {
         GameGrid result = new GameGrid(this.gridSize().getX() + 1, this
                 .gridSize().getY() + 1);
         result.setColumns(this.grid);
-        result.setBalloonCount(this.balloonCount);
+        //result.setBalloonCount(this.balloonCount);
+        //result.setChecksum(this.checksum);
+        result.computeChecksum();
         return result;
     }
     
     public int compareTo(Object aGrid){
-        if (this.balloonCount != ((GameGrid)aGrid).getBalloonCount()) return this.balloonCount - ((GameGrid)aGrid).getBalloonCount();
-        if (this.equals(aGrid)){
-            return 0;
-        }
-        return 1;
+        long result = (this.checksum.getValue() - ((GameGrid)aGrid).getChecksum().getValue());
+        if (result > 0) return 1;
+        if (result < 0 ) return -1;
+        return 0;
     }
 
     private BalloonColumn[] grid;
-
     private int xMax;
-
     private int yMax;
-
     private Coord bottomRight;
-    
-    private int balloonCount;
+    private CRC32 checksum;
+    //private int balloonCount;
 
     /**
      * @param args

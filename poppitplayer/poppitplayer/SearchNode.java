@@ -71,6 +71,7 @@ public class SearchNode implements Cloneable, Comparable{
     
     public String toString(){
         String result = "";
+        result += "Hash code is " + this.hashCode() + "\n";
         result += "State is " + this.state.getGrid() + "\n";
         result += "Ancestor is ";
         if (!(this.ancestor == null)) result += "not ";
@@ -93,6 +94,10 @@ public class SearchNode implements Cloneable, Comparable{
     
     public int compareTo(Object aNode){
         return this.state.compareTo(((SearchNode)aNode).getState());
+    }
+    
+    public int hashCode(){
+        return this.state.hashCode();
     }
     
     private GameInterface state;

@@ -191,6 +191,17 @@ public class GameInterface implements Cloneable, Comparable{
     public int compareTo(Object aGame){
         return this.gameBoard.compareTo(((GameInterface)aGame).getGrid());
     }
+    
+    public int hashCode(){
+        return (int)this.gameBoard.getChecksum().getValue();
+    }
+    
+    public String toString(){
+        String result = "";
+        result += "Hash code is " + this.hashCode() + "\n";
+        result += "Gameboard is " + this.gameBoard + "\n";
+        return result;
+    }
 	
     private int score;
     private final int maxScore;

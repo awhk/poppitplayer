@@ -18,8 +18,10 @@ public class BreadthFirstSearch extends Search {
         this.solutionFound = false;
         this.unseenStates = new LinkedList<SearchNode>();
 //        this.seenStates = new LinkedList<SearchNode>();
-        this.seenNodes = new TreeSet<SearchNode>();
-        this.EnqueueUnseen(this.node);
+        this.seenNodes = new TreeSet<Integer>();
+        this.unseenNodes = new TreeSet<Integer>();
+        this.enqueueUnseen(this.node);
+        this.storeUnseen(this.node);
         this.totalNodes = 1;
     }
     
@@ -27,7 +29,7 @@ public class BreadthFirstSearch extends Search {
      * @see Search#EnqueueUnseen(SearchNode)
      */
     @Override
-    public void EnqueueUnseen(SearchNode aNode) {
+    public void enqueueUnseen(SearchNode aNode) {
         this.unseenStates.offer(aNode);
 
     }
@@ -45,7 +47,7 @@ public class BreadthFirstSearch extends Search {
      * @see Search#DequeueUnseen()
      */
     @Override
-    public SearchNode DequeueUnseen() {
+    public SearchNode dequeueUnseen() {
         return this.unseenStates.remove();
     }
 
@@ -65,21 +67,21 @@ public class BreadthFirstSearch extends Search {
 //        return this.seenStates.isEmpty();
 //    }
 
-    /* (non-Javadoc)
-     * @see Search#UnseenEmpty()
-     */
-    @Override
-    public boolean UnseenEmpty() {
-        return this.unseenStates.isEmpty();
-    }
+//    /* (non-Javadoc)
+//     * @see Search#UnseenEmpty()
+//     */
+//    @Override
+//    public boolean UnseenEmpty() {
+//        return this.unseenStates.isEmpty();
+//    }
 
-    /* (non-Javadoc)
-     * @see Search#UnseenSize()
-     */
-    @Override
-    public int UnseenSize() {
-        return this.unseenStates.size();
-    }
+//    /* (non-Javadoc)
+//     * @see Search#UnseenSize()
+//     */
+//    @Override
+//    public int UnseenSize() {
+//        return this.unseenStates.size();
+//    }
 
 //    /* (non-Javadoc)
 //     * @see Search#SeenSize()
@@ -97,13 +99,13 @@ public class BreadthFirstSearch extends Search {
 //        return this.seenStates.contains(aNode);
 //    }
     
-    /* (non-Javadoc)
-     * @see Search#UnseenContains(SearchNode)
-     */
-    @Override
-    public boolean UnseenContains(SearchNode aNode) {
-        return this.unseenStates.contains(aNode);
-    }
+//    /* (non-Javadoc)
+//     * @see Search#UnseenContains(SearchNode)
+//     */
+//    @Override
+//    public boolean UnseenContains(SearchNode aNode) {
+//        return this.unseenStates.contains(aNode);
+//    }
 
     
     private Queue<SearchNode> unseenStates;

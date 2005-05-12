@@ -31,29 +31,33 @@ public abstract class Search {
     }
     
     public void nextNode(){
-        if (this.UnseenEmpty()) this.node = null;
-        else this.node = this.DequeueUnseen();
+        if (this.unseenEmpty()) this.node = null;
+        else {
+            this.node = this.dequeueUnseen();
+            this.unseenDrop(this.node);
+        }
     }
     
     public void expand(){
         System.out.println("Queuing " + this.node.successors().size() + " nodes.");
-        int beforeSize = this.UnseenSize();
+        int beforeSize = this.unseenSize();
         for (SearchNode t : this.node.successors()){
-            if (this.SeenContains(t)) continue;
-            if (this.UnseenContains(t)) continue;
-            this.EnqueueUnseen(t);
+            if (this.seenContains(t)) continue;
+            if (this.unseenContains(t)) continue;
+            this.enqueueUnseen(t);
+            this.storeUnseen(t);
         }
-        this.totalNodes += (this.UnseenSize() - beforeSize);
-        System.out.println("(Actually queued " + (this.UnseenSize() - beforeSize) + " nodes)");
+        this.totalNodes += (this.unseenSize() - beforeSize);
+        System.out.println("(Actually queued " + (this.unseenSize() - beforeSize) + " nodes)");
         System.out.println("Generated " + this.totalNodes + " total nodes so far.");
     }
     
     public void search(){
-        while (!(this.UnseenEmpty())){
+        while (!(this.unseenEmpty())){
         //while((!(this.solutionFound))&(!(this.UnseenEmpty()))){
-            System.out.println("Tested " + this.SeenSize() + " nodes so far.");
+            System.out.println("Tested " + this.seenSize() + " nodes so far.");
             System.out.println("Found " + this.solutionsFound + " solutions so far.");
-            System.out.println(this.UnseenSize() + " nodes remain in the current queue.");
+            System.out.println(this.unseenSize() + " nodes remain in the current queue.");
             System.out.print("Testing node...");
             if (this.goalState()){
                 System.out.println("found a solution!");
@@ -70,7 +74,7 @@ public abstract class Search {
             }else{
                 System.out.println("not a solution.");
             }
-            this.EnqueueSeen(this.node);
+            this.storeSeen(this.node);
             this.expand();
             this.nextNode();
         }
@@ -112,31 +116,55 @@ public abstract class Search {
         }
     }
     
-    public void EnqueueSeen(SearchNode aNode){
-        this.seenNodes.add(aNode);
+    public void storeSeen(SearchNode aNode){
+        //this.seenNodes.add(aNode);
+        this.seenNodes.add(aNode.hashCode());
     }
     
-    public boolean SeenEmpty(){
+    public boolean seenEmpty(){
         return this.seenNodes.isEmpty();
     }
     
-    public int SeenSize(){
+    public int seenSize(){
         return this.seenNodes.size();
     }
     
-    public boolean SeenContains(SearchNode aNode){
-        return this.seenNodes.contains(aNode);
+    public boolean seenContains(SearchNode aNode){
+        //return this.seenNodes.contains(aNode);
+        return this.seenNodes.contains(aNode.hashCode());
     }
     
-    abstract public void EnqueueUnseen(SearchNode aNode);
+    public void storeUnseen(SearchNode aNode){
+        //this.seenNodes.add(aNode);
+        this.unseenNodes.add(aNode.hashCode());
+    }
     
-    abstract public SearchNode DequeueUnseen();
+    public boolean unseenEmpty(){
+        return this.unseenNodes.isEmpty();
+    }
     
-    abstract public boolean UnseenEmpty();
+    public int unseenSize(){
+        return this.unseenNodes.size();
+    }
     
-    abstract public int UnseenSize();
+    public boolean unseenContains(SearchNode aNode){
+        //return this.seenNodes.contains(aNode);
+        return this.unseenNodes.contains(aNode.hashCode());
+    }
     
-    abstract public boolean UnseenContains(SearchNode aNode);
+    public void unseenDrop(SearchNode aNode){
+        this.unseenNodes.remove(aNode.hashCode());
+    }
+    
+    abstract public void enqueueUnseen(SearchNode aNode);
+    
+    abstract public SearchNode dequeueUnseen();
+    
+    //abstract public boolean UnseenEmpty();
+    
+    //abstract public int UnseenSize();
+    
+    //abstract public boolean UnseenContains(SearchNode aNode);
     
     protected SearchNode node;
     protected SearchNode bestNode;
@@ -144,6 +172,8 @@ public abstract class Search {
     protected int solutionsFound;
     protected boolean solutionFound;
     protected int totalNodes;
-    protected TreeSet<SearchNode> seenNodes;
+    //protected TreeSet<SearchNode> seenNodes;
+    protected TreeSet<Integer> seenNodes;
+    protected TreeSet<Integer> unseenNodes;
 
 }

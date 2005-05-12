@@ -20,6 +20,8 @@ public class BalloonColumn implements Cloneable{
         for (int i=0; i<aLength; i++){
             this.column.add(new Balloon());
         }
+        //this.salt = (new Random().nextInt(50) + 1);
+        this.computeChecksum();
     }
     
     public int count(){
@@ -38,6 +40,7 @@ public class BalloonColumn implements Cloneable{
     
     public String toString() {
         String result = "";
+        result += "Checksum is " + this.checksum + "\n";
         for (int i=0; i<this.getSize(); i++){
             result += "Row ";
             result += i + 1;
@@ -71,6 +74,10 @@ public class BalloonColumn implements Cloneable{
         return this.column.get(aBalloon);
     }
     
+    public int getChecksum(){
+        return this.checksum;
+    }
+    
     public void pop(int aBalloon){
         this.column.get(aBalloon).pop();
     }
@@ -85,8 +92,26 @@ public class BalloonColumn implements Cloneable{
         }
     }
     
+    private void computeChecksum(){
+        int myChecksum = 0;
+        for (int i=0; i<this.getSize(); i++){
+            myChecksum += (this.getBalloon(i).getNumber() * (this.getSize() - i));
+        }
+        this.checksum = myChecksum;
+        if (this.checksum == 0){
+            System.out.println("Uh-oh...");
+        }
+    }
+    
+//    public void setSalt(int aSalt){
+//        this.salt = aSalt;
+//    }
+    
     public void squeeze(){
-        if (this.isEmpty()) return;
+        if (this.isEmpty()) {
+            this.checksum = this.getSize();
+            return;
+        }
 		
         boolean sawPopped = false;
         for (int i=0; i<this.getSize(); i++){
@@ -100,15 +125,20 @@ public class BalloonColumn implements Cloneable{
                 break;
             }
         }
+        this.computeChecksum();
     }
     
     public Object clone(){
         BalloonColumn result = new BalloonColumn(this.getSize());
+        //result.setSalt(this.salt);
         result.setBalloons(this.column);
+        result.computeChecksum();
         return result;
     }
     
     private ArrayList<Balloon> column = new ArrayList<Balloon>(10);
+    private int checksum;
+    //private int salt;
     
     /**
      * @param args

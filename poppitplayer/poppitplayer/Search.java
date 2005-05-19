@@ -109,8 +109,8 @@ public abstract class Search {
         if (selection == JOptionPane.CANCEL_OPTION){
             //System.exit(0);
         }else{
-            //gui.setVisible(false);
-            //gui.dispose();
+            gui.setVisible(false);
+            gui.dispose();
             gui = null;
             this.playbackSolution();
         }

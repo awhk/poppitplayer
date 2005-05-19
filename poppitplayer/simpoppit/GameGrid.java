@@ -356,6 +356,9 @@ public class GameGrid implements Cloneable, Comparable {
         long result = (this.checksum.getValue() - ((GameGrid)aGrid).getChecksum().getValue());
         if (result > 0) return 1;
         if (result < 0 ) return -1;
+        if(!(this.oldEquals(aGrid))){
+            return 1;
+        }
         return 0;
     }
 

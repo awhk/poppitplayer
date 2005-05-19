@@ -94,10 +94,14 @@ public class BalloonColumn implements Cloneable{
     
     private void computeChecksum(){
         int myChecksum = 0;
+        int myBalloonCount = 0;
         for (int i=0; i<this.getSize(); i++){
             myChecksum += (this.getBalloon(i).getNumber() * (this.getSize() - i));
+            if (!(this.getBalloon(i).isPopped())){
+                myBalloonCount ++;
+            }
         }
-        this.checksum = myChecksum;
+        this.checksum = myChecksum + myBalloonCount;
         if (this.checksum == 0){
             System.out.println("Uh-oh...");
         }

@@ -21,7 +21,7 @@ public class BreadthFirstSearch extends Search {
         this.unseenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
         this.enqueueUnseen(this.node);
         this.storeUnseen(this.node);
-        this.totalNodes = 1;
+        //this.totalNodes = 1;
     }
     
     /* (non-Javadoc)

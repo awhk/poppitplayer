@@ -39,29 +39,29 @@ public abstract class Search {
     }
     
     public void expand(){
-        System.out.println("Queuing " + this.node.successors().size() + " nodes.");
-        int beforeSize = this.unseenSize();
+        //System.out.println("Queuing " + this.node.successors().size() + " nodes.");
+        //int beforeSize = this.unseenSize();
         for (SearchNode t : this.node.successors()){
             if (this.seenContains(t)) continue;
             if (this.unseenContains(t)) continue;
             this.enqueueUnseen(t);
             this.storeUnseen(t);
         }
-        this.totalNodes += (this.unseenSize() - beforeSize);
-        System.out.println("(Actually queued " + (this.unseenSize() - beforeSize) + " nodes)");
-        System.out.println("Generated " + this.totalNodes + " total nodes so far.");
+        //this.totalNodes += (this.unseenSize() - beforeSize);
+        //System.out.println("(Actually queued " + (this.unseenSize() - beforeSize) + " nodes)");
+        //System.out.println("Generated " + this.totalNodes + " total nodes so far.");
     }
     
     public void search(){
         while (!(this.unseenEmpty())){
         //while((!(this.solutionFound))&(!(this.UnseenEmpty()))){
-            System.out.println("Tested " + this.seenSize() + " nodes so far.");
-            System.out.println("Found " + this.solutionsFound + " solutions so far.");
-            System.out.println(this.unseenSize() + " nodes remain in the current queue.");
-            System.out.print("Testing node...");
+            System.out.print(".");
             if (this.goalState()){
-                System.out.println("found a solution!");
+                System.out.println("Found a solution!");
                 System.out.println("Score of solution found is " + this.node.getState().getScore());
+                System.out.println("Tested " + this.seenSize() + " nodes so far.");
+                System.out.println("Found " + this.solutionsFound + " solutions so far.");
+                System.out.println(this.unseenSize() + " nodes remain in the current queue.");
                 this.solutionFound = true;
                 this.solutionsFound++;
                 if (this.node.getState().getScore() > this.bestScore){
@@ -69,11 +69,12 @@ public abstract class Search {
                     this.bestNode = this.node;
                     System.out.println("Setting score to " + this.bestScore);
                     System.out.println("Setting best node to " + this.bestNode);
+                    if (this.bestNode.getState().getScore() == this.bestNode.getState().getMaxScore()){
+                        break;
+                    }
                     System.gc();
                 }
                 //break;
-            }else{
-                System.out.println("not a solution.");
             }
             this.storeSeen(this.node);
             this.expand();
@@ -164,7 +165,7 @@ public abstract class Search {
     protected int bestScore;
     protected int solutionsFound;
     protected boolean solutionFound;
-    protected int totalNodes;
+    //protected int totalNodes;
     protected TreeSet<Balloon[]> seenNodes;
     protected TreeSet<Balloon[]> unseenNodes;
 

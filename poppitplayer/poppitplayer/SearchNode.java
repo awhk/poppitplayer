@@ -96,10 +96,6 @@ public class SearchNode implements Cloneable, Comparable{
         return this.state.compareTo(((SearchNode)aNode).getState());
     }
     
-//    public int hashCode(){
-//        return this.state.hashCode();
-//    }
-    
     private GameInterface state;
     private SearchNode ancestor;
     private Coord operator;

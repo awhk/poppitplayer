@@ -3,6 +3,7 @@
 	<name>poppitplayer</name>
 	<comment></comment>
 	<projects>
+		<project>simpoppit</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

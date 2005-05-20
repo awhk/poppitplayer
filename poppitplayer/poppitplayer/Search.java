@@ -117,8 +117,7 @@ public abstract class Search {
     }
     
     public void storeSeen(SearchNode aNode){
-        //this.seenNodes.add(aNode);
-        this.seenNodes.add(aNode.hashCode());
+        this.seenNodes.add(aNode.getState().getGrid().getGridAsBalloonArray());
     }
     
     public boolean seenEmpty(){
@@ -130,13 +129,11 @@ public abstract class Search {
     }
     
     public boolean seenContains(SearchNode aNode){
-        //return this.seenNodes.contains(aNode);
-        return this.seenNodes.contains(aNode.hashCode());
+        return this.seenNodes.contains(aNode.getState().getGrid().getGridAsBalloonArray());
     }
     
     public void storeUnseen(SearchNode aNode){
-        //this.seenNodes.add(aNode);
-        this.unseenNodes.add(aNode.hashCode());
+        this.unseenNodes.add(aNode.getState().getGrid().getGridAsBalloonArray());
     }
     
     public boolean unseenEmpty(){
@@ -148,23 +145,17 @@ public abstract class Search {
     }
     
     public boolean unseenContains(SearchNode aNode){
-        //return this.seenNodes.contains(aNode);
-        return this.unseenNodes.contains(aNode.hashCode());
+        return this.unseenNodes.contains(aNode.getState().getGrid().getGridAsBalloonArray());
     }
     
     public void unseenDrop(SearchNode aNode){
-        this.unseenNodes.remove(aNode.hashCode());
+        this.unseenNodes.remove(aNode.getState().getGrid().getGridAsBalloonArray());
     }
     
     abstract public void enqueueUnseen(SearchNode aNode);
     
     abstract public SearchNode dequeueUnseen();
     
-    //abstract public boolean UnseenEmpty();
-    
-    //abstract public int UnseenSize();
-    
-    //abstract public boolean UnseenContains(SearchNode aNode);
     
     protected SearchNode node;
     protected SearchNode bestNode;
@@ -172,8 +163,7 @@ public abstract class Search {
     protected int solutionsFound;
     protected boolean solutionFound;
     protected int totalNodes;
-    //protected TreeSet<SearchNode> seenNodes;
-    protected TreeSet<Integer> seenNodes;
-    protected TreeSet<Integer> unseenNodes;
+    protected TreeSet<Balloon[]> seenNodes;
+    protected TreeSet<Balloon[]> unseenNodes;
 
 }

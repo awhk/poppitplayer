@@ -69,6 +69,7 @@ public abstract class Search {
                     this.bestNode = this.node;
                     System.out.println("Setting score to " + this.bestScore);
                     System.out.println("Setting best node to " + this.bestNode);
+                    System.gc();
                 }
                 //break;
             }else{

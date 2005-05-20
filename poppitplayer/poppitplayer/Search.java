@@ -82,6 +82,7 @@ public abstract class Search {
     }
     
     public void playbackSolution(){
+        System.gc();
         SearchNode myNode = this.bestNode;
         //SearchNode myNode = this.node;
         Stack<Coord> moves = new Stack<Coord>();

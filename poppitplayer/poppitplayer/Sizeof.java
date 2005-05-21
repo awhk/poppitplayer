@@ -74,7 +74,7 @@ public class Sizeof
         {
             s_runtime.runFinalization ();
             s_runtime.gc ();
-            Thread.currentThread ().yield ();
+            Thread.yield ();
             
             usedMem2 = usedMem1;
             usedMem1 = usedMemory ();

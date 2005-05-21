@@ -15,7 +15,6 @@ public class DepthFirstSearch extends Search {
         this.bestNode = null;
         this.bestScore = 0;
         this.solutionsFound = 0;
-        this.solutionFound = false;
         this.unseenStates = new Stack<SearchNode>();
         this.seenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
         this.unseenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
@@ -48,14 +47,11 @@ public class DepthFirstSearch extends Search {
      * @param args
      */
     public static void main(String[] args) {
-        Search test = new DepthFirstSearch(new GameInterface());
+        Search test = new DepthFirstSearch(new GameInterface(9,9));
         test.search();
-        if (test.solutionFound()){
             System.out.println("Solution found in " + test.getNode().getDepth() + " moves.");
             test.playbackSolution();
-        }else{
-            System.out.println("No solution found.");
-        }
+
 
     }
 

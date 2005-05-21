@@ -22,10 +22,6 @@ public abstract class Search {
         return this.node.getState().gameOver();
     }
     
-    public boolean solutionFound(){
-        return this.solutionFound;
-    }
-    
     public int nodeScore (){
         return this.node.getState().getScore();
     }
@@ -53,16 +49,20 @@ public abstract class Search {
     }
     
     public void search(){
+        int loopCount = 0;
         while (!(this.unseenEmpty())){
-        //while((!(this.solutionFound))&(!(this.UnseenEmpty()))){
+            loopCount++;
             System.out.print(".");
+            if (loopCount%40 == 0) System.out.println("(" + loopCount + " nodes)");
             if (this.goalState()){
-                System.out.println("Found a solution!");
+                System.out.println("\nFound solution after examining " + loopCount + " nodes.");
+                loopCount = 0;
+                //System.out.println("Found a solution!");
                 System.out.println("Score of solution found is " + this.node.getState().getScore());
+                System.out.println("Max score possible for this game is " + this.node.getState().getMaxScore());
                 System.out.println("Tested " + this.seenSize() + " nodes so far.");
                 System.out.println("Found " + this.solutionsFound + " solutions so far.");
                 System.out.println(this.unseenSize() + " nodes remain in the current queue.");
-                this.solutionFound = true;
                 this.solutionsFound++;
                 if (this.node.getState().getScore() > this.bestScore){
                     this.bestScore = this.node.getState().getScore();
@@ -72,7 +72,9 @@ public abstract class Search {
                     if (this.bestNode.getState().getScore() == this.bestNode.getState().getMaxScore()){
                         break;
                     }
-                    System.gc();
+                    s_runtime.runFinalization();
+                    s_runtime.gc();
+                    Thread.yield();
                 }
                 //break;
             }
@@ -80,11 +82,12 @@ public abstract class Search {
             this.expand();
             this.nextNode();
         }
-        if (!(this.bestNode == null)) this.solutionFound = true;
     }
     
     public void playbackSolution(){
-        System.gc();
+        s_runtime.runFinalization();
+        s_runtime.gc();
+        Thread.yield();
         SearchNode myNode = this.bestNode;
         //SearchNode myNode = this.node;
         Stack<Coord> moves = new Stack<Coord>();
@@ -164,9 +167,9 @@ public abstract class Search {
     protected SearchNode bestNode;
     protected int bestScore;
     protected int solutionsFound;
-    protected boolean solutionFound;
     //protected int totalNodes;
     protected TreeSet<Balloon[]> seenNodes;
     protected TreeSet<Balloon[]> unseenNodes;
+    private static final Runtime s_runtime = Runtime.getRuntime ();
 
 }

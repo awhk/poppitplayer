@@ -15,7 +15,6 @@ public class BreadthFirstSearch extends Search {
         this.bestNode = null;
         this.bestScore = 0;
         this.solutionsFound = 0;
-        this.solutionFound = false;
         this.unseenStates = new LinkedList<SearchNode>();
         this.seenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
         this.unseenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
@@ -50,12 +49,9 @@ public class BreadthFirstSearch extends Search {
     public static void main(String[] args) {
         Search test = new BreadthFirstSearch(new GameInterface(7,7));
         test.search();
-        if (test.solutionFound()){
             System.out.println("Solution found in " + test.getNode().getDepth() + " moves.");
             test.playbackSolution();
-        }else{
-            System.out.println("No solution found.");
-        }
+
     }
 
 }

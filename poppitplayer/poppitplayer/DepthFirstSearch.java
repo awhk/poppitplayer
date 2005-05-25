@@ -16,8 +16,10 @@ public class DepthFirstSearch extends Search {
         this.bestScore = 0;
         this.solutionsFound = 0;
         this.unseenStates = new Stack<SearchNode>();
-        this.seenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
-        this.unseenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
+        //this.seenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
+        //this.unseenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
+        this.seenNodes = new TreeSet<BalloonBits>();
+        this.unseenNodes = new TreeSet<BalloonBits>();
         this.enqueueUnseen(this.node);
         this.storeUnseen(this.node);
         //this.totalNodes = 1;
@@ -39,6 +41,11 @@ public class DepthFirstSearch extends Search {
     public SearchNode dequeueUnseen() {
         return this.unseenStates.pop();
     }
+    
+    public int queueSize(){
+        return this.unseenStates.size();
+    }
+
 
     private Stack<SearchNode> unseenStates;
 
@@ -47,7 +54,7 @@ public class DepthFirstSearch extends Search {
      * @param args
      */
     public static void main(String[] args) {
-        Search test = new DepthFirstSearch(new GameInterface(9,9));
+        Search test = new DepthFirstSearch(new GameInterface(7,7));
         test.search();
             System.out.println("Solution found in " + test.getNode().getDepth() + " moves.");
             test.playbackSolution();

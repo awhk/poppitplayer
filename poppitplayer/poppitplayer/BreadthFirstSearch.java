@@ -16,8 +16,10 @@ public class BreadthFirstSearch extends Search {
         this.bestScore = 0;
         this.solutionsFound = 0;
         this.unseenStates = new LinkedList<SearchNode>();
-        this.seenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
-        this.unseenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
+        //this.seenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
+        //this.unseenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
+        this.seenNodes = new TreeSet<BalloonBits>();
+        this.unseenNodes = new TreeSet<BalloonBits>();
         this.enqueueUnseen(this.node);
         this.storeUnseen(this.node);
         //this.totalNodes = 1;
@@ -38,6 +40,10 @@ public class BreadthFirstSearch extends Search {
     @Override
     public SearchNode dequeueUnseen() {
         return this.unseenStates.remove();
+    }
+    
+    public int queueSize(){
+        return this.unseenStates.size();
     }
 
     

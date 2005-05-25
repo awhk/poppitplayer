@@ -42,6 +42,10 @@ public abstract class Search {
             if (this.unseenContains(t)) continue;
             this.enqueueUnseen(t);
             this.storeUnseen(t);
+            if (this.unseenNodes.size() != this.queueSize()){
+                System.out.println("Uh-oh");
+                System.exit(0);
+            }
         }
         //this.totalNodes += (this.unseenSize() - beforeSize);
         //System.out.println("(Actually queued " + (this.unseenSize() - beforeSize) + " nodes)");
@@ -56,7 +60,6 @@ public abstract class Search {
             if (loopCount%40 == 0) System.out.println("(" + loopCount + " nodes)");
             if (this.goalState()){
                 System.out.println("\nFound solution after examining " + loopCount + " nodes.");
-                loopCount = 0;
                 //System.out.println("Found a solution!");
                 System.out.println("Score of solution found is " + this.node.getState().getScore());
                 System.out.println("Max score possible for this game is " + this.node.getState().getMaxScore());
@@ -64,22 +67,22 @@ public abstract class Search {
                 System.out.println("Found " + this.solutionsFound + " solutions so far.");
                 System.out.println(this.unseenSize() + " nodes remain in the current queue.");
                 this.solutionsFound++;
-                if (this.node.getState().getScore() > this.bestScore){
+                if ((this.node.getState().getScore() > this.bestScore)){
                     this.bestScore = this.node.getState().getScore();
                     this.bestNode = this.node;
                     System.out.println("Setting score to " + this.bestScore);
                     System.out.println("Setting best node to " + this.bestNode);
-                    if (this.bestNode.getState().getScore() == this.bestNode.getState().getMaxScore()){
+                    if ((this.bestNode.getState().getScore() == this.bestNode.getState().getMaxScore())){
                         break;
                     }
-                    s_runtime.runFinalization();
-                    s_runtime.gc();
-                    Thread.yield();
                 }
+                loopCount = 0;
                 //break;
             }
             this.storeSeen(this.node);
-            this.expand();
+            if (!(this.goalState())){
+                this.expand();
+            }
             this.nextNode();
         }
     }
@@ -123,7 +126,7 @@ public abstract class Search {
     }
     
     public void storeSeen(SearchNode aNode){
-        this.seenNodes.add(aNode.getState().getGrid().getGridAsBalloonArray());
+        this.seenNodes.add(aNode.getState().getGrid().getGridAsBalloonBits());
     }
     
     public boolean seenEmpty(){
@@ -135,11 +138,11 @@ public abstract class Search {
     }
     
     public boolean seenContains(SearchNode aNode){
-        return this.seenNodes.contains(aNode.getState().getGrid().getGridAsBalloonArray());
+        return this.seenNodes.contains(aNode.getState().getGrid().getGridAsBalloonBits());
     }
     
     public void storeUnseen(SearchNode aNode){
-        this.unseenNodes.add(aNode.getState().getGrid().getGridAsBalloonArray());
+        this.unseenNodes.add(aNode.getState().getGrid().getGridAsBalloonBits());
     }
     
     public boolean unseenEmpty(){
@@ -151,16 +154,18 @@ public abstract class Search {
     }
     
     public boolean unseenContains(SearchNode aNode){
-        return this.unseenNodes.contains(aNode.getState().getGrid().getGridAsBalloonArray());
+        return this.unseenNodes.contains(aNode.getState().getGrid().getGridAsBalloonBits());
     }
     
     public void unseenDrop(SearchNode aNode){
-        this.unseenNodes.remove(aNode.getState().getGrid().getGridAsBalloonArray());
+        this.unseenNodes.remove(aNode.getState().getGrid().getGridAsBalloonBits());
     }
     
     abstract public void enqueueUnseen(SearchNode aNode);
     
     abstract public SearchNode dequeueUnseen();
+    
+    abstract public int queueSize();
     
     
     protected SearchNode node;
@@ -168,8 +173,8 @@ public abstract class Search {
     protected int bestScore;
     protected int solutionsFound;
     //protected int totalNodes;
-    protected TreeSet<Balloon[]> seenNodes;
-    protected TreeSet<Balloon[]> unseenNodes;
+    protected TreeSet<BalloonBits> seenNodes;
+    protected TreeSet<BalloonBits> unseenNodes;
     private static final Runtime s_runtime = Runtime.getRuntime ();
 
 }

@@ -28,14 +28,17 @@ public class Sizeof
             // Instantiate your data here and assign it to object
             
             //object = new Object ();
+            //object = new byte[1];
             //object = new Integer (i);
             //object = new Long (i);
             //object = new String ();
-            //object = new byte [128][1]
-            object = new Balloon();
+            //object = new byte [128][1];
+            //object = new Balloon();
+            //object = new Balloon[100];
             //object = new BalloonColumn();
             //object = new GameGrid();
             //object = new GameInterface();
+            object = new BalloonBits(100);
             
             if (i >= 0)
                 objects [i] = object;

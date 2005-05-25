@@ -22,6 +22,7 @@ public class DepthFirstSearch extends Search {
         this.unseenNodes = new TreeSet<BalloonInt>();
         this.enqueueUnseen(this.node);
         this.storeUnseen(this.node);
+        this.perfect = false;
         //this.totalNodes = 1;
     }
     
@@ -54,7 +55,7 @@ public class DepthFirstSearch extends Search {
      * @param args
      */
     public static void main(String[] args) {
-        Search test = new DepthFirstSearch(new GameInterface(7,7));
+        Search test = new DepthFirstSearch(new GameInterface(5,5));
         test.search();
         test.playbackSolution();
 

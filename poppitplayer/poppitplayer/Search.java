@@ -74,6 +74,7 @@ public abstract class Search {
                     System.out.println("Setting best node to " + this.bestNode);
                     if ((this.bestNode.getState().getScore() == this.bestNode.getState().getMaxScore())){
                         System.out.println("Found perfect game, abandoning search.");
+                        this.perfect = true;
                         break;
                     }
                 }
@@ -86,7 +87,7 @@ public abstract class Search {
             }
             this.nextNode();
         }
-        
+        if (!this.perfect){
         System.out.println("\nFound solution after examining " + loopCount + " nodes.");
         System.out.println("Score of solution found is " + this.bestNode.getState().getScore());
         System.out.println("Max score possible for this game is " + this.bestNode.getState().getMaxScore());
@@ -94,6 +95,7 @@ public abstract class Search {
         System.out.println("Found " + this.solutionsFound + " solutions so far.");
         System.out.println(this.unseenSize() + " nodes remain in the current queue.");
         System.out.println("Exhausted search space, no perfect game found for this board.");
+        }
     }
     
     public void playbackSolution(){
@@ -182,8 +184,19 @@ public abstract class Search {
     protected int bestScore;
     protected int solutionsFound;
     //protected int totalNodes;
+    protected boolean perfect;
     protected TreeSet<BalloonInt> seenNodes;
     protected TreeSet<BalloonInt> unseenNodes;
     private static final Runtime s_runtime = Runtime.getRuntime ();
+    
+    public static void main(String[] args){
+        GameInterface game = new GameInterface(7,7);
+        BreadthFirstSearch bfs = new BreadthFirstSearch(game);
+        DepthFirstSearch dfs = new DepthFirstSearch(game);
+        bfs.search();
+        dfs.search();
+        bfs.playbackSolution();
+        dfs.playbackSolution();
+    }
 
 }

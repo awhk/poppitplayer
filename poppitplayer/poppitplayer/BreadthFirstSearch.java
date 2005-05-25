@@ -22,6 +22,7 @@ public class BreadthFirstSearch extends Search {
         this.unseenNodes = new TreeSet<BalloonInt>();
         this.enqueueUnseen(this.node);
         this.storeUnseen(this.node);
+        this.perfect = false;
         //this.totalNodes = 1;
     }
     
@@ -30,7 +31,10 @@ public class BreadthFirstSearch extends Search {
      */
     @Override
     public void enqueueUnseen(SearchNode aNode) {
-        this.unseenStates.offer(aNode);
+        if (!(this.unseenStates.offer(aNode))){
+            System.out.println("Insertion into queue failed!");
+            System.exit(0);
+        }
 
     }
 
@@ -53,7 +57,7 @@ public class BreadthFirstSearch extends Search {
      * @param args
      */
     public static void main(String[] args) {
-        Search test = new BreadthFirstSearch(new GameInterface(9,9));
+        Search test = new BreadthFirstSearch(new GameInterface(7,7));
         test.search();
         test.playbackSolution();
 

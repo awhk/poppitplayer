@@ -73,6 +73,7 @@ public abstract class Search {
                     System.out.println("Setting score to " + this.bestScore);
                     System.out.println("Setting best node to " + this.bestNode);
                     if ((this.bestNode.getState().getScore() == this.bestNode.getState().getMaxScore())){
+                        System.out.println("Found perfect game, abandoning search.");
                         break;
                     }
                 }
@@ -85,6 +86,14 @@ public abstract class Search {
             }
             this.nextNode();
         }
+        
+        System.out.println("\nFound solution after examining " + loopCount + " nodes.");
+        System.out.println("Score of solution found is " + this.bestNode.getState().getScore());
+        System.out.println("Max score possible for this game is " + this.bestNode.getState().getMaxScore());
+        System.out.println("Tested " + this.seenSize() + " nodes so far.");
+        System.out.println("Found " + this.solutionsFound + " solutions so far.");
+        System.out.println(this.unseenSize() + " nodes remain in the current queue.");
+        System.out.println("Exhausted search space, no perfect game found for this board.");
     }
     
     public void playbackSolution(){

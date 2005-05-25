@@ -56,8 +56,7 @@ public class DepthFirstSearch extends Search {
     public static void main(String[] args) {
         Search test = new DepthFirstSearch(new GameInterface(7,7));
         test.search();
-            System.out.println("Solution found in " + test.getNode().getDepth() + " moves.");
-            test.playbackSolution();
+        test.playbackSolution();
 
 
     }

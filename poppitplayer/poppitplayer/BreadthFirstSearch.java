@@ -53,10 +53,9 @@ public class BreadthFirstSearch extends Search {
      * @param args
      */
     public static void main(String[] args) {
-        Search test = new BreadthFirstSearch(new GameInterface(7,7));
+        Search test = new BreadthFirstSearch(new GameInterface(9,9));
         test.search();
-            System.out.println("Solution found in " + test.getNode().getDepth() + " moves.");
-            test.playbackSolution();
+        test.playbackSolution();
 
     }
 

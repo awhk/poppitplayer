@@ -170,6 +170,10 @@ public class GameGrid implements Cloneable, Comparable {
     public BalloonBits getGridAsBalloonBits(){
         return new BalloonBits(this.getGridAsBalloonArray());
     }
+	
+	public BalloonInt getGridAsBalloonInt(){
+		return new BalloonInt(this.getGridAsBalloonArray());
+	}
 
     public ArrayList<Coord> hasLikeColoredNeighbors() {
         ArrayList<Coord> result = new ArrayList<Coord>();

@@ -18,8 +18,8 @@ public class BreadthFirstSearch extends Search {
         this.unseenStates = new LinkedList<SearchNode>();
         //this.seenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
         //this.unseenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
-        this.seenNodes = new TreeSet<BalloonBits>();
-        this.unseenNodes = new TreeSet<BalloonBits>();
+        this.seenNodes = new TreeSet<BalloonInt>();
+        this.unseenNodes = new TreeSet<BalloonInt>();
         this.enqueueUnseen(this.node);
         this.storeUnseen(this.node);
         //this.totalNodes = 1;

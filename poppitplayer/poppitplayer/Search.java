@@ -126,7 +126,7 @@ public abstract class Search {
     }
     
     public void storeSeen(SearchNode aNode){
-        this.seenNodes.add(aNode.getState().getGrid().getGridAsBalloonBits());
+        this.seenNodes.add(aNode.getState().getGrid().getGridAsBalloonInt());
     }
     
     public boolean seenEmpty(){
@@ -138,11 +138,11 @@ public abstract class Search {
     }
     
     public boolean seenContains(SearchNode aNode){
-        return this.seenNodes.contains(aNode.getState().getGrid().getGridAsBalloonBits());
+        return this.seenNodes.contains(aNode.getState().getGrid().getGridAsBalloonInt());
     }
     
     public void storeUnseen(SearchNode aNode){
-        this.unseenNodes.add(aNode.getState().getGrid().getGridAsBalloonBits());
+        this.unseenNodes.add(aNode.getState().getGrid().getGridAsBalloonInt());
     }
     
     public boolean unseenEmpty(){
@@ -154,11 +154,11 @@ public abstract class Search {
     }
     
     public boolean unseenContains(SearchNode aNode){
-        return this.unseenNodes.contains(aNode.getState().getGrid().getGridAsBalloonBits());
+        return this.unseenNodes.contains(aNode.getState().getGrid().getGridAsBalloonInt());
     }
     
     public void unseenDrop(SearchNode aNode){
-        this.unseenNodes.remove(aNode.getState().getGrid().getGridAsBalloonBits());
+        this.unseenNodes.remove(aNode.getState().getGrid().getGridAsBalloonInt());
     }
     
     abstract public void enqueueUnseen(SearchNode aNode);
@@ -173,8 +173,8 @@ public abstract class Search {
     protected int bestScore;
     protected int solutionsFound;
     //protected int totalNodes;
-    protected TreeSet<BalloonBits> seenNodes;
-    protected TreeSet<BalloonBits> unseenNodes;
+    protected TreeSet<BalloonInt> seenNodes;
+    protected TreeSet<BalloonInt> unseenNodes;
     private static final Runtime s_runtime = Runtime.getRuntime ();
 
 }

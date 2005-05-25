@@ -9,10 +9,6 @@ import java.util.*;
  */
 public class BalloonBits implements Comparable{
 	
-//	public BalloonBits(){
-//		this.bitArray = new BitSet(100);
-//	}
-	
 	public BalloonBits(int aSize){
 		this.bitArray = new BitSet(aSize*3);
         this.size = aSize*3;
@@ -33,7 +29,7 @@ public class BalloonBits implements Comparable{
         
         for (int i=0; i<anArray.length; i++){
             this.setBalloon(BalloonBits.getIndex(i), anArray[i]);
-        }       
+        }
     }
 	
 	private BitSet getSet(){

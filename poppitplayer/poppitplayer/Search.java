@@ -57,7 +57,7 @@ public abstract class Search {
         while (!(this.unseenEmpty())){
             loopCount++;
             System.out.print(".");
-            if (loopCount%40 == 0) System.out.println("(" + loopCount + " nodes)");
+            if (loopCount%80 == 0) System.out.println("(" + loopCount + " nodes)");
             if (this.goalState()){
                 System.out.println("\nFound solution after examining " + loopCount + " nodes.");
                 //System.out.println("Found a solution!");
@@ -113,12 +113,12 @@ public abstract class Search {
         SimPoppitGui gui = new SimPoppitGui((GameInterface)myNode.getState().clone(), false);
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gui.setVisible(true);
-        System.out.println("Number of moves is " + moves.size());
+        //System.out.println("Number of moves is " + moves.size());
         JOptionPane.showMessageDialog(gui, "Click OK to watch playback", "Game Solved", JOptionPane.DEFAULT_OPTION);
         while(!(moves.isEmpty())){
             gui.getGame().highlight(moves.peek());
             try{
-                Thread.sleep(2000);
+                Thread.sleep(1000);
             }
             catch (Exception e){
                 System.out.println("Failed to sleep - " + e);
@@ -134,6 +134,14 @@ public abstract class Search {
             gui = null;
             this.playbackSolution();
         }
+    }
+    
+    public int getSolutionTotal(){
+        return this.solutionsFound;
+    }
+    
+    public int getBestScore(){
+        return this.bestScore;
     }
     
     public void storeSeen(SearchNode aNode){
@@ -190,13 +198,17 @@ public abstract class Search {
     private static final Runtime s_runtime = Runtime.getRuntime ();
     
     public static void main(String[] args){
-        GameInterface game = new GameInterface(7,7);
+        GameInterface game = new GameInterface(7,6);
         BreadthFirstSearch bfs = new BreadthFirstSearch(game);
         DepthFirstSearch dfs = new DepthFirstSearch(game);
         dfs.search();
         bfs.search();
-        dfs.playbackSolution();
-        bfs.playbackSolution();
+        System.out.println("DFS searched " + dfs.seenSize() + " nodes total, with " + dfs.unseenSize() + " unexplored.");
+        System.out.println("DFS found " + dfs.getSolutionTotal() + " solutions, with the best solution having a score of " + dfs.getBestScore());
+        //dfs.playbackSolution();
+        System.out.println("BFS searched " + bfs.seenSize() + " nodes total, with " + bfs.unseenSize() + " unexplored.");
+        System.out.println("BFS found " + bfs.getSolutionTotal() + " solutions, with the best solution having a score of " + bfs.getBestScore());
+        //bfs.playbackSolution();
     }
 
 }

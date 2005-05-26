@@ -193,10 +193,10 @@ public abstract class Search {
         GameInterface game = new GameInterface(7,7);
         BreadthFirstSearch bfs = new BreadthFirstSearch(game);
         DepthFirstSearch dfs = new DepthFirstSearch(game);
-        bfs.search();
         dfs.search();
-        bfs.playbackSolution();
+        bfs.search();
         dfs.playbackSolution();
+        bfs.playbackSolution();
     }
 
 }

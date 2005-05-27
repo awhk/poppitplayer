@@ -12,18 +12,9 @@ public class BreadthFirstSearch extends Search {
 
     BreadthFirstSearch(GameInterface aGame){
         this.node = new SearchNode(aGame);
-        this.bestNode = null;
-        this.bestScore = 0;
-        this.solutionsFound = 0;
         this.unseenStates = new LinkedList<SearchNode>();
-        //this.seenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
-        //this.unseenNodes = new TreeSet<Balloon[]>(new BalloonArrayOrder());
-        this.seenNodes = new TreeSet<BalloonInt>();
-        this.unseenNodes = new TreeSet<BalloonInt>();
-        this.enqueueUnseen(this.node);
+        //this.enqueueUnseen(this.node);
         this.storeUnseen(this.node);
-        this.perfect = false;
-        //this.totalNodes = 1;
     }
     
     /* (non-Javadoc)

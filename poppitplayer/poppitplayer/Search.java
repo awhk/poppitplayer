@@ -38,12 +38,18 @@ public abstract class Search {
         //System.out.println("Queuing " + this.node.successors().size() + " nodes.");
         //int beforeSize = this.unseenSize();
         for (SearchNode t : this.node.successors()){
-            if (this.seenContains(t)) continue;
-            if (this.unseenContains(t)) continue;
-            this.enqueueUnseen(t);
+            if (this.seenContains(t)){
+                this.skippedBecauseSeen++;
+                continue;
+            }
+            if (this.unseenContains(t)){
+                this.skippedBecauseUnseen++;
+                continue;
+            }
+            //this.enqueueUnseen(t);
             this.storeUnseen(t);
             if (this.unseenNodes.size() != this.queueSize()){
-                System.out.println("Uh-oh");
+                System.out.println("Uh-oh, unseen queues out of sync!");
                 System.exit(0);
             }
         }
@@ -144,6 +150,14 @@ public abstract class Search {
         return this.bestScore;
     }
     
+    public int getSkippedSeen(){
+        return this.skippedBecauseSeen;
+    }
+    
+    public int getSkippedUnseen(){
+        return this.skippedBecauseUnseen;
+    }
+    
     public void storeSeen(SearchNode aNode){
         this.seenNodes.add(aNode.getState().getGrid().getGridAsBalloonInt());
     }
@@ -162,6 +176,7 @@ public abstract class Search {
     
     public void storeUnseen(SearchNode aNode){
         this.unseenNodes.add(aNode.getState().getGrid().getGridAsBalloonInt());
+        this.enqueueUnseen(aNode);
     }
     
     public boolean unseenEmpty(){
@@ -188,25 +203,29 @@ public abstract class Search {
     
     
     protected SearchNode node;
-    protected SearchNode bestNode;
-    protected int bestScore;
-    protected int solutionsFound;
+    protected SearchNode bestNode = null;
+    protected int bestScore = 0;
+    protected int solutionsFound = 0;
+    protected int skippedBecauseSeen = 0;
+    protected int skippedBecauseUnseen = 0;
     //protected int totalNodes;
-    protected boolean perfect;
-    protected TreeSet<BalloonInt> seenNodes;
-    protected TreeSet<BalloonInt> unseenNodes;
+    protected boolean perfect = false;
+    protected TreeSet<BalloonInt> seenNodes = new TreeSet<BalloonInt>();
+    protected TreeSet<BalloonInt> unseenNodes = new TreeSet<BalloonInt>();
     private static final Runtime s_runtime = Runtime.getRuntime ();
     
     public static void main(String[] args){
-        GameInterface game = new GameInterface(7,6);
-        BreadthFirstSearch bfs = new BreadthFirstSearch(game);
-        DepthFirstSearch dfs = new DepthFirstSearch(game);
+        GameInterface game = new GameInterface(7,5);
+        BreadthFirstSearch bfs = new BreadthFirstSearch((GameInterface)game.clone());
+        DepthFirstSearch dfs = new DepthFirstSearch((GameInterface)game.clone());
         dfs.search();
         bfs.search();
         System.out.println("DFS searched " + dfs.seenSize() + " nodes total, with " + dfs.unseenSize() + " unexplored.");
+        System.out.println("DFS skipped " + dfs.getSkippedSeen() + " nodes because it already explored them, and " + dfs.getSkippedUnseen() + " because they were already queued to explore.");
         System.out.println("DFS found " + dfs.getSolutionTotal() + " solutions, with the best solution having a score of " + dfs.getBestScore());
         //dfs.playbackSolution();
         System.out.println("BFS searched " + bfs.seenSize() + " nodes total, with " + bfs.unseenSize() + " unexplored.");
+        System.out.println("BFS skipped " + bfs.getSkippedSeen() + " nodes because it already explored them, and " + bfs.getSkippedUnseen() + " because they were already queued to explore.");
         System.out.println("BFS found " + bfs.getSolutionTotal() + " solutions, with the best solution having a score of " + bfs.getBestScore());
         //bfs.playbackSolution();
     }

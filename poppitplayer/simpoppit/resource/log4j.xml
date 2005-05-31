@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!-- This "threshold" property sets the universal logging threshold;
+	setting it to a certain level will disable all logging messages 
+	everywhere beneath that level-->
+<log4j:configuration 
+	xmlns:log4j="http://jakarta.apache.org/log4j/">
+	
+	<appender name="ASYNC" class="org.apache.log4j.AsyncAppender">
+	        <!--appender-ref ref="FILE"/-->
+	        <appender-ref ref="CONSOLE"/>
+	</appender>
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+  		     <param name="ConversionPattern" 
+  		      				value="%r %c{4} [%t] %-5p  - %m%n"/>
+		</layout>
+	</appender>
+	
+	<!--appender name="FILE" class="org.apache.log4j.FileAppender">
+		<param name="File" value="./resource/log.txt"/>
+		<layout class="org.apache.log4j.PatternLayout">
+  		     <param name="ConversionPattern" 
+                           value="%d %c{2} [%t] %-5p  - %m%n"/>
+		</layout>
+	</appender-->
+ 	
+	<logger name="simpoppit.greedy">
+		<level value="DEBUG"/>
+	</logger>
+	
+	<root>
+		<priority value="WARN"/>
+		<appender-ref ref="ASYNC"/>
+	</root>
+	
+	
+</log4j:configuration>

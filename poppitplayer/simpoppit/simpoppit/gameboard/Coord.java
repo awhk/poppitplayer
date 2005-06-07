@@ -1,4 +1,4 @@
-package gameboard;
+package simpoppit.gameboard;
 import java.util.*;
 /**
  * <p>Title: Coord</p>

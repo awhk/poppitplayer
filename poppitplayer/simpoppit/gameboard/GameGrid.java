@@ -40,10 +40,10 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
 //            aNumberOfColumns++;
 //            System.out.println("Number of columns must be odd.  Incremented.");
 //        }
-        this.grid = new HashMap<Coord, Color>(aNumberOfColumns*aNumberOfRows);
-        for (int i = 0; i < aNumberOfColumns; i++) {
-            for (int j = 0; j < aNumberOfRows; j++){
-                this.grid.put(new Coord(i,j), randColor());
+        this.grid = new byte[aNumberOfColumns][aNumberOfRows];
+        for (int y=0; y<aNumberOfColumns; y++) {
+            for (int x=0; x<aNumberOfRows; x++){
+                this.grid[x][y] = randColor();
             }
         }
         this.xMax = aNumberOfColumns - 1;
@@ -51,12 +51,9 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
         this.bottomRight = new Coord(aNumberOfColumns - 1, aNumberOfRows - 1);
     }
     
-    private Color randColor(){
-        ArrayList<Color> temp = new ArrayList<Color>();
-        temp.addAll(Arrays.asList(Color.values()));
-        temp.remove(Color.EMPTY);
-        Collections.shuffle(temp, new Random());
-        return temp.get(0);
+    private byte randColor(){
+		int index = (int) Math.floor(Math.random() * COLORS.length);
+		return COLORS[index];
     }
 
     public int getSize() {
@@ -67,19 +64,16 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
         return this.bottomRight;
     }
 
-    public Color color(int aX, int aY) {
-        return this.color(new Coord(aX, aY));
+    public byte color(int aX, int aY) {
+        return this.grid[aX][aY];
     }
 
-    public Color color(Coord aBalloon) {
-        if (aBalloon.getX() > this.xMax || aBalloon.getY() > this.yMax) {
-            return null;
-        }
-        return this.grid.get(aBalloon);
+    public byte color(Coord aBalloon) {
+        return this.color(aBalloon.getX(), aBalloon.getY());
     }
     
     public boolean isPopped(Coord aBalloon){
-        return (this.grid.get(aBalloon) == Color.EMPTY);
+        return (this.grid[aBalloon.getX()][aBalloon.getY()] == EMPTY);
     }
 
     public ArrayList<Coord> neighbors(Coord aBalloon) {
@@ -113,8 +107,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
                         && !(aBalloon.isDiagonalTo(myTestPoint))
                         && !(this.isPopped(myTestPoint))
                         && !(this.isPopped(aBalloon))
-                        && (this.color(myTestPoint).equals(this
-                                .color(aBalloon)))) {
+                        && (this.color(myTestPoint) == (this.color(aBalloon)))) {
                     result.add(new Coord(aBalloon.getX() + i, aBalloon.getY()
                             + j));
                 }
@@ -181,7 +174,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     public void pop(Coord aBalloon) {
-        this.grid.put(aBalloon, Color.EMPTY);
+        this.grid[aBalloon.getX()][aBalloon.getY()] = EMPTY;
     }
 
     public void popChain(ArrayList<Coord> balloonList) {
@@ -199,7 +192,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
         String result = "";
         for (int y=0; y<this.yMax; y++){
             for (int x=0; x<this.xMax; x++){
-                result += this.grid.get(new Coord(x,y));
+                result += this.grid[x][y];
                 result += "   ";
             }
             result += "\n";
@@ -216,10 +209,18 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
 
 
     private void squeezeColumns() {
-        for (BalloonColumn t : this.grid) {
-            t.squeeze();
-        }
+        boolean wasSqueezed = true;
+		while(wasSqueezed){
+			
+		}
     }
+	
+	private boolean columnIsEmpty(int aColumn){
+		for(int x=0; x<this.xMax; x++){
+			if (this.grid[x][aColumn] != EMPTY) return false;
+		}
+		return true;
+	}
 
     private void squeezeRows() {
         ArrayList<BalloonColumn> myGrid = new ArrayList<BalloonColumn>();
@@ -308,7 +309,8 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     private int xMax;
     private int yMax;
     private Coord bottomRight;
-    private HashMap<Coord, Color> grid;
+    //private HashMap<Coord, Color> grid;
+	private byte[][] grid;
 
     /**
      * @param args

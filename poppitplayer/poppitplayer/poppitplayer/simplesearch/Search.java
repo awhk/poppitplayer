@@ -160,7 +160,7 @@ public abstract class Search {
     }
     
     public void storeSeen(SearchNode aNode){
-        this.seenNodes.add(aNode);
+        this.seenNodes.add(aNode.getState());
     }
     
     public boolean seenEmpty(){
@@ -172,11 +172,11 @@ public abstract class Search {
     }
     
     public boolean seenContains(SearchNode aNode){
-        return this.seenNodes.contains(aNode);
+        return this.seenNodes.contains(aNode.getState());
     }
     
     public void storeUnseen(SearchNode aNode){
-        this.unseenNodes.add(aNode);
+        this.unseenNodes.add(aNode.getState());
         this.enqueueUnseen(aNode);
     }
     
@@ -189,11 +189,11 @@ public abstract class Search {
     }
     
     public boolean unseenContains(SearchNode aNode){
-        return this.unseenNodes.contains(aNode);
+        return this.unseenNodes.contains(aNode.getState());
     }
     
     public void unseenDrop(SearchNode aNode){
-        this.unseenNodes.remove(aNode);
+        this.unseenNodes.remove(aNode.getState());
     }
     
     abstract public void enqueueUnseen(SearchNode aNode);
@@ -211,12 +211,12 @@ public abstract class Search {
     protected int skippedBecauseUnseen = 0;
     //protected int totalNodes;
     protected boolean perfect = false;
-    protected TreeSet<SearchNode> seenNodes = new TreeSet<SearchNode>();
-    protected TreeSet<SearchNode> unseenNodes = new TreeSet<SearchNode>();
+    protected TreeSet<GameInterface> seenNodes = new TreeSet<GameInterface>();
+    protected TreeSet<GameInterface> unseenNodes = new TreeSet<GameInterface>();
     private static final Runtime s_runtime = Runtime.getRuntime ();
     
     public static void main(String[] args){
-        GameInterface game = new GameInterface();
+        GameInterface game = new GameInterface(8,8);
         BreadthFirstSearch bfs = new BreadthFirstSearch((GameInterface)game.clone());
         DepthFirstSearch dfs = new DepthFirstSearch((GameInterface)game.clone());
         dfs.search();

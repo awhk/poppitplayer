@@ -282,59 +282,6 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
             grid[column2][y] = temp;
         }
     }
-    
-// private void squeezeRows() {
-// ArrayList<BalloonColumn> myGrid = new ArrayList<BalloonColumn>();
-//        boolean swapped = false;
-//        for (int i = 0; i < this.getSize(); i++) {
-//            myGrid.add(i, this.grid[i]);
-//        }
-//        int leftOfCenter = 0;
-//        int rightOfCenter = 0;
-//        for (int i = 0; i < this.getSize(); i++) {
-//            if (myGrid.get(i).isEmpty())
-//                continue;
-//            if (i < this.centerColumn()) {
-//                leftOfCenter++;
-//            } else {
-//                rightOfCenter++;
-//            }
-//        }
-//        if (leftOfCenter == 0 & rightOfCenter == 0) {
-//            return;
-//        }
-//        if (myGrid.get(this.centerColumn()).isEmpty()) {
-//            if (leftOfCenter > rightOfCenter) {
-//                Collections.swap(myGrid, this.centerColumn() - 1, this
-//                        .centerColumn());
-//            } else {
-//                Collections.swap(myGrid, this.centerColumn() + 1, this
-//                        .centerColumn());
-//            }
-//        }
-//        for (int i = 0; i < this.getSize(); i++) {
-//            if (myGrid.get(i).isEmpty()) {
-//                if (i == 0 || i == this.xMax || i == this.centerColumn())
-//                    continue;
-//                if (i < this.centerColumn()) {
-//                    if (myGrid.get(i).isEmpty() & myGrid.get(i - 1).isEmpty())
-//                        continue;
-//                    Collections.swap(myGrid, i - 1, i);
-//                    swapped = true;
-//                } else {
-//                    if (myGrid.get(i).isEmpty() & myGrid.get(i + 1).isEmpty())
-//                        continue;
-//                    Collections.swap(myGrid, i + 1, i);
-//                    swapped = true;
-//                }
-//            }
-//        }
-//        for (int i = 0; i < this.getSize(); i++) {
-//            this.grid[i] = myGrid.get(i);
-//        }
-//        if (swapped)
-//            squeezeRows();
-//    }
 
     public boolean equals(Object aGrid) {
         if (!(aGrid instanceof GameGrid))

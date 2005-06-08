@@ -160,7 +160,7 @@ public abstract class Search {
     }
     
     public void storeSeen(SearchNode aNode){
-        this.seenNodes.add(aNode.getState());
+        this.seenNodes.add(aNode.getState().getGrid());
     }
     
     public boolean seenEmpty(){
@@ -172,11 +172,11 @@ public abstract class Search {
     }
     
     public boolean seenContains(SearchNode aNode){
-        return this.seenNodes.contains(aNode.getState());
+        return this.seenNodes.contains(aNode.getState().getGrid());
     }
     
     public void storeUnseen(SearchNode aNode){
-        this.unseenNodes.add(aNode.getState());
+        this.unseenNodes.add(aNode.getState().getGrid());
         this.enqueueUnseen(aNode);
     }
     
@@ -189,11 +189,11 @@ public abstract class Search {
     }
     
     public boolean unseenContains(SearchNode aNode){
-        return this.unseenNodes.contains(aNode.getState());
+        return this.unseenNodes.contains(aNode.getState().getGrid());
     }
     
     public void unseenDrop(SearchNode aNode){
-        this.unseenNodes.remove(aNode.getState());
+        this.unseenNodes.remove(aNode.getState().getGrid());
     }
     
     abstract public void enqueueUnseen(SearchNode aNode);
@@ -211,8 +211,8 @@ public abstract class Search {
     protected int skippedBecauseUnseen = 0;
     //protected int totalNodes;
     protected boolean perfect = false;
-    protected TreeSet<GameInterface> seenNodes = new TreeSet<GameInterface>();
-    protected TreeSet<GameInterface> unseenNodes = new TreeSet<GameInterface>();
+    protected TreeSet<GameGrid> seenNodes = new TreeSet<GameGrid>();
+    protected TreeSet<GameGrid> unseenNodes = new TreeSet<GameGrid>();
     private static final Runtime s_runtime = Runtime.getRuntime ();
     
     public static void main(String[] args){

@@ -70,9 +70,9 @@ public class GameInterface implements Cloneable, Comparable{
         return gameBoard.getGridAsListByRow();
     }
     
-//    public GameGrid getGrid(){
-//        return this.gameBoard;
-//    }
+    public GameGrid getGrid(){
+        return this.gameBoard;
+    }
     
     public int getScore(){
         return this.score;

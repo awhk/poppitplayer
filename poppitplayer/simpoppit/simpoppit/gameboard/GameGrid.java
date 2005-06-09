@@ -290,7 +290,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
             return false;
 		for (int y=0; y<=this.yMax; y++){
             for (int x=0; x<=this.xMax; x++){
-                if (this.getColor(new Coord(x,y)) != ((GameGrid)aGrid).getColor(new Coord(x,y))) return false;
+                if (this.getColor(x,y) != ((GameGrid)aGrid).getColor(x,y)) return false;
             }
         }
         return true;

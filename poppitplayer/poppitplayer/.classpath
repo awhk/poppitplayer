@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="/simpoppit"/>
+	<classpathentry kind="lib" path="/simpoppit/lib/log4j-1.2.8.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>

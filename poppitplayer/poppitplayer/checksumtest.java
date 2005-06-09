@@ -1,16 +1,17 @@
 import java.util.zip.CRC32;
+
 /**
  * 
  */
 
 /**
  * @author Andrew
- *
+ * 
  */
 public class checksumtest {
 
-    
     static final String test = "115129156148153";
+
     /**
      * @param args
      */

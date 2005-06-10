@@ -41,8 +41,8 @@ public abstract class Search {
     }
 
     public void expand() {
-        log.debug("Queuing " + this.node.successors().size() + " nodes.");
-        int beforeSize = this.unseenSize();
+        //log.debug("Queuing " + this.node.successors().size() + " nodes.");
+        //int beforeSize = this.unseenSize();
         for (SearchNode t : this.node.successors()) {
             if (this.seenContains(t)) {
                 this.skippedBecauseSeen++;
@@ -59,8 +59,7 @@ public abstract class Search {
             }
         }
         // this.totalNodes += (this.unseenSize() - beforeSize);
-        log.debug("(Actually queued " + (this.unseenSize() - beforeSize)
-                + " nodes)");
+        //log.debug("(Actually queued " + (this.unseenSize() - beforeSize)+ " nodes)");
         // System.out.println("Generated " + this.totalNodes + " total nodes so
         // far.");
     }
@@ -94,7 +93,7 @@ public abstract class Search {
                     log.debug("Setting best node to " + this.bestNode);
                     if ((this.bestNode.getState().getScore() == this.bestNode
                             .getState().getMaxScore())) {
-                        log.debug("Found perfect game, abandoning search.");
+                        log.info("Found perfect game, abandoning search.");
                         this.perfect = true;
                         break;
                     }
@@ -121,7 +120,7 @@ public abstract class Search {
                     .debug(this.unseenSize()
                             + " nodes remain in the current queue.");
             log
-                    .debug("Exhausted search space, no perfect game found for this board.");
+                    .info("Exhausted search space, no perfect game found for this board.");
         }
     }
 
@@ -254,18 +253,18 @@ public abstract class Search {
                 .clone());
         DepthFirstSearch dfs = new DepthFirstSearch((GameInterface) game
                 .clone());
-        dfs.search();
+//        dfs.search();
         bfs.search();
-        System.out.println("DFS searched " + dfs.seenSize()
-                + " nodes total, with " + dfs.unseenSize() + " unexplored.");
-        System.out.println("DFS skipped " + dfs.getSkippedSeen()
-                + " nodes because it already explored them, and "
-                + dfs.getSkippedUnseen()
-                + " because they were already queued to explore.");
-        System.out.println("DFS found " + dfs.getSolutionTotal()
-                + " solutions, with the best solution having a score of "
-                + dfs.getBestScore());
-        // dfs.playbackSolution();
+//        System.out.println("DFS searched " + dfs.seenSize()
+//                + " nodes total, with " + dfs.unseenSize() + " unexplored.");
+//        System.out.println("DFS skipped " + dfs.getSkippedSeen()
+//                + " nodes because it already explored them, and "
+//                + dfs.getSkippedUnseen()
+//                + " because they were already queued to explore.");
+//        System.out.println("DFS found " + dfs.getSolutionTotal()
+//                + " solutions, with the best solution having a score of "
+//                + dfs.getBestScore());
+//        dfs.playbackSolution();
         System.out.println("BFS searched " + bfs.seenSize()
                 + " nodes total, with " + bfs.unseenSize() + " unexplored.");
         System.out.println("BFS skipped " + bfs.getSkippedSeen()
@@ -275,7 +274,7 @@ public abstract class Search {
         System.out.println("BFS found " + bfs.getSolutionTotal()
                 + " solutions, with the best solution having a score of "
                 + bfs.getBestScore());
-        // bfs.playbackSolution();
+//         bfs.playbackSolution();
     }
 
 }

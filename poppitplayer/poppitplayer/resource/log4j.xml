@@ -14,7 +14,7 @@
 	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
 		<layout class="org.apache.log4j.PatternLayout">
   		     <param name="ConversionPattern" 
-  		      				value="%r %c{4} [%t] %-5p  - %m%n"/>
+  		      				value="%d{MM/dd/yy HH:mm:ss.SSS} [%c{2}] %-5p  - %m%n"/>
 		</layout>
 	</appender>
 	
@@ -27,7 +27,7 @@
 	</appender-->
  	
 	<logger name="poppitplayer.simplesearch">
-		<level value="DEBUG"/>
+		<level value="INFO"/>
 	</logger>
 	
 	<root>

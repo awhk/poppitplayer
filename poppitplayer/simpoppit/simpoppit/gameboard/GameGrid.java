@@ -250,43 +250,33 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     private void squeezeRows() {
         //This method squeezes columns together,
         //moving empty columns outward.
-        boolean swapped = squeezeRow();
+		int[] columns = columnCount();
+		boolean left = true;
+		if (columns[0] < columns[1]) left = false;
+        boolean swapped = squeezeRow(left, columns);
         while(swapped){
-            swapped = squeezeRow();
+            swapped = squeezeRow(left, columns);
         }
     }
     
-    private boolean squeezeRow() {
+    private boolean squeezeRow(boolean left, int[] columns) {
         boolean swapped = false;
-        int[] columns = columnCount();
-        if (columns[0] >= columns[1]) {
-            for (int x = (columns[0] + columns[1]); x < this.xMax; x++) {
+		int fullColumns = columns[0] + columns[1] + (centerColumn() - columns[0]);
+		if (left){
+            for (int x = (centerColumn() - columns[0]); x <= fullColumns; x++) {
                 if (columnIsEmpty(x) && x > 0 && !(columnIsEmpty(x - 1))) {
                     swapped = true;
                     swapColumns(x, x - 1);
                 }
             }
-        } else {
-            for (int x = (this.xMax - (columns[0] + columns[1])); x >= 0; x--) {
-                if (columnIsEmpty(x) && x < this.xMax
-                        && !(columnIsEmpty(x + 1))) {
-                    swapped = true;
-                    swapColumns(x, x + 1);
-                }
-            }
-        }
-        for (int x = 0; x <= this.centerColumn(); x++) {
-            if (columnIsEmpty(x) && x > 0 && !(columnIsEmpty(x - 1))) {
-                swapped = true;
-                swapColumns(x, x - 1);
-            }
-        }
-        for (int x = this.xMax; x >= this.centerColumn(); x--) {
+		}else{
+        for (int x = fullColumns; x >= (centerColumn() - columns[0]); x--) {
             if (columnIsEmpty(x) && x < this.xMax && !(columnIsEmpty(x + 1))) {
                 swapped = true;
                 swapColumns(x, x + 1);
             }
         }
+		}
         return swapped;
     }
     

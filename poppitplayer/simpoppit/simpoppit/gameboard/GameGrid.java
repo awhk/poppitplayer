@@ -45,7 +45,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
                 this.grid[x][y] = randColor();
             }
         }
-        this.bottomRight = new Coord(aNumberOfColumns - 1, aNumberOfRows - 1);
+        //this.bottomRight = new Coord(aNumberOfColumns - 1, aNumberOfRows - 1);
     }
     
     private byte randColor(){
@@ -59,7 +59,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     public Coord gridSize() {
-        return this.bottomRight;
+        return new Coord(this.xMax, this.yMax);
     }
 
     public byte getColor(int aX, int aY) {
@@ -95,7 +95,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
                 Coord myTestPoint = new Coord(aBalloon.getX() + i, aBalloon
                         .getY()
                         + j);
-                if (bottomRight.isBeyond(myTestPoint) && !(i == j)
+                if ((new Coord(this.xMax, this.yMax)).isBeyond(myTestPoint) && !(i == j)
                         && !(aBalloon.isDiagonalTo(myTestPoint))) {
                     result.add(new Coord(aBalloon.getX() + i, aBalloon.getY()
                             + j));
@@ -114,7 +114,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
                         + j);
                 if (myTestPoint.getX() >= 0
                         && myTestPoint.getY() >= 0
-                        && bottomRight.isBeyond(myTestPoint)
+                        && (new Coord(this.xMax, this.yMax)).isBeyond(myTestPoint)
                         && !(i == j)
                         && !(aBalloon.isDiagonalTo(myTestPoint))
                         && !(this.isPopped(myTestPoint))
@@ -149,22 +149,20 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     public ArrayList<Coord> getGridAsList() {
-        ArrayList<Coord> result = new ArrayList<Coord>(this.bottomRight.getX()
-                * this.bottomRight.getY());
-        for (int i = 0; i <= this.bottomRight.getX(); i++) {
-            for (int j = 0; j <= this.bottomRight.getY(); j++) {
-                result.add(new Coord(i, j));
+        ArrayList<Coord> result = new ArrayList<Coord>(this.getSize());
+        for (int x = 0; x <= this.xMax; x++) {
+            for (int y = 0; y <= this.yMax; y++) {
+                result.add(new Coord(x, y));
             }
         }
         return result;
     }
 
     public ArrayList<Coord> getGridAsListByRow() {
-        ArrayList<Coord> result = new ArrayList<Coord>(this.bottomRight.getX()
-                * this.bottomRight.getY());
-        for (int i = 0; i <= this.bottomRight.getY(); i++) {
-            for (int j = 0; j <= this.bottomRight.getX(); j++) {
-                result.add(new Coord(j, i));
+        ArrayList<Coord> result = new ArrayList<Coord>(this.getSize());
+        for (int y = 0; y <= this.yMax; y++) {
+            for (int x = 0; x <= this.xMax; x++) {
+                result.add(new Coord(x, y));
             }
         }
         return result;
@@ -260,14 +258,31 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     
     private boolean squeezeRow() {
         boolean swapped = false;
+        int[] columns = columnCount();
+        if (columns[0] >= columns[1]) {
+            for (int x = (columns[0] + columns[1]); x < this.xMax; x++) {
+                if (columnIsEmpty(x) && x > 0 && !(columnIsEmpty(x - 1))) {
+                    swapped = true;
+                    swapColumns(x, x - 1);
+                }
+            }
+        } else {
+            for (int x = (this.xMax - (columns[0] + columns[1])); x >= 0; x--) {
+                if (columnIsEmpty(x) && x < this.xMax
+                        && !(columnIsEmpty(x + 1))) {
+                    swapped = true;
+                    swapColumns(x, x + 1);
+                }
+            }
+        }
         for (int x = 0; x <= this.centerColumn(); x++) {
-            if (columnIsEmpty(x) && x > 0 && !(columnIsEmpty(x-1))) {
+            if (columnIsEmpty(x) && x > 0 && !(columnIsEmpty(x - 1))) {
                 swapped = true;
                 swapColumns(x, x - 1);
             }
         }
         for (int x = this.xMax; x >= this.centerColumn(); x--) {
-            if (columnIsEmpty(x) && x < this.xMax && !(columnIsEmpty(x+1))) {
+            if (columnIsEmpty(x) && x < this.xMax && !(columnIsEmpty(x + 1))) {
                 swapped = true;
                 swapColumns(x, x + 1);
             }
@@ -281,6 +296,16 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
             grid[column1][y] = grid[column2][y];
             grid[column2][y] = temp;
         }
+    }
+    
+    private int[] columnCount(){
+        int result[] = {0,0};
+        for (int x=0; x<=this.xMax; x++){
+            if (columnIsEmpty(x)) continue;
+            if (x < centerColumn()) result[0]++;
+            if (x> centerColumn()) result[1]++;
+        }
+        return result;
     }
 
     public boolean equals(Object aGrid) {
@@ -321,7 +346,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
 
     private int xMax;
     private int yMax;
-    private Coord bottomRight;
+    //private Coord bottomRight;
     //private HashMap<Coord, Color> grid;
 	private byte[][] grid;
 

@@ -2,7 +2,7 @@ package poppitplayer.simplesearch;
 
 import java.util.*;
 import simpoppit.gameboard.*;
-import org.apache.log4j.Logger;
+//import org.apache.log4j.Logger;
 import simpoppit.gui.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -41,7 +41,7 @@ public abstract class Search {
     }
 
     public void expand() {
-        //log.debug("Queuing " + this.node.successors().size() + " nodes.");
+        //System.out.println("Queuing " + this.node.successors().size() + " nodes.");
         //int beforeSize = this.unseenSize();
         for (SearchNode t : this.node.successors()) {
             if (this.seenContains(t)) {
@@ -59,7 +59,7 @@ public abstract class Search {
             }
         }
         // this.totalNodes += (this.unseenSize() - beforeSize);
-        //log.debug("(Actually queued " + (this.unseenSize() - beforeSize)+ " nodes)");
+        //System.out.println("(Actually queued " + (this.unseenSize() - beforeSize)+ " nodes)");
         // System.out.println("Generated " + this.totalNodes + " total nodes so
         // far.");
     }
@@ -68,32 +68,31 @@ public abstract class Search {
         int loopCount = 0;
         while (!(this.unseenEmpty())) {
             loopCount++;
-            log.debug(".");
+            System.out.print(".");
             if (loopCount % 80 == 0)
-                log.debug("(" + loopCount + " nodes)");
+                System.out.println("(" + loopCount + " nodes)");
             if (this.goalState()) {
-                log.info("\nFound solution after examining " + loopCount
+                System.out.println("\nFound solution after examining " + loopCount
                         + " nodes.");
                 // System.out.println("Found a solution!");
-                log.info("Score of solution found is "
+                System.out.println("Score of solution found is "
                         + this.node.getState().getScore());
-                log.debug("Max score possible for this game is "
+                System.out.println("Max score possible for this game is "
                         + this.node.getState().getMaxScore());
-                log.debug("Tested " + this.seenSize() + " nodes so far.");
-                log
-                        .debug("Found " + this.solutionsFound
+                System.out.println("Tested " + this.seenSize() + " nodes so far.");
+                System.out.println("Found " + this.solutionsFound
                                 + " solutions so far.");
-                log.debug(this.unseenSize()
+                System.out.println(this.unseenSize()
                         + " nodes remain in the current queue.");
                 this.solutionsFound++;
                 if ((this.node.getState().getScore() > this.bestScore)) {
                     this.bestScore = this.node.getState().getScore();
                     this.bestNode = this.node;
-                    log.debug("Setting score to " + this.bestScore);
-                    log.debug("Setting best node to " + this.bestNode);
+                    System.out.println("Setting score to " + this.bestScore);
+                    System.out.println("Setting best node to " + this.bestNode);
                     if ((this.bestNode.getState().getScore() == this.bestNode
                             .getState().getMaxScore())) {
-                        log.info("Found perfect game, abandoning search.");
+                        System.out.println("Found perfect game, abandoning search.");
                         this.perfect = true;
                         break;
                     }
@@ -108,19 +107,17 @@ public abstract class Search {
             this.nextNode();
         }
         if ((!this.perfect) && (this.bestNode != null)) {
-            log.info("\nFound solution after examining " + loopCount
+            System.out.println("\nFound solution after examining " + loopCount
                     + " nodes.");
-            log.info("Score of solution found is "
+            System.out.println("Score of solution found is "
                     + this.bestNode.getState().getScore());
-            log.debug("Max score possible for this game is "
+            System.out.println("Max score possible for this game is "
                     + this.bestNode.getState().getMaxScore());
-            log.debug("Tested " + this.seenSize() + " nodes so far.");
-            log.debug("Found " + this.solutionsFound + " solutions so far.");
-            log
-                    .debug(this.unseenSize()
+            System.out.println("Tested " + this.seenSize() + " nodes so far.");
+            System.out.println("Found " + this.solutionsFound + " solutions so far.");
+            System.out.println(this.unseenSize()
                             + " nodes remain in the current queue.");
-            log
-                    .info("Exhausted search space, no perfect game found for this board.");
+            System.out.println("Exhausted search space, no perfect game found for this board.");
         }
     }
 
@@ -148,7 +145,7 @@ public abstract class Search {
             try {
                 Thread.sleep(1000);
             } catch (Exception e) {
-                log.debug("Failed to sleep - " + e);
+                System.out.println("Failed to sleep - " + e);
             }
             gui.getGame().pop(moves.pop());
         }
@@ -243,7 +240,7 @@ public abstract class Search {
 
     protected TreeSet<GameGrid> unseenNodes = new TreeSet<GameGrid>();
 
-    public static Logger log = Logger.getLogger(Search.class);
+//    public static Logger log = Logger.getLogger(Search.class);
 
     private static final Runtime s_runtime = Runtime.getRuntime();
 

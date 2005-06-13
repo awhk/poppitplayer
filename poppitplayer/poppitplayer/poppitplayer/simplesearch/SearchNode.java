@@ -95,11 +95,11 @@ public class SearchNode implements Cloneable, Comparable {
     public Object clone() {
         SearchNode result;
         if (this.operator == null) {
-            result = new SearchNode((GameInterface) (this.state.clone()),
-                    this.ancestor, (Coord) null, this.depth, this.pathCost);
+            result = new SearchNode((GameInterface)(this.state.clone()),
+                    this.ancestor, (Coord)null, this.depth, this.pathCost);
         } else {
-            result = new SearchNode((GameInterface) (this.state.clone()),
-                    this.ancestor, (Coord) (this.operator.clone()), this.depth,
+            result = new SearchNode((GameInterface)(this.state.clone()),
+                    this.ancestor, (Coord)(this.operator.clone()), this.depth,
                     this.pathCost);
         }
         return result;
@@ -110,13 +110,9 @@ public class SearchNode implements Cloneable, Comparable {
     }
 
     private GameInterface state;
-
     private SearchNode ancestor;
-
     private Coord operator;
-
     private int depth;
-
     private int pathCost;
 
     /**

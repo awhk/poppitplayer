@@ -23,16 +23,16 @@ public class GameInterface implements Cloneable, Comparable{
 		this.gameBoard = new GameGrid(aX, aY);
         this.action = "none";
         this.coordList = new ArrayList<Coord>();
-        this.gameListeners = new LinkedList<GameListener>();
-        this.maxScore = aX * aY;
+        GameInterface.gameListeners = new LinkedList<GameListener>();
+        GameInterface.maxScore = aX * aY;
         this.score = 0;
 	}
     
-    public GameInterface(GameGrid newGrid, LinkedList<GameListener> newGameListeners, int aScore){
+    public GameInterface(GameGrid newGrid, int aScore){
         this.gameBoard = newGrid;
         this.coordList = new ArrayList<Coord>();
-        this.gameListeners = newGameListeners;
-        this.maxScore = (this.gameBoard.gridSize().getX()+1)*(this.gameBoard.gridSize().getY()+1);
+//        GameInterface.gameListeners = newGameListeners;
+//        GameInterface.maxScore = (this.gameBoard.gridSize().getX()+1)*(this.gameBoard.gridSize().getY()+1);
         this.action = "none";
         this.score = aScore;
     }
@@ -79,7 +79,7 @@ public class GameInterface implements Cloneable, Comparable{
     }
     
     public int getMaxScore(){
-        return this.maxScore;
+        return GameInterface.maxScore;
     }
     
     public String getAction(){
@@ -89,7 +89,7 @@ public class GameInterface implements Cloneable, Comparable{
     public void resetGame(){
         this.gameBoard = new GameGrid(this.gameBoard.gridSize().getX()+1, this.gameBoard.gridSize().getY()+1);
         this.coordList.addAll(this.gameBoard.getGridAsList());
-        //this.maxScore = this.gameBoard.gridSize().getX() * this.gameBoard.gridSize().getY();
+        //GameInterface.maxScore = this.gameBoard.gridSize().getX() * this.gameBoard.gridSize().getY();
         this.score = 0;
         this.action = "update";
         this.fireGameEvent();
@@ -163,21 +163,21 @@ public class GameInterface implements Cloneable, Comparable{
     }
     
     public synchronized void addGameListener( GameListener listener ) {
-        this.gameListeners.add( listener );
+        GameInterface.gameListeners.add( listener );
     }
     
     public synchronized void removeGameListener( GameListener listener ) {
-        this.gameListeners.remove( listener );
+        GameInterface.gameListeners.remove( listener );
     }
     
     public LinkedList<GameListener> getListeners(){
-        return this.gameListeners;
+        return GameInterface.gameListeners;
     }
     
     private synchronized void fireGameEvent(){
-        //System.out.println("Dispatching event " + this.action + " to " + this.gameListeners.size() + " listeners");
+        //System.out.println("Dispatching event " + this.action + " to " + GameInterface.gameListeners.size() + " listeners");
         GameEvent event = new GameEvent(this, this.coordList, this.action);
-        for (GameListener t : this.gameListeners){
+        for (GameListener t : GameInterface.gameListeners){
             t.gameEventReceived(event);
         }
         this.coordList.clear();
@@ -187,16 +187,17 @@ public class GameInterface implements Cloneable, Comparable{
     public boolean equals(Object aGame){
         if ((aGame instanceof GameInterface)
                 //&& (((GameInterface)aGame).getScore() == this.score)
-                //&& (((GameInterface)aGame).getMaxScore() == this.maxScore)
+                //&& (((GameInterface)aGame).getMaxScore() == GameInterface.maxScore)
                 //&& (((GameInterface)aGame).getCoordList().equals(this.coordList))
                 && (((GameInterface)aGame).gameBoard.equals(this.gameBoard))) return true;
                 //&& (((GameInterface)aGame).getAction().equals(this.action))
-                //&& (((GameInterface)aGame).getListeners().equals(this.gameListeners))) return true;
+                //&& (((GameInterface)aGame).getListeners().equals(GameInterface.gameListeners))) return true;
         return false;
     }
     
     public Object clone(){
-        GameInterface result = new GameInterface((GameGrid)this.gameBoard.clone(), (LinkedList<GameListener>)this.gameListeners.clone(), this.score);
+//        GameInterface result = new GameInterface((GameGrid)this.gameBoard.clone(), GameInterface.gameListeners, this.score);
+        GameInterface result = new GameInterface((GameGrid)this.gameBoard.clone(), this.score);
         return result;
     }
     
@@ -211,11 +212,11 @@ public class GameInterface implements Cloneable, Comparable{
     }
 	
     private int score;
-    private final int maxScore;
+    private static int maxScore;
 	private GameGrid gameBoard;
     private ArrayList<Coord> coordList;
     private String action;
-    private LinkedList<GameListener> gameListeners;
+    private static LinkedList<GameListener> gameListeners;
 
     /**
      * @param args

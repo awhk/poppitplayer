@@ -214,7 +214,7 @@ public class GameInterface implements Cloneable, Comparable{
     private int score;
     private static int maxScore;
 	private GameGrid gameBoard;
-    private ArrayList<Coord> coordList;
+    private final ArrayList<Coord> coordList;
     private String action;
     private static LinkedList<GameListener> gameListeners;
 

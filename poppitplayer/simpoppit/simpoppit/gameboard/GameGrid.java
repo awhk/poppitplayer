@@ -39,23 +39,28 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
 //        }
         GameGrid.xMax = aNumberOfColumns - 1;
         GameGrid.yMax = aNumberOfRows - 1;
-        this.grid = new byte[aNumberOfColumns][aNumberOfRows];
+        this.grid = new byte[aNumberOfColumns * aNumberOfRows];
         for (int y=0; y<=GameGrid.yMax; y++) {
             for (int x=0; x<=GameGrid.xMax; x++){
-                this.grid[x][y] = randColor();
+                this.grid[(x * GameGrid.getHeight()) + y] = randColor();
             }
         }
         //this.bottomRight = new Coord(aNumberOfColumns - 1, aNumberOfRows - 1);
     }
     
-    private byte randColor(){
+    private static byte randColor(){
 		Random rand = new Random();
         int color = rand.nextInt(COLORS.length - 1) + 1;
         return COLORS[color];
     }
 
     public int getSize() {
-        return GameGrid.xMax * GameGrid.yMax;
+        //return GameGrid.xMax * GameGrid.yMax;
+        return grid.length;
+    }
+    
+    private static int getHeight(){
+        return GameGrid.yMax + 1;
     }
 
     public Coord gridSize() {
@@ -63,7 +68,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     public byte getColor(int aX, int aY) {
-        return this.grid[aX][aY];
+        return this.grid[(aX * GameGrid.getHeight()) + aY];
     }
 
     public byte getColor(Coord aBalloon) {
@@ -85,7 +90,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
     
     public boolean isPopped(Coord aBalloon){
-        return (this.grid[aBalloon.getX()][aBalloon.getY()] == EMPTY);
+        return (this.grid[(aBalloon.getX() * GameGrid.getHeight()) + aBalloon.getY()] == EMPTY);
     }
 
     public ArrayList<Coord> neighbors(Coord aBalloon) {
@@ -174,7 +179,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     public void pop(Coord aBalloon) {
-        this.grid[aBalloon.getX()][aBalloon.getY()] = EMPTY;
+        this.grid[(aBalloon.getX() * GameGrid.getHeight()) + aBalloon.getY()] = EMPTY;
     }
 
     public void popChain(ArrayList<Coord> balloonList) {
@@ -192,7 +197,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
         String result = "";
         for (int y=0; y<=GameGrid.yMax; y++){
             for (int x=0; x<=GameGrid.xMax; x++){
-                result += this.grid[x][y];
+                result += this.grid[(x * GameGrid.getHeight()) + y];
                 result += "   ";
             }
             result += "\n";
@@ -221,9 +226,9 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
                 continue;
             }
             if (sawPopped && y>0){
-                byte temp = grid[aColumn][y-1];
-                grid[aColumn][y-1] = grid[aColumn][y];
-                grid[aColumn][y] = temp;
+                byte temp = grid[(aColumn * GameGrid.getHeight()) + (y-1)];
+                grid[(aColumn * GameGrid.getHeight() ) + (y-1)] = grid[(aColumn * GameGrid.getHeight() ) + y];
+                grid[(aColumn * GameGrid.getHeight() ) + y] = temp;
                 squeezeColumn(aColumn);
                 break;
             }
@@ -232,7 +237,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
 	
 	private boolean columnIsEmpty(int aColumn){
 		for(int y=0; y<=GameGrid.yMax; y++){
-			if (this.grid[aColumn][y] != EMPTY) return false;
+			if (this.grid[(aColumn * GameGrid.getHeight() ) + y] != EMPTY) return false;
 		}
 		return true;
 	}
@@ -267,9 +272,9 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     
     private void swapColumns(int column1, int column2){
         for (int y=0; y<=GameGrid.yMax; y++){
-            byte temp = grid[column1][y];
-            grid[column1][y] = grid[column2][y];
-            grid[column2][y] = temp;
+            byte temp = grid[(column1 * GameGrid.getHeight()) + y];
+            grid[(column1 * GameGrid.getHeight()) + y] = grid[(column2 * GameGrid.getHeight()) + y];
+            grid[(column2 * GameGrid.getHeight()) + y] = temp;
         }
     }
     
@@ -300,7 +305,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
         GameGrid result = new GameGrid(GameGrid.xMax + 1, GameGrid.yMax + 1);
         for (int y=0; y<=GameGrid.yMax; y++){
             for (int x=0; x<=GameGrid.xMax; x++){
-                result.grid[x][y] = this.grid[x][y];
+                result.grid[(x * GameGrid.getHeight()) + y] = this.grid[(x * GameGrid.getHeight()) + y];
             }
         }
         return result;
@@ -311,7 +316,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
         compare:
         for (int y = 0; y <= GameGrid.yMax; y++) {
             for (int x = 0; x <= GameGrid.xMax; x++) {
-                result = grid[x][y] - ((GameGrid) aGrid).grid[x][y];
+                result = grid[(x * GameGrid.getHeight()) + y] - ((GameGrid) aGrid).grid[(x * GameGrid.getHeight()) + y];
                 if (result != 0)
                     break compare;
             }
@@ -323,7 +328,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     private static int yMax;
     //private Coord bottomRight;
     //private HashMap<Coord, Color> grid;
-	private byte[][] grid;
+	private byte[] grid;
 
     /**
      * @param args

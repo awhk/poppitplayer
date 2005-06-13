@@ -122,9 +122,9 @@ public abstract class Search {
     }
 
     public void playbackSolution() {
-        s_runtime.runFinalization();
-        s_runtime.gc();
-        Thread.yield();
+//        s_runtime.runFinalization();
+//        s_runtime.gc();
+//        Thread.yield();
         SearchNode myNode = this.bestNode;
         // SearchNode myNode = this.node;
         Stack<Coord> moves = new Stack<Coord>();
@@ -242,7 +242,7 @@ public abstract class Search {
 
 //    public static Logger log = Logger.getLogger(Search.class);
 
-    private static final Runtime s_runtime = Runtime.getRuntime();
+//    private static final Runtime s_runtime = Runtime.getRuntime();
 
     public static void main(String[] args) {
         GameInterface game = new GameInterface(8, 8);

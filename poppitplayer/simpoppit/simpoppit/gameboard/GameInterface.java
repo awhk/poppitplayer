@@ -22,7 +22,7 @@ public class GameInterface implements Cloneable, Comparable{
 	public GameInterface(int aX, int aY){
 		this.gameBoard = new GameGrid(aX, aY);
         this.action = "none";
-        this.coordList = new ArrayList<Coord>();
+        this.coordList = new ArrayList<Coord>(20);
         GameInterface.gameListeners = new LinkedList<GameListener>();
         GameInterface.maxScore = aX * aY;
         this.score = 0;
@@ -30,7 +30,7 @@ public class GameInterface implements Cloneable, Comparable{
     
     public GameInterface(GameGrid newGrid, int aScore){
         this.gameBoard = newGrid;
-        this.coordList = new ArrayList<Coord>();
+        this.coordList = new ArrayList<Coord>(20);
 //        GameInterface.gameListeners = newGameListeners;
 //        GameInterface.maxScore = (this.gameBoard.gridSize().getX()+1)*(this.gameBoard.gridSize().getY()+1);
         this.action = "none";
@@ -66,8 +66,8 @@ public class GameInterface implements Cloneable, Comparable{
         return gameBoard.gridSize();
     }
     
-    public ArrayList<Coord> getGridAsListByRow() {
-        return gameBoard.getGridAsListByRow();
+    public ArrayList<Coord> getGridAsList() {
+        return gameBoard.getGridAsList();
     }
     
     public GameGrid getGrid(){
@@ -109,7 +109,7 @@ public class GameInterface implements Cloneable, Comparable{
         //System.out.println("Popping " + aBalloon);
         if (!this.isPoppable(aBalloon)) return false;
         this.unHighlight(aBalloon);
-        ArrayList<Coord> myBalloons = new ArrayList<Coord>();
+        ArrayList<Coord> myBalloons = new ArrayList<Coord>(20);
         myBalloons.addAll(this.gameBoard.likeColoredNeighborChain(aBalloon));
         myBalloons.add(aBalloon);
         this.score += myBalloons.size();

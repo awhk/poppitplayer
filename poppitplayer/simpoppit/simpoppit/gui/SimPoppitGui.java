@@ -54,7 +54,7 @@ public class SimPoppitGui extends JFrame implements GameListener {
         panel.setBackground(Color.WHITE);
         panel.setLayout(new GridLayout(
                 this.game.getGridSize().getY()+1, this.game.getGridSize().getX()+1));
-        for (Coord t : this.game.getGridAsListByRow()) {
+        for (Coord t : this.game.getGridAsList()) {
             BalloonButton balloon = new BalloonButton(this.game, t);
             if (this.isInteractive) {
                 balloon.addMouseMotionListener(new MouseMotionHandler());

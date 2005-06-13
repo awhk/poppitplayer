@@ -89,7 +89,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     public ArrayList<Coord> neighbors(Coord aBalloon) {
-        ArrayList<Coord> result = new ArrayList<Coord>();
+        ArrayList<Coord> result = new ArrayList<Coord>(4);
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
                 Coord myTestPoint = new Coord(aBalloon.getX() + i, aBalloon
@@ -106,7 +106,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     public ArrayList<Coord> likeColoredNeighbors(Coord aBalloon) {
-        ArrayList<Coord> result = new ArrayList<Coord>();
+        ArrayList<Coord> result = new ArrayList<Coord>(4);
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
                 Coord myTestPoint = new Coord(aBalloon.getX() + i, aBalloon
@@ -130,18 +130,18 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
 
     public ArrayList<Coord> likeColoredNeighborChain(Coord aBalloon) {
         ArrayList<Coord> result = new ArrayList<Coord>();
-        ArrayList<Coord> alreadyVisited = new ArrayList<Coord>();
+        //ArrayList<Coord> alreadyVisited = new ArrayList<Coord>();
         Stack<Coord> toBeTested = new Stack<Coord>();
         ArrayList<Coord> temp = new ArrayList<Coord>();
-        alreadyVisited.add(aBalloon);
+        //alreadyVisited.add(aBalloon);
         toBeTested.push(aBalloon);
         while (!(toBeTested.isEmpty())) {
             temp = this.likeColoredNeighbors(toBeTested.pop());
             for (Coord t : temp) {
-                if (alreadyVisited.contains(t))
+                if (result.contains(t))
                     continue;
                 toBeTested.push(t);
-                alreadyVisited.add(t);
+                //alreadyVisited.add(t);
                 result.add(t);
             }
         }
@@ -149,16 +149,6 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     public ArrayList<Coord> getGridAsList() {
-        ArrayList<Coord> result = new ArrayList<Coord>(this.getSize());
-        for (int x = 0; x <= GameGrid.xMax; x++) {
-            for (int y = 0; y <= GameGrid.yMax; y++) {
-                result.add(new Coord(x, y));
-            }
-        }
-        return result;
-    }
-
-    public ArrayList<Coord> getGridAsListByRow() {
         ArrayList<Coord> result = new ArrayList<Coord>(this.getSize());
         for (int y = 0; y <= GameGrid.yMax; y++) {
             for (int x = 0; x <= GameGrid.xMax; x++) {

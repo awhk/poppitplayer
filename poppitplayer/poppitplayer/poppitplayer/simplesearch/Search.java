@@ -245,7 +245,7 @@ public abstract class Search {
 //    private static final Runtime s_runtime = Runtime.getRuntime();
 
     public static void main(String[] args) {
-        GameInterface game = new GameInterface(8, 8);
+        GameInterface game = new GameInterface(10, 10);
         BreadthFirstSearch bfs = new BreadthFirstSearch((GameInterface) game
                 .clone());
         DepthFirstSearch dfs = new DepthFirstSearch((GameInterface) game
@@ -271,7 +271,7 @@ public abstract class Search {
         System.out.println("BFS found " + bfs.getSolutionTotal()
                 + " solutions, with the best solution having a score of "
                 + bfs.getBestScore());
-//         bfs.playbackSolution();
+         bfs.playbackSolution();
     }
 
 }

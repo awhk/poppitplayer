@@ -2,6 +2,7 @@ package simpoppit.gameboard;
 import java.util.ArrayList;
 import java.util.Stack;
 import java.util.Random;
+import java.util.Arrays;
 
 //import org.apache.log4j.Logger;
 
@@ -29,23 +30,20 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     public GameGrid(int aNumberOfColumns) {
-        this(aNumberOfColumns, 10);
+        this(aNumberOfColumns, 10, false);
     }
 
-    public GameGrid(int aNumberOfColumns, int aNumberOfRows) {
-//        if ((aNumberOfColumns % 2) == 0) {
-//            aNumberOfColumns++;
-//            System.out.println("Number of columns must be odd.  Incremented.");
-//        }
+    public GameGrid(int aNumberOfColumns, int aNumberOfRows, boolean clone) {
         GameGrid.xMax = aNumberOfColumns - 1;
         GameGrid.yMax = aNumberOfRows - 1;
         this.grid = new byte[aNumberOfColumns * aNumberOfRows];
-        for (int y=0; y<=GameGrid.yMax; y++) {
-            for (int x=0; x<=GameGrid.xMax; x++){
-                this.grid[(x * GameGrid.getHeight()) + y] = randColor();
+        if (!clone) {
+            for (int y = 0; y <= GameGrid.yMax; y++) {
+                for (int x = 0; x <= GameGrid.xMax; x++) {
+                    this.grid[(x * GameGrid.getHeight()) + y] = randColor();
+                }
             }
         }
-        //this.bottomRight = new Coord(aNumberOfColumns - 1, aNumberOfRows - 1);
     }
     
     private static byte randColor(){
@@ -291,23 +289,25 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     public boolean equals(Object aGrid) {
         if (!(aGrid instanceof GameGrid))
             return false;
-        if (!(((GameGrid) aGrid).getSize() == this.getSize()))
-            return false;
-		for (int y=0; y<=GameGrid.yMax; y++){
-            for (int x=0; x<=GameGrid.xMax; x++){
-                if (this.getColor(x,y) != ((GameGrid)aGrid).getColor(x,y)) return false;
-            }
-        }
-        return true;
+//        if (!(((GameGrid) aGrid).getSize() == this.getSize()))
+//            return false;
+//		for (int y=0; y<=GameGrid.yMax; y++){
+//            for (int x=0; x<=GameGrid.xMax; x++){
+//                if (this.getColor(x,y) != ((GameGrid)aGrid).getColor(x,y)) return false;
+//            }
+//        }
+//        return true;
+        return Arrays.equals(this.grid, ((GameGrid)aGrid).grid);
     }
 
     public Object clone() {
-        GameGrid result = new GameGrid(GameGrid.xMax + 1, GameGrid.yMax + 1);
-        for (int y=0; y<=GameGrid.yMax; y++){
-            for (int x=0; x<=GameGrid.xMax; x++){
-                result.grid[(x * GameGrid.getHeight()) + y] = this.grid[(x * GameGrid.getHeight()) + y];
-            }
-        }
+        GameGrid result = new GameGrid(GameGrid.xMax + 1, GameGrid.yMax + 1, true);
+//        for (int y=0; y<=GameGrid.yMax; y++){
+//            for (int x=0; x<=GameGrid.xMax; x++){
+//                result.grid[(x * GameGrid.getHeight()) + y] = this.grid[(x * GameGrid.getHeight()) + y];
+//            }
+//        }
+        System.arraycopy(this.grid, 0, result.grid, 0, this.grid.length);
         return result;
     }
     

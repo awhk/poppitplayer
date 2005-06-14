@@ -20,7 +20,7 @@ public class GameInterface implements Cloneable, Comparable{
 	}
 	
 	public GameInterface(int aX, int aY){
-		this.gameBoard = new GameGrid(aX, aY);
+		this.gameBoard = new GameGrid(aX, aY, false);
         this.action = "none";
         this.coordList = new ArrayList<Coord>(20);
         GameInterface.gameListeners = new LinkedList<GameListener>();
@@ -87,7 +87,7 @@ public class GameInterface implements Cloneable, Comparable{
     }
     
     public void resetGame(){
-        this.gameBoard = new GameGrid(this.gameBoard.gridSize().getX()+1, this.gameBoard.gridSize().getY()+1);
+        this.gameBoard = new GameGrid(this.gameBoard.gridSize().getX()+1, this.gameBoard.gridSize().getY()+1, false);
         this.coordList.addAll(this.gameBoard.getGridAsList());
         //GameInterface.maxScore = this.gameBoard.gridSize().getX() * this.gameBoard.gridSize().getY();
         this.score = 0;

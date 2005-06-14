@@ -96,7 +96,7 @@ public class SimPoppitGui extends JFrame implements GameListener {
      * @param args
      */
     public static void main(String[] args) {
-        SimPoppitGui frame = new SimPoppitGui(new GameInterface(7,7), true);
+        SimPoppitGui frame = new SimPoppitGui(new GameInterface(), true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         // frame.show();

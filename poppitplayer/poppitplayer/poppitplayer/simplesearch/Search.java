@@ -90,7 +90,7 @@ public abstract class Search {
                     this.bestNode = this.node;
                     System.out.println("Setting score to " + this.bestScore);
                     System.out.println("Setting best node to " + this.bestNode);
-                    if ((this.bestNode.getState().getScore() == this.bestNode
+                    if ((this.bestNode.getState().getScore() >= this.bestNode
                             .getState().getMaxScore())) {
                         System.out.println("Found perfect game, abandoning search.");
                         this.perfect = true;
@@ -250,28 +250,28 @@ public abstract class Search {
                 .clone());
         DepthFirstSearch dfs = new DepthFirstSearch((GameInterface) game
                 .clone());
-//        dfs.search();
-        bfs.search();
-//        System.out.println("DFS searched " + dfs.seenSize()
-//                + " nodes total, with " + dfs.unseenSize() + " unexplored.");
-//        System.out.println("DFS skipped " + dfs.getSkippedSeen()
-//                + " nodes because it already explored them, and "
-//                + dfs.getSkippedUnseen()
-//                + " because they were already queued to explore.");
-//        System.out.println("DFS found " + dfs.getSolutionTotal()
-//                + " solutions, with the best solution having a score of "
-//                + dfs.getBestScore());
-//        dfs.playbackSolution();
-        System.out.println("BFS searched " + bfs.seenSize()
-                + " nodes total, with " + bfs.unseenSize() + " unexplored.");
-        System.out.println("BFS skipped " + bfs.getSkippedSeen()
+        dfs.search();
+//        bfs.search();
+        System.out.println("DFS searched " + dfs.seenSize()
+                + " nodes total, with " + dfs.unseenSize() + " unexplored.");
+        System.out.println("DFS skipped " + dfs.getSkippedSeen()
                 + " nodes because it already explored them, and "
-                + bfs.getSkippedUnseen()
+                + dfs.getSkippedUnseen()
                 + " because they were already queued to explore.");
-        System.out.println("BFS found " + bfs.getSolutionTotal()
+        System.out.println("DFS found " + dfs.getSolutionTotal()
                 + " solutions, with the best solution having a score of "
-                + bfs.getBestScore());
-         bfs.playbackSolution();
+                + dfs.getBestScore());
+        dfs.playbackSolution();
+//        System.out.println("BFS searched " + bfs.seenSize()
+//                + " nodes total, with " + bfs.unseenSize() + " unexplored.");
+//        System.out.println("BFS skipped " + bfs.getSkippedSeen()
+//                + " nodes because it already explored them, and "
+//                + bfs.getSkippedUnseen()
+//                + " because they were already queued to explore.");
+//        System.out.println("BFS found " + bfs.getSolutionTotal()
+//                + " solutions, with the best solution having a score of "
+//                + bfs.getBestScore());
+//         bfs.playbackSolution();
     }
 
 }

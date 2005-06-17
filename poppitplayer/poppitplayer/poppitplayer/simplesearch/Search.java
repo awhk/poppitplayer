@@ -53,10 +53,10 @@ public abstract class Search {
                 continue;
             }
             this.storeUnseen(t);
-            if (this.unseenNodes.size() != this.queueSize()) {
-                System.out.println("Uh-oh, unseen queues out of sync!");
-                System.exit(0);
-            }
+//            if (this.unseenNodes.size() != this.queueSize()) {
+//                System.out.println("Uh-oh, unseen queues out of sync!");
+//                System.exit(0);
+//            }
         }
         // this.totalNodes += (this.unseenSize() - beforeSize);
         //System.out.println("(Actually queued " + (this.unseenSize() - beforeSize)+ " nodes)");
@@ -74,9 +74,8 @@ public abstract class Search {
             if (loopCount % 800 == 0)
                 System.out
                         .println("Total nodes currently stored: "
-                                + (this.unseenNodes.size() + queueSize() + this.seenNodes.size()) + " ["
-                                + this.unseenNodes.size() + " (unexplored)," + queueSize()
-                                + " (unexplored)," + this.seenNodes.size() + " (explored)]");
+                                + ((this.unseenNodes.size() * 2) + this.seenNodes.size()) + " ["
+                                + this.unseenNodes.size() + " (unexplored) x2," + this.seenNodes.size() + " (explored)]");
             if (this.goalState()) {
                 System.out.println("\nFound solution after examining " + loopCount
                         + " nodes.");

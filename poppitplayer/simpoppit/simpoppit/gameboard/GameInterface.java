@@ -32,7 +32,6 @@ public class GameInterface implements Cloneable, Comparable {
      * Default constructor: creates a default-sized game grid and initializes
      * it.
      * 
-     * @param none
      * @see #GameInterface(int, int)
      */
     public GameInterface() {
@@ -142,7 +141,7 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * getGrid: Returns the {@link GameGrid) used by this game instance
+     * getGrid: Returns the {@link GameGrid} used by this game instance
      * 
      * @return current {@link GameGrid}
      */
@@ -233,7 +232,7 @@ public class GameInterface implements Cloneable, Comparable {
      * 
      * @param aBalloon
      *            {@link Coord}inate of balloon/grid location desired to pop
-     * @return
+     * @return boolean
      */
     public boolean pop(Coord aBalloon) {
         // If the given location does not contain a poppable balloon, return

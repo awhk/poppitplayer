@@ -34,7 +34,6 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     /**
      * Creates a default-sized (15 column, 10 row) game board.
      * 
-     * @param none
      * @see #GameGrid(int)
      * @see #GameGrid(int, int)
      * @see #GameGrid(int, int, boolean)

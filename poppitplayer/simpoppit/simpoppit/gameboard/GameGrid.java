@@ -17,7 +17,7 @@ import java.util.Arrays;
  * game board (not the game rules, just the board mechanics). For instance, this
  * class well initialize a board to a starting configuration (populate with
  * random balloons, etc). This class provides the means to pop a balloon, but
- * does not offer any method to decide if a balloon can legitinately be popped.
+ * does not offer any method to decide if a balloon can legitimately be popped.
  * That functionality is the task of the {@link GameInterface}.
  * </p>
  * 
@@ -36,6 +36,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
      * 
      * @param none
      * @see #GameGrid(int)
+     * @see #GameGrid(int, int)
      * @see #GameGrid(int, int, boolean)
      */
     public GameGrid() {
@@ -78,7 +79,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
      *            boolean flag to indicate if this is a clone of an existing
      *            board (if so the population step is skipped)
      */
-    public GameGrid(int aNumberOfColumns, int aNumberOfRows, boolean clone) {
+    private GameGrid(int aNumberOfColumns, int aNumberOfRows, boolean clone) {
         // Establish a zero-based maximum x coordinate
         GameGrid.xMax = aNumberOfColumns - 1;
 

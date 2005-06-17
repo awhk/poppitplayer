@@ -256,18 +256,18 @@ public abstract class Search {
                 .clone());
         DepthFirstSearch dfs = new DepthFirstSearch((GameInterface) game
                 .clone());
-//        dfs.search();
+        dfs.search();
         bfs.search();
-//        System.out.println("DFS searched " + dfs.seenSize()
-//                + " nodes total, with " + dfs.unseenSize() + " unexplored.");
-//        System.out.println("DFS skipped " + dfs.getSkippedSeen()
-//                + " nodes because it already explored them, and "
-//                + dfs.getSkippedUnseen()
-//                + " because they were already queued to explore.");
-//        System.out.println("DFS found " + dfs.getSolutionTotal()
-//                + " solutions, with the best solution having a score of "
-//                + dfs.getBestScore());
-//        dfs.playbackSolution();
+        System.out.println("DFS searched " + dfs.seenSize()
+                + " nodes total, with " + dfs.unseenSize() + " unexplored.");
+        System.out.println("DFS skipped " + dfs.getSkippedSeen()
+                + " nodes because it already explored them, and "
+                + dfs.getSkippedUnseen()
+                + " because they were already queued to explore.");
+        System.out.println("DFS found " + dfs.getSolutionTotal()
+                + " solutions, with the best solution having a score of "
+                + dfs.getBestScore());
+        dfs.playbackSolution();
         System.out.println("BFS searched " + bfs.seenSize()
                 + " nodes total, with " + bfs.unseenSize() + " unexplored.");
         System.out.println("BFS skipped " + bfs.getSkippedSeen()

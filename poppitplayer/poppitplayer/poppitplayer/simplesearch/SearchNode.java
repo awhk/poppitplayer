@@ -4,10 +4,14 @@ import java.util.*;
 import simpoppit.gameboard.*;
 
 /**
+ * <p>
+ * Title: SearchNode
+ * </p>
  * 
- */
-
-/**
+ * <p>
+ * Description: 
+ * </p>
+ * 
  * @author Andrew
  * 
  */

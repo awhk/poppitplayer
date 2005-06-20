@@ -16,7 +16,7 @@ public class Sizeof {
         usedMemory();
 
         // Array to keep strong references to allocated objects
-        final int count = 500000;
+        final int count = 100000;
         Object[] objects = new Object[count];
 
         long heap1 = 0;
@@ -37,9 +37,10 @@ public class Sizeof {
             // object = new Balloon[100];
             // object = new BalloonColumn();
             // object = new GameGrid();
-             object = new GameInterface();
+            // object = new GameInterface();
             // object = new SearchNode(new GameInterface());
             // object = new Coord(100, 100);
+            object = new test();
 
             if (i >= 0)
                 objects[i] = object;

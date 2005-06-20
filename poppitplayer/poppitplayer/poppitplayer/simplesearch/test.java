@@ -1,3 +1,4 @@
+package poppitplayer.simplesearch;
 import java.util.*;
 import simpoppit.gameboard.Coord;
 
@@ -9,15 +10,21 @@ public class test {
     
     public test(){
         Random rand = new Random();
-        for (int i=0; i<100; i++){
+        for (int i=0; i<30; i++){
             Coord temp = new Coord(rand.nextInt(100), rand.nextInt(100));
             set1.add(temp);
+            set2.add(temp);
+//            list1.add(temp);
+//            list2.add(temp);
+//            list1.add(temp);
+//            list2.add(temp);
         }
     }
     
     private TreeSet<Coord> set1 = new TreeSet<Coord>();
     private ArrayList<Coord> list1 = new ArrayList<Coord>();
     private TreeSet<Coord> set2 = new TreeSet<Coord>();
+    private ArrayList<Coord> list2 = new ArrayList<Coord>();
 
     public static void main(String[] args) {
         Integer test = 5;

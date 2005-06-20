@@ -32,7 +32,8 @@ public class Sizeof {
             // object = new GameGrid();
             // object = new GameInterface();
             // object = new BalloonBits(100);
-            object = new Coord(100, 100);
+            // object = new Coord(100, 100);
+            object = new test();
 
             if (i >= 0)
                 objects[i] = object;

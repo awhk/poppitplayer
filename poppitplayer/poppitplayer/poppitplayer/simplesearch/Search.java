@@ -184,7 +184,7 @@ public abstract class Search {
     }
 
     public void storeSeen(SearchNode aNode) {
-        this.seenNodes.add(aNode.getState().getGrid());
+        this.seenNodes.add(aNode);
     }
 
     public boolean seenEmpty() {
@@ -196,11 +196,11 @@ public abstract class Search {
     }
 
     public boolean seenContains(SearchNode aNode) {
-        return this.seenNodes.contains(aNode.getState().getGrid());
+        return this.seenNodes.contains(aNode);
     }
 
     public void storeUnseen(SearchNode aNode) {
-        this.unseenNodes.add(aNode.getState().getGrid());
+        this.unseenNodes.add(aNode);
         this.enqueueUnseen(aNode);
     }
 
@@ -213,11 +213,11 @@ public abstract class Search {
     }
 
     public boolean unseenContains(SearchNode aNode) {
-        return this.unseenNodes.contains(aNode.getState().getGrid());
+        return this.unseenNodes.contains(aNode);
     }
 
     public void unseenDrop(SearchNode aNode) {
-        this.unseenNodes.remove(aNode.getState().getGrid());
+        this.unseenNodes.remove(aNode);
     }
 
     abstract public void enqueueUnseen(SearchNode aNode);
@@ -241,9 +241,13 @@ public abstract class Search {
     // protected int totalNodes;
     protected boolean perfect = false;
 
-    protected TreeSet<GameGrid> seenNodes = new TreeSet<GameGrid>();
+    protected TreeSet<SearchNode> seenNodes = new TreeSet<SearchNode>();
 
-    protected TreeSet<GameGrid> unseenNodes = new TreeSet<GameGrid>();
+    protected TreeSet<SearchNode> unseenNodes = new TreeSet<SearchNode>();
+    
+//    protected ArrayList<SearchNode> seenNodes = new ArrayList<SearchNode>();
+//
+//    protected ArrayList<SearchNode> unseenNodes = new ArrayList<SearchNode>();
 
 //    public static Logger log = Logger.getLogger(Search.class);
 

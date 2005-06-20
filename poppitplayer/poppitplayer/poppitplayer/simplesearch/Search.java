@@ -120,9 +120,8 @@ public abstract class Search {
      * all balloons since number of moves is not a factor in Poppit).
      */
     public void search() {
-        // Count the number of times we go through the main loop. Basically, as
-        // we test one node/game state per loop iteration, this counter will
-        // keep track of how many nodes we have examined as the search proceeds.
+        // Count the number of times we go through the main loop between finding
+        // solutions
         int loopCount = 0;
         // As long as we haven't run out of candidate nodes, keep searching
         while (!(this.unseenEmpty())) {
@@ -142,9 +141,9 @@ public abstract class Search {
                         + " (explored)]");
             // If we found a solution node, do something about it
             if (this.goalState()) {
+                // Output: print a summary of the details of the solution found
                 System.out.println("\nFound solution after examining "
                         + loopCount + " nodes.");
-                // System.out.println("Found a solution!");
                 System.out.println("Score of solution found is "
                         + this.node.getState().getScore());
                 System.out.println("Max score possible for this game is "
@@ -155,12 +154,24 @@ public abstract class Search {
                         + " solutions so far.");
                 System.out.println(this.unseenSize()
                         + " nodes remain in the current queue.");
+                // Keep track of the number of solutions found so far (there can
+                // be many, many solutions to any given Poppit game)
                 this.solutionsFound++;
+                // If the solution we just found is better than our previous
+                // best solution, make a note of it. This way we if we end up
+                // exhausting the search space, we can go back and know that the
+                // best (non-perfect) solution we ended up finding along the way
+                // is the best possible solution for the starting board layout.
                 if ((this.node.getState().getScore() > this.bestScore)) {
                     this.bestScore = this.node.getState().getScore();
                     this.bestNode = this.node;
+                    // Output: note that we have a new "best game" candidate
                     System.out.println("Setting score to " + this.bestScore);
                     System.out.println("Setting best node to " + this.bestNode);
+                    // Check and see if this new best game is in fact a perfect
+                    // game. If it is, we do not need to continue searching as
+                    // perfect games cannot be bested, so we should break out of
+                    // our search loop now.
                     if ((this.bestNode.getState().getScore() >= this.bestNode
                             .getState().getMaxScore())) {
                         System.out
@@ -169,8 +180,10 @@ public abstract class Search {
                         break;
                     }
                 }
+                // Since we found a solution, but not a perfect one, clear our
+                // loop/node counter and begin searching again
                 loopCount = 0;
-                // break;
+//                break;
             }
             this.storeSeen(this.node);
             if (!(this.goalState())) {

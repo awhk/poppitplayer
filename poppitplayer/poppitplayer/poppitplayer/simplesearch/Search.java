@@ -8,85 +8,151 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
+ * <p>
+ * Title: Search
+ * </p>
  * 
- */
-
-/**
- * @author Andrew
+ * <p>
+ * Description: This is the search "superclass" that is extended in order to
+ * implement various kinds of searches. This class implements all the
+ * functionality of a search except for the mechanism to choose the next node to
+ * assess (either expand to new unexplored nodes if possible, or terminate the
+ * search if it is a solution node). For instance, to implement a depth first
+ * search, this class would be extended and a stack would be utilized to store
+ * unexplored nodes. This class maintains an independent store of seen and
+ * unseen nodes in the form of a {@link java.util.TreeSet} to facilitate rapid
+ * detection and elimination of duplicate nodes, as such detection would not be
+ * efficient with stack or queue data structures.
+ * </p>
+ * 
+ * <p>
+ * Copyright: Copyright (c) 2005
+ * </p>
+ * 
+ * @author Andrew W. Henry
+ * @version 1.0
+ * @see SearchNode
  * 
  */
 public abstract class Search {
 
-    public SearchNode getNode() {
-        return this.node;
-    }
-
+    /**
+     * If the current {@link SearchNode} represents a goal state (i.e. it cannot
+     * be expanded into deeper child nodes), return true. Otherwise, return
+     * false.
+     * 
+     * @return boolean
+     */
     public boolean goalState() {
+        // If the current node is invalid, then it sure isn't a goal state
         if (this.node == null)
             return false;
         return this.node.getState().isGameOver();
     }
 
+    /**
+     * Return the score of the current node. Basically, how many balloons have
+     * been popped.
+     * 
+     * @return integer score of current node
+     */
     public int nodeScore() {
         return this.node.getState().getScore();
     }
 
+    /**
+     * If another node is stored and waiting to be examined, remove it from
+     * storage and assign it to the current node. If no nodes are stored, then
+     * the search space for this game must be exhausted.
+     */
     public void nextNode() {
+        // If no unvisited nodes are stored, set the current node to null
         if (this.unseenEmpty())
             this.node = null;
+        // Otherwise, take the next waiting node out of storage and make it the
+        // current node
         else {
+            // Assign current node to next available unseen node and drop that
+            // node from the unseen store
             this.node = this.dequeueUnseen();
+            // Drop the corresponding node from the local unseen node set
             this.unseenDrop(this.node);
         }
     }
 
+    /**
+     * Given that the current node is valid, determine if that node has
+     * successor nodes (i.e. represents a game state that has unplayed moves),
+     * and if so, generate those successors. Add each successor to the "unseen
+     * node" store if it is not already there and has not been seen previously.
+     */
     public void expand() {
-        //System.out.println("Queuing " + this.node.successors().size() + " nodes.");
-        //int beforeSize = this.unseenSize();
+        // Query the current node for any possible successor nodes, and iterate
+        // over that set
         for (SearchNode t : this.node.successors()) {
+            // If this node has already been explored, skip it and keep track of
+            // that fact
             if (this.seenContains(t)) {
                 this.skippedBecauseSeen++;
                 continue;
             }
+            // If this node has already been queued for later exploration, skip
+            // it and keep track of that fact
             if (this.unseenContains(t)) {
                 this.skippedBecauseUnseen++;
                 continue;
             }
+            // Otherwise, we have a unique node, so store it away for future
+            // exploration
             this.storeUnseen(t);
-//            if (this.unseenNodes.size() != this.queueSize()) {
-//                System.out.println("Uh-oh, unseen queues out of sync!");
-//                System.exit(0);
-//            }
+            // if (this.unseenNodes.size() != this.queueSize()) {
+            // System.out.println("Uh-oh, unseen queues out of sync!");
+            // System.exit(0);
+            // }
         }
-        // this.totalNodes += (this.unseenSize() - beforeSize);
-        //System.out.println("(Actually queued " + (this.unseenSize() - beforeSize)+ " nodes)");
-        // System.out.println("Generated " + this.totalNodes + " total nodes so
-        // far.");
     }
 
+    /**
+     * This is the primary method of this class, and it initiates and propogates
+     * a search, proceeding through the search space of the game until it has
+     * either exhausted every possible node/game state, or has found a perfect
+     * solution (as there is no possibility to improve on a solution that pops
+     * all balloons since number of moves is not a factor in Poppit).
+     */
     public void search() {
+        // Count the number of times we go through the main loop. Basically, as
+        // we test one node/game state per loop iteration, this counter will
+        // keep track of how many nodes we have examined as the search proceeds.
         int loopCount = 0;
+        // As long as we haven't run out of candidate nodes, keep searching
         while (!(this.unseenEmpty())) {
+            // Increment the loop counter/number of nodes examined
             loopCount++;
+            // Output: print a dot for every node examined
             System.out.print(".");
+            // Output: every 80th dot, print a brief summary and a CR
             if (loopCount % 80 == 0)
                 System.out.println("(" + loopCount + " nodes)");
+            // Output: every 800th dot, print a detailed summary
             if (loopCount % 800 == 0)
-                System.out
-                        .println("Total nodes currently stored: "
-                                + ((this.unseenNodes.size() * 2) + this.seenNodes.size()) + " ["
-                                + this.unseenNodes.size() + " (unexplored) x2," + this.seenNodes.size() + " (explored)]");
+                System.out.println("Total nodes currently in storage: "
+                        + ((this.unseenNodes.size() * 2) + this.seenNodes
+                                .size()) + " [" + this.unseenNodes.size()
+                        + " (unexplored) x2," + this.seenNodes.size()
+                        + " (explored)]");
+            // If we found a solution node, do something about it
             if (this.goalState()) {
-                System.out.println("\nFound solution after examining " + loopCount
-                        + " nodes.");
+                System.out.println("\nFound solution after examining "
+                        + loopCount + " nodes.");
                 // System.out.println("Found a solution!");
                 System.out.println("Score of solution found is "
                         + this.node.getState().getScore());
                 System.out.println("Max score possible for this game is "
                         + this.node.getState().getMaxScore());
-                System.out.println("Tested " + this.seenSize() + " nodes so far.");
+                System.out.println("Tested " + this.seenSize()
+                        + " nodes so far.");
                 System.out.println("Found " + this.solutionsFound
-                                + " solutions so far.");
+                        + " solutions so far.");
                 System.out.println(this.unseenSize()
                         + " nodes remain in the current queue.");
                 this.solutionsFound++;
@@ -97,7 +163,8 @@ public abstract class Search {
                     System.out.println("Setting best node to " + this.bestNode);
                     if ((this.bestNode.getState().getScore() >= this.bestNode
                             .getState().getMaxScore())) {
-                        System.out.println("Found perfect game, abandoning search.");
+                        System.out
+                                .println("Found perfect game, abandoning search.");
                         this.perfect = true;
                         break;
                     }
@@ -119,17 +186,19 @@ public abstract class Search {
             System.out.println("Max score possible for this game is "
                     + this.bestNode.getState().getMaxScore());
             System.out.println("Tested " + this.seenSize() + " nodes so far.");
-            System.out.println("Found " + this.solutionsFound + " solutions so far.");
+            System.out.println("Found " + this.solutionsFound
+                    + " solutions so far.");
             System.out.println(this.unseenSize()
-                            + " nodes remain in the current queue.");
-            System.out.println("Exhausted search space, no perfect game found for this board.");
+                    + " nodes remain in the current queue.");
+            System.out
+                    .println("Exhausted search space, no perfect game found for this board.");
         }
     }
 
     public void playbackSolution() {
-//        s_runtime.runFinalization();
-//        s_runtime.gc();
-//        Thread.yield();
+        // s_runtime.runFinalization();
+        // s_runtime.gc();
+        // Thread.yield();
         SearchNode myNode = this.bestNode;
         // SearchNode myNode = this.node;
         Stack<Coord> moves = new Stack<Coord>();
@@ -238,20 +307,15 @@ public abstract class Search {
 
     protected int skippedBecauseUnseen = 0;
 
-    // protected int totalNodes;
     protected boolean perfect = false;
 
     protected TreeSet<SearchNode> seenNodes = new TreeSet<SearchNode>();
 
     protected TreeSet<SearchNode> unseenNodes = new TreeSet<SearchNode>();
-    
-//    protected ArrayList<SearchNode> seenNodes = new ArrayList<SearchNode>();
-//
-//    protected ArrayList<SearchNode> unseenNodes = new ArrayList<SearchNode>();
 
-//    public static Logger log = Logger.getLogger(Search.class);
+    // public static Logger log = Logger.getLogger(Search.class);
 
-//    private static final Runtime s_runtime = Runtime.getRuntime();
+    // private static final Runtime s_runtime = Runtime.getRuntime();
 
     public static void main(String[] args) {
         GameInterface game = new GameInterface(10, 10);
@@ -280,7 +344,7 @@ public abstract class Search {
         System.out.println("BFS found " + bfs.getSolutionTotal()
                 + " solutions, with the best solution having a score of "
                 + bfs.getBestScore());
-         bfs.playbackSolution();
+        bfs.playbackSolution();
     }
 
 }

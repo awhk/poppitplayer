@@ -29,12 +29,6 @@ public class Coord implements Cloneable, Comparable{
         return y;
     }
     
-//    public boolean isBeyond(Coord aPoint){
-//        if (aPoint.getX() > this.x) return false;
-//        if (aPoint.getY() > this.y) return false;
-//        return true;
-//    }
-    
     public boolean equals(Object aPoint){
         if ((aPoint instanceof Coord) && (((Coord)aPoint).getX() == this.x & ((Coord)aPoint).getY() == this.y) ) return true;
         return false;
@@ -53,14 +47,6 @@ public class Coord implements Cloneable, Comparable{
         Coord result = new Coord(this.x, this.y);
         return result;
     }
-    
-//    public boolean isDiagonalTo(Coord aPoint){
-//        if (aPoint.getX() == this.x-1 & aPoint.getY() == this.y-1) return true;
-//        if (aPoint.getX() == this.x+1 & aPoint.getY() == this.y-1) return true;
-//        if (aPoint.getX() == this.x-1 & aPoint.getY() == this.y+1) return true;
-//        if (aPoint.getX() == this.x+1 & aPoint.getY() == this.y+1) return true;
-//        return false;
-//    }
     
     public String toString(){
         String result = "";

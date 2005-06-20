@@ -24,7 +24,7 @@ public abstract class Search {
     public boolean goalState() {
         if (this.node == null)
             return false;
-        return this.node.getState().gameOver();
+        return this.node.getState().isGameOver();
     }
 
     public int nodeScore() {

@@ -39,7 +39,7 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * Constructor: creates an arbitrary-sized Poppit game instance
+     * This constructor creates an arbitrary-sized Poppit game instance
      * 
      * @param aX
      *            integer number of rows for the game grid
@@ -62,7 +62,7 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * Constructor: this contructor is used by the clone method to propogate the
+     * This contructor is used by the clone method to propogate the
      * accumulated score as well as avoid clearing the list of game event
      * listeners. The score could be computed, but since it is readily at hand
      * and we have a dedicated constructor anyway, might as well just pass it
@@ -80,18 +80,18 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * possibleMoves: Returns a list of {@link Coord}s of locations in the
+     * Returns a list of {@link Coord}s of locations in the
      * current game grid that are eligible to be popped according to the game
      * rules.
      * 
      * @return list of {@link Coord}s
      */
-    public ArrayList<Coord> possibleMoves() {
+    public ArrayList<Coord> getPossibleMoves() {
         return gameBoard.hasLikeColoredNeighbors();
     }
 
     /**
-     * isPoppable: Given a balloon/grid location, return true if the location
+     * Given a balloon/grid location, return true if the location
      * contains a balloon that is eligible for popping according to the game
      * rules.
      * 
@@ -141,7 +141,7 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * getGrid: Returns the {@link GameGrid} used by this game instance
+     * Returns the {@link GameGrid} used by this game instance
      * 
      * @return current {@link GameGrid}
      */
@@ -150,7 +150,7 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * getScore: Returns the value of the current score for this game instance.
+     * Returns the value of the current score for this game instance.
      * 
      * @return current integer score
      */
@@ -159,7 +159,7 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * getMaxScore: Returns the maximum possible score for this game instance.
+     * Returns the maximum possible score for this game instance.
      * This score may not be attainable, and represents only the score that
      * could be achieved if the board was completely solvable (i.e. all the
      * balloon could ultimately be popped).
@@ -171,7 +171,7 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * resetGame: Returns the game state to initial settings. Does not revert to
+     * Returns the game state to initial settings. Does not revert to
      * original game grid layout, but generates a new one of the same size.
      * Sends an "update" event to all registered listeners.
      * 
@@ -191,7 +191,7 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * valueOfMove: Returns the score value of the move represented by the given
+     * Returns the score value of the move represented by the given
      * location. That is, if the given location was popped (assuming it is
      * eligible), how much that move would increase the score of this game.
      * 
@@ -210,21 +210,20 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * gameOver: Returns true if there are no more moves left in this game,
+     * Returns true if there are no more moves left in this game,
      * false otherwise.
-     * 
-     * Note: probable optimization opportunity
      * 
      * @return boolean
      */
-    public boolean gameOver() {
-        if (this.possibleMoves().isEmpty())
-            return true;
-        return false;
+    public boolean isGameOver() {
+        for (Coord t : getGridAsList()){
+            if (this.gameBoard.hasLikeColoredNeighbors(t)) return false;
+        }
+        return true;
     }
 
     /**
-     * pop: Given a balloon/grid location, pop the balloon at that location if
+     * Given a balloon/grid location, pop the balloon at that location if
      * eligible, and take care of other tasks necessary to maintain game
      * integrity after a move takes place (squeezing columns and rows, notifying
      * registered listeners, etc). Return true if the pop was successful, false
@@ -268,7 +267,7 @@ public class GameInterface implements Cloneable, Comparable {
         // Notify registered listeners
         this.fireGameEvent();
         // Test if this was the final move for this game
-        if (this.gameOver()) {
+        if (this.isGameOver()) {
             // If so, load the "gameover" event
             this.action = "gameover";
             // And fire
@@ -278,20 +277,20 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * popAll: Pop all eligible balloons in the current game. This is not a
+     * Pop all eligible balloons in the current game. This is not a
      * legal action, but is a cheat added for troubleshooting purposes to
      * quickly pop multiple balloons and finish a game rapidly.
      * 
      */
     public void popAll() {
-        for (Coord t : possibleMoves()) {
+        for (Coord t : getPossibleMoves()) {
             unHighlight(t);
             pop(t);
         }
     }
 
     /**
-     * highlight: Given a balloon/grid location, if it contains a balloon that
+     * Given a balloon/grid location, if it contains a balloon that
      * is eligible to be popped, send the "highlight" game event to that balloon
      * and all other balloons in the same balloon group (like-colored and
      * adjacent).
@@ -313,7 +312,7 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * unHighlight: Given a balloon/grid location, send the "unhighlight" game
+     * Given a balloon/grid location, send the "unhighlight" game
      * event to that balloon and all other balloons in the same balloon group
      * (like-colored and adjacent).
      * 
@@ -331,7 +330,7 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * addGameListener: Register a class to allow it to receive event
+     * Register a class to allow it to receive event
      * notifications when the game state changes.
      * 
      * @param listener
@@ -343,7 +342,7 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * removeGameListener: Unregister a class to stop it from receiving event
+     * Unregister a class to stop it from receiving event
      * notifications when the game state changes.
      * 
      * @param listener
@@ -355,7 +354,7 @@ public class GameInterface implements Cloneable, Comparable {
     }
 
     /**
-     * fireGameEvent: Distribute the current game event to registered listeners
+     * Distribute the current game event to registered listeners
      * 
      * @see GameEvent
      */
@@ -449,7 +448,7 @@ public class GameInterface implements Cloneable, Comparable {
         GameInterface test = new GameInterface(5, 5);
         GameInterface testClone = (GameInterface) test.clone();
         System.out.println("Test is " + test);
-        test.pop(test.possibleMoves().get(0));
+        test.pop(test.getPossibleMoves().get(0));
         System.out.println("Test is " + test);
         System.out.println("TestClone is " + testClone);
         if (test.equals(testClone)) {

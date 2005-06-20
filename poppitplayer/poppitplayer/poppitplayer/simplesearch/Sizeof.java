@@ -40,7 +40,7 @@ public class Sizeof {
             // object = new GameInterface();
             // object = new SearchNode(new GameInterface());
             // object = new Coord(100, 100);
-            object = new test();
+            // object = new test();
 
             if (i >= 0)
                 objects[i] = object;

@@ -210,7 +210,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * neighbors: Return a list of {@link Coord}s representing game grid
+     * Return a list of {@link Coord}s representing game grid
      * locations immediately adjacent to a given balloon.
      * 
      * @param aBalloon
@@ -244,7 +244,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * likeColoredNeighbors: Return a list of {@link Coord}s representing game
+     * Return a list of {@link Coord}s representing game
      * grid locations immediately adjacent to a given balloon that contain
      * balloons of the same color as the balloon at the given grid location.
      * 
@@ -272,7 +272,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * likeColoredNeighborsChain: Return a list of {@link Coord}s representing
+     * Return a list of {@link Coord}s representing
      * the like-colored neighbors of a given balloon, combined with the
      * like-colored neighbors of each of those balloons, such that ultimately
      * all balloons of like color to the provided balloon that are recursively
@@ -315,7 +315,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * getGridAsList: Return the current grid as a list of {@link Coord}s
+     * Return the current grid as a list of {@link Coord}s
      * ordered by row. Basically, this method provides a {@link Coord} view of
      * the current game grid for methods that like to operate on {@link Coord}s.
      * 
@@ -338,7 +338,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * hasLikeColoredNeighbors: Returns a list of {@link Coord}s of balloons in
+     * Returns a list of {@link Coord}s of balloons in
      * the current game that have like-colored neighbors.
      * 
      * @return list of {@link Coord}s
@@ -348,17 +348,17 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
         ArrayList<Coord> result = new ArrayList<Coord>();
 
         // Iterate over grid testing each balloon for like-colored neighbors.
-        for (Coord t : this.getGridAsList()) {
+        for (Coord t : getGridAsList()) {
 
             // Add any that are foudn to the result list
-            if (this.hasLikeColoredNeighbors(t))
+            if (hasLikeColoredNeighbors(t))
                 result.add(t);
         }
         return result;
     }
 
     /**
-     * hasLikeColoredNeighbors: Given a balloon, return true if that balloon has
+     * Given a balloon, return true if that balloon has
      * like-colroed neighbors, false otherwise.
      * 
      * @param aBalloon
@@ -375,7 +375,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * pop: Given a {@link Coord}inate, pop the balloon at that location by
+     * Given a {@link Coord}inate, pop the balloon at that location by
      * setting the color of the location to EMPTY/0.
      * 
      * @param aBalloon
@@ -386,7 +386,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * popChain: Given a list of {@link Coord}s, pop all the balloons at those
+     * Given a list of {@link Coord}s, pop all the balloons at those
      * locations.
      * 
      * @param balloonList
@@ -402,7 +402,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * squeezeAll: shortcut method to easily "normalize" a game grid by filling
+     * Shortcut method to easily "normalize" a game grid by filling
      * in gaps created by popping balloons.
      */
     public void squeezeAll() {
@@ -441,7 +441,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * centerColumn: Return a value for the vertical bisector of the grid. This
+     * Return a value for the vertical bisector of the grid. This
      * value may or may not correspond with a "real" column, depending on
      * whether there are an odd or even number of columns in the grid.
      * 
@@ -452,7 +452,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * squeezeColumns: Iterate over each column in the grid, normalizing each
+     * Iterate over each column in the grid, normalizing each
      * one vertically. That is, if balloons have been popped in the column
      * leaving spaces, "float" lower balloons up to fill in the gaps.
      * 
@@ -466,7 +466,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * squeezeColumn: Given a column, normalize it to fill in spaces left by
+     * Given a column, normalize it to fill in spaces left by
      * popping balloons.
      * 
      * @param aColumn
@@ -515,7 +515,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * columnIsEmpty: Given a column, returns true if the column is empty, false
+     * Given a column, returns true if the column is empty, false
      * otherwise.
      * 
      * @param aColumn
@@ -537,7 +537,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * squeezeRows: Loop over the rows of the grid moving empty rows to the
+     * Loop over the rows of the grid moving empty rows to the
      * outside and clustering non-empty rows together, ideally in the middle of
      * the grid.
      * 
@@ -552,7 +552,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * squeezeRow: Iterate once over the rows of the grid checking for empty
+     * Iterate once over the rows of the grid checking for empty
      * columns. If an empty column is found on the "center side" of a full
      * column, swap it with the nearest outside column to migrate it out.
      * 
@@ -589,7 +589,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     }
 
     /**
-     * swapColumns: Given two x-coordinates of columsn in the grid, swap the
+     * Given two x-coordinates of columsn in the grid, swap the
      * columns
      * 
      * @param column1
@@ -651,18 +651,15 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
         // Initialize result vallue to zero
         int result = 0;
         // Begin compare block, iterating over the grid space
-        compare: for (int i=0; i<grid.length; i++){
-//        compare: for (int y = 0; y <= GameGrid.yMax; y++) {
-//            for (int x = 0; x <= GameGrid.xMax; x++) {
-                // Set result to the difference of each corresponding point in
-                // this grid and the given grid
-//                result = grid[(x * GameGrid.getHeight()) + y] - ((GameGrid) aGrid).grid[(x * GameGrid.getHeight()) + y];
+        compare: for (int i = 0; i < grid.length; i++) {
+            // Set result to the difference of each corresponding point in
+            // this grid and the given grid
             result = grid[i] - ((GameGrid) aGrid).grid[i];
-                // If the difference is ever non-zero then the grids are not
-                // equal, and we can order by the first difference, so break out
-                // of the comparison block
-                if (result != 0) break compare;
-//            }
+            // If the difference is ever non-zero then the grids are not
+            // equal, and we can order by the first difference, so break out
+            // of the comparison block
+            if (result != 0)
+                break compare;
         }
         // And return the difference (which will be zero if the grids are equal)
         return result;

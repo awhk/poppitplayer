@@ -105,6 +105,9 @@ public abstract class Search {
             // Otherwise, we have a unique node, so store it away for future
             // exploration
             this.storeUnseen(t);
+            
+            // Update the node count for whatever depth this node represents
+            this.depthTrack[t.getDepth()] = this.depthTrack[t.getDepth()] + 1;
             // if (this.unseenNodes.size() != this.queueSize()) {
             // System.out.println("Uh-oh, unseen queues out of sync!");
             // System.exit(0);
@@ -133,12 +136,22 @@ public abstract class Search {
             if (loopCount % 80 == 0)
                 System.out.println("(" + loopCount + " nodes)");
             // Output: every 800th dot, print a detailed summary
-            if (loopCount % 800 == 0)
+            if (loopCount % 800 == 0) {
                 System.out.println("Total nodes currently in storage: "
-                        + ((this.unseenNodes.size() * 2) + this.seenNodes
-                                .size()) + " [" + this.unseenNodes.size()
-                        + " (unexplored) x2," + this.seenNodes.size()
-                        + " (explored)]");
+                        + ((this.unseenNodes.size()) + this.seenNodes.size())
+                        + " [" + this.unseenNodes.size() + " (unexplored), "
+                        + this.seenNodes.size() + " (explored)]");
+                System.out.println("Nodes by depth:\nDepth\t:\tNodes\t:\tMultiple of previous depth");
+                for (int i = 0; i < this.depthTrack.length; i++) {
+                    if (this.depthTrack[i] == 0) continue;
+                    System.out.print(i + "\t:\t" + this.depthTrack[i] + "\t:\t");
+                    if (this.depthTrack[i-1] == 0){
+                        System.out.println("-");
+                    } else {
+                        System.out.println(this.depthTrack[i] / this.depthTrack[i-1]);
+                    }
+                }
+            }
             // If we found a solution node, do something about it
             if (this.goalState()) {
                 // Output: print a summary of the details of the solution found
@@ -441,7 +454,8 @@ public abstract class Search {
     abstract public SearchNode dequeueUnseen();
 
     /**
-     * Returns the number of nodes currently in the implementation-dependent store.
+     * Returns the number of nodes currently in the implementation-dependent
+     * store.
      * 
      * @return integer number of unseen nodes currently in storage
      */
@@ -492,6 +506,11 @@ public abstract class Search {
      */
     protected TreeSet<SearchNode> unseenNodes = new TreeSet<SearchNode>();
 
+    /**
+     * Array to track the number of nodes generated for each depth level
+     */
+    protected int[] depthTrack = new int[500];
+
     // public static Logger log = Logger.getLogger(Search.class);
 
     public static void main(String[] args) {
@@ -500,18 +519,18 @@ public abstract class Search {
                 .clone());
         DepthFirstSearch dfs = new DepthFirstSearch((GameInterface) game
                 .clone());
-        dfs.search();
+        // dfs.search();
         bfs.search();
-        System.out.println("DFS searched " + dfs.seenSize()
-                + " nodes total, with " + dfs.unseenSize() + " unexplored.");
-        System.out.println("DFS skipped " + dfs.getSkippedSeen()
-                + " nodes because it already explored them, and "
-                + dfs.getSkippedUnseen()
-                + " because they were already queued to explore.");
-        System.out.println("DFS found " + dfs.getSolutionTotal()
-                + " solutions, with the best solution having a score of "
-                + dfs.getBestScore());
-        dfs.playbackSolution();
+        // System.out.println("DFS searched " + dfs.seenSize()
+        // + " nodes total, with " + dfs.unseenSize() + " unexplored.");
+        // System.out.println("DFS skipped " + dfs.getSkippedSeen()
+        // + " nodes because it already explored them, and "
+        // + dfs.getSkippedUnseen()
+        // + " because they were already queued to explore.");
+        // System.out.println("DFS found " + dfs.getSolutionTotal()
+        // + " solutions, with the best solution having a score of "
+        // + dfs.getBestScore());
+        // dfs.playbackSolution();
         System.out.println("BFS searched " + bfs.seenSize()
                 + " nodes total, with " + bfs.unseenSize() + " unexplored.");
         System.out.println("BFS skipped " + bfs.getSkippedSeen()

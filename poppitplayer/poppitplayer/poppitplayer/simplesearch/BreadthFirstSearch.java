@@ -16,7 +16,6 @@ public class BreadthFirstSearch extends Search {
     BreadthFirstSearch(GameInterface aGame) {
         this.node = new SearchNode(aGame);
         this.unseenStates = new LinkedList<SearchNode>();
-        // this.enqueueUnseen(this.node);
         this.storeUnseen(this.node);
     }
 
@@ -44,6 +43,9 @@ public class BreadthFirstSearch extends Search {
         return this.unseenStates.remove();
     }
 
+    /* (non-Javadoc)
+     * @see poppitplayer.simplesearch.Search#queueSize()
+     */
     public int queueSize() {
         return this.unseenStates.size();
     }

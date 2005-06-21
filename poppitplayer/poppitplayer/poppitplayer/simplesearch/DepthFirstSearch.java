@@ -16,7 +16,6 @@ public class DepthFirstSearch extends Search {
     DepthFirstSearch(GameInterface aGame) {
         this.node = new SearchNode(aGame);
         this.unseenStates = new Stack<SearchNode>();
-        // this.enqueueUnseen(this.node);
         this.storeUnseen(this.node);
     }
 
@@ -41,6 +40,9 @@ public class DepthFirstSearch extends Search {
         return this.unseenStates.pop();
     }
 
+    /* (non-Javadoc)
+     * @see poppitplayer.simplesearch.Search#queueSize()
+     */
     public int queueSize() {
         return this.unseenStates.size();
     }

@@ -190,6 +190,20 @@ public abstract class Search {
                         System.out
                                 .println("Found perfect game, abandoning search.");
                         this.perfect = true;
+                        System.out.println("Total nodes currently in storage: "
+                                + ((this.unseenNodes.size()) + this.seenNodes.size())
+                                + " [" + this.unseenNodes.size() + " (unexplored), "
+                                + this.seenNodes.size() + " (explored)]");
+                        System.out.println("Nodes by depth:\nDepth\t:\tNodes\t:\tMultiple of previous depth");
+                        for (int i = 0; i < this.depthTrack.length; i++) {
+                            if (this.depthTrack[i] == 0) continue;
+                            System.out.print(i + "\t:\t" + this.depthTrack[i] + "\t:\t");
+                            if (this.depthTrack[i-1] == 0){
+                                System.out.println("-");
+                            } else {
+                                System.out.println(this.depthTrack[i] / this.depthTrack[i-1]);
+                            }
+                        }
                         break;
                     }
                 }
@@ -228,6 +242,20 @@ public abstract class Search {
                     + " nodes remain in the current queue.");
             System.out
                     .println("Exhausted search space, no perfect game found for this board.");
+        }
+        System.out.println("Total nodes currently in storage: "
+                + ((this.unseenNodes.size()) + this.seenNodes.size())
+                + " [" + this.unseenNodes.size() + " (unexplored), "
+                + this.seenNodes.size() + " (explored)]");
+        System.out.println("Nodes by depth:\nDepth\t:\tNodes\t:\tMultiple of previous depth");
+        for (int i = 0; i < this.depthTrack.length; i++) {
+            if (this.depthTrack[i] == 0) continue;
+            System.out.print(i + "\t:\t" + this.depthTrack[i] + "\t:\t");
+            if (this.depthTrack[i-1] == 0){
+                System.out.println("-");
+            } else {
+                System.out.println(this.depthTrack[i] / this.depthTrack[i-1]);
+            }
         }
     }
 
@@ -514,7 +542,7 @@ public abstract class Search {
     // public static Logger log = Logger.getLogger(Search.class);
 
     public static void main(String[] args) {
-        GameInterface game = new GameInterface(10, 10);
+        GameInterface game = new GameInterface(8, 8);
         BreadthFirstSearch bfs = new BreadthFirstSearch((GameInterface) game
                 .clone());
         DepthFirstSearch dfs = new DepthFirstSearch((GameInterface) game

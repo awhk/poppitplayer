@@ -1,5 +1,7 @@
 package poppitplayer.simplesearch;
 import java.util.*;
+
+import ec.util.MersenneTwisterFast;
 import simpoppit.gameboard.*;
 
 /**
@@ -9,7 +11,7 @@ import simpoppit.gameboard.*;
 public class test {
     
     public test(){
-        Random rand = new Random();
+        MersenneTwisterFast rand = new MersenneTwisterFast();
         for (int i=0; i<10; i++){
 //            Coord temp = new Coord(rand.nextInt(100), rand.nextInt(100));
             GameInterface temp = new GameInterface();

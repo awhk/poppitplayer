@@ -2,8 +2,11 @@ package simpoppit.gameboard;
 
 import java.util.ArrayList;
 import java.util.Stack;
-import java.util.Random;
 import java.util.Arrays;
+import java.util.Random;
+import java.io.Serializable;
+
+import ec.util.MersenneTwisterFast;
 
 //import org.apache.log4j.Logger;
 
@@ -29,7 +32,7 @@ import java.util.Arrays;
  * @version 1.0
  */
 
-public class GameGrid implements Cloneable, Comparable, GameConsts {
+public class GameGrid implements Cloneable, Comparable, GameConsts, Serializable {
 
     /**
      * Creates a default-sized (15 column, 10 row) game board.
@@ -106,6 +109,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
      * @see GameConsts
      */
     private static byte randColor() {
+        //MersenneTwisterFast rand = new MersenneTwisterFast();
         Random rand = new Random();
         int color = rand.nextInt(COLORS.length - 1) + 1;
         return COLORS[color];
@@ -510,6 +514,7 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
                 // in which case this block won't be entered and the recursive
                 // calls will stop.
                 squeezeColumn(aColumn);
+                sawPopped = false;
             }
         }
     }
@@ -670,6 +675,8 @@ public class GameGrid implements Cloneable, Comparable, GameConsts {
     private static int yMax;
 
     private byte[] grid;
+    
+    static final long serialVersionUID = 12345;
 
     /**
      * @param args

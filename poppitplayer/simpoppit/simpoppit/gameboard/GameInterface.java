@@ -1,6 +1,12 @@
 package simpoppit.gameboard;
 
 import java.util.*;
+import java.io.Serializable;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectOutputStream;
+import java.io.ObjectInputStream;
+import java.io.IOException;
 
 import simpoppit.gui.*;
 
@@ -26,7 +32,7 @@ import simpoppit.gui.*;
  * @version 1.0
  * @see GameGrid
  */
-public class GameInterface implements Cloneable, Comparable {
+public class GameInterface implements Cloneable, Comparable, Serializable {
 
     /**
      * Default constructor: creates a default-sized game grid and initializes
@@ -188,6 +194,45 @@ public class GameInterface implements Cloneable, Comparable {
         this.action = "update";
         // Send the event
         this.fireGameEvent();
+    }
+    
+    /**
+     * Returns the game state to initial settings. Does not revert to
+     * original game grid layout, but generates a new one of the same size.
+     * Sends an "update" event to all registered listeners.
+     * 
+     */
+    public void saveGame(String filename) {
+        try{
+            FileOutputStream f_out = new FileOutputStream(filename);
+            ObjectOutputStream obj_out = new ObjectOutputStream (f_out);
+            obj_out.writeObject ( this );
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+    }
+    
+    /**
+     * Returns the game state to initial settings. Does not revert to
+     * original game grid layout, but generates a new one of the same size.
+     * Sends an "update" event to all registered listeners.
+     * 
+     */
+    public void loadGame(String filename) {
+        try{
+            FileInputStream f_in = new FileInputStream(filename);
+            ObjectInputStream obj_in = new ObjectInputStream (f_in);
+            GameInterface loaded = (GameInterface)obj_in.readObject();
+            this.gameBoard = loaded.getGrid();
+            this.score = loaded.getScore();
+            this.coordList.addAll(this.gameBoard.getGridAsList());
+            this.action = "update";
+            this.fireGameEvent();
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }catch(ClassNotFoundException ex){
+            ex.printStackTrace();
+        }  
     }
 
     /**
@@ -440,6 +485,8 @@ public class GameInterface implements Cloneable, Comparable {
     private String action;
 
     private static LinkedList<GameListener> gameListeners;
+    
+    static final long serialVersionUID = 123456;
 
     /**
      * @param args

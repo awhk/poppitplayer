@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.io.Serializable;
 
-import ec.util.MersenneTwisterFast;
+//import ec.util.MersenneTwisterFast;
 
 //import org.apache.log4j.Logger;
 

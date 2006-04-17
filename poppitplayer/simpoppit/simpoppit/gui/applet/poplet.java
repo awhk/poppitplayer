@@ -1,12 +1,17 @@
-package simpoppit.gui;
+package simpoppit.gui.applet;
+
 import java.awt.*;
-import java.util.Random;
-import simpoppit.gameboard.*;
 
 import javax.swing.*;
-/**
- * 
- */
+
+import java.util.Random;
+import simpoppit.gameboard.*;
+import simpoppit.gui.BalloonButton;
+import simpoppit.gui.GameEvent;
+import simpoppit.gui.GameLabel;
+import simpoppit.gui.GameListener;
+import simpoppit.gui.MouseHandler;
+import simpoppit.gui.MouseMotionHandler;
 
 /**
  * @author Andrew W. Henry
@@ -61,4 +66,20 @@ public class poplet extends JApplet implements GameListener{
 	
     private GameInterface game;
 	static final long serialVersionUID = new Random().nextInt(50000);
+}
+
+class PoppitPanel extends JPanel {
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+    }
+
+    static final long serialVersionUID = new Random().nextInt(50000);
+}
+
+class InfoPanel extends JPanel {
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+    }
+
+    static final long serialVersionUID = new Random().nextInt(50000);
 }

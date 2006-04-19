@@ -14,7 +14,7 @@ import simpoppit.gameboard.Coord;
 public class GoLeftPct extends GPNode {
     
     public String toString() {
-        return "goleftpct";
+        return "GoLeftPct";
     }
     
     public void checkConstraints(final EvolutionState state, final int tree,

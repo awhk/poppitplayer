@@ -7,7 +7,7 @@ import ec.gp.GPData;
 import ec.gp.GPIndividual;
 import ec.gp.GPNode;
 import ec.util.Parameter;
-import poppitplayer.ecj.BooleanData;
+import poppitplayer.ecj.PoppitData;
 
 public class If extends GPNode {
 
@@ -29,7 +29,7 @@ public class If extends GPNode {
 
         children[0].eval(state, thread, input, stack, individual, problem);
 
-        if (((BooleanData) input).result) {
+        if (((PoppitData) input).result) {
 
             children[1].eval(state, thread, input, stack, individual, problem);
         } else {

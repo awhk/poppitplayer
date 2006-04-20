@@ -1,7 +1,6 @@
 package poppitplayer.ecj.func;
 
-import poppitplayer.ecj.BooleanData;
-import poppitplayer.ecj.CoordData;
+import poppitplayer.ecj.PoppitData;
 import poppitplayer.ecj.PoppitProblem;
 import simpoppit.gameboard.Coord;
 import ec.EvolutionState;
@@ -32,18 +31,18 @@ public class SameColor extends GPNode {
 
         children[0].eval(state, thread, input, stack, individual, problem);
 
-        Coord coord1 = ((CoordData) input).point;
+        Coord coord1 = ((PoppitData) input).point;
         byte color1 = ((PoppitProblem) problem).game.getColor(coord1);
 
         children[1].eval(state, thread, input, stack, individual, problem);
 
-        Coord coord2 = ((CoordData) input).point;
+        Coord coord2 = ((PoppitData) input).point;
         byte color2 = ((PoppitProblem) problem).game.getColor(coord2);
 
         if (color1 == color2) {
-            ((BooleanData) input).result = true;
+            ((PoppitData) input).result = true;
         } else {
-            ((BooleanData) input).result = false;
+            ((PoppitData) input).result = false;
         }
     }
 

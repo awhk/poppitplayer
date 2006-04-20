@@ -1,1 +1,102 @@
-parent.0 = ../../gp/koza/koza.params
+parent.0 = C:/j2sdk/ec/ec/gp/koza/koza.params
+
+generations = 500
+pop.subpop.0.size = 5000
+gp.koza.half.max-depth = 12
+#select.tournament.size = 10
+#gp.koza.xover.maxdepth = 12
+
+gp.type.a.size = 2
+gp.type.a.0.name = bool
+gp.type.a.1.name = coord
+gp.type.s.size = 1
+gp.type.s.0.name = bl-and-crd
+gp.type.s.0.size = 2
+gp.type.s.0.member.0 = bool
+gp.type.s.0.member.1 = coord
+
+gp.tc.0.returns = bl-and-crd
+
+gp.nc.size = 8
+gp.nc.0 = ec.gp.GPNodeConstraints
+gp.nc.0.name = bl-bl-rets-bl
+gp.nc.0.returns = bool
+gp.nc.0.size = 2
+gp.nc.0.child.0 = bool
+gp.nc.0.child.1 = bool
+gp.nc.1 = ec.gp.GPNodeConstraints
+gp.nc.1.name = bl-rets-bl
+gp.nc.1.returns = bool
+gp.nc.1.size = 1
+gp.nc.1.child.0 = bool
+gp.nc.2 = ec.gp.GPNodeConstraints
+gp.nc.2.name = crd-rets-crd
+gp.nc.2.returns = coord
+gp.nc.2.size = 1
+gp.nc.2.child.0 = coord
+gp.nc.3 = ec.gp.GPNodeConstraints
+gp.nc.3.name = bl-crd-crd-rets-crd
+gp.nc.3.returns = coord
+gp.nc.3.size = 3
+gp.nc.3.child.0 = bool
+gp.nc.3.child.1 = coord
+gp.nc.3.child.2 = coord
+gp.nc.4 = ec.gp.GPNodeConstraints
+gp.nc.4.name = crd-crd-rets-bl
+gp.nc.4.returns = bool
+gp.nc.4.size = 2
+gp.nc.4.child.0 = coord
+gp.nc.4.child.1 = coord
+gp.nc.5 = ec.gp.GPNodeConstraints
+gp.nc.5.name = crd-rets-bl
+gp.nc.5.returns = bool
+gp.nc.5.size = 1
+gp.nc.5.child.0 = coord
+gp.nc.6 = ec.gp.GPNodeConstraints
+gp.nc.6.name = rets-crd
+gp.nc.6.returns = coord
+gp.nc.6.size = 0
+gp.nc.7 = ec.gp.GPNodeConstraints
+gp.nc.7.name = rets-bl
+gp.nc.7.returns = bool
+gp.nc.7.size = 0
+
+gp.fs.size = 1
+gp.fs.0.name = f0
+gp.fs.0.info = ec.gp.GPFuncInfo
+
+gp.fs.0.size = 12
+gp.fs.0.func.0 = poppitplayer.ecj.func.And
+gp.fs.0.func.0.nc = bl-bl-rets-bl
+gp.fs.0.func.1 = poppitplayer.ecj.func.GoDownPct
+gp.fs.0.func.1.nc = crd-rets-crd
+gp.fs.0.func.2 = poppitplayer.ecj.func.GoLeftPct
+gp.fs.0.func.2.nc = crd-rets-crd
+gp.fs.0.func.3 = poppitplayer.ecj.func.GoRightPct
+gp.fs.0.func.3.nc = crd-rets-crd
+gp.fs.0.func.4 = poppitplayer.ecj.func.GoUpPct
+gp.fs.0.func.4.nc = crd-rets-crd
+gp.fs.0.func.5 = poppitplayer.ecj.func.If
+gp.fs.0.func.5.nc = bl-crd-crd-rets-crd
+gp.fs.0.func.6 = poppitplayer.ecj.func.Not
+gp.fs.0.func.6.nc = bl-rets-bl
+gp.fs.0.func.7 = poppitplayer.ecj.func.Or
+gp.fs.0.func.7.nc = bl-bl-rets-bl
+gp.fs.0.func.8 = poppitplayer.ecj.func.Pop
+gp.fs.0.func.8.nc = crd-rets-bl
+gp.fs.0.func.9 = poppitplayer.ecj.func.SameColor
+gp.fs.0.func.9.nc = crd-crd-rets-bl
+gp.fs.0.func.10 = poppitplayer.ecj.func.CoordERC
+gp.fs.0.func.10.nc = rets-crd
+gp.fs.0.func.11 = poppitplayer.ecj.func.BoolERC
+gp.fs.0.func.11.nc = rets-bl
+
+eval.problem = poppitplayer.ecj.PoppitProblem
+eval.problem.data = poppitplayer.ecj.PoppitData
+eval.problem.x = 8
+eval.problem.y = 8
+
+stat = ec.app.lawnmower.LawnmowerStatistics
+stat.gather-full = true
+
+eval.problem.stack.context.data = poppitplayer.ecj.PoppitData

@@ -1,6 +1,6 @@
 package poppitplayer.ecj.func;
 
-import poppitplayer.ecj.BooleanData;
+import poppitplayer.ecj.PoppitData;
 import ec.EvolutionState;
 import ec.Problem;
 import ec.gp.ADFStack;
@@ -27,7 +27,7 @@ public class Not extends GPNode {
             final GPData input, final ADFStack stack,
             final GPIndividual individual, final Problem problem) {
         children[0].eval(state, thread, input, stack, individual, problem);
-        ((BooleanData) input).result = !((BooleanData) input).result;
+        ((PoppitData) input).result = !((PoppitData) input).result;
     }
 
 }

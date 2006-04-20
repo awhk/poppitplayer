@@ -16,20 +16,27 @@ import ec.util.DecodeReturn;
 import simpoppit.gameboard.Coord;
 import poppitplayer.ecj.PoppitData;
 
-public class CoordERC extends ERC {
+public class BoolERC extends ERC {
 
-    public Coord value;
+    public boolean value;
+    private float test;
 
     // for now, this will produce coordinates in the range
     // (0,0)-(8,8)...hopefully I can find a way to make the range
     // match the board size...
     public void resetNode(final EvolutionState state, final int thread)
-        { value = new Coord(state.random[thread].nextInt(6), state.random[thread].nextInt(6));}
+        { test = state.random[thread].nextFloat();
+            if (test >= 0.5){
+                value = true;
+            }else{
+                value = false;
+            }
+        }
 
     public int nodeHashCode()
     {
     // a reasonable hash code
-    return this.getClass().hashCode() + Float.floatToIntBits(value.getX()) + Float.floatToIntBits(value.getY());
+    return this.getClass().hashCode() + Float.floatToIntBits(test);
     }
     
     public boolean nodeEquals(final GPNode node)
@@ -39,24 +46,23 @@ public class CoordERC extends ERC {
         // to change this to isAssignableTo(...)
         if (this.getClass() != node.getClass()) return false;
         // now check to see if the ERCs hold the same value
-        return (((CoordERC)node).value.equals(value));
+        return (((BoolERC)node).value = value);
         }
 
     public void readNode(final EvolutionState state, final DataInput dataInput) throws IOException
         {
-        byte input[] = new byte[2];
-        dataInput.readFully(input);
-        value = new Coord(input[0], input[1]);
+        value = dataInput.readBoolean();
+        test = dataInput.readFloat();
         }
 
     public void writeNode(final EvolutionState state, final DataOutput dataOutput) throws IOException
         {
-        byte output[] = {(byte)value.getX(), (byte)value.getY()};
-        dataOutput.write(output);
+        dataOutput.writeBoolean(value);
+        dataOutput.writeFloat(test);
         }
 
     public String encode()
-        { return Code.encode(value.toString()); }
+        { return Code.encode(value); }
 
     public boolean decode(DecodeReturn dret)
         {
@@ -68,7 +74,7 @@ public class CoordERC extends ERC {
         // decode
         Code.decode(dret);
 
-        if (dret.type != DecodeReturn.T_STRING) // uh oh!
+        if (dret.type != DecodeReturn.T_BOOLEAN) // uh oh!
             {
             // restore the position and the string; it was an error
             dret.data = data;
@@ -77,14 +83,32 @@ public class CoordERC extends ERC {
             }
 
         // store the data
-        value  = new Coord(Integer.valueOf(dret.s.charAt(1)), Integer.valueOf(dret.s.charAt(3)));
-        return true;
+        if (dret.l == 0){
+            value = false;
+        }else{
+            value = true;
+        }
+        
+        Code.decode(dret);
+        
+        if (dret.type != DecodeReturn.T_FLOAT) // uh oh!
+        {
+        // restore the position and the string; it was an error
+        dret.data = data;
+        dret.pos = pos;
+        return false;
         }
 
-    public String name() { return "coorderc"; } // I'm the only ERC class, this is fine
+    // store the data
+    test = (float)dret.d;
+        
+        return true;
+    }
+
+    public String name() { return "boolerc"; } // I'm the only ERC class, this is fine
 
     public String toStringForHumans()
-        { return value.toString(); }
+        { return "" + value; }
 
     public void eval(final EvolutionState state,
                      final int thread,
@@ -94,7 +118,7 @@ public class CoordERC extends ERC {
                      final Problem problem)
         {
         PoppitData pd = ((PoppitData)(input));
-         pd.point = value;
-         pd.result = false;
+         pd.result = value;
+         pd.point = new Coord(0,0);
         }
 }

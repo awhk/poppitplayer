@@ -12,13 +12,14 @@ import simpoppit.gameboard.GameInterface;
 public class PoppitProblem extends GPProblem implements SimpleProblemForm {
 
     public GameInterface game;
-    public CoordData pointval;
+    public PoppitData gamedata;
     public int perfect;
+    public int penalty;
 
     public Object clone() {
         PoppitProblem myobj = (PoppitProblem) (super.clone());
         myobj.game = (GameInterface) (game.clone());
-        myobj.pointval = (CoordData) (pointval.clone());
+        myobj.gamedata = (PoppitData) (gamedata.clone());
         return myobj;
     }
 
@@ -26,23 +27,25 @@ public class PoppitProblem extends GPProblem implements SimpleProblemForm {
         // very important, remember this
         super.setup(state, base);
         
-        game = new GameInterface(8, 8);
+        game = new GameInterface(6, 6);
+        game.loadGame("c:\\simpoppit.sav");
 
-        pointval = (CoordData) state.parameters.getInstanceForParameterEq(
-                base.push(P_DATA), null, CoordData.class);
-        pointval.setup(state, base.push(P_DATA));
+        gamedata = (PoppitData) state.parameters.getInstanceForParameterEq(
+                base.push(P_DATA), null, PoppitData.class);
+        gamedata.setup(state, base.push(P_DATA));
     }
 
     public void evaluate(final EvolutionState state, final Individual ind,
             final int threadnum) {
         if (!ind.evaluated) // don't bother reevaluating
         {
-            int max = game.getMaxScore();
-            int popped = game.getScore();
             perfect = 0;
             
             ((GPIndividual)ind).trees[0].child.eval(
-                    state,threadnum,pointval,stack,((GPIndividual)ind),this);
+                    state,threadnum,gamedata,stack,((GPIndividual)ind),this);
+            
+            int max = game.getMaxScore();
+            int popped = game.getScore();
 
             // the fitness better be KozaFitness!
             KozaFitness f = ((KozaFitness) ind.fitness);
@@ -51,5 +54,23 @@ public class PoppitProblem extends GPProblem implements SimpleProblemForm {
             ind.evaluated = true;
         }
     }
+    
+    public void describe(final Individual ind, 
+            final EvolutionState state, 
+            final int threadnum, final int log,
+            final int verbosity)
+
+{
+state.output.println("\n\nBest Individual\n",
+                verbosity,log);
+
+// evaluate the individual
+((GPIndividual)ind).trees[0].child.eval(
+state,threadnum,gamedata,stack,((GPIndividual)ind),this);
+
+// print out the map
+state.output.println(game.toString(),verbosity,log);
+
+}
 
 }

@@ -7,13 +7,15 @@ import ec.gp.GPData;
 import ec.gp.GPIndividual;
 import ec.gp.GPNode;
 import ec.util.Parameter;
-import poppitplayer.ecj.CoordData;
+import poppitplayer.ecj.PoppitData;
 import simpoppit.gameboard.Coord;
 
 public class GoUpPct extends GPNode {
     
+    private int pct;
+    
     public String toString() {
-        return "GoUpPct";
+        return "GoUpPct:" + pct;
     }
     
     public void checkConstraints(final EvolutionState state, final int tree,
@@ -30,14 +32,14 @@ public class GoUpPct extends GPNode {
         
         children[0].eval(state, thread, input, stack, individual, problem);
         
-        int pct = state.random[thread].nextInt(101);
-        int x = ((CoordData) input).point.getX();
-        int y = ((CoordData) input).point.getY();
+        pct = state.random[thread].nextInt(101);
+        int x = ((PoppitData) input).point.getX();
+        int y = ((PoppitData) input).point.getY();
         int newY = y - (Math.round(((float)pct/100) * y));
         if (newY < 0) newY = 0;
         Coord newPoint = new Coord(x, newY);
         
-        ((CoordData) input).point = newPoint;
+        ((PoppitData) input).point = newPoint;
     }
 
 }

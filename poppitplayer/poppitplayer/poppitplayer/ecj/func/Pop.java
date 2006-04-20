@@ -1,6 +1,6 @@
 package poppitplayer.ecj.func;
 
-import poppitplayer.ecj.BooleanData;
+import poppitplayer.ecj.PoppitData;
 import ec.EvolutionState;
 import ec.Problem;
 import ec.gp.ADFStack;
@@ -8,7 +8,6 @@ import ec.gp.GPData;
 import ec.gp.GPIndividual;
 import ec.gp.GPNode;
 import ec.util.Parameter;
-import poppitplayer.ecj.CoordData;
 import poppitplayer.ecj.PoppitProblem;
 import simpoppit.gameboard.Coord;
 
@@ -30,13 +29,21 @@ public class Pop extends GPNode {
             final GPData input, final ADFStack stack,
             final GPIndividual individual, final Problem problem) {
         
-        Coord popcoord = ((CoordData) input).point;
+        children[0].eval(state, thread, input, stack, individual, problem);
+        
+        Coord popcoord = ((PoppitData) input).point;
         PoppitProblem myproblem = (PoppitProblem) problem;
         
         if (((PoppitProblem) problem).game.pop(popcoord)) {
-            ((BooleanData) input).result = true;
+            ((PoppitData) input).result = true;
+            if(myproblem.penalty > 2){
+                myproblem.penalty = myproblem.penalty - 2;
+            }else{
+            myproblem.penalty = 0;
+            }
         } else {
-            ((BooleanData) input).result = false;
+            ((PoppitData) input).result = false;
+            myproblem.penalty = myproblem.penalty + 2;
         }
         if (((PoppitProblem) problem).game.getScore() == ((PoppitProblem) problem).game.getMaxScore() ){
             myproblem.perfect++;

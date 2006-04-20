@@ -1,0 +1,4863 @@
+
+
+
+Generation 0
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 42.8032
+Nodes/tree: [42.8032]
+Avg Depth: 6.403
+Depth/tree: [6.403]
+Mean fitness raw: 4.2024 adjusted: 0.19759664 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (GoUpPct:45 (GoRightPct:22 (GoDownPct:80
+     (if (samecolor (if (not (or (pop (if (not
+         false) (GoUpPct:78 (0,4)) (GoUpPct:0 (4,3))))
+         (not (pop (if true (2,1) (3,2)))))) (GoRightPct:88
+         (GoDownPct:98 (GoLeftPct:75 (GoDownPct:16
+             (GoDownPct:10 (4,5)))))) (GoDownPct:0 (GoRightPct:0
+         (if (samecolor (GoUpPct:0 (0,1)) (GoDownPct:0
+             (3,1))) (GoUpPct:0 (GoDownPct:0 (2,1))) (if
+             (pop (0,4)) (GoDownPct:0 (5,2)) (if true
+             (2,1) (2,3))))))) (GoUpPct:4 (GoDownPct:45
+         (GoRightPct:67 (GoRightPct:10 (if (pop (4,0))
+             (GoUpPct:0 (2,3)) (GoRightPct:50 (1,2))))))))
+         (GoDownPct:52 (GoLeftPct:43 (if (or (and
+             (pop (GoUpPct:9 (1,3))) (not (pop (3,5))))
+             (and (and (or true true) (or true true))
+                 (and (pop (3,0)) (not true)))) (GoRightPct:0
+             (if (and (not true) (not false)) (GoRightPct:0
+                 (GoRightPct:0 (1,0))) (GoUpPct:0 (GoUpPct:0
+                 (1,0))))) (GoUpPct:95 (GoLeftPct:54 (GoDownPct:56
+             (GoDownPct:60 (4,0)))))))) (GoDownPct:0 (GoLeftPct:0
+         (GoRightPct:0 (GoRightPct:0 (GoRightPct:0
+             (GoUpPct:0 (GoRightPct:0 (0,0))))))))))))
+
+
+
+Generation 1
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 42.6
+Nodes/tree: [42.6]
+Avg Depth: 6.5788
+Depth/tree: [6.5788]
+Mean fitness raw: 4.9324 adjusted: 0.17567362 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (GoDownPct:59 (GoRightPct:2 (GoRightPct:90
+     (if (samecolor (GoLeftPct:28 (GoRightPct:92
+         (GoUpPct:95 (GoDownPct:36 (3,1))))) (if (and
+         (and (and false true) (samecolor (4,3) (3,3)))
+         (samecolor (GoUpPct:0 (1,4)) (GoRightPct:0
+             (2,2)))) (GoRightPct:0 (if (or false true)
+         (GoRightPct:0 (2,1)) (GoRightPct:0 (4,3))))
+         (GoLeftPct:32 (GoUpPct:76 (GoLeftPct:10 (0,5))))))
+         (if (or (or (samecolor (GoDownPct:78 (0,1))
+             (if true (5,2) (3,0))) (and (pop (3,5)) (samecolor
+             (4,2) (0,0)))) (samecolor (GoLeftPct:0 (if
+             false (5,1) (3,5))) (if (not false) (GoLeftPct:0
+             (3,4)) (GoLeftPct:0 (3,5))))) (GoLeftPct:51
+             (GoRightPct:11 (GoDownPct:57 (GoRightPct:89
+                 (4,4))))) (GoRightPct:0 (if (pop (GoRightPct:0
+             (4,1))) (GoLeftPct:0 (GoRightPct:0 (5,2)))
+             (if (samecolor (0,0) (4,5)) (GoDownPct:0
+                 (2,5)) (GoDownPct:0 (5,3)))))) (if (and (not
+         (pop (if true (2,2) (0,0)))) (or (pop (GoLeftPct:0
+         (0,0))) (and (samecolor (2,3) (5,4)) (or
+         false false)))) (GoDownPct:0 (GoRightPct:0
+         (GoLeftPct:0 (GoRightPct:0 (4,2))))) (GoDownPct:0
+         (if (pop (if true (1,2) (4,0))) (GoDownPct:0
+             (GoRightPct:0 (4,3))) (GoLeftPct:0 (GoUpPct:0
+             (1,0))))))))))
+
+
+
+Generation 2
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 54.9636
+Nodes/tree: [54.9636]
+Avg Depth: 7.4864
+Depth/tree: [7.4864]
+Mean fitness raw: 6.6564 adjusted: 0.14426659 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (GoRightPct:48 (GoDownPct:9 (GoUpPct:76 (if
+     (not (not (samecolor (GoDownPct:48 (GoLeftPct:71
+         (GoRightPct:19 (if false (3,5) (1,0)))))
+         (if (not (pop (GoUpPct:52 (0,0)))) (if (samecolor
+             (GoLeftPct:65 (0,5)) (if false (0,3) (4,3)))
+             (if (pop (5,3)) (if true (3,0) (4,1)) (GoUpPct:48
+                 (3,3))) (GoUpPct:0 (GoLeftPct:0 (3,4))))
+             (GoUpPct:0 (GoLeftPct:0 (if false (4,0) (5,5))))))))
+     (GoLeftPct:0 (GoLeftPct:0 (GoRightPct:0 (GoLeftPct:0
+         (GoUpPct:0 (GoUpPct:0 (GoUpPct:0 (0,1))))))))
+     (GoDownPct:66 (GoUpPct:94 (GoDownPct:51 (GoRightPct:40
+         (GoLeftPct:95 (if (samecolor (1,0) (4,0))
+             (GoUpPct:40 (2,3)) (GoRightPct:0 (2,3))))))))))))
+
+
+
+Generation 3
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 61.4242
+Nodes/tree: [61.4242]
+Avg Depth: 7.8404
+Depth/tree: [7.8404]
+Mean fitness raw: 5.8856 adjusted: 0.15621261 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (or (pop (GoUpPct:54 (GoUpPct:98 (GoRightPct:16
+     (GoUpPct:17 (if (not (pop (GoRightPct:49
+         (GoDownPct:15 (0,5))))) (GoRightPct:4 (GoRightPct:0
+         (GoLeftPct:50 (if true (1,2) (5,5))))) (1,1)))))))
+     (pop (GoUpPct:55 (GoLeftPct:95 (GoUpPct:80
+         (GoUpPct:6 (if (samecolor (GoUpPct:16 (GoDownPct:75
+             (2,5))) (GoRightPct:83 (GoRightPct:51 (GoRightPct:42
+             (3,4))))) (GoLeftPct:34 (GoUpPct:96 (if (samecolor
+             (2,2) (5,0)) (GoUpPct:87 (1,5)) (if false
+             (2,3) (4,1))))) (if (and (samecolor (if true
+             (5,2) (3,5)) (GoLeftPct:0 (5,5))) true) (GoLeftPct:0
+             (GoUpPct:0 (3,2))) (2,4)))))))))
+
+
+
+Generation 4
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 69.4622
+Nodes/tree: [69.4622]
+Avg Depth: 8.0984
+Depth/tree: [8.0984]
+Mean fitness raw: 8.7914 adjusted: 0.13195913 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (or (and (or (and (not (not (and (and (not
+     false) (not false)) (or (pop (2,4)) (pop
+     (5,0)))))) (and (samecolor (GoDownPct:0 (GoDownPct:0
+     (GoLeftPct:0 (3,1)))) (GoUpPct:0 (GoUpPct:0
+     (GoDownPct:0 (5,3))))) (not (pop (GoDownPct:0
+     (GoUpPct:0 (1,5))))))) (pop (GoLeftPct:27
+     (GoRightPct:75 (if (samecolor (GoLeftPct:8
+         (2,4)) (GoUpPct:0 (1,4))) (GoUpPct:62 (GoUpPct:63
+         (1,1))) (GoDownPct:0 (GoUpPct:0 (4,5))))))))
+     (and (not (not (pop (GoRightPct:0 (GoUpPct:0
+         (GoDownPct:0 (5,5))))))) (pop (if (pop (if
+         (and (or false false) (not false)) (GoUpPct:0
+         (if true (1,5) (3,3))) (GoUpPct:0 (GoRightPct:0
+         (2,2))))) (GoLeftPct:0 (GoDownPct:0 (if (pop
+         (2,5)) (GoUpPct:0 (1,1)) (GoDownPct:0 (3,1)))))
+         (if (samecolor (GoLeftPct:0 (if true (0,0)
+             (0,3))) (if (not false) (GoRightPct:0 (0,1))
+             (if false (5,1) (4,1)))) (GoLeftPct:0 (GoUpPct:0
+             (GoRightPct:0 (4,5)))) (if (not (not false))
+             (GoLeftPct:0 (if true (5,1) (4,4))) (if (or
+             false true) (GoUpPct:0 (3,0)) (if true (1,2)
+             (1,2))))))))) (and (pop (if (samecolor (GoDownPct:37
+     (if (not (not true)) (if (or true false)
+         (GoRightPct:91 (5,0)) (GoDownPct:0 (4,3)))
+         (GoRightPct:0 (GoRightPct:0 (2,5))))) (GoDownPct:71
+     (GoLeftPct:24 (GoDownPct:0 (GoRightPct:32
+         (2,0)))))) (GoUpPct:0 (GoRightPct:0 (GoRightPct:0
+     (GoRightPct:0 (GoUpPct:0 (3,1)))))) (GoDownPct:27
+     (GoLeftPct:17 (GoUpPct:42 (GoRightPct:89
+         (GoLeftPct:42 (0,4)))))))) (not (samecolor
+     (GoUpPct:0 (GoUpPct:0 (GoLeftPct:0 (GoDownPct:0
+         (GoDownPct:0 (0,3)))))) (GoUpPct:0 (GoDownPct:0
+     (GoDownPct:0 (GoDownPct:0 (GoDownPct:0 (3,2))))))))))
+
+
+
+Generation 5
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 73.8046
+Nodes/tree: [73.8046]
+Avg Depth: 8.2422
+Depth/tree: [8.2422]
+Mean fitness raw: 8.3182 adjusted: 0.13421658 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (samecolor (GoLeftPct:14 (GoDownPct:37 (GoRightPct:40
+     (GoUpPct:59 (GoLeftPct:46 (GoRightPct:45
+         (GoLeftPct:51 (GoRightPct:69 (GoLeftPct:96
+             (GoDownPct:48 (4,3))))))))))) (GoUpPct:43
+     (GoUpPct:46 (GoRightPct:34 (if (not (pop
+         (if (not (or (and true true) (samecolor (5,3)
+             (1,5)))) (if (pop (GoLeftPct:0 (4,4))) (if
+             (not true) (GoLeftPct:0 (4,1)) (GoUpPct:0
+             (1,5))) (GoLeftPct:0 (GoDownPct:0 (3,2))))
+             (GoLeftPct:53 (GoRightPct:21 (if true (0,3)
+                 (0,5))))))) (if (not (not (samecolor (GoRightPct:14
+         (GoUpPct:4 (1,1))) (if (pop (4,2)) (GoLeftPct:0
+         (5,4)) (GoDownPct:95 (5,4)))))) (GoDownPct:73
+         (GoRightPct:89 (GoRightPct:22 (GoRightPct:24
+             (GoRightPct:33 (0,4)))))) (GoLeftPct:0 (GoDownPct:0
+         (if (not (pop (0,3))) (if (and false false)
+             (GoDownPct:0 (3,3)) (GoDownPct:0 (2,4)))
+             (GoUpPct:0 (GoLeftPct:0 (1,5))))))) (GoDownPct:0
+         (if (or (and (and (not false) (and false
+             true)) (samecolor (GoDownPct:0 (5,4)) (GoDownPct:0
+             (3,2)))) (not (pop (GoDownPct:0 (3,2)))))
+             (GoRightPct:0 (GoDownPct:0 (GoDownPct:0 (if
+                 false (5,0) (3,5))))) (GoUpPct:0 (GoDownPct:0
+             (GoUpPct:0 (GoLeftPct:0 (2,4))))))))))))
+
+
+
+Generation 6
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 76.995
+Nodes/tree: [76.995]
+Avg Depth: 8.406
+Depth/tree: [8.406]
+Mean fitness raw: 8.2496 adjusted: 0.13531008 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (or (and (samecolor (5,4) (3,1)) (and false
+     false)) (and (or false false) true))
+
+
+
+Generation 7
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 76.3954
+Nodes/tree: [76.3954]
+Avg Depth: 8.4824
+Depth/tree: [8.4824]
+Mean fitness raw: 7.2224 adjusted: 0.14321537 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (and (and (or true false) (samecolor (3,2)
+     (2,4))) (samecolor (GoLeftPct:0 (4,4)) (GoDownPct:0
+     (5,3))))
+
+
+
+Generation 8
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 78.245
+Nodes/tree: [78.245]
+Avg Depth: 8.5316
+Depth/tree: [8.5316]
+Mean fitness raw: 5.1442 adjusted: 0.17016311 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (GoDownPct:88 (GoLeftPct:95 (if (pop (GoDownPct:44
+     (GoRightPct:71 (GoDownPct:88 (GoUpPct:3 (GoRightPct:74
+         (if false (4,2) (4,1)))))))) (GoUpPct:0 (if
+     (not (not (not (samecolor (GoDownPct:0 (1,3))
+         (GoRightPct:0 (4,3)))))) (GoRightPct:0 (GoDownPct:0
+     (GoLeftPct:0 (if (or false true) (GoRightPct:0
+         (1,0)) (GoDownPct:0 (5,0)))))) (GoDownPct:0
+     (if (and (pop (GoDownPct:0 (5,1))) (pop (GoRightPct:0
+         (0,2)))) (GoRightPct:0 (GoRightPct:0 (GoDownPct:0
+         (2,1)))) (if (and (and true false) (pop (3,1)))
+         (GoUpPct:0 (if true (3,0) (5,3))) (if (or
+         false true) (GoLeftPct:0 (5,5)) (if false
+         (5,2) (4,4)))))))) (GoLeftPct:74 (GoLeftPct:94
+     (GoLeftPct:66 (GoUpPct:39 (GoDownPct:51 (if
+         (and true true) (GoUpPct:5 (0,1)) (GoLeftPct:0
+         (2,0)))))))))))
+
+
+
+Generation 9
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 83.1046
+Nodes/tree: [83.1046]
+Avg Depth: 8.5918
+Depth/tree: [8.5918]
+Mean fitness raw: 6.1744 adjusted: 0.1532085 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (if (and (pop (GoUpPct:15 (if (and (or (or
+     false false) (or true false)) (and (not true)
+     (samecolor (1,0) (4,5)))) (GoDownPct:0 (GoDownPct:0
+     (GoLeftPct:0 (3,4)))) (if (pop (if false
+     (4,1) (2,1))) (GoDownPct:0 (if true (3,0)
+     (3,1))) (GoRightPct:53 (GoUpPct:30 (0,0)))))))
+     (and (samecolor (if (or (and (or true true)
+         (not true)) (not (samecolor (1,3) (3,1))))
+         (GoLeftPct:0 (GoRightPct:0 (GoUpPct:0 (3,5))))
+         (GoUpPct:0 (GoUpPct:0 (GoLeftPct:0 (3,5)))))
+         (GoUpPct:0 (GoDownPct:0 (GoDownPct:0 (GoDownPct:0
+             (1,3)))))) (or (or (and (not (or true true))
+         (not (and true false))) (pop (GoRightPct:0
+         (GoLeftPct:0 (5,5))))) (not (not (samecolor
+         (GoUpPct:0 (1,2)) (GoLeftPct:0 (2,4))))))))
+     (GoDownPct:0 (GoDownPct:0 (GoUpPct:0 (GoLeftPct:0
+         (GoUpPct:0 (GoDownPct:0 (if true (5,1) (4,0))))))))
+     (if (and (not (and (and (not (samecolor (4,0)
+         (2,1))) (samecolor (GoDownPct:0 (2,4)) (GoLeftPct:0
+         (1,1)))) (and (pop (if false (3,3) (1,4)))
+         (not (or false true))))) (and (pop (if (and
+         (not false) (samecolor (2,5) (2,1))) (GoUpPct:10
+         (GoDownPct:61 (3,2))) (GoLeftPct:0 (GoUpPct:0
+         (5,5))))) (or (not (samecolor (if true (5,1)
+         (4,5)) (GoUpPct:0 (5,0)))) (and (samecolor
+         (GoLeftPct:0 (4,0)) (GoUpPct:0 (5,5))) (samecolor
+         (GoDownPct:0 (1,1)) (GoUpPct:0 (4,1)))))))
+         (GoUpPct:0 (GoUpPct:0 (GoLeftPct:0 (GoLeftPct:0
+             (if (or false false) (GoDownPct:0 (1,1))
+                 (if true (4,4) (3,3))))))) (GoLeftPct:43
+         (GoLeftPct:76 (GoUpPct:94 (GoLeftPct:38 (if
+             (samecolor (5,1) (3,0)) (if false (1,2) (0,0))
+             (if true (1,2) (5,1)))))))))
+
+
+
+Generation 10
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 83.8576
+Nodes/tree: [83.8576]
+Avg Depth: 8.6798
+Depth/tree: [8.6798]
+Mean fitness raw: 6.596 adjusted: 0.14916712 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (or (not (or (pop (GoRightPct:20 (GoLeftPct:81
+     (if (or (not true) (not true)) (GoUpPct:0
+         (GoLeftPct:0 (1,4))) (GoDownPct:59 (GoRightPct:59
+         (4,2))))))) (samecolor (GoLeftPct:69 (GoRightPct:59
+     (GoLeftPct:38 (GoUpPct:65 (GoRightPct:28
+         (4,3)))))) (GoDownPct:28 (GoRightPct:86 (GoLeftPct:83
+     (GoLeftPct:56 (if true (4,3) (0,1)))))))))
+     (not (and (and (not (or (and (or (not true)
+         (pop (0,3))) (samecolor (GoDownPct:0 (1,0))
+         (if false (1,4) (0,5)))) (pop (if (or true
+         false) (GoDownPct:95 (3,3)) (GoUpPct:0 (3,4))))))
+         (or (or (samecolor (GoLeftPct:43 (GoUpPct:56
+             (5,0))) (GoUpPct:28 (if false (0,4) (1,0))))
+             (pop (if (not true) (GoUpPct:0 (4,1)) (GoLeftPct:0
+                 (1,4))))) (and (samecolor (GoRightPct:12
+             (GoLeftPct:83 (0,2))) (if (samecolor (3,5)
+             (2,0)) (GoDownPct:0 (1,0)) (GoLeftPct:45
+             (4,3)))) (and (pop (GoRightPct:42 (0,4)))
+             (and (and false true) (samecolor (4,2) (3,5)))))))
+         (not (or (and (pop (GoRightPct:0 (GoLeftPct:0
+             (4,4)))) (samecolor (GoUpPct:0 (GoLeftPct:0
+             (2,2))) (GoLeftPct:0 (if false (1,2) (2,5)))))
+             (not (not (not (not false)))))))))
+
+
+
+Generation 11
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 83.5674
+Nodes/tree: [83.5674]
+Avg Depth: 8.8182
+Depth/tree: [8.8182]
+Mean fitness raw: 8.6856 adjusted: 0.13375778 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (and (samecolor (GoDownPct:90 (GoLeftPct:84
+     (if (pop (if (pop (GoRightPct:83 (GoRightPct:44
+         (GoLeftPct:87 (0,2))))) (GoLeftPct:0 (GoRightPct:0
+         (GoUpPct:0 (GoDownPct:0 (5,1))))) (if (not
+         (and (or true false) (or true true))) (GoDownPct:0
+         (GoRightPct:0 (GoLeftPct:0 (2,0)))) (GoLeftPct:75
+         (GoDownPct:31 (GoRightPct:12 (4,5)))))))
+         (GoRightPct:0 (GoDownPct:0 (GoLeftPct:0 (GoDownPct:0
+             (if (not false) (GoDownPct:0 (1,1)) (GoLeftPct:0
+                 (4,0))))))) (GoDownPct:1 (GoUpPct:83 (GoUpPct:87
+         (GoDownPct:86 (GoLeftPct:8 (GoDownPct:3 (1,4))))))))))
+     (GoLeftPct:40 (GoRightPct:88 (if (pop (GoDownPct:19
+         (GoRightPct:7 (GoLeftPct:55 (GoLeftPct:80
+             (GoDownPct:69 (3,3))))))) (GoLeftPct:0 (GoDownPct:0
+         (GoDownPct:0 (GoDownPct:0 (GoUpPct:0 (if
+             false (5,1) (4,3))))))) (GoRightPct:2 (GoRightPct:44
+         (GoUpPct:49 (GoLeftPct:80 (if (pop (4,1))
+             (GoUpPct:0 (5,1)) (if false (3,4) (0,2)))))))))))
+     (pop (GoLeftPct:23 (GoUpPct:7 (if (or (pop
+         (GoDownPct:35 (GoDownPct:19 (if (not false)
+             (GoRightPct:51 (2,3)) (GoDownPct:0 (1,2))))))
+         (or (samecolor (GoLeftPct:19 (GoRightPct:42
+             (GoLeftPct:65 (3,5)))) (if (samecolor (if
+             false (2,2) (1,2)) (GoDownPct:32 (1,0)))
+             (GoUpPct:79 (GoUpPct:62 (0,4))) (GoUpPct:0
+             (if true (2,3) (0,0))))) (not (and (and (pop
+             (5,3)) (not true)) (or (pop (1,4)) (or true
+             false)))))) (GoDownPct:92 (GoDownPct:85 (GoUpPct:48
+         (GoDownPct:41 (if (samecolor (3,5) (2,3))
+             (GoRightPct:14 (3,1)) (GoRightPct:0 (3,0)))))))
+         (GoDownPct:0 (if (not (or (samecolor (GoRightPct:0
+             (0,3)) (GoRightPct:0 (4,2))) (and (samecolor
+             (5,1) (4,1)) (and false true)))) (GoDownPct:0
+             (GoLeftPct:0 (if (pop (1,3)) (GoLeftPct:0
+                 (1,3)) (if false (1,5) (4,0))))) (GoUpPct:0
+             (GoRightPct:0 (GoLeftPct:0 (if false (0,1)
+                 (3,4))))))))))))
+
+
+
+Generation 12
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 84.2302
+Nodes/tree: [84.2302]
+Avg Depth: 8.8258
+Depth/tree: [8.8258]
+Mean fitness raw: 5.6382 adjusted: 0.1605183 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (or (and (and false (or (not (samecolor (GoRightPct:0
+     (if (samecolor (GoUpPct:0 (GoUpPct:0 (2,0)))
+         (4,0)) (GoLeftPct:0 (5,0)) (GoRightPct:0
+         (GoDownPct:0 (GoDownPct:0 (4,5)))))) (GoUpPct:0
+     (GoUpPct:0 (GoUpPct:0 (GoDownPct:0 (if false
+         (5,2) (4,1)))))))) (not (or (samecolor (GoDownPct:0
+     (GoUpPct:0 (GoDownPct:0 (0,1)))) (if false
+     (0,5) (1,3))) (pop (GoLeftPct:0 (0,0)))))))
+     (or false (not true))) true)
+
+
+
+Generation 13
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 82.952
+Nodes/tree: [82.952]
+Avg Depth: 8.8224
+Depth/tree: [8.8224]
+Mean fitness raw: 6.5916 adjusted: 0.14953268 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (or (and (samecolor (GoDownPct:35 (GoRightPct:18
+     (GoLeftPct:5 (2,1)))) (GoLeftPct:77 (0,3)))
+     (pop (1,1))) (or (or (samecolor (GoDownPct:33
+     (if (pop (if true (2,3) (2,1))) (GoUpPct:0
+         (GoLeftPct:0 (2,2))) (GoDownPct:99 (GoDownPct:18
+         (1,3))))) (GoRightPct:84 (2,4))) (pop (GoDownPct:0
+     (5,4)))) (or (and (and (or (and (or false
+     false) (pop (3,5))) (and (and false true)
+     true)) (or (not (not false)) true)) (and
+     (samecolor (5,0) (GoUpPct:0 (GoRightPct:0
+         (3,0)))) (or (pop (GoRightPct:0 (2,1))) (not
+     (pop (1,3)))))) (not (or (not (pop (0,5)))
+     (samecolor (GoRightPct:0 (GoDownPct:0 (5,2)))
+         (GoRightPct:0 (5,3))))))))
+
+
+
+Generation 14
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 87.4016
+Nodes/tree: [87.4016]
+Avg Depth: 8.8034
+Depth/tree: [8.8034]
+Mean fitness raw: 8.5414 adjusted: 0.13563254 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=4.0 Adjusted=0.2 Hits=0
+Tree 0:
+ (samecolor (GoUpPct:99 (GoUpPct:46 (GoLeftPct:100
+     (GoUpPct:18 (GoLeftPct:30 (if true (4,3)
+         (5,4))))))) (GoRightPct:0 (if (and (samecolor
+     (GoRightPct:18 (GoUpPct:31 (5,1))) (if (or
+     true false) (GoUpPct:91 (1,4)) (GoLeftPct:0
+     (4,3)))) (pop (GoUpPct:43 (GoUpPct:90 (3,5)))))
+     (GoRightPct:0 (GoLeftPct:0 (GoLeftPct:0 (GoDownPct:0
+         (1,3))))) (GoDownPct:5 (if (or (or true false)
+     (and false false)) (GoRightPct:33 (GoDownPct:56
+     (4,0))) (if (not false) (GoRightPct:0 (2,0))
+     (GoLeftPct:0 (0,1))))))))
+
+
+
+Generation 15
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 89.0762
+Nodes/tree: [89.0762]
+Avg Depth: 8.8444
+Depth/tree: [8.8444]
+Mean fitness raw: 2.6794 adjusted: 0.34613132 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (or (and (not (not false)) (and (and false
+     true) (or false true))) (not (not (pop (2,0)))))
+
+
+
+Generation 16
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 81.8192
+Nodes/tree: [81.8192]
+Avg Depth: 8.994
+Depth/tree: [8.994]
+Mean fitness raw: 5.3044 adjusted: 0.2863866 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (samecolor (if (or (or (pop (GoDownPct:67
+     (0,4))) (and (and false true) (and true true)))
+     (and (or (pop (0,4)) (or true false)) (or
+         (samecolor (5,3) (2,3)) (and true false))))
+     (if (samecolor (GoLeftPct:66 (GoUpPct:83
+         (0,3))) (if (pop (0,0)) (GoDownPct:0 (5,4))
+         (GoRightPct:20 (4,5)))) (GoDownPct:67 (if
+         (samecolor (5,1) (5,2)) (if false (5,5) (5,2))
+         (GoUpPct:0 (4,3)))) (if (not (samecolor (2,0)
+         (5,5))) (GoDownPct:0 (GoUpPct:0 (5,1))) (GoUpPct:0
+         (GoRightPct:0 (4,1))))) (if (samecolor (GoDownPct:0
+     (GoDownPct:0 (2,4))) (GoRightPct:0 (GoLeftPct:0
+     (1,5)))) (if (not (or false true)) (if (pop
+     (3,4)) (GoDownPct:0 (0,2)) (GoRightPct:0
+     (4,4))) (if (or false false) (GoUpPct:0 (1,5))
+     (GoRightPct:0 (5,4)))) (GoDownPct:0 (GoLeftPct:0
+     (GoUpPct:0 (5,0)))))) (if (pop (GoDownPct:23
+     (if (pop (4,3)) (GoDownPct:0 (1,5)) (GoUpPct:78
+         (0,1))))) (if (samecolor (GoUpPct:0 (GoRightPct:0
+     (if (and (and true true) (not true)) (GoLeftPct:0
+         (GoUpPct:0 (0,5))) (GoUpPct:0 (if true (0,2)
+         (4,0)))))) (GoRightPct:0 (GoDownPct:0 (0,2))))
+     (GoUpPct:0 (GoRightPct:0 (GoUpPct:0 (0,0))))
+     (GoUpPct:0 (GoLeftPct:0 (GoUpPct:0 (1,3)))))
+     (GoLeftPct:9 (GoRightPct:84 (GoLeftPct:36
+         (if false (3,1) (3,4)))))))
+
+
+
+Generation 17
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 84.3278
+Nodes/tree: [84.3278]
+Avg Depth: 9.3276
+Depth/tree: [9.3276]
+Mean fitness raw: 4.7028 adjusted: 0.2977681 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (GoLeftPct:8 (GoRightPct:13 (GoUpPct:24 (GoRightPct:76
+     (if (and (and (samecolor (GoRightPct:15 (GoLeftPct:63
+         (4,4))) (if (or true true) (GoLeftPct:10
+         (5,3)) (GoRightPct:0 (3,3)))) (and (pop (GoUpPct:90
+         (1,0))) (not (not true)))) (samecolor (GoDownPct:0
+         (GoUpPct:0 (GoLeftPct:0 (3,3)))) (GoRightPct:0
+         (GoLeftPct:0 (GoDownPct:0 (1,2)))))) (if
+         (and true false) (GoUpPct:0 (0,2)) (if false
+         (3,1) (1,5))) (GoDownPct:70 (GoDownPct:88
+         (GoLeftPct:12 (GoLeftPct:19 (GoLeftPct:3
+             (2,1)))))))))))
+
+
+
+Generation 18
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 85.8318
+Nodes/tree: [85.8318]
+Avg Depth: 9.3374
+Depth/tree: [9.3374]
+Mean fitness raw: 5.2564 adjusted: 0.28877535 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (if (or (not (samecolor (if (or (or (pop
+     (if false (4,4) (1,5))) (not (not true)))
+     (not (pop (if false (5,4) (1,5))))) (GoRightPct:46
+     (if (and (pop (5,4)) (pop (0,4))) (GoUpPct:0
+         (GoDownPct:0 (4,5))) (GoUpPct:56 (GoRightPct:84
+         (1,0))))) (GoRightPct:0 (GoUpPct:0 (GoLeftPct:0
+     (GoUpPct:0 (2,5)))))) (GoUpPct:98 (GoLeftPct:29
+     (GoUpPct:54 (if (samecolor (5,2) (5,5)) (GoDownPct:5
+         (2,3)) (if false (2,5) (2,4)))))))) (or (not
+     (and (pop (GoRightPct:61 (GoUpPct:44 (GoDownPct:63
+         (2,4))))) (or (and (and (pop (5,2)) (not
+         false)) (and (pop (5,4)) (or true false)))
+         (and (and (samecolor (3,0) (0,4)) (and false
+             false)) (or (not false) (or true true))))))
+     (or (not (not (and (samecolor (GoRightPct:0
+         (1,2)) (GoRightPct:0 (5,2))) (samecolor (GoDownPct:0
+         (4,5)) (GoRightPct:0 (0,5)))))) (samecolor
+         (GoUpPct:0 (GoUpPct:0 (GoDownPct:0 (GoUpPct:0
+             (2,1))))) (GoUpPct:0 (GoDownPct:0 (GoLeftPct:0
+         (GoRightPct:0 (1,4))))))))) (if (and (or
+     (not (samecolor (GoRightPct:61 (GoLeftPct:34
+         (if true (3,1) (2,0)))) (if (and (not false)
+         (and false true)) (GoLeftPct:0 (if false
+         (1,4) (4,2))) (if (not false) (GoRightPct:10
+         (4,3)) (GoUpPct:0 (5,1)))))) (not (pop (GoRightPct:70
+     (GoLeftPct:77 (if false (1,5) (3,1)))))))
+     (pop (GoDownPct:7 (GoDownPct:6 (GoUpPct:5
+         (GoRightPct:44 (GoUpPct:43 (5,1)))))))) (GoLeftPct:0
+     (GoRightPct:0 (GoRightPct:0 (if (and (and
+         (samecolor (2,3) (1,2)) (and true true))
+         (samecolor (GoUpPct:0 (2,0)) (GoLeftPct:0
+             (0,1)))) (if (samecolor (if true (1,1) (1,5))
+         (if false (0,1) (0,2))) (GoRightPct:0 (GoLeftPct:0
+         (2,1))) (if (or true false) (if true (1,3)
+         (2,1)) (GoLeftPct:0 (0,0)))) (GoUpPct:0 (GoDownPct:0
+         (GoDownPct:0 (0,1)))))))) (GoUpPct:8 (GoRightPct:1
+     (GoRightPct:30 (if (and (or (pop (4,1)) (or
+         false true)) (and (and false false) (not
+         false))) (if (and (or true false) (not false))
+         (GoRightPct:0 (GoDownPct:0 (2,3))) (GoLeftPct:0
+         (GoLeftPct:0 (5,5)))) (GoUpPct:0 (if (pop
+         (GoUpPct:68 (1,5))) (GoRightPct:0 (5,4))
+         (if false (0,3) (3,5))))))))) (GoRightPct:0
+     (GoLeftPct:0 (GoDownPct:0 (GoRightPct:0 (GoRightPct:0
+         (GoLeftPct:0 (GoLeftPct:0 (GoRightPct:0 (3,2))))))))))
+
+
+
+Generation 19
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 92.5604
+Nodes/tree: [92.5604]
+Avg Depth: 9.562
+Depth/tree: [9.562]
+Mean fitness raw: 7.9668 adjusted: 0.28221056 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (or (and (pop (2,2)) (pop (5,5))) (and
+     (and (pop (0,2)) true) (pop (3,0)))))
+
+
+
+Generation 20
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 94.2452
+Nodes/tree: [94.2452]
+Avg Depth: 9.6658
+Depth/tree: [9.6658]
+Mean fitness raw: 4.9828 adjusted: 0.3047331 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (and (and (and (samecolor (GoRightPct:60
+     (GoUpPct:64 (2,3))) (GoUpPct:85 (if false
+     (0,5) (2,1)))) (or (or (and false false)
+     (and true true)) (not (samecolor (1,0) (2,4)))))
+     (and (or false false) (or (and (and true
+         true) (pop (4,0))) (not (not true))))) (pop
+     (GoRightPct:91 (GoDownPct:39 (if (pop (2,1))
+         (GoUpPct:0 (1,3)) (GoDownPct:3 (4,5))))))))
+
+
+
+Generation 21
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 96.7852
+Nodes/tree: [96.7852]
+Avg Depth: 9.6924
+Depth/tree: [9.6924]
+Mean fitness raw: 4.011 adjusted: 0.3161931 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (GoRightPct:84 (GoRightPct:0 (if (and true
+     (pop (GoRightPct:58 (1,5)))) (GoLeftPct:0
+     (GoUpPct:0 (if (pop (GoRightPct:0 (0,0)))
+         (GoUpPct:0 (GoRightPct:0 (4,5))) (3,2))))
+     (GoUpPct:81 (1,1)))))
+
+
+
+Generation 22
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 96.7754
+Nodes/tree: [96.7754]
+Avg Depth: 9.7088
+Depth/tree: [9.7088]
+Mean fitness raw: 6.0922 adjusted: 0.29085815 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoUpPct:99 (if (not (or (not (pop
+     (GoDownPct:2 (GoUpPct:21 (GoLeftPct:6 (0,3))))))
+     (and (not (not (and (not true) (not false))))
+         (or (or (not (pop (3,1))) (and (not false)
+             (pop (3,2)))) (pop (if (and false false)
+             (GoLeftPct:0 (GoDownPct:0 (2,1))) (GoUpPct:0
+             (5,1)))))))) (if (samecolor (GoLeftPct:0
+     (GoLeftPct:0 (GoUpPct:0 (GoLeftPct:0 (GoUpPct:0
+         (4,0)))))) (GoUpPct:0 (GoUpPct:0 (if (samecolor
+     (if false (3,0) (3,3)) (GoUpPct:0 (1,0)))
+     (GoLeftPct:0 (if true (0,3) (2,2))) (GoLeftPct:0
+     (GoDownPct:0 (3,5))))))) (if (not (and (and
+     (not (pop (1,3))) (and (pop (5,0)) (pop (3,3))))
+     (samecolor (GoLeftPct:0 (GoLeftPct:0 (2,5)))
+         (GoUpPct:0 (if false (2,3) (0,4)))))) (GoRightPct:0
+     (if (pop (GoUpPct:0 (GoLeftPct:0 (0,0))))
+         (GoLeftPct:0 (GoUpPct:0 (GoRightPct:0 (3,5))))
+         (GoDownPct:0 (GoRightPct:0 (GoLeftPct:0 (0,1))))))
+     (GoDownPct:0 (if (pop (GoUpPct:0 (GoUpPct:0
+         (2,0)))) (GoUpPct:0 (GoUpPct:0 (GoDownPct:0
+         (1,4)))) (GoRightPct:0 (if (and true true)
+         (GoDownPct:0 (2,2)) (GoUpPct:0 (1,3)))))))
+     (GoLeftPct:0 (GoLeftPct:0 (if (or (and (pop
+         (4,0)) (or true true)) (pop (GoRightPct:0
+         (0,4)))) (GoRightPct:0 (GoRightPct:0 (GoLeftPct:0
+         (5,3)))) (GoUpPct:0 (GoUpPct:0 (GoLeftPct:0
+         (1,1)))))))) (if (or (not (samecolor (if
+     (pop (GoUpPct:25 (3,5))) (if (and true true)
+     (GoRightPct:0 (5,2)) (GoLeftPct:0 (3,0)))
+     (GoDownPct:94 (GoRightPct:85 (0,0)))) (GoLeftPct:38
+     (if (not true) (GoUpPct:0 (1,1)) (GoDownPct:10
+         (3,0)))))) (or (or (not (or (samecolor (3,1)
+     (5,1)) (not true))) (not (and (and false
+     false) (pop (4,3))))) (or (not (samecolor
+     (if false (4,0) (4,1)) (if true (1,2) (4,5))))
+     (samecolor (GoLeftPct:0 (GoUpPct:0 (0,2)))
+         (GoRightPct:0 (GoRightPct:0 (1,3))))))) (if
+     (samecolor (if (not (not (or false true)))
+         (GoDownPct:61 (GoDownPct:44 (GoLeftPct:26
+             (0,5)))) (GoRightPct:0 (GoLeftPct:0 (GoUpPct:0
+         (3,1))))) (if (pop (GoRightPct:79 (if false
+         (4,2) (2,1)))) (GoUpPct:0 (if (samecolor
+         (3,5) (3,3)) (GoDownPct:0 (3,3)) (GoLeftPct:0
+         (3,2)))) (if (and (not true) (samecolor (2,0)
+         (0,1))) (GoRightPct:0 (GoUpPct:0 (1,3)))
+         (GoRightPct:39 (GoDownPct:61 (0,0)))))) (GoDownPct:59
+     (if (samecolor (if (and true true) (GoLeftPct:30
+         (3,5)) (GoRightPct:0 (2,1))) (GoRightPct:64
+         (GoRightPct:80 (3,4)))) (GoUpPct:61 (GoLeftPct:98
+         (GoUpPct:34 (3,5)))) (if (not (or true true))
+         (GoUpPct:0 (if true (2,3) (1,5))) (GoDownPct:0
+         (GoLeftPct:0 (3,3)))))) (GoRightPct:0 (GoUpPct:0
+     (GoUpPct:0 (GoRightPct:0 (GoRightPct:0 (5,0)))))))
+     (if (samecolor (if (samecolor (GoLeftPct:0
+         (GoUpPct:0 (2,3))) (if (pop (4,4)) (GoDownPct:0
+         (2,2)) (GoUpPct:0 (5,0)))) (GoLeftPct:0 (GoRightPct:0
+         (if false (2,4) (3,4)))) (if (not (samecolor
+         (4,1) (0,1))) (GoDownPct:0 (GoLeftPct:0 (2,1)))
+         (GoRightPct:0 (GoLeftPct:0 (2,5))))) (GoLeftPct:0
+         (GoLeftPct:0 (GoLeftPct:0 (GoLeftPct:0 (0,1))))))
+         (GoRightPct:0 (if (pop (GoRightPct:0 (GoDownPct:0
+             (2,2)))) (GoUpPct:0 (GoRightPct:0 (GoUpPct:0
+             (0,1)))) (GoUpPct:0 (GoUpPct:0 (if false
+             (4,3) (4,5)))))) (GoDownPct:0 (GoDownPct:0
+         (GoUpPct:0 (GoDownPct:0 (GoRightPct:0 (1,0))))))))))))
+
+
+
+Generation 23
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 100.1604
+Nodes/tree: [100.1604]
+Avg Depth: 9.9872
+Depth/tree: [9.9872]
+Mean fitness raw: 3.0106 adjusted: 0.34240144 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (or (or (not false) (and true false)) (not
+     (samecolor (5,5) (1,1))))
+
+
+
+Generation 24
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 101.336
+Nodes/tree: [101.336]
+Avg Depth: 10.1154
+Depth/tree: [10.1154]
+Mean fitness raw: 3.9246 adjusted: 0.32018334 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (and (and (or (samecolor (4,5) (1,5)) (or
+     false true)) (or (not true) (not false)))
+     (samecolor (if (samecolor (4,4) (2,5)) (if
+         true (0,2) (3,2)) (GoRightPct:0 (5,5))) (GoUpPct:70
+         (GoUpPct:41 (5,0)))))
+
+
+
+Generation 25
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 102.9874
+Nodes/tree: [102.9874]
+Avg Depth: 10.1562
+Depth/tree: [10.1562]
+Mean fitness raw: 5.1968 adjusted: 0.3095105 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (if (or (or (samecolor (if (pop (GoRightPct:9
+     (3,4))) (GoRightPct:0 (GoRightPct:0 (1,0)))
+     (GoLeftPct:46 (GoLeftPct:52 (2,4)))) (GoUpPct:74
+     (GoRightPct:47 (if (samecolor (GoDownPct:5
+         (GoUpPct:26 (GoRightPct:12 (2,0)))) (GoDownPct:27
+         (GoUpPct:21 (GoRightPct:22 (1,3))))) (GoLeftPct:0
+         (if (samecolor (GoDownPct:0 (2,4)) (if true
+             (3,3) (3,2))) (GoLeftPct:0 (GoUpPct:0 (1,0)))
+             (GoLeftPct:0 (GoUpPct:0 (5,0))))) (GoLeftPct:44
+         (GoUpPct:85 (GoRightPct:11 (GoDownPct:37
+             (1,0))))))))) (pop (GoUpPct:0 (if (not true)
+     (GoLeftPct:0 (5,5)) (GoUpPct:0 (1,2))))))
+     (not (not (or (or (pop (2,1)) (or false false))
+         (or (pop (5,4)) (not false)))))) (GoUpPct:87
+     (GoLeftPct:19 (GoLeftPct:86 (if (and (and
+         false true) (samecolor (1,5) (0,0))) (GoUpPct:0
+         (GoRightPct:0 (4,0))) (if (samecolor (3,1)
+         (5,0)) (GoUpPct:70 (2,4)) (GoUpPct:2 (5,1)))))))
+     (GoUpPct:0 (GoDownPct:0 (GoRightPct:0 (GoUpPct:0
+         (GoLeftPct:0 (GoDownPct:0 (5,2))))))))
+
+
+
+Generation 26
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 105.4748
+Nodes/tree: [105.4748]
+Avg Depth: 10.2312
+Depth/tree: [10.2312]
+Mean fitness raw: 5.018 adjusted: 0.3028357 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (or (samecolor (GoRightPct:7 (GoUpPct:16
+     (if (and (samecolor (GoDownPct:27 (4,3))
+         (GoRightPct:97 (5,3))) (or (or true false)
+         (or false true))) (GoLeftPct:84 (if true
+         (GoDownPct:46 (4,4)) (1,3))) (GoRightPct:0
+         (GoDownPct:0 (if false (1,2) (0,2)))))))
+     (GoRightPct:35 (if true (GoUpPct:68 (GoUpPct:35
+         (GoLeftPct:55 (if (or (pop (GoLeftPct:49
+             (GoDownPct:54 (GoUpPct:28 (GoRightPct:12
+                 (GoLeftPct:91 (0,1))))))) (or (samecolor
+             (GoDownPct:55 (GoDownPct:93 (GoLeftPct:17
+                 (GoUpPct:30 (0,2))))) (GoRightPct:44 (GoLeftPct:8
+             (GoRightPct:90 (GoUpPct:53 (0,0)))))) (pop
+             (GoLeftPct:0 (if (and (not false) (samecolor
+                 (1,1) (0,0))) (GoRightPct:0 (GoLeftPct:0
+                 (5,3))) (GoLeftPct:0 (if false (2,1) (0,2))))))))
+             (GoLeftPct:57 (GoRightPct:72 (if (or (not
+                 (samecolor (GoRightPct:27 (1,3)) (GoDownPct:2
+                     (0,0)))) (not (and (samecolor (3,3) (5,4))
+                 (and false true)))) (GoLeftPct:96 (if (and
+                 (samecolor (2,3) (4,5)) (and true false))
+                 (if (not true) (if false (0,3) (0,4)) (GoUpPct:0
+                     (0,0))) (GoRightPct:46 (GoUpPct:81 (3,1)))))
+                 (GoUpPct:0 (if (and (and true false) (not
+                     false)) (GoLeftPct:0 (GoDownPct:0 (0,4)))
+                     (if (and false false) (GoRightPct:0 (0,2))
+                         (GoUpPct:0 (3,5)))))))) (GoLeftPct:0 (GoUpPct:0
+             (GoDownPct:0 (if (pop (GoLeftPct:0 (GoRightPct:0
+                 (1,5)))) (GoLeftPct:0 (GoRightPct:0 (GoLeftPct:0
+                 (0,5)))) (if (pop (GoRightPct:0 (5,5))) (GoUpPct:0
+                 (GoUpPct:0 (2,1))) (GoDownPct:0 (GoRightPct:0
+                 (0,5)))))))))))) (GoUpPct:0 (GoDownPct:0
+         (GoRightPct:0 (if true (3,5) (1,5))))))))
+     (and (and (pop (GoLeftPct:0 (3,2))) (pop
+         (GoUpPct:0 (GoLeftPct:0 (GoRightPct:0 (GoRightPct:0
+             (2,3))))))) (or (or true (pop (GoLeftPct:0
+         (GoUpPct:0 (GoUpPct:0 (2,2)))))) true)))
+
+
+
+Generation 27
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 108.0568
+Nodes/tree: [108.0568]
+Avg Depth: 10.3084
+Depth/tree: [10.3084]
+Mean fitness raw: 8.8424 adjusted: 0.28227413 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (or (pop (GoDownPct:50 (GoRightPct:37 (2,5))))
+     (or (not (pop (5,1))) (and (pop (if false
+         (1,5) (2,1))) (not (and true true)))))
+
+
+
+Generation 28
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 111.3192
+Nodes/tree: [111.3192]
+Avg Depth: 10.3964
+Depth/tree: [10.3964]
+Mean fitness raw: 6.5892 adjusted: 0.3028063 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (and (or (pop (GoDownPct:83 (GoDownPct:58
+     (4,2)))) (pop (4,0))) (not (or (not (not
+     (pop (3,1)))) false)))
+
+
+
+Generation 29
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 114.8238
+Nodes/tree: [114.8238]
+Avg Depth: 10.481
+Depth/tree: [10.481]
+Mean fitness raw: 4.9892 adjusted: 0.30362046 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (and (and (and (pop (GoUpPct:0 (if true (1,5)
+     (3,0)))) (not (samecolor (GoRightPct:0 (0,2))
+     (GoLeftPct:0 (5,0))))) (or (or (samecolor
+     (GoUpPct:0 (4,4)) (GoDownPct:0 (1,2))) (not
+     (not false))) (samecolor (GoUpPct:0 (GoDownPct:0
+     (4,3))) (GoUpPct:0 (GoDownPct:0 (3,4))))))
+     (and (or (samecolor (GoLeftPct:0 (GoLeftPct:0
+         (1,4))) (GoUpPct:0 (GoRightPct:0 (4,1))))
+         (and (and (samecolor (GoUpPct:0 (3,1)) (GoRightPct:0
+             (0,4))) (not false)) (and (and true true)
+             (not true)))) (or (or (and (and true false)
+         (not false)) (samecolor (GoDownPct:0 (5,4))
+         (if true (3,5) (5,2)))) (pop (GoDownPct:0
+         (if true (4,2) (0,0)))))))
+
+
+
+Generation 30
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 118.218
+Nodes/tree: [118.218]
+Avg Depth: 10.6028
+Depth/tree: [10.6028]
+Mean fitness raw: 4.4128 adjusted: 0.31530276 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (GoLeftPct:56 (GoRightPct:38 (GoRightPct:28
+     (GoLeftPct:68 (GoLeftPct:85 (if (and (pop
+         (GoRightPct:33 (GoLeftPct:18 (3,4)))) (or
+         (not (and true false)) (and (pop (2,0)) (samecolor
+         (5,2) (3,3))))) (GoLeftPct:0 (GoUpPct:0 (if
+         (not false) (GoLeftPct:0 (0,1)) (if true
+         (2,5) (if (and (and (samecolor (0,0) (3,0))
+         (samecolor (5,0) (2,1))) (not (or true true)))
+         (GoLeftPct:0 (if (or true true) (if true
+             (4,2) (5,2)) (GoUpPct:0 (4,1)))) (GoUpPct:0
+         (if (not true) (GoRightPct:0 (5,2)) (if true
+             (4,1) (5,3))))))))) (GoUpPct:31 (GoUpPct:98
+         (GoRightPct:86 (GoUpPct:41 (2,1)))))))))))
+
+
+
+Generation 31
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 119.3582
+Nodes/tree: [119.3582]
+Avg Depth: 10.668
+Depth/tree: [10.668]
+Mean fitness raw: 4.4498 adjusted: 0.31216896 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (not (and (or (samecolor (GoUpPct:47
+     (GoRightPct:44 (GoDownPct:19 (GoUpPct:83
+         (GoUpPct:35 (GoDownPct:48 (0,2))))))) (GoLeftPct:6
+     (GoDownPct:51 (if (samecolor (GoRightPct:23
+         (if true (1,2) (1,5))) (GoDownPct:15 (if
+         false (1,0) (4,1)))) (GoUpPct:43 (GoUpPct:18
+         (if false (0,5) (2,1)))) (GoLeftPct:0 (GoDownPct:0
+         (GoDownPct:0 (5,5)))))))) (and (not (samecolor
+     (GoUpPct:0 (GoUpPct:0 (GoLeftPct:0 (GoDownPct:0
+         (1,5))))) (GoUpPct:0 (GoUpPct:0 (5,2)))))
+     (pop (GoDownPct:0 (GoUpPct:0 (GoUpPct:0 (GoRightPct:0
+         (GoUpPct:0 (4,0))))))))) (samecolor (GoLeftPct:42
+     (GoLeftPct:41 (if (samecolor (GoLeftPct:68
+         (GoRightPct:79 (GoLeftPct:17 (4,3)))) (if
+         (samecolor (GoRightPct:89 (4,5)) (GoRightPct:19
+             (4,1))) (GoRightPct:80 (GoRightPct:3 (1,1)))
+         (if (and false true) (GoUpPct:0 (1,4)) (GoDownPct:0
+             (5,1))))) (GoLeftPct:31 (if (or (or true
+         true) (or false true)) (GoUpPct:48 (GoUpPct:96
+         (1,0))) (GoRightPct:0 (GoLeftPct:0 (5,3)))))
+         (GoRightPct:69 (GoRightPct:45 (GoUpPct:22
+             (GoDownPct:10 (0,1)))))))) (GoRightPct:76
+     (GoUpPct:58 (GoLeftPct:0 (if (pop (GoDownPct:82
+         (if false (5,0) (3,5)))) (if (or (not false)
+         (not false)) (GoDownPct:0 (GoLeftPct:0 (0,4)))
+         (GoDownPct:0 (GoRightPct:0 (5,3)))) (GoRightPct:26
+         (if (pop (5,5)) (GoLeftPct:0 (2,1)) (if true
+             (2,5) (2,4))))))))))))
+
+
+
+Generation 32
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 117.8852
+Nodes/tree: [117.8852]
+Avg Depth: 10.7582
+Depth/tree: [10.7582]
+Mean fitness raw: 3.4596 adjusted: 0.3303728 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (not (and (or (samecolor (GoUpPct:1
+     (GoRightPct:70 (GoDownPct:37 (GoUpPct:97
+         (GoUpPct:83 (GoDownPct:47 (0,2))))))) (GoLeftPct:67
+     (GoDownPct:15 (if (samecolor (GoRightPct:24
+         (if true (1,2) (1,5))) (GoDownPct:94 (if
+         false (1,0) (4,1)))) (GoUpPct:45 (4,4)) (GoLeftPct:0
+         (GoDownPct:0 (GoDownPct:0 (5,5)))))))) (and
+     (not (samecolor (GoUpPct:0 (GoUpPct:0 (GoLeftPct:0
+         (GoDownPct:0 (1,5))))) (GoUpPct:0 (GoUpPct:0
+         (GoDownPct:0 (GoLeftPct:0 (3,5))))))) (pop
+     (GoDownPct:0 (GoUpPct:0 (GoUpPct:0 (GoRightPct:0
+         (GoUpPct:0 (4,0))))))))) (samecolor (GoLeftPct:91
+     (GoLeftPct:71 (if (samecolor (GoLeftPct:37
+         (GoRightPct:8 (GoLeftPct:64 (4,3)))) (if
+         (samecolor (GoRightPct:60 (4,5)) (GoRightPct:30
+             (4,1))) (GoRightPct:66 (GoRightPct:72 (1,1)))
+         (if (and false true) (GoUpPct:0 (1,4)) (GoDownPct:0
+             (5,1))))) (GoLeftPct:84 (if (or (or true
+         true) (or false true)) (GoUpPct:38 (GoUpPct:13
+         (1,0))) (GoRightPct:0 (GoLeftPct:0 (5,3)))))
+         (GoRightPct:69 (GoRightPct:45 (GoUpPct:22
+             (GoDownPct:10 (0,1)))))))) (GoRightPct:10
+     (GoUpPct:67 (GoLeftPct:36 (if (pop (GoDownPct:42
+         (if false (5,0) (3,5)))) (if (or (not false)
+         (not false)) (GoDownPct:0 (GoLeftPct:0 (0,4)))
+         (GoDownPct:0 (GoRightPct:0 (5,3)))) (GoRightPct:80
+         (if (pop (5,5)) (GoLeftPct:0 (2,1)) (if true
+             (2,5) (2,4))))))))))))
+
+
+
+Generation 33
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 123.148
+Nodes/tree: [123.148]
+Avg Depth: 10.9314
+Depth/tree: [10.9314]
+Mean fitness raw: 4.1408 adjusted: 0.32755598 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (or (pop (GoDownPct:50 (GoRightPct:37 (2,5))))
+     (or (not (pop (5,1))) (and (pop (if false
+         (1,5) (2,1))) (not (and true true)))))
+
+
+
+Generation 34
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 126.4178
+Nodes/tree: [126.4178]
+Avg Depth: 11.1506
+Depth/tree: [11.1506]
+Mean fitness raw: 5.6386 adjusted: 0.30830556 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (and (and (and (samecolor (GoRightPct:34
+     (GoUpPct:39 (2,3))) (GoUpPct:31 (if false
+     (0,5) (2,1)))) (or (or (and false false)
+     (and true true)) (not (samecolor (1,0) (2,4)))))
+     (and (not (not (or (and (samecolor (5,4)
+         (1,0)) (samecolor (1,5) (4,0))) (or (pop
+         (0,4)) (samecolor (1,1) (4,0)))))) (or (and
+         (and true true) (pop (4,0))) (not (not true)))))
+     (pop (GoRightPct:17 (GoDownPct:80 (if (pop
+         (2,1)) (GoUpPct:0 (1,3)) (GoDownPct:19 (4,5))))))))
+
+
+
+Generation 35
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 123.5854
+Nodes/tree: [123.5854]
+Avg Depth: 11.3598
+Depth/tree: [11.3598]
+Mean fitness raw: 6.9222 adjusted: 0.30322677 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (and (and (or (samecolor (4,5) (1,5)) (or
+     false true)) (or (not true) (not false)))
+     (and false false))
+
+
+
+Generation 36
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 122.0434
+Nodes/tree: [122.0434]
+Avg Depth: 11.6046
+Depth/tree: [11.6046]
+Mean fitness raw: 6.4346 adjusted: 0.30712262 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (or (or (not (samecolor (GoRightPct:41 (GoDownPct:61
+     (GoLeftPct:96 (GoUpPct:15 (GoDownPct:27 (GoRightPct:37
+         (GoRightPct:83 (4,0)))))))) (GoUpPct:22 (GoDownPct:6
+     (GoLeftPct:95 (GoUpPct:87 (GoLeftPct:71 (if
+         (pop (2,3)) (GoRightPct:0 (5,2)) (GoLeftPct:46
+         (3,0)))))))))) (and (or (or (and (pop (GoDownPct:20
+     (GoLeftPct:13 (if (and false true) (GoDownPct:0
+         (0,5)) (GoLeftPct:80 (5,1)))))) (or (or (samecolor
+     (GoUpPct:0 (GoLeftPct:0 (0,3))) (GoRightPct:0
+     (GoUpPct:0 (0,5)))) (not (not (samecolor
+     (3,1) (2,2))))) (not (pop (GoUpPct:0 (GoDownPct:0
+     (4,1))))))) (samecolor (GoLeftPct:60 (GoUpPct:83
+     (GoDownPct:84 (GoUpPct:21 (if false (1,0)
+         (2,4)))))) (GoRightPct:75 (if (samecolor
+     (GoRightPct:25 (GoLeftPct:62 (4,0))) (if
+     (and true true) (if false (1,0) (3,2)) (GoUpPct:0
+     (4,2)))) (GoLeftPct:50 (GoDownPct:9 (GoLeftPct:49
+     (3,1)))) (GoUpPct:0 (GoLeftPct:0 (GoRightPct:0
+     (5,3)))))))) (and (samecolor (GoLeftPct:0
+     (if (samecolor (GoDownPct:0 (if true (3,4)
+         (0,1))) (GoRightPct:0 (GoDownPct:0 (0,4))))
+         (GoLeftPct:0 (GoUpPct:0 (GoDownPct:0 (4,2))))
+         (GoLeftPct:0 (GoUpPct:0 (GoLeftPct:0 (0,5))))))
+     (GoUpPct:0 (GoUpPct:0 (GoUpPct:0 (GoUpPct:0
+         (if true (2,0) (3,3))))))) (or (not (or (or
+     (or (and false true) (and false true)) (and
+     (pop (1,3)) (or true false))) (not (not (pop
+     (5,0)))))) (not (and (and (and (not true)
+     (or false true)) (not (samecolor (5,5) (1,0))))
+     (and (or (or false true) (and true false))
+         (samecolor (GoLeftPct:0 (5,3)) (GoRightPct:0
+             (1,1))))))))) (or (pop (if (not (and (not
+     (samecolor (GoDownPct:100 (0,4)) (GoUpPct:42
+         (0,5)))) (and (or (or true true) (not false))
+     (samecolor (GoRightPct:0 (2,0)) (GoLeftPct:0
+         (4,0)))))) (GoUpPct:16 (GoRightPct:49 (if
+     (pop (GoDownPct:17 (5,4))) (GoDownPct:0 (GoUpPct:0
+     (4,5))) (GoUpPct:80 (GoDownPct:98 (5,5))))))
+     (GoDownPct:0 (if (or (not (pop (5,1))) (and
+         (pop (2,1)) (samecolor (3,3) (3,4)))) (if
+         (or (samecolor (1,1) (2,3)) (pop (1,0)))
+         (if (or false false) (GoUpPct:0 (0,3)) (GoRightPct:0
+             (0,4))) (2,4)) (GoDownPct:0 (GoLeftPct:0
+         (GoUpPct:0 (3,0)))))))) (samecolor (GoLeftPct:90
+     (GoRightPct:15 (GoLeftPct:28 (if (and (not
+         false) (and true true)) (GoDownPct:59 (GoDownPct:9
+         (4,5))) (GoDownPct:0 (GoUpPct:0 (0,1)))))))
+     (GoRightPct:47 (if (samecolor (GoDownPct:23
+         (GoUpPct:3 (GoRightPct:39 (2,0)))) (GoDownPct:9
+         (GoUpPct:61 (GoRightPct:4 (1,3))))) (GoLeftPct:41
+         (if (samecolor (GoDownPct:55 (2,4)) (if true
+             (3,3) (3,2))) (GoLeftPct:82 (GoUpPct:95 (1,0)))
+             (GoLeftPct:0 (GoUpPct:0 (5,0))))) (GoLeftPct:0
+         (GoUpPct:0 (GoRightPct:0 (GoDownPct:0 (1,0)))))))))))
+     (samecolor (GoLeftPct:0 (if (pop (GoUpPct:0
+         (GoDownPct:0 (GoLeftPct:0 (if (pop (GoDownPct:0
+             (1,4))) (if (or false true) (GoUpPct:0 (2,1))
+             (GoDownPct:0 (2,5))) (GoUpPct:0 (GoDownPct:0
+             (4,3)))))))) (GoDownPct:0 (GoUpPct:0 (GoDownPct:0
+         (GoLeftPct:0 (GoUpPct:0 (GoUpPct:0 (if false
+             (5,4) (3,2)))))))) (GoDownPct:0 (GoRightPct:0
+         (GoRightPct:0 (GoLeftPct:0 (GoRightPct:0
+             (GoUpPct:0 (if true (3,3) (0,5))))))))))
+         (if (and (or (pop (GoLeftPct:0 (GoRightPct:0
+             (GoDownPct:0 (GoUpPct:0 (GoLeftPct:0 (2,2)))))))
+             (or (not (not (or (not (samecolor (0,3) (3,5)))
+                 (samecolor (GoLeftPct:0 (4,2)) (GoRightPct:0
+                     (3,2)))))) (or (samecolor (GoDownPct:0 (GoDownPct:0
+                 (GoLeftPct:0 (1,2)))) (GoRightPct:0 (GoRightPct:0
+                 (GoRightPct:0 (5,2))))) (samecolor (GoLeftPct:0
+                 (GoDownPct:0 (if true (5,2) (2,1)))) (GoDownPct:0
+                 (GoRightPct:0 (GoUpPct:0 (5,3)))))))) (not
+             (not (not (not (pop (GoUpPct:0 (GoLeftPct:0
+                 (1,5))))))))) (GoUpPct:0 (GoUpPct:0 (if (samecolor
+             (if (or (and (and false true) (not true))
+                 (samecolor (GoLeftPct:0 (3,4)) (GoRightPct:0
+                     (3,1)))) (GoRightPct:0 (if (and false true)
+                 (GoUpPct:0 (2,3)) (GoUpPct:0 (2,0)))) (if
+                 (samecolor (if false (1,4) (1,5)) (GoUpPct:0
+                     (5,4))) (GoRightPct:0 (GoDownPct:0 (4,3)))
+                 (GoRightPct:0 (GoLeftPct:0 (5,1))))) (GoLeftPct:0
+             (GoDownPct:0 (if (or false true) (GoUpPct:0
+                 (5,2)) (GoDownPct:0 (1,3)))))) (GoDownPct:0
+             (GoLeftPct:0 (if (samecolor (GoLeftPct:0
+                 (2,0)) (GoUpPct:0 (1,2))) (if (pop (1,1))
+                 (GoRightPct:0 (4,1)) (GoUpPct:0 (0,3))) (GoUpPct:0
+                 (GoRightPct:0 (5,2)))))) (GoUpPct:0 (GoUpPct:0
+             (GoDownPct:0 (GoLeftPct:0 (if true (4,1)
+                 (1,1))))))))) (GoUpPct:0 (GoRightPct:0 (GoRightPct:0
+             (if (and (samecolor (GoDownPct:0 (GoRightPct:0
+                 (1,0))) (if (samecolor (2,3) (3,2)) (GoLeftPct:0
+                 (4,3)) (if true (1,4) (4,4)))) (or (pop (GoLeftPct:0
+                 (1,1))) (samecolor (GoLeftPct:0 (2,5)) (GoDownPct:0
+                 (5,5))))) (if (pop (GoDownPct:0 (GoRightPct:0
+                 (5,2)))) (if (or (samecolor (2,3) (5,5))
+                 (pop (2,2))) (GoUpPct:0 (GoUpPct:0 (3,3)))
+                 (GoRightPct:0 (if false (1,2) (1,3)))) (if
+                 (and (pop (1,4)) (pop (3,5))) (if (pop (0,4))
+                 (GoUpPct:0 (1,5)) (if false (4,4) (2,1)))
+                 (if (not false) (GoUpPct:0 (1,3)) (GoUpPct:0
+                     (4,0))))) (if (samecolor (if (and false false)
+                 (GoDownPct:0 (2,3)) (GoRightPct:0 (2,2)))
+                 (GoRightPct:0 (if true (4,2) (1,2)))) (GoRightPct:0
+                 (GoDownPct:0 (GoLeftPct:0 (0,4)))) (GoUpPct:0
+                 (GoDownPct:0 (if true (4,2) (2,5))))))))))))
+
+
+
+Generation 37
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 120.8424
+Nodes/tree: [120.8424]
+Avg Depth: 11.82
+Depth/tree: [11.82]
+Mean fitness raw: 8.3314 adjusted: 0.29811767 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (GoDownPct:54 (GoRightPct:72 (GoRightPct:77
+     (if (or (or (samecolor (5,5) (1,0)) (and
+         true true)) (or (not true) (or false true)))
+         (if (or (and true true) (not false)) (if
+             (not false) (GoUpPct:78 (5,0)) (GoLeftPct:0
+             (5,1))) (if (or (not (pop (GoDownPct:16 (GoDownPct:50
+             (if (not false) (GoDownPct:55 (5,5)) (GoRightPct:0
+                 (3,2))))))) (samecolor (if (pop (GoUpPct:0
+             (GoLeftPct:0 (GoDownPct:0 (1,0))))) (GoDownPct:0
+             (GoUpPct:0 (GoUpPct:0 (if true (5,5) (2,2)))))
+             (if (samecolor (GoLeftPct:0 (GoRightPct:0
+                 (2,0))) (GoRightPct:0 (GoUpPct:0 (0,3))))
+                 (GoRightPct:0 (GoRightPct:0 (if true (4,4)
+                     (4,4)))) (GoRightPct:0 (if (or false false)
+                 (GoDownPct:0 (4,0)) (GoDownPct:0 (0,2))))))
+             (GoDownPct:0 (GoLeftPct:0 (if (samecolor
+                 (GoDownPct:0 (5,1)) (GoLeftPct:0 (2,5)))
+                 (GoDownPct:0 (if false (4,3) (5,4))) (GoDownPct:0
+                 (if false (5,5) (2,4)))))))) (GoDownPct:32
+             (GoRightPct:79 (if (samecolor (if (or (pop
+                 (3,1)) (not false)) (if (not false) (GoDownPct:55
+                 (3,0)) (GoDownPct:0 (3,0))) (GoRightPct:0
+                 (if false (5,1) (5,5)))) (GoRightPct:41 (GoRightPct:11
+                 (if true (3,1) (3,4))))) (if (pop (GoRightPct:0
+                 (GoDownPct:0 (4,0)))) (GoRightPct:0 (if (not
+                 true) (GoRightPct:0 (3,4)) (GoLeftPct:0 (1,1))))
+                 (GoDownPct:0 (GoRightPct:0 (if false (3,4)
+                     (5,3))))) (GoDownPct:89 (GoUpPct:12 (if (and
+                 false false) (GoLeftPct:0 (4,4)) (if false
+                 (3,4) (1,2)))))))) (GoRightPct:0 (GoDownPct:0
+             (GoLeftPct:0 (GoDownPct:0 (GoUpPct:0 (GoDownPct:0
+                 (GoLeftPct:0 (1,2)))))))))) (GoLeftPct:0
+         (GoUpPct:0 (GoLeftPct:0 (5,2))))))))
+
+
+
+Generation 38
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 120.7544
+Nodes/tree: [120.7544]
+Avg Depth: 12.0736
+Depth/tree: [12.0736]
+Mean fitness raw: 5.0576 adjusted: 0.31708595 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 39
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 118.5782
+Nodes/tree: [118.5782]
+Avg Depth: 12.2092
+Depth/tree: [12.2092]
+Mean fitness raw: 5.8868 adjusted: 0.31426385 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (not (not (not (or true (or (or (samecolor
+     (GoLeftPct:94 (1,5)) (GoUpPct:1 (0,0))) (or
+     (or true false) (pop (1,2)))) (not (and (not
+     false) (and false false)))))))))
+
+
+
+Generation 40
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 120.3438
+Nodes/tree: [120.3438]
+Avg Depth: 12.4374
+Depth/tree: [12.4374]
+Mean fitness raw: 4.5566 adjusted: 0.32817072 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (and (not (or (or (and true (and false (samecolor
+     (3,5) (1,3)))) (or (and (or (or (not (or
+     (or (or (samecolor (GoLeftPct:35 (1,5)) (GoUpPct:88
+         (0,0))) (or (or true false) (pop (1,2))))
+         (not (and (not false) (and false false))))
+     (or (samecolor (if (or false true) (if false
+         (1,0) (4,2)) (GoDownPct:0 (2,5))) (GoLeftPct:0
+         (if false (3,2) (2,3)))) (or (pop (GoLeftPct:0
+         (4,4))) (or (or false true) (and false true))))))
+     true) (not false)) (not (or true true)))
+     (and (or (or false false) (samecolor (2,1)
+         (2,1))) (pop (if false (3,2) (2,0)))))) (and
+     (samecolor (GoDownPct:36 (GoDownPct:8 (GoRightPct:15
+         (5,2)))) (2,4)) (pop (GoUpPct:92 (GoRightPct:55
+     (if false (3,3) (3,0)))))))) (not true))
+
+
+
+Generation 41
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 121.1706
+Nodes/tree: [121.1706]
+Avg Depth: 12.7534
+Depth/tree: [12.7534]
+Mean fitness raw: 8.2336 adjusted: 0.30972144 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (not (and (or (samecolor (GoUpPct:1
+     (GoRightPct:70 (GoDownPct:37 (GoUpPct:97
+         (GoUpPct:83 (GoDownPct:47 (0,2))))))) (GoLeftPct:67
+     (GoDownPct:15 (if (samecolor (GoRightPct:24
+         (if true (1,2) (1,5))) (GoDownPct:94 (if
+         false (1,0) (4,1)))) (GoUpPct:45 (4,4)) (GoLeftPct:0
+         (GoDownPct:0 (GoDownPct:0 (5,5)))))))) (and
+     (not (samecolor (GoUpPct:0 (GoUpPct:0 (GoLeftPct:0
+         (GoDownPct:0 (1,5))))) (GoUpPct:0 (GoUpPct:0
+         (GoDownPct:0 (GoLeftPct:0 (3,5))))))) (pop
+     (GoDownPct:0 (GoUpPct:0 (GoUpPct:0 (GoRightPct:0
+         (GoUpPct:0 (4,0))))))))) (samecolor (GoLeftPct:91
+     (GoLeftPct:71 (if (samecolor (GoLeftPct:37
+         (GoRightPct:8 (GoLeftPct:64 (4,3)))) (if
+         (samecolor (GoRightPct:60 (4,5)) (GoRightPct:30
+             (4,1))) (GoRightPct:66 (GoRightPct:72 (1,1)))
+         (if (and false true) (GoUpPct:0 (1,4)) (GoDownPct:0
+             (5,1))))) (GoLeftPct:84 (if (or (or true
+         true) (or false true)) (GoUpPct:38 (GoUpPct:13
+         (1,0))) (GoRightPct:0 (GoLeftPct:0 (5,3)))))
+         (GoRightPct:69 (GoRightPct:45 (GoUpPct:22
+             (GoDownPct:10 (0,1)))))))) (GoRightPct:10
+     (GoUpPct:67 (GoLeftPct:36 (if (pop (GoDownPct:42
+         (if false (5,0) (3,5)))) (if (or (not false)
+         (not false)) (GoDownPct:0 (GoLeftPct:0 (0,4)))
+         (GoDownPct:0 (GoRightPct:0 (5,3)))) (GoRightPct:80
+         (if (pop (5,5)) (GoLeftPct:0 (2,1)) (if true
+             (2,5) (2,4))))))))))))
+
+
+
+Generation 42
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 119.0874
+Nodes/tree: [119.0874]
+Avg Depth: 13.0676
+Depth/tree: [13.0676]
+Mean fitness raw: 8.0626 adjusted: 0.30536583 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 43
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 117.1612
+Nodes/tree: [117.1612]
+Avg Depth: 13.0784
+Depth/tree: [13.0784]
+Mean fitness raw: 4.8726 adjusted: 0.32618394 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (and (and (pop (GoRightPct:13 (GoLeftPct:4
+     (GoLeftPct:56 (GoRightPct:35 (GoDownPct:13
+         (GoDownPct:70 (if true (3,5) (1,5)))))))))
+     (not (and (not (and (pop (GoLeftPct:0 (GoRightPct:0
+         (if true (5,4) (1,0))))) (not (pop (GoDownPct:0
+         (if false (1,3) (0,3))))))) (or (and (not
+         (samecolor (if (samecolor (4,5) (2,3)) (GoRightPct:0
+             (1,2)) (if true (0,1) (0,0))) (if (not false)
+             (GoLeftPct:0 (3,2)) (GoDownPct:0 (2,5)))))
+         (not (not (or (not true) (or true true)))))
+         (samecolor (GoDownPct:0 (GoDownPct:0 (if
+             (samecolor (3,5) (0,5)) (if true (0,0) (3,4))
+             (if false (0,0) (3,5))))) (GoDownPct:0 (GoUpPct:0
+             (GoDownPct:0 (GoUpPct:0 (4,3)))))))))) (and
+     (pop (GoRightPct:91 (if (and (not (pop (GoUpPct:9
+         (GoLeftPct:31 (0,0))))) (pop (GoDownPct:52
+         (GoUpPct:74 (GoUpPct:93 (2,3)))))) (GoRightPct:0
+         (GoUpPct:0 (GoRightPct:0 (GoUpPct:0 (if false
+             (4,2) (5,5)))))) (GoRightPct:44 (GoLeftPct:57
+         (GoLeftPct:40 (GoRightPct:0 (GoRightPct:83
+             (0,0))))))))) (pop (if (or (and (or (samecolor
+     (GoDownPct:0 (GoLeftPct:0 (2,4))) (GoDownPct:0
+     (GoDownPct:0 (0,0)))) (and (samecolor (GoDownPct:0
+     (5,5)) (if false (5,1) (5,2))) (and (and
+     false true) (pop (2,0))))) (or (and (or (samecolor
+     (4,5) (1,4)) (and false true)) (or (samecolor
+     (4,2) (1,3)) (not true))) (samecolor (GoLeftPct:0
+     (if false (1,1) (3,1))) (GoUpPct:0 (GoDownPct:0
+     (1,5)))))) (or (samecolor (GoLeftPct:0 (if
+     (or true true) (GoUpPct:0 (3,5)) (GoLeftPct:0
+     (3,1)))) (GoUpPct:0 (GoUpPct:0 (if true (0,2)
+     (1,2))))) (samecolor (if (pop (GoDownPct:0
+     (1,2))) (GoRightPct:0 (GoDownPct:0 (1,0)))
+     (GoRightPct:0 (GoRightPct:0 (5,3)))) (GoDownPct:0
+     (GoUpPct:0 (GoDownPct:0 (0,0))))))) (GoUpPct:0
+     (GoDownPct:0 (GoLeftPct:0 (if (not (and false
+         true)) (if (not true) (if false (1,1) (5,2))
+         (GoRightPct:0 (0,0))) (GoRightPct:0 (GoRightPct:0
+         (2,2))))))) (GoLeftPct:0 (GoLeftPct:0 (GoRightPct:0
+     (GoRightPct:0 (GoUpPct:0 (if false (3,3)
+         (5,2)))))))))))
+
+
+
+Generation 44
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 114.0982
+Nodes/tree: [114.0982]
+Avg Depth: 13.3434
+Depth/tree: [13.3434]
+Mean fitness raw: 6.0284 adjusted: 0.32330158 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (or (samecolor (GoRightPct:7 (GoUpPct:16
+     (if (and (samecolor (GoDownPct:27 (4,3))
+         (GoRightPct:97 (5,3))) (or (or true false)
+         (or false true))) (GoLeftPct:84 (if true
+         (GoDownPct:46 (4,4)) (1,3))) (GoRightPct:0
+         (GoDownPct:0 (if false (1,2) (0,2)))))))
+     (GoRightPct:35 (if true (GoUpPct:68 (GoUpPct:35
+         (GoLeftPct:55 (if (or (pop (GoLeftPct:49
+             (GoDownPct:54 (GoUpPct:28 (GoRightPct:12
+                 (GoLeftPct:91 (0,1))))))) (or (samecolor
+             (GoDownPct:55 (GoDownPct:93 (GoLeftPct:17
+                 (GoUpPct:30 (0,2))))) (GoRightPct:44 (GoLeftPct:8
+             (GoRightPct:90 (GoUpPct:53 (0,0)))))) (pop
+             (GoLeftPct:0 (if (and (not false) (samecolor
+                 (1,1) (0,0))) (GoRightPct:0 (GoLeftPct:0
+                 (5,3))) (GoLeftPct:0 (if false (2,1) (0,2))))))))
+             (GoLeftPct:57 (GoRightPct:72 (if (or (not
+                 (samecolor (GoRightPct:27 (1,3)) (GoDownPct:2
+                     (0,0)))) (not (and (samecolor (3,3) (5,4))
+                 (and false true)))) (GoLeftPct:96 (if (and
+                 (samecolor (2,3) (4,5)) (and true false))
+                 (if (not true) (if false (0,3) (0,4)) (GoUpPct:0
+                     (0,0))) (GoRightPct:46 (GoUpPct:81 (3,1)))))
+                 (GoUpPct:0 (if (and (and true false) (not
+                     false)) (GoLeftPct:0 (GoDownPct:0 (0,4)))
+                     (if (and false false) (GoRightPct:0 (0,2))
+                         (GoUpPct:0 (3,5)))))))) (GoLeftPct:0 (GoUpPct:0
+             (GoDownPct:0 (if (pop (GoLeftPct:0 (GoRightPct:0
+                 (1,5)))) (GoLeftPct:0 (GoRightPct:0 (GoLeftPct:0
+                 (0,5)))) (if (pop (GoRightPct:0 (5,5))) (GoUpPct:0
+                 (GoUpPct:0 (2,1))) (GoDownPct:0 (GoRightPct:0
+                 (0,5)))))))))))) (GoUpPct:0 (GoDownPct:0
+         (GoRightPct:0 (if true (3,5) (1,5))))))))
+     (and (and (pop (GoLeftPct:0 (3,2))) (pop
+         (GoUpPct:0 (GoLeftPct:0 (GoRightPct:0 (GoRightPct:0
+             (2,3))))))) (or (or true (pop (GoLeftPct:0
+         (GoUpPct:0 (GoUpPct:0 (2,2)))))) true)))
+
+
+
+Generation 45
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 110.3908
+Nodes/tree: [110.3908]
+Avg Depth: 13.551
+Depth/tree: [13.551]
+Mean fitness raw: 3.9684 adjusted: 0.34068722 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (and (and (pop (GoRightPct:13 (GoLeftPct:4
+     (GoLeftPct:56 (GoRightPct:35 (GoDownPct:13
+         (GoDownPct:70 (if true (3,5) (1,5)))))))))
+     (not (and (not (and (pop (GoLeftPct:0 (GoRightPct:0
+         (if true (5,4) (1,0))))) (not (pop (GoDownPct:0
+         (if false (1,3) (0,3))))))) (or (and (not
+         (samecolor (if (samecolor (4,5) (2,3)) (GoRightPct:0
+             (1,2)) (if true (0,1) (0,0))) (if (not false)
+             (GoLeftPct:0 (3,2)) (GoDownPct:0 (2,5)))))
+         (not (not (or (not true) (or true true)))))
+         (samecolor (GoDownPct:0 (GoDownPct:0 (if
+             (samecolor (3,5) (0,5)) (if true (0,0) (3,4))
+             (if false (0,0) (3,5))))) (GoDownPct:0 (GoUpPct:0
+             (GoDownPct:0 (GoUpPct:0 (4,3)))))))))) (and
+     (pop (GoRightPct:91 (if (and (not (pop (GoUpPct:9
+         (GoLeftPct:31 (0,0))))) (pop (GoDownPct:52
+         (GoUpPct:74 (GoUpPct:93 (2,3)))))) (GoRightPct:0
+         (GoUpPct:0 (GoRightPct:0 (GoUpPct:0 (if false
+             (4,2) (5,5)))))) (GoRightPct:44 (GoLeftPct:57
+         (GoLeftPct:40 (GoRightPct:0 (GoRightPct:83
+             (0,0))))))))) (pop (if (or (and (or (samecolor
+     (GoDownPct:0 (GoLeftPct:0 (2,4))) (GoDownPct:0
+     (GoDownPct:0 (0,0)))) (and (samecolor (GoDownPct:0
+     (5,5)) (if false (5,1) (5,2))) (and (and
+     false true) (pop (2,0))))) (or (and (or (samecolor
+     (4,5) (1,4)) (and false true)) (or (samecolor
+     (4,2) (1,3)) (not true))) (samecolor (GoLeftPct:0
+     (if false (1,1) (3,1))) (GoUpPct:0 (GoDownPct:0
+     (1,5)))))) (or (samecolor (GoLeftPct:0 (if
+     (or true true) (GoUpPct:0 (3,5)) (GoLeftPct:0
+     (3,1)))) (GoUpPct:0 (GoUpPct:0 (if true (0,2)
+     (1,2))))) (samecolor (if (pop (GoDownPct:0
+     (1,2))) (GoRightPct:0 (GoDownPct:0 (1,0)))
+     (GoRightPct:0 (GoRightPct:0 (5,3)))) (GoDownPct:0
+     (GoUpPct:0 (GoDownPct:0 (0,0))))))) (GoUpPct:0
+     (GoDownPct:0 (GoLeftPct:0 (if (not (and false
+         true)) (if (not true) (if false (1,1) (5,2))
+         (GoRightPct:0 (0,0))) (GoRightPct:0 (GoRightPct:0
+         (2,2))))))) (GoLeftPct:0 (GoLeftPct:0 (GoRightPct:0
+     (GoRightPct:0 (GoUpPct:0 (if false (3,3)
+         (5,2)))))))))))
+
+
+
+Generation 46
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 108.919
+Nodes/tree: [108.919]
+Avg Depth: 13.676
+Depth/tree: [13.676]
+Mean fitness raw: 4.9268 adjusted: 0.3372432 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 47
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 110.723
+Nodes/tree: [110.723]
+Avg Depth: 13.8814
+Depth/tree: [13.8814]
+Mean fitness raw: 4.2222 adjusted: 0.34027353 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoUpPct:74 (if (not (or (not (pop
+     (GoDownPct:22 (GoUpPct:10 (GoLeftPct:39 (0,3))))))
+     (and (not (not (and (not true) (not false))))
+         (or (or (not (pop (3,1))) (and (not false)
+             (pop (3,2)))) (pop (if (and false false)
+             (GoLeftPct:0 (0,3)) (GoUpPct:0 (5,1))))))))
+     (if (samecolor (GoLeftPct:0 (GoLeftPct:0
+         (GoUpPct:0 (GoLeftPct:0 (GoUpPct:0 (4,0))))))
+         (GoUpPct:0 (GoUpPct:0 (if (samecolor (if
+             false (3,0) (3,3)) (GoUpPct:0 (1,0))) (GoLeftPct:0
+             (if true (0,3) (2,2))) (GoLeftPct:0 (GoDownPct:0
+             (3,5))))))) (if (not (and (and (not (pop
+         (1,3))) (and (pop (5,0)) (pop (3,3)))) (samecolor
+         (GoLeftPct:0 (GoLeftPct:0 (2,5))) (GoUpPct:0
+         (if false (2,3) (0,4)))))) (GoRightPct:0
+         (if (pop (GoUpPct:0 (GoLeftPct:0 (0,0))))
+             (GoLeftPct:0 (GoUpPct:0 (5,2))) (GoDownPct:0
+             (GoRightPct:0 (GoLeftPct:0 (0,1)))))) (GoDownPct:0
+         (if (pop (GoUpPct:0 (GoUpPct:0 (2,0)))) (GoUpPct:0
+             (GoUpPct:0 (GoDownPct:0 (1,4)))) (GoRightPct:0
+             (if (and true true) (GoDownPct:0 (2,2)) (GoUpPct:0
+                 (1,3))))))) (GoLeftPct:0 (GoLeftPct:0 (if
+         (or (and (pop (4,0)) (or true true)) (pop
+             (GoRightPct:0 (0,4)))) (GoRightPct:0 (GoRightPct:0
+         (GoLeftPct:0 (5,3)))) (GoUpPct:0 (GoUpPct:0
+         (GoLeftPct:0 (1,1)))))))) (if (or (not (samecolor
+     (if (pop (GoUpPct:29 (3,5))) (if (and true
+         true) (GoRightPct:0 (5,2)) (GoLeftPct:0 (3,0)))
+         (GoDownPct:17 (GoRightPct:20 (0,0)))) (GoLeftPct:91
+     (if (not true) (GoUpPct:0 (1,1)) (GoDownPct:97
+         (3,0)))))) (or (or (not (or (samecolor (3,1)
+     (5,1)) (not true))) (not (and (and false
+     false) (pop (4,3))))) (or (not (samecolor
+     (if false (4,0) (4,1)) (if true (1,2) (4,5))))
+     (samecolor (GoLeftPct:0 (GoUpPct:0 (0,2)))
+         (GoRightPct:0 (GoRightPct:0 (1,3))))))) (if
+     (samecolor (if (not (not (or false true)))
+         (GoDownPct:35 (GoDownPct:6 (GoLeftPct:80
+             (0,5)))) (GoRightPct:0 (GoLeftPct:0 (GoUpPct:0
+         (3,1))))) (if (pop (GoRightPct:44 (if false
+         (4,2) (2,1)))) (GoUpPct:0 (if (samecolor
+         (3,5) (3,3)) (GoDownPct:0 (3,3)) (GoLeftPct:0
+         (3,2)))) (if (and (not true) (samecolor (2,0)
+         (0,1))) (GoRightPct:0 (GoUpPct:0 (1,3)))
+         (GoRightPct:64 (GoDownPct:94 (0,0)))))) (GoDownPct:58
+     (if (samecolor (if (and true true) (GoLeftPct:70
+         (3,5)) (GoRightPct:0 (2,1))) (GoRightPct:99
+         (GoRightPct:79 (3,4)))) (GoUpPct:51 (GoLeftPct:73
+         (GoUpPct:23 (3,5)))) (if (not (or true true))
+         (GoUpPct:0 (if true (2,3) (1,5))) (GoDownPct:0
+         (GoLeftPct:0 (3,3)))))) (GoRightPct:0 (GoUpPct:0
+     (GoUpPct:0 (GoRightPct:0 (GoRightPct:0 (5,0)))))))
+     (if (samecolor (if (samecolor (GoLeftPct:0
+         (GoUpPct:0 (2,3))) (if (pop (4,4)) (GoDownPct:0
+         (2,2)) (GoUpPct:0 (5,0)))) (GoLeftPct:0 (GoRightPct:0
+         (if false (2,4) (3,4)))) (if (not (samecolor
+         (4,1) (0,1))) (GoDownPct:0 (GoLeftPct:0 (2,1)))
+         (GoRightPct:0 (GoLeftPct:0 (2,5))))) (GoLeftPct:0
+         (GoLeftPct:0 (GoLeftPct:0 (GoLeftPct:0 (0,1))))))
+         (GoRightPct:0 (if (pop (GoRightPct:0 (GoDownPct:0
+             (2,2)))) (GoUpPct:0 (GoRightPct:0 (GoUpPct:0
+             (0,1)))) (GoUpPct:0 (GoUpPct:0 (if false
+             (4,3) (4,5)))))) (GoDownPct:0 (GoDownPct:0
+         (GoUpPct:0 (GoDownPct:0 (GoRightPct:0 (1,0))))))))))))
+
+
+
+Generation 48
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 105.6276
+Nodes/tree: [105.6276]
+Avg Depth: 14.0214
+Depth/tree: [14.0214]
+Mean fitness raw: 5.6788 adjusted: 0.3342135 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (and (or (and (and (or (pop (GoUpPct:47 (GoDownPct:30
+     (GoLeftPct:65 (GoUpPct:18 (GoRightPct:40
+         (4,2))))))) (and (pop (GoDownPct:94 (GoDownPct:65
+     (if (pop (3,3)) (GoRightPct:0 (4,2)) (GoRightPct:95
+         (5,1)))))) (not (and (not (not (not true)))
+     (and (or (or true false) (pop (2,4))) (pop
+         (GoRightPct:0 (4,0)))))))) (or (and (not
+     (and (pop (GoLeftPct:0 (GoUpPct:0 (4,1))))
+         (samecolor (GoRightPct:0 (if true (5,3) (0,2)))
+             (GoLeftPct:0 (if false (5,3) (5,3)))))) (pop
+     (if (pop (GoLeftPct:0 (GoLeftPct:0 (2,5))))
+         (if (and (or false false) (and false false))
+             (GoLeftPct:0 (GoDownPct:0 (4,1))) (GoDownPct:0
+             (if false (5,2) (0,2)))) (GoLeftPct:0 (GoUpPct:0
+         (if false (3,5) (1,5))))))) (samecolor (GoUpPct:0
+     (GoUpPct:0 (if (pop (GoLeftPct:0 (1,4)))
+         (GoRightPct:0 (GoUpPct:0 (4,3))) (if (or
+         false true) (GoUpPct:0 (0,1)) (GoRightPct:0
+         (1,3)))))) (if (not (samecolor (if (or true
+     true) (GoUpPct:0 (0,5)) (GoLeftPct:0 (4,5)))
+     (if (pop (5,0)) (if true (1,4) (2,3)) (GoLeftPct:0
+         (3,0))))) (if (pop (if (not false) (if true
+     (3,2) (4,5)) (GoUpPct:0 (2,0)))) (if (pop
+     (GoUpPct:0 (4,2))) (GoRightPct:0 (GoRightPct:0
+     (0,2))) (if (not false) (if (or (and (pop
+     (GoDownPct:58 (5,3))) (and (samecolor (4,3)
+     (5,0)) (and true true))) (or (not (samecolor
+     (3,0) (5,1))) (not (samecolor (4,1) (4,5)))))
+     (4,4) (1,1)) (GoUpPct:0 (5,4)))) (if (or
+     (pop (2,1)) (pop (5,4))) (GoDownPct:0 (if
+     true (5,5) (1,3))) (GoRightPct:0 (GoLeftPct:0
+     (2,2))))) (GoUpPct:0 (GoDownPct:0 (GoRightPct:0
+     (GoRightPct:0 (5,3))))))))) (samecolor (GoDownPct:0
+     (GoDownPct:0 (GoUpPct:0 (GoLeftPct:0 (if
+         (pop (GoLeftPct:0 (4,5))) (if (or true true)
+         (if false (0,3) (2,4)) (GoLeftPct:0 (4,5)))
+         (GoDownPct:0 (GoLeftPct:0 (3,1)))))))) (GoUpPct:0
+     (GoUpPct:0 (GoDownPct:0 (GoLeftPct:0 (GoLeftPct:0
+         (GoRightPct:0 (GoLeftPct:0 (1,1))))))))))
+     (pop (GoUpPct:77 (if (not (or (not (or (samecolor
+         (if false (5,5) (4,2)) (GoLeftPct:18 (3,2)))
+         (and (samecolor (0,2) (0,0)) (and false false))))
+         (not (and (samecolor (if true (2,4) (1,2))
+             (GoDownPct:9 (2,4))) (not (pop (5,1)))))))
+         (GoRightPct:86 (GoDownPct:23 (GoRightPct:35
+             (GoLeftPct:67 (GoUpPct:44 (GoDownPct:96 (2,0)))))))
+         (GoDownPct:0 (GoDownPct:0 (GoUpPct:0 (GoRightPct:0
+             (GoUpPct:0 (GoDownPct:0 (4,4))))))))))) (not
+     (or (pop (GoDownPct:0 (if (and (pop (if (samecolor
+         (GoUpPct:0 (1,3)) (if false (3,2) (1,3)))
+         (GoDownPct:0 (GoDownPct:0 (2,1))) (GoUpPct:0
+         (GoLeftPct:0 (5,0))))) (pop (if (samecolor
+         (GoRightPct:0 (5,3)) (GoDownPct:0 (4,0)))
+         (GoLeftPct:0 (GoUpPct:0 (4,4))) (GoLeftPct:0
+         (GoUpPct:0 (4,2)))))) (if (and (and (samecolor
+         (GoRightPct:0 (4,0)) (GoRightPct:0 (5,2)))
+         (not (not false))) (pop (GoLeftPct:0 (GoRightPct:0
+         (1,4))))) (GoDownPct:0 (GoLeftPct:0 (GoRightPct:0
+         (GoLeftPct:0 (1,0))))) (GoDownPct:0 (GoLeftPct:0
+         (GoRightPct:0 (GoDownPct:0 (4,3)))))) (if
+         (pop (GoDownPct:0 (GoUpPct:0 (GoLeftPct:0
+             (2,5))))) (GoUpPct:0 (GoDownPct:0 (if (samecolor
+         (4,4) (5,0)) (GoRightPct:0 (1,3)) (if false
+         (4,1) (2,1))))) (GoDownPct:0 (GoUpPct:0 (GoUpPct:0
+         (if true (4,0) (3,0))))))))) (pop (GoDownPct:0
+         (GoLeftPct:0 (GoDownPct:0 (GoUpPct:0 (if
+             (and (pop (0,1)) (not true)) (GoLeftPct:0
+             (GoUpPct:0 (0,3))) (GoLeftPct:0 (GoRightPct:0
+             (5,3))))))))))))
+
+
+
+Generation 49
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 105.213
+Nodes/tree: [105.213]
+Avg Depth: 14.1484
+Depth/tree: [14.1484]
+Mean fitness raw: 3.3276 adjusted: 0.35944313 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 50
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 103.4724
+Nodes/tree: [103.4724]
+Avg Depth: 14.172
+Depth/tree: [14.172]
+Mean fitness raw: 2.5806 adjusted: 0.37613288 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 51
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 102.5356
+Nodes/tree: [102.5356]
+Avg Depth: 14.3684
+Depth/tree: [14.3684]
+Mean fitness raw: 4.4284 adjusted: 0.3356858 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 52
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 97.1916
+Nodes/tree: [97.1916]
+Avg Depth: 14.5448
+Depth/tree: [14.5448]
+Mean fitness raw: 5.5562 adjusted: 0.338826 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 53
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 97.068
+Nodes/tree: [97.068]
+Avg Depth: 14.673
+Depth/tree: [14.673]
+Mean fitness raw: 2.6642 adjusted: 0.36785057 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 54
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 98.508
+Nodes/tree: [98.508]
+Avg Depth: 14.844
+Depth/tree: [14.844]
+Mean fitness raw: 6.2736 adjusted: 0.33595654 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 55
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 94.5292
+Nodes/tree: [94.5292]
+Avg Depth: 14.9296
+Depth/tree: [14.9296]
+Mean fitness raw: 6.224 adjusted: 0.33785903 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 56
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 92.4642
+Nodes/tree: [92.4642]
+Avg Depth: 14.9938
+Depth/tree: [14.9938]
+Mean fitness raw: 6.3806 adjusted: 0.3334506 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 57
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 89.6148
+Nodes/tree: [89.6148]
+Avg Depth: 15.0996
+Depth/tree: [15.0996]
+Mean fitness raw: 5.4798 adjusted: 0.34280044 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 58
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 87.9526
+Nodes/tree: [87.9526]
+Avg Depth: 15.2868
+Depth/tree: [15.2868]
+Mean fitness raw: 3.138 adjusted: 0.36945632 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 59
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 86.2954
+Nodes/tree: [86.2954]
+Avg Depth: 15.3142
+Depth/tree: [15.3142]
+Mean fitness raw: 5.1466 adjusted: 0.34197748 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 60
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 83.3774
+Nodes/tree: [83.3774]
+Avg Depth: 15.3476
+Depth/tree: [15.3476]
+Mean fitness raw: 2.2474 adjusted: 0.38996953 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 61
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 80.632
+Nodes/tree: [80.632]
+Avg Depth: 15.4872
+Depth/tree: [15.4872]
+Mean fitness raw: 2.4918 adjusted: 0.38290575 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 62
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 78.644
+Nodes/tree: [78.644]
+Avg Depth: 15.5584
+Depth/tree: [15.5584]
+Mean fitness raw: 5.971 adjusted: 0.3466027 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (or (samecolor (GoRightPct:7 (GoUpPct:16
+     (if (and (samecolor (GoDownPct:27 (4,3))
+         (GoRightPct:97 (5,3))) (or (or true false)
+         (or false true))) (GoLeftPct:84 (if true
+         (GoDownPct:46 (4,4)) (1,3))) (GoRightPct:0
+         (GoDownPct:0 (if false (1,2) (0,2)))))))
+     (GoRightPct:35 (if true (GoUpPct:68 (GoUpPct:35
+         (GoLeftPct:55 (if (or (pop (GoLeftPct:49
+             (GoDownPct:54 (GoUpPct:28 (GoRightPct:12
+                 (GoLeftPct:91 (0,1))))))) (or (samecolor
+             (GoDownPct:55 (GoDownPct:93 (GoLeftPct:17
+                 (GoUpPct:30 (0,2))))) (GoRightPct:44 (GoLeftPct:8
+             (GoRightPct:90 (GoUpPct:53 (0,0)))))) (pop
+             (GoLeftPct:0 (if (and (not false) (samecolor
+                 (1,1) (0,0))) (GoRightPct:0 (GoLeftPct:0
+                 (5,3))) (GoLeftPct:0 (if false (2,1) (0,2))))))))
+             (GoLeftPct:57 (GoRightPct:72 (if (or (not
+                 (samecolor (GoRightPct:27 (1,3)) (GoDownPct:2
+                     (0,0)))) (not (and (samecolor (3,3) (5,4))
+                 (and false true)))) (GoLeftPct:96 (if (and
+                 (samecolor (2,3) (4,5)) (and true false))
+                 (if (not true) (if false (0,3) (0,4)) (GoUpPct:0
+                     (0,0))) (GoRightPct:46 (GoUpPct:81 (3,1)))))
+                 (GoUpPct:0 (if (and (and true false) (not
+                     false)) (GoLeftPct:0 (GoDownPct:0 (0,4)))
+                     (if (and false false) (GoRightPct:0 (0,2))
+                         (GoUpPct:0 (3,5)))))))) (GoLeftPct:0 (GoUpPct:0
+             (GoDownPct:0 (if (pop (GoLeftPct:0 (GoRightPct:0
+                 (1,5)))) (GoLeftPct:0 (GoRightPct:0 (GoLeftPct:0
+                 (0,5)))) (if (pop (GoRightPct:0 (5,5))) (GoUpPct:0
+                 (GoUpPct:0 (2,1))) (GoDownPct:0 (GoRightPct:0
+                 (0,5)))))))))))) (GoUpPct:0 (GoDownPct:0
+         (GoRightPct:0 (if true (3,5) (1,5))))))))
+     (and (and (pop (GoLeftPct:0 (3,2))) (pop
+         (GoUpPct:0 (GoLeftPct:0 (GoRightPct:0 (GoRightPct:0
+             (2,3))))))) (or (or true (pop (GoLeftPct:0
+         (GoUpPct:0 (GoUpPct:0 (2,2)))))) true)))
+
+
+
+Generation 63
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 77.7786
+Nodes/tree: [77.7786]
+Avg Depth: 15.5938
+Depth/tree: [15.5938]
+Mean fitness raw: 5.9314 adjusted: 0.3482614 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 64
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 76.7568
+Nodes/tree: [76.7568]
+Avg Depth: 15.6432
+Depth/tree: [15.6432]
+Mean fitness raw: 6.6204 adjusted: 0.34551886 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 65
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 77.5696
+Nodes/tree: [77.5696]
+Avg Depth: 15.7224
+Depth/tree: [15.7224]
+Mean fitness raw: 5.445 adjusted: 0.34524393 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 66
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 75.016
+Nodes/tree: [75.016]
+Avg Depth: 15.763
+Depth/tree: [15.763]
+Mean fitness raw: 6.275 adjusted: 0.34668306 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (or (samecolor (GoRightPct:7 (GoUpPct:16
+     (if (and (samecolor (GoDownPct:27 (4,3))
+         (GoRightPct:97 (5,3))) (or (or true false)
+         (or false true))) (GoLeftPct:84 (if true
+         (GoDownPct:46 (4,4)) (1,3))) (GoRightPct:0
+         (GoDownPct:0 (if false (1,2) (0,2)))))))
+     (GoRightPct:35 (if true (GoUpPct:68 (GoUpPct:35
+         (GoLeftPct:55 (if (or (pop (GoLeftPct:49
+             (GoDownPct:54 (GoUpPct:28 (GoRightPct:12
+                 (GoLeftPct:91 (0,1))))))) (or (samecolor
+             (GoDownPct:55 (GoDownPct:93 (GoLeftPct:17
+                 (GoUpPct:30 (0,2))))) (GoRightPct:44 (GoLeftPct:8
+             (GoRightPct:90 (GoUpPct:53 (0,0)))))) (pop
+             (GoLeftPct:0 (if (and (not false) (samecolor
+                 (1,1) (0,0))) (GoRightPct:0 (GoLeftPct:0
+                 (5,3))) (GoLeftPct:0 (if false (2,1) (0,2))))))))
+             (GoLeftPct:57 (GoRightPct:72 (if (or (not
+                 (samecolor (GoRightPct:27 (1,3)) (GoDownPct:2
+                     (0,0)))) (not (and (samecolor (3,3) (5,4))
+                 (and false true)))) (GoLeftPct:96 (if (and
+                 (samecolor (2,3) (4,5)) (and true false))
+                 (if (not true) (if false (0,3) (0,4)) (GoUpPct:0
+                     (0,0))) (GoRightPct:46 (GoUpPct:81 (3,1)))))
+                 (GoUpPct:0 (if (and (and true false) (not
+                     false)) (GoLeftPct:0 (GoDownPct:0 (0,4)))
+                     (if (and false false) (GoRightPct:0 (0,2))
+                         (GoUpPct:0 (3,5)))))))) (GoLeftPct:0 (GoUpPct:0
+             (GoDownPct:0 (if (pop (GoLeftPct:0 (GoRightPct:0
+                 (1,5)))) (GoLeftPct:0 (GoRightPct:0 (GoLeftPct:0
+                 (0,5)))) (if (pop (GoRightPct:0 (5,5))) (GoUpPct:0
+                 (GoUpPct:0 (2,1))) (GoDownPct:0 (GoRightPct:0
+                 (0,5)))))))))))) (GoUpPct:0 (GoDownPct:0
+         (GoRightPct:0 (if true (3,5) (1,5))))))))
+     (and (and (pop (GoLeftPct:0 (3,2))) (pop
+         (GoUpPct:0 (GoLeftPct:0 (GoRightPct:0 (GoRightPct:0
+             (2,3))))))) (or (or true (pop (GoLeftPct:0
+         (GoUpPct:0 (GoUpPct:0 (2,2)))))) true)))
+
+
+
+Generation 67
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 75.561
+Nodes/tree: [75.561]
+Avg Depth: 15.7886
+Depth/tree: [15.7886]
+Mean fitness raw: 7.0014 adjusted: 0.34457162 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 68
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 75.519
+Nodes/tree: [75.519]
+Avg Depth: 15.9026
+Depth/tree: [15.9026]
+Mean fitness raw: 2.4762 adjusted: 0.38357282 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 69
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 74.358
+Nodes/tree: [74.358]
+Avg Depth: 15.8448
+Depth/tree: [15.8448]
+Mean fitness raw: 6.774 adjusted: 0.3485586 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 70
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 75.1994
+Nodes/tree: [75.1994]
+Avg Depth: 15.8592
+Depth/tree: [15.8592]
+Mean fitness raw: 6.5046 adjusted: 0.3479152 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 71
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 75.1172
+Nodes/tree: [75.1172]
+Avg Depth: 15.8838
+Depth/tree: [15.8838]
+Mean fitness raw: 6.6792 adjusted: 0.34343907 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 72
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 74.268
+Nodes/tree: [74.268]
+Avg Depth: 15.9264
+Depth/tree: [15.9264]
+Mean fitness raw: 7.9796 adjusted: 0.34246683 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (or (samecolor (GoRightPct:7 (GoUpPct:16
+     (if (and (samecolor (GoDownPct:27 (4,3))
+         (GoRightPct:97 (5,3))) (or (or true false)
+         (or false true))) (GoLeftPct:84 (if true
+         (GoDownPct:46 (4,4)) (1,3))) (GoRightPct:0
+         (GoDownPct:0 (if false (1,2) (0,2)))))))
+     (GoRightPct:35 (if true (GoUpPct:68 (GoUpPct:35
+         (GoLeftPct:55 (if (or (pop (GoLeftPct:49
+             (GoDownPct:54 (GoUpPct:28 (GoRightPct:12
+                 (GoLeftPct:91 (0,1))))))) (or (samecolor
+             (GoDownPct:55 (GoDownPct:93 (GoLeftPct:17
+                 (GoUpPct:30 (0,2))))) (GoRightPct:44 (GoLeftPct:8
+             (GoRightPct:90 (GoUpPct:53 (0,0)))))) (pop
+             (GoLeftPct:0 (if (and (not false) (samecolor
+                 (1,1) (0,0))) (GoRightPct:0 (GoLeftPct:0
+                 (5,3))) (GoLeftPct:0 (if false (2,1) (0,2))))))))
+             (GoLeftPct:57 (GoRightPct:72 (if (or (not
+                 (samecolor (GoRightPct:27 (1,3)) (GoDownPct:2
+                     (0,0)))) (not (and (samecolor (3,3) (5,4))
+                 (and false true)))) (GoLeftPct:96 (if (and
+                 (samecolor (2,3) (4,5)) (and true false))
+                 (if (not true) (if false (0,3) (0,4)) (GoUpPct:0
+                     (0,0))) (GoRightPct:46 (GoUpPct:81 (3,1)))))
+                 (GoUpPct:0 (if (and (and true false) (not
+                     false)) (GoLeftPct:0 (GoDownPct:0 (0,4)))
+                     (if (and false false) (GoRightPct:0 (0,2))
+                         (GoUpPct:0 (3,5)))))))) (GoLeftPct:0 (GoUpPct:0
+             (GoDownPct:0 (if (pop (GoLeftPct:0 (GoRightPct:0
+                 (1,5)))) (GoLeftPct:0 (GoRightPct:0 (GoLeftPct:0
+                 (0,5)))) (if (pop (GoRightPct:0 (5,5))) (GoUpPct:0
+                 (GoUpPct:0 (2,1))) (GoDownPct:0 (GoRightPct:0
+                 (0,5)))))))))))) (GoUpPct:0 (GoDownPct:0
+         (GoRightPct:0 (if true (3,5) (1,5))))))))
+     (and (and (pop (GoLeftPct:0 (3,2))) (pop
+         (GoUpPct:0 (GoLeftPct:0 (GoRightPct:0 (GoRightPct:0
+             (2,3))))))) (or (or true (pop (GoLeftPct:0
+         (GoUpPct:0 (GoUpPct:0 (2,2)))))) true)))
+
+
+
+Generation 73
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 73.3438
+Nodes/tree: [73.3438]
+Avg Depth: 15.9368
+Depth/tree: [15.9368]
+Mean fitness raw: 3.756 adjusted: 0.3649133 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 74
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 71.9768
+Nodes/tree: [71.9768]
+Avg Depth: 15.972
+Depth/tree: [15.972]
+Mean fitness raw: 6.6504 adjusted: 0.34498703 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (or (samecolor (GoRightPct:7 (GoUpPct:16
+     (if (and (samecolor (GoDownPct:27 (4,3))
+         (GoRightPct:97 (5,3))) (or (or true false)
+         (or false true))) (GoLeftPct:84 (if true
+         (GoDownPct:46 (4,4)) (1,3))) (GoRightPct:0
+         (GoDownPct:0 (if false (1,2) (0,2)))))))
+     (GoRightPct:35 (if true (GoUpPct:68 (GoUpPct:35
+         (GoLeftPct:55 (if (or (pop (GoLeftPct:49
+             (GoDownPct:54 (GoUpPct:28 (GoRightPct:12
+                 (GoLeftPct:91 (0,1))))))) (or (samecolor
+             (GoDownPct:55 (GoDownPct:93 (GoLeftPct:17
+                 (GoUpPct:30 (0,2))))) (GoRightPct:44 (GoLeftPct:8
+             (GoRightPct:90 (GoUpPct:53 (0,0)))))) (pop
+             (GoLeftPct:0 (if (and (not false) (samecolor
+                 (1,1) (0,0))) (GoRightPct:0 (GoLeftPct:0
+                 (5,3))) (GoLeftPct:0 (if false (2,1) (0,2))))))))
+             (GoLeftPct:57 (GoRightPct:72 (if (or (not
+                 (samecolor (GoRightPct:27 (1,3)) (GoDownPct:2
+                     (0,0)))) (not (and (samecolor (3,3) (5,4))
+                 (and false true)))) (GoLeftPct:96 (if (and
+                 (samecolor (2,3) (4,5)) (and true false))
+                 (if (not true) (if false (0,3) (0,4)) (GoUpPct:0
+                     (0,0))) (GoRightPct:46 (GoUpPct:81 (3,1)))))
+                 (GoUpPct:0 (if (and (and true false) (not
+                     false)) (GoLeftPct:0 (GoDownPct:0 (0,4)))
+                     (if (and false false) (GoRightPct:0 (0,2))
+                         (GoUpPct:0 (3,5)))))))) (GoLeftPct:0 (GoUpPct:0
+             (GoDownPct:0 (if (pop (GoLeftPct:0 (GoRightPct:0
+                 (1,5)))) (GoLeftPct:0 (GoRightPct:0 (GoLeftPct:0
+                 (0,5)))) (if (pop (GoRightPct:0 (5,5))) (GoUpPct:0
+                 (GoUpPct:0 (2,1))) (GoDownPct:0 (GoRightPct:0
+                 (0,5)))))))))))) (GoUpPct:0 (GoDownPct:0
+         (GoRightPct:0 (if true (3,5) (1,5))))))))
+     (and (and (pop (GoLeftPct:0 (3,2))) (pop
+         (GoUpPct:0 (GoLeftPct:0 (GoRightPct:0 (GoRightPct:0
+             (2,3))))))) (or (or true (pop (GoLeftPct:0
+         (GoUpPct:0 (GoUpPct:0 (2,2)))))) true)))
+
+
+
+Generation 75
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 70.3994
+Nodes/tree: [70.3994]
+Avg Depth: 16.0206
+Depth/tree: [16.0206]
+Mean fitness raw: 2.8096 adjusted: 0.37548316 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 76
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 68.646
+Nodes/tree: [68.646]
+Avg Depth: 15.9548
+Depth/tree: [15.9548]
+Mean fitness raw: 5.2826 adjusted: 0.3516538 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 77
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 68.6108
+Nodes/tree: [68.6108]
+Avg Depth: 16.015
+Depth/tree: [16.015]
+Mean fitness raw: 4.7976 adjusted: 0.3556622 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 78
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 68.142
+Nodes/tree: [68.142]
+Avg Depth: 16.0264
+Depth/tree: [16.0264]
+Mean fitness raw: 2.1516 adjusted: 0.39527354 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 79
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 67.187
+Nodes/tree: [67.187]
+Avg Depth: 16.0106
+Depth/tree: [16.0106]
+Mean fitness raw: 5.9076 adjusted: 0.34828794 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 80
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 66.7196
+Nodes/tree: [66.7196]
+Avg Depth: 16.0122
+Depth/tree: [16.0122]
+Mean fitness raw: 5.863 adjusted: 0.34896415 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 81
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.863
+Nodes/tree: [65.863]
+Avg Depth: 16.0226
+Depth/tree: [16.0226]
+Mean fitness raw: 2.4744 adjusted: 0.3824383 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 82
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.3236
+Nodes/tree: [65.3236]
+Avg Depth: 16.0426
+Depth/tree: [16.0426]
+Mean fitness raw: 5.8712 adjusted: 0.3491603 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 83
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.6016
+Nodes/tree: [65.6016]
+Avg Depth: 16.1392
+Depth/tree: [16.1392]
+Mean fitness raw: 4.1876 adjusted: 0.35789335 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 84
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.3428
+Nodes/tree: [65.3428]
+Avg Depth: 16.0454
+Depth/tree: [16.0454]
+Mean fitness raw: 3.216 adjusted: 0.36904055 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 85
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.4598
+Nodes/tree: [65.4598]
+Avg Depth: 16.0704
+Depth/tree: [16.0704]
+Mean fitness raw: 4.2238 adjusted: 0.35742056 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 86
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.8232
+Nodes/tree: [64.8232]
+Avg Depth: 16.0254
+Depth/tree: [16.0254]
+Mean fitness raw: 3.4646 adjusted: 0.36531237 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 87
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.6844
+Nodes/tree: [64.6844]
+Avg Depth: 16.028
+Depth/tree: [16.028]
+Mean fitness raw: 2.8894 adjusted: 0.37554857 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 88
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.8094
+Nodes/tree: [64.8094]
+Avg Depth: 16.038
+Depth/tree: [16.038]
+Mean fitness raw: 5.9272 adjusted: 0.3479427 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 89
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.692
+Nodes/tree: [65.692]
+Avg Depth: 16.089
+Depth/tree: [16.089]
+Mean fitness raw: 2.4524 adjusted: 0.38552672 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 90
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.9772
+Nodes/tree: [64.9772]
+Avg Depth: 16.0586
+Depth/tree: [16.0586]
+Mean fitness raw: 5.1462 adjusted: 0.35380137 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 91
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.4584
+Nodes/tree: [65.4584]
+Avg Depth: 16.0568
+Depth/tree: [16.0568]
+Mean fitness raw: 5.803 adjusted: 0.353347 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 92
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.243
+Nodes/tree: [65.243]
+Avg Depth: 16.0496
+Depth/tree: [16.0496]
+Mean fitness raw: 2.248 adjusted: 0.3944699 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 93
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.7282
+Nodes/tree: [65.7282]
+Avg Depth: 16.0606
+Depth/tree: [16.0606]
+Mean fitness raw: 5.3608 adjusted: 0.34768197 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 94
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.4284
+Nodes/tree: [65.4284]
+Avg Depth: 16.0944
+Depth/tree: [16.0944]
+Mean fitness raw: 5.531 adjusted: 0.35063812 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 95
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.2386
+Nodes/tree: [65.2386]
+Avg Depth: 16.059
+Depth/tree: [16.059]
+Mean fitness raw: 6.8332 adjusted: 0.34812635 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 96
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.7432
+Nodes/tree: [65.7432]
+Avg Depth: 16.0736
+Depth/tree: [16.0736]
+Mean fitness raw: 5.8876 adjusted: 0.3488115 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 97
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.316
+Nodes/tree: [65.316]
+Avg Depth: 16.0866
+Depth/tree: [16.0866]
+Mean fitness raw: 3.5174 adjusted: 0.36383724 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 98
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.014
+Nodes/tree: [65.014]
+Avg Depth: 16.0686
+Depth/tree: [16.0686]
+Mean fitness raw: 2.5116 adjusted: 0.3819094 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 99
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.7364
+Nodes/tree: [64.7364]
+Avg Depth: 16.0264
+Depth/tree: [16.0264]
+Mean fitness raw: 4.1654 adjusted: 0.35793695 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 100
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.569
+Nodes/tree: [64.569]
+Avg Depth: 16.0162
+Depth/tree: [16.0162]
+Mean fitness raw: 3.4432 adjusted: 0.37080464 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 101
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.8902
+Nodes/tree: [64.8902]
+Avg Depth: 16.112
+Depth/tree: [16.112]
+Mean fitness raw: 3.5138 adjusted: 0.36496064 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 102
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.1378
+Nodes/tree: [65.1378]
+Avg Depth: 16.1266
+Depth/tree: [16.1266]
+Mean fitness raw: 7.3794 adjusted: 0.3486785 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 103
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.0808
+Nodes/tree: [65.0808]
+Avg Depth: 16.0596
+Depth/tree: [16.0596]
+Mean fitness raw: 7.0572 adjusted: 0.34323162 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 104
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.9486
+Nodes/tree: [64.9486]
+Avg Depth: 16.064
+Depth/tree: [16.064]
+Mean fitness raw: 4.308 adjusted: 0.3565925 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 105
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.2678
+Nodes/tree: [65.2678]
+Avg Depth: 16.0698
+Depth/tree: [16.0698]
+Mean fitness raw: 3.1504 adjusted: 0.37336585 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 106
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.4972
+Nodes/tree: [65.4972]
+Avg Depth: 16.0734
+Depth/tree: [16.0734]
+Mean fitness raw: 4.1792 adjusted: 0.35797253 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 107
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.0224
+Nodes/tree: [65.0224]
+Avg Depth: 16.0814
+Depth/tree: [16.0814]
+Mean fitness raw: 5.363 adjusted: 0.34653914 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 108
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.0174
+Nodes/tree: [65.0174]
+Avg Depth: 16.0912
+Depth/tree: [16.0912]
+Mean fitness raw: 7.5752 adjusted: 0.34531498 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 109
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.9054
+Nodes/tree: [64.9054]
+Avg Depth: 16.1016
+Depth/tree: [16.1016]
+Mean fitness raw: 3.493 adjusted: 0.36606762 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 110
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.5074
+Nodes/tree: [64.5074]
+Avg Depth: 16.0022
+Depth/tree: [16.0022]
+Mean fitness raw: 3.187 adjusted: 0.36800233 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 111
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.2498
+Nodes/tree: [65.2498]
+Avg Depth: 16.0966
+Depth/tree: [16.0966]
+Mean fitness raw: 3.818 adjusted: 0.36345252 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 112
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.7926
+Nodes/tree: [64.7926]
+Avg Depth: 16.086
+Depth/tree: [16.086]
+Mean fitness raw: 3.117 adjusted: 0.37059796 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 113
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 65.2342
+Nodes/tree: [65.2342]
+Avg Depth: 16.136
+Depth/tree: [16.136]
+Mean fitness raw: 6.3844 adjusted: 0.35346442 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 114
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.1062
+Nodes/tree: [64.1062]
+Avg Depth: 16.0494
+Depth/tree: [16.0494]
+Mean fitness raw: 3.5912 adjusted: 0.35992584 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 115
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.2606
+Nodes/tree: [64.2606]
+Avg Depth: 16.0848
+Depth/tree: [16.0848]
+Mean fitness raw: 5.0392 adjusted: 0.35668126 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 116
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.203
+Nodes/tree: [64.203]
+Avg Depth: 16.0412
+Depth/tree: [16.0412]
+Mean fitness raw: 7.2064 adjusted: 0.34643438 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 117
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.9126
+Nodes/tree: [63.9126]
+Avg Depth: 16.0344
+Depth/tree: [16.0344]
+Mean fitness raw: 4.1312 adjusted: 0.36198804 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 118
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 64.0024
+Nodes/tree: [64.0024]
+Avg Depth: 16.1222
+Depth/tree: [16.1222]
+Mean fitness raw: 6.0742 adjusted: 0.35364178 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 119
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.804
+Nodes/tree: [63.804]
+Avg Depth: 16.0826
+Depth/tree: [16.0826]
+Mean fitness raw: 7.625 adjusted: 0.3437266 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 120
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.2054
+Nodes/tree: [63.2054]
+Avg Depth: 16.0236
+Depth/tree: [16.0236]
+Mean fitness raw: 4.1958 adjusted: 0.35933483 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 121
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.6724
+Nodes/tree: [63.6724]
+Avg Depth: 16.1492
+Depth/tree: [16.1492]
+Mean fitness raw: 7.2804 adjusted: 0.34413004 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 122
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.2612
+Nodes/tree: [63.2612]
+Avg Depth: 16.065
+Depth/tree: [16.065]
+Mean fitness raw: 6.7662 adjusted: 0.3485809 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 123
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.0474
+Nodes/tree: [63.0474]
+Avg Depth: 15.9924
+Depth/tree: [15.9924]
+Mean fitness raw: 2.6012 adjusted: 0.38313904 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 124
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.7122
+Nodes/tree: [63.7122]
+Avg Depth: 16.1216
+Depth/tree: [16.1216]
+Mean fitness raw: 3.3984 adjusted: 0.37016648 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 125
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.633
+Nodes/tree: [63.633]
+Avg Depth: 16.0862
+Depth/tree: [16.0862]
+Mean fitness raw: 2.4898 adjusted: 0.38754377 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 126
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.2932
+Nodes/tree: [63.2932]
+Avg Depth: 16.0616
+Depth/tree: [16.0616]
+Mean fitness raw: 6.0196 adjusted: 0.34619513 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 127
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.583
+Nodes/tree: [63.583]
+Avg Depth: 16.077
+Depth/tree: [16.077]
+Mean fitness raw: 6.8584 adjusted: 0.34658235 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 128
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.5616
+Nodes/tree: [63.5616]
+Avg Depth: 16.1128
+Depth/tree: [16.1128]
+Mean fitness raw: 3.499 adjusted: 0.36655605 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 129
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.5318
+Nodes/tree: [63.5318]
+Avg Depth: 16.1022
+Depth/tree: [16.1022]
+Mean fitness raw: 2.1408 adjusted: 0.39474493 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 130
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.5446
+Nodes/tree: [63.5446]
+Avg Depth: 16.1186
+Depth/tree: [16.1186]
+Mean fitness raw: 3.8566 adjusted: 0.36267415 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 131
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.4808
+Nodes/tree: [63.4808]
+Avg Depth: 16.1224
+Depth/tree: [16.1224]
+Mean fitness raw: 3.4908 adjusted: 0.3635966 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 132
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.1822
+Nodes/tree: [63.1822]
+Avg Depth: 16.0714
+Depth/tree: [16.0714]
+Mean fitness raw: 5.7512 adjusted: 0.35322577 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 133
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 62.9838
+Nodes/tree: [62.9838]
+Avg Depth: 16.0212
+Depth/tree: [16.0212]
+Mean fitness raw: 6.6836 adjusted: 0.34318176 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 134
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.336
+Nodes/tree: [63.336]
+Avg Depth: 16.068
+Depth/tree: [16.068]
+Mean fitness raw: 6.8918 adjusted: 0.34650928 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 135
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.1938
+Nodes/tree: [63.1938]
+Avg Depth: 16.0754
+Depth/tree: [16.0754]
+Mean fitness raw: 6.019 adjusted: 0.34828398 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 136
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 63.3902
+Nodes/tree: [63.3902]
+Avg Depth: 16.1052
+Depth/tree: [16.1052]
+Mean fitness raw: 2.449 adjusted: 0.3828367 hits: 0.0
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=1.0 Adjusted=0.5 Hits=0
+Tree 0:
+ (not (pop (GoRightPct:69 (GoLeftPct:50 (GoRightPct:37
+     (if (and (not (pop (GoUpPct:91 (GoLeftPct:20
+         (0,0))))) (pop (GoDownPct:52 (GoUpPct:47
+         (GoUpPct:17 (2,3)))))) (GoRightPct:0 (GoUpPct:0
+         (GoRightPct:0 (GoUpPct:0 (if false (4,2)
+             (5,5)))))) (GoRightPct:49 (GoLeftPct:77 (GoLeftPct:52
+         (GoUpPct:10 (GoRightPct:71 (GoRightPct:97
+             (if (and (or (pop (4,1)) (or false true))
+                 (and (and false false) (not false))) (if
+                 (and (or true false) (not false)) (GoRightPct:0
+                 (GoDownPct:0 (2,3))) (GoLeftPct:0 (GoLeftPct:0
+                 (5,5)))) (GoUpPct:7 (if (pop (3,4)) (GoRightPct:0
+                 (5,4)) (if false (0,3) (3,5)))))))))))))))))
+
+
+
+Generation 137
+================
+
+Subpopulation 0
+----------------
+Avg Nodes: 62.9094
+Nodes/tree: [62.9094]
+Avg Depth: 16.012
+Depth/tree: [16.012]
+Mean fitness raw: 0.7174 adjusted: 0.6711437 hits: 1.337
+
+Best Individual of Generation:
+Evaluated: true
+Fitness: Raw=0.0 Adjusted=1.0 Hits=2
+Tree 0:
+ (not (pop (GoRightPct:33 (GoLeftPct:6 (GoRightPct:60
+     (if (and (not (pop (GoUpPct:88 (GoLeftPct:91
+         (0,0))))) (pop (GoDownPct:9 (GoUpPct:63 (GoUpPct:55
+         (2,3)))))) (GoRightPct:63 (GoUpPct:71 (GoRightPct:0
+         (GoUpPct:38 (if false (4,2) (5,5)))))) (GoRightPct:49
+         (GoDownPct:0 (2,3)))))))))
+
+
+
+Final Statistics
+================
+Total Individuals Evaluated: 690000
+
+Best Individual of Run:
+Evaluated: true
+Fitness: Raw=0.0 Adjusted=1.0 Hits=2
+Tree 0:
+ (not (pop (GoRightPct:33 (GoLeftPct:6 (GoRightPct:60
+     (if (and (not (pop (GoUpPct:88 (GoLeftPct:91
+         (0,0))))) (pop (GoDownPct:9 (GoUpPct:63 (GoUpPct:55
+         (2,3)))))) (GoRightPct:63 (GoUpPct:71 (GoRightPct:0
+         (GoUpPct:38 (if false (4,2) (5,5)))))) (GoRightPct:49
+         (GoDownPct:0 (2,3)))))))))
+
+
+
+Timings
+=======
+Initialization: 0.859 secs total, 214016 nodes, 249145.52 nodes/sec
+Evaluating: 9.37 secs total, 55354103 nodes, 5907588.5 nodes/sec
+Breeding: 112.735 secs total, 55140087 nodes, 489112.4 nodes/sec
+
+
+
+Memory Usage
+==============
+Initialization: 10054.328 KB total, 214016 nodes, 21.285957 nodes/KB
+Evaluating: 146655.62 KB total, 55354103 nodes, 377.44275 nodes/KB
+Breeding: 1524942.8 KB total, 55140087 nodes, 36.15879 nodes/KB
+
+
+Best Individual
+
+Score is (current/max): 2/36
+Gameboard is:
+	0	1	2	3	4	5	
+0 :	YELLOW	GREEN	YELLOW	BLUE	PURPLE	BLUE	
+1 :	PURPLE	GREEN	PURPLE	BLUE	YELLOW	GREEN	
+2 :	BLUE	RED	YELLOW	PURPLE	YELLOW	RED	
+3 :	YELLOW	PURPLE	RED	BLUE	RED	RED	
+4 :	GREEN	PURPLE	PURPLE	GREEN	GREEN	BLUE	
+5 :	BLUE	EMPTY	EMPTY	BLUE	GREEN	GREEN	
+

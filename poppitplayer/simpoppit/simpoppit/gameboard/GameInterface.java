@@ -206,6 +206,25 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
     }
     
     /**
+     * Returns the game state to initial settings. Reverts to
+     * original game grid layout.
+     * Sends an "update" event to all registered listeners.
+     * 
+     */
+    public void restartGame() {
+        // Copy the starting board into the current one
+        this.gameBoard = (GameGrid)GameInterface.startBoard.clone();
+        // Prepare a list of affected locations to send update messages to
+        this.coordList.addAll(this.gameBoard.getGridAsList());
+        // Reset score
+        this.score = 0;
+        // Select the "update" action
+        this.action = "update";
+        // Send the event
+        this.fireGameEvent();
+    }
+    
+    /**
      * Saves the current game state to a file.
      * 
      */
@@ -239,6 +258,31 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
         }catch(ClassNotFoundException ex){
             ex.printStackTrace();
         }  
+    }
+    
+    /**
+     * Replays the current game from the move list.
+     * 
+     */
+    public void replayGame() {
+        // Copy the starting board into the current one
+        this.gameBoard = (GameGrid)GameInterface.startBoard.clone();
+        // Prepare a list of affected locations to send update messages to
+        this.coordList.addAll(this.gameBoard.getGridAsList());
+        // Reset score
+        this.score = 0;
+        // Select the "update" action
+        this.action = "update";
+        // Send the event
+        this.fireGameEvent();
+        for (Coord item : this.moveList){
+            this.pop(item);
+            try {
+                Thread.sleep(2000);
+            } catch (Exception e) {
+                System.out.println("Failed to sleep - " + e);
+            }
+        }
     }
 
     /**

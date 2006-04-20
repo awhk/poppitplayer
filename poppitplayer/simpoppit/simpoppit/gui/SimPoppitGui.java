@@ -48,9 +48,9 @@ public class SimPoppitGui extends JFrame implements GameListener {
         iPanel.add(value);
         iPanel.add(new JLabel("Maximum score for this board: " + game.getMaxScore()));
         GameButton saveButton = new GameButton(this.game, "Save");
-//        iPanel.add(saveButton);
+        iPanel.add(saveButton);
         GameButton loadButton = new GameButton(this.game, "Load");
-//        iPanel.add(loadButton);
+        iPanel.add(loadButton);
         contentPane.add(iPanel, BorderLayout.NORTH);
 
         PoppitPanel panel = new PoppitPanel();

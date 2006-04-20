@@ -55,16 +55,21 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
     public GameInterface(int aX, int aY) {
         // Inititalize the game grid to the given size
         this.gameBoard = new GameGrid(aX, aY);
+        // Store the starting layout for replay purposes
+        GameInterface.startBoard = (GameGrid)this.gameBoard.clone();
         // Set the default event action
         this.action = "none";
         // Init the coordinate list, used to identify event recipients
         this.coordList = new ArrayList<Coord>();
+        // Init the move list, used to replay games
+        this.moveList = new LinkedList<Coord>();
         // Init the event listener list
         GameInterface.gameListeners = new LinkedList<GameListener>();
         // Init the static maximum score value for this game
         GameInterface.maxScore = aX * aY;
         // Init the starting accumulated score for this game session
         this.score = 0;
+        //System.out.println("New game created.");
     }
 
     /**
@@ -78,9 +83,13 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
      *            an existing game grid to use for this new game instance
      * @param aScore
      */
-    private GameInterface(GameGrid newGrid, int aScore) {
+    private GameInterface(GameGrid newGrid, int aScore, Queue<Coord>moves) {
         this.gameBoard = newGrid;
         this.coordList = new ArrayList<Coord>();
+        this.moveList = new LinkedList<Coord>();
+        for (Coord item : moves){
+            this.moveList.offer(item);
+        }
         this.action = "none";
         this.score = aScore;
     }
@@ -197,9 +206,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
     }
     
     /**
-     * Returns the game state to initial settings. Does not revert to
-     * original game grid layout, but generates a new one of the same size.
-     * Sends an "update" event to all registered listeners.
+     * Saves the current game state to a file.
      * 
      */
     public void saveGame(String filename) {
@@ -213,9 +220,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
     }
     
     /**
-     * Returns the game state to initial settings. Does not revert to
-     * original game grid layout, but generates a new one of the same size.
-     * Sends an "update" event to all registered listeners.
+     * Load the current game state from a file.
      * 
      */
     public void loadGame(String filename) {
@@ -225,6 +230,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
             GameInterface loaded = (GameInterface)obj_in.readObject();
             this.gameBoard = loaded.getGrid();
             this.score = loaded.getScore();
+            this.moveList = loaded.moveList;
             this.coordList.addAll(this.gameBoard.getGridAsList());
             this.action = "update";
             this.fireGameEvent();
@@ -283,6 +289,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
         // failure
         if (!this.isPoppable(aBalloon))
             return false;
+        moveList.offer(aBalloon);
         // Start by un-highlighting the current balloon group. This is done for
         // GUI purposes, so the highlighted locations do not linger after the
         // balloons have been popped.
@@ -448,7 +455,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
         // class are either transient or static, so they are of no concern when
         // cloning.
         GameInterface result = new GameInterface((GameGrid) this.gameBoard
-                .clone(), this.score);
+                .clone(), this.score, this.moveList);
         return result;
     }
 
@@ -485,6 +492,10 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
     private String action;
 
     private static LinkedList<GameListener> gameListeners;
+    
+    private Queue<Coord> moveList;
+    
+    private static GameGrid startBoard;
     
     static final long serialVersionUID = 123456;
 

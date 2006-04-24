@@ -37,6 +37,7 @@ public class Pop extends GPNode {
         } else {
             popcoord = PoppitProblem
                     .convertIntCoord(((PoppitData) input).number, state);
+          System.out.println("Assuming numerical run in 'pop'");
         }
         PoppitProblem myproblem = (PoppitProblem) problem;
 

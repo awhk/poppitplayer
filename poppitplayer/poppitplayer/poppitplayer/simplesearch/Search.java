@@ -275,22 +275,23 @@ public abstract class Search {
         // Initialize a stack to hold the move list. Moves will be extracted
         // from the solution sequence in reverse order, so a stack will allow
         // them to be popped off and the game replayed from start to finish.
-        Stack<Coord> moves = new Stack<Coord>();
+//        Stack<Coord> moves = new Stack<Coord>();
         // Iterate through the nodes of the solution set, starting from the last
         // node and ending at the first.
-        while (myNode.getAncestor() != null) {
+//        while (myNode.getAncestor() != null) {
             // Retrieve the operator from the current search node (i.e. the move
             // that resulted in the game state of the current node)
-            moves.push(myNode.getOperator());
+//            moves.push(myNode.getOperator());
             // Prime the next node up in the game solution sequence for
             // examination
-            myNode = myNode.getAncestor();
-        }
+//            myNode = myNode.getAncestor();
+//        }
         // Initialize the gui with a COPY of the starting game state, so the
         // replay can be run more than once. Start the gui in non-interactive
         // mode.
-        SimPoppitGui gui = new SimPoppitGui((GameInterface) myNode.getState()
-                .clone(), false);
+        GameInterface best = (GameInterface)myNode.getState().clone();
+        best.restartGame();
+        SimPoppitGui gui = new SimPoppitGui(best, false);
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gui.setVisible(true);
         // Put up a dialog box to allow the start of the playback to be delayed
@@ -298,18 +299,19 @@ public abstract class Search {
         JOptionPane.showMessageDialog(gui, "Click OK to watch playback",
                 "Game Solved", JOptionPane.DEFAULT_OPTION);
         // Iterate through the move stack
-        while (!(moves.isEmpty())) {
+//        while (!(moves.isEmpty())) {
             // Highlight the impending move...
-            gui.getGame().highlight(moves.peek());
+//            gui.getGame().highlight(moves.peek());
             // ...for one second...
-            try {
-                Thread.sleep(1000);
-            } catch (Exception e) {
-                System.out.println("Failed to sleep - " + e);
-            }
+//            try {
+//                Thread.sleep(1000);
+//            } catch (Exception e) {
+//                System.out.println("Failed to sleep - " + e);
+//            }
             // ...then make the move.
-            gui.getGame().pop(moves.pop());
-        }
+//            gui.getGame().pop(moves.pop());
+//        }
+        best.replayGame();
         // When the playback is complete, offer the option to watch it again
         int selection = JOptionPane.showConfirmDialog(gui,
                 "Click OK to watch playback again or cancel not to",

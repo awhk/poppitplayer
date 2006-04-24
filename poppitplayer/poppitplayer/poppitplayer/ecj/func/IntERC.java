@@ -19,9 +19,9 @@ import ec.util.Parameter;
 import simpoppit.gameboard.Coord;
 import poppitplayer.ecj.PoppitData;
 
-public class CoordERC extends ERC {
+public class IntERC extends ERC {
 
-    public Coord value;
+    public int value;
     
     private int x;
     private int y;
@@ -34,7 +34,6 @@ public class CoordERC extends ERC {
     Parameter newbase = 
         new Parameter(EvolutionState.P_EVALUATOR).push(Evaluator.P_PROBLEM);
 
-    // obviously not using the default base for any of this stuff
 
     // load our map coordinates
     x = state.parameters.getInt(newbase.push("x"),null,1);
@@ -43,17 +42,16 @@ public class CoordERC extends ERC {
     state.output.exitIfErrors();      
     }
 
-    // for now, this will produce coordinates in the range
-    // (0,0)-(6,6)...hopefully I can find a way to make the range
-    // match the board size...
     public void resetNode(final EvolutionState state, final int thread)
-        { value = new Coord(state.random[thread].nextInt(x), state.random[thread].nextInt(y));}
+        {   value = state.random[thread].nextInt(x*y) + 1;
+            //value = state.random[thread].nextInt(x) + 1;
+        }
 
     public int nodeHashCode()
     {
     // a reasonable hash code
     //return this.getClass().hashCode() + Float.floatToIntBits(value.getX()) + Float.floatToIntBits(value.getY());
-        return this.getClass().hashCode() + x*y + y;
+        return this.getClass().hashCode() + value;
     }
     
     public boolean nodeEquals(final GPNode node)
@@ -63,24 +61,21 @@ public class CoordERC extends ERC {
         // to change this to isAssignableTo(...)
         if (this.getClass() != node.getClass()) return false;
         // now check to see if the ERCs hold the same value
-        return (((CoordERC)node).value.equals(value));
+        return ((IntERC)node).value == value;
         }
 
     public void readNode(final EvolutionState state, final DataInput dataInput) throws IOException
         {
-        byte input[] = new byte[2];
-        dataInput.readFully(input);
-        value = new Coord(input[0], input[1]);
+        value = dataInput.readInt();
         }
 
     public void writeNode(final EvolutionState state, final DataOutput dataOutput) throws IOException
         {
-        byte output[] = {(byte)value.getX(), (byte)value.getY()};
-        dataOutput.write(output);
+        dataOutput.writeInt(value);
         }
 
     public String encode()
-        { return Code.encode(value.toString()); }
+        { return Code.encode(value); }
 
     public boolean decode(DecodeReturn dret)
         {
@@ -92,7 +87,7 @@ public class CoordERC extends ERC {
         // decode
         Code.decode(dret);
 
-        if (dret.type != DecodeReturn.T_STRING) // uh oh!
+        if (dret.type != DecodeReturn.T_INT) // uh oh!
             {
             // restore the position and the string; it was an error
             dret.data = data;
@@ -101,14 +96,14 @@ public class CoordERC extends ERC {
             }
 
         // store the data
-        value  = new Coord(Integer.valueOf(dret.s.charAt(1)), Integer.valueOf(dret.s.charAt(3)));
+        value  = (int)(dret.l);
         return true;
         }
 
-    public String name() { return "coorderc"; }
+    public String name() { return "interc"; }
 
     public String toStringForHumans()
-        { return value.toString(); }
+        { return "" + value; }
 
     public void eval(final EvolutionState state,
                      final int thread,
@@ -118,7 +113,6 @@ public class CoordERC extends ERC {
                      final Problem problem)
         {
         PoppitData pd = ((PoppitData)(input));
-         pd.point = value;
-         pd.result = false;
+         pd.number = value;
         }
 }

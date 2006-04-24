@@ -1,0 +1,117 @@
+parent.0 = C:/j2sdk/ec/ec/gp/koza/koza.params
+
+generations = 100
+pop.subpop.0.size = 1000
+gp.koza.half.max-depth = 12
+#select.tournament.size = 10
+#gp.koza.xover.maxdepth = 9
+#seed.0 = 9632
+#seed.0 = time
+
+gp.type.a.size = 2
+gp.type.a.0.name = bool
+gp.type.a.1.name = int
+gp.type.s.size = 1
+gp.type.s.0.name = bl-and-int
+gp.type.s.0.size = 2
+gp.type.s.0.member.0 = bool
+gp.type.s.0.member.1 = int
+
+gp.tc.size = 1
+
+gp.tc.0 = ec.gp.GPTreeConstraints
+gp.tc.0.name = tc0
+gp.tc.0.fset = f0
+gp.tc.0.returns = bl-and-int
+#gp.tc.0.init = ec.gp.koza.HalfBuilder
+#gp.tc.0.init.growp = 0.5
+#gp.tc.0.init.min = 2
+#gp.tc.0.init.max = 6
+
+gp.nc.size = 9
+gp.nc.0 = ec.gp.GPNodeConstraints
+gp.nc.0.name = bl-bl-rets-bl
+gp.nc.0.returns = bool
+gp.nc.0.size = 2
+gp.nc.0.child.0 = bool
+gp.nc.0.child.1 = bool
+gp.nc.1 = ec.gp.GPNodeConstraints
+gp.nc.1.name = bl-rets-bl
+gp.nc.1.returns = bool
+gp.nc.1.size = 1
+gp.nc.1.child.0 = bool
+gp.nc.2 = ec.gp.GPNodeConstraints
+gp.nc.2.name = int-rets-int
+gp.nc.2.returns = int
+gp.nc.2.size = 1
+gp.nc.2.child.0 = int
+gp.nc.3 = ec.gp.GPNodeConstraints
+gp.nc.3.name = bl-int-int-rets-int
+gp.nc.3.returns = int
+gp.nc.3.size = 3
+gp.nc.3.child.0 = bool
+gp.nc.3.child.1 = int
+gp.nc.3.child.2 = int
+gp.nc.4 = ec.gp.GPNodeConstraints
+gp.nc.4.name = int-int-rets-bl
+gp.nc.4.returns = bool
+gp.nc.4.size = 2
+gp.nc.4.child.0 = int
+gp.nc.4.child.1 = int
+gp.nc.5 = ec.gp.GPNodeConstraints
+gp.nc.5.name = int-rets-bl
+gp.nc.5.returns = bool
+gp.nc.5.size = 1
+gp.nc.5.child.0 = int
+gp.nc.6 = ec.gp.GPNodeConstraints
+gp.nc.6.name = rets-int
+gp.nc.6.returns = int
+gp.nc.6.size = 0
+gp.nc.7 = ec.gp.GPNodeConstraints
+gp.nc.7.name = rets-bl
+gp.nc.7.returns = bool
+gp.nc.7.size = 0
+gp.nc.8 = ec.gp.GPNodeConstraints
+gp.nc.8.name = int-int-rets-int
+gp.nc.8.returns = int
+gp.nc.8.size = 2
+gp.nc.8.child.0 = int
+gp.nc.8.child.1 = int
+
+gp.fs.size = 1
+
+gp.fs.0.name = f0
+gp.fs.0.info = ec.gp.GPFuncInfo
+gp.fs.0.size = 11
+gp.fs.0.func.0 = poppitplayer.ecj.func.And
+gp.fs.0.func.0.nc = bl-bl-rets-bl
+gp.fs.0.func.1 = poppitplayer.ecj.func.Add
+gp.fs.0.func.1.nc = int-int-rets-int
+gp.fs.0.func.2 = poppitplayer.ecj.func.Color
+gp.fs.0.func.2.nc = int-rets-int
+gp.fs.0.func.3 = poppitplayer.ecj.func.Div
+gp.fs.0.func.3.nc = int-int-rets-int
+gp.fs.0.func.4 = poppitplayer.ecj.func.IntERC
+gp.fs.0.func.4.nc = rets-int
+gp.fs.0.func.5 = poppitplayer.ecj.func.If
+gp.fs.0.func.5.nc = bl-int-int-rets-int
+gp.fs.0.func.6 = poppitplayer.ecj.func.Not
+gp.fs.0.func.6.nc = bl-rets-bl
+gp.fs.0.func.7 = poppitplayer.ecj.func.Or
+gp.fs.0.func.7.nc = bl-bl-rets-bl
+gp.fs.0.func.8 = poppitplayer.ecj.func.Pop
+gp.fs.0.func.8.nc = int-rets-bl
+gp.fs.0.func.9 = poppitplayer.ecj.func.Equals
+gp.fs.0.func.9.nc = int-int-rets-bl
+gp.fs.0.func.10 = poppitplayer.ecj.func.BoolERC
+gp.fs.0.func.10.nc = rets-bl
+
+eval.problem = poppitplayer.ecj.PoppitProblem
+eval.problem.data = poppitplayer.ecj.PoppitData
+eval.problem.x = 6
+eval.problem.y = 6
+
+stat = poppitplayer.ecj.PoppitStatistics
+stat.gather-full = true
+
+eval.problem.stack.context.data = poppitplayer.ecj.PoppitData

@@ -1,0 +1,229 @@
+parent.0 = C:/j2sdk/ec/ec/gp/koza/koza.params
+
+generations = 200
+pop.subpop.0.size = 5000
+gp.koza.half.max-depth = 14
+#select.tournament.size = 10
+gp.koza.xover.maxdepth = 9
+#seed.0 = 9632
+#seed.0 = time
+
+gp.type.a.size = 2
+gp.type.a.0.name = bool
+gp.type.a.1.name = coord
+gp.type.s.size = 1
+gp.type.s.0.name = bl-and-crd
+gp.type.s.0.size = 2
+gp.type.s.0.member.0 = bool
+gp.type.s.0.member.1 = coord
+
+pop.subpop.0.species.ind.numtrees = 3
+
+# "The result-producing branch" (Koza-II p. 245)
+pop.subpop.0.species.ind.tree.0 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.0.tc = tc0
+# "ADF0 body" (Koza-II p. 245)
+pop.subpop.0.species.ind.tree.1 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.1.tc = tc1
+# "ADF1 body" (Koza-II p. 245)
+pop.subpop.0.species.ind.tree.2 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.2.tc = tc2
+
+gp.tc.size = 3
+
+gp.tc.0 = ec.gp.GPTreeConstraints
+gp.tc.0.name = tc0
+gp.tc.0.fset = f0
+gp.tc.0.returns = bl-and-crd
+gp.tc.0.init = ec.gp.koza.HalfBuilder
+gp.tc.0.init.growp = 0.5
+gp.tc.0.init.min = 2
+gp.tc.0.init.max = 6
+
+gp.tc.1 = ec.gp.GPTreeConstraints
+gp.tc.1.name = tc1
+gp.tc.1.fset = f1
+gp.tc.1.returns = bl-and-crd
+gp.tc.1.init = ec.gp.koza.HalfBuilder
+gp.tc.1.init.growp = 0.5
+gp.tc.1.init.min = 2
+gp.tc.1.init.max = 6
+
+gp.tc.2 = ec.gp.GPTreeConstraints
+gp.tc.2.name = tc2
+gp.tc.2.fset = f2
+gp.tc.2.returns = bl-and-crd
+gp.tc.2.init = ec.gp.koza.HalfBuilder
+gp.tc.2.init.growp = 0.5
+gp.tc.2.init.min = 2
+gp.tc.2.init.max = 6
+
+gp.nc.size = 10
+gp.nc.0 = ec.gp.GPNodeConstraints
+gp.nc.0.name = bl-bl-rets-bl
+gp.nc.0.returns = bool
+gp.nc.0.size = 2
+gp.nc.0.child.0 = bool
+gp.nc.0.child.1 = bool
+gp.nc.1 = ec.gp.GPNodeConstraints
+gp.nc.1.name = bl-rets-bl
+gp.nc.1.returns = bool
+gp.nc.1.size = 1
+gp.nc.1.child.0 = bool
+gp.nc.2 = ec.gp.GPNodeConstraints
+gp.nc.2.name = crd-rets-crd
+gp.nc.2.returns = coord
+gp.nc.2.size = 1
+gp.nc.2.child.0 = coord
+gp.nc.3 = ec.gp.GPNodeConstraints
+gp.nc.3.name = bl-crd-crd-rets-crd
+gp.nc.3.returns = coord
+gp.nc.3.size = 3
+gp.nc.3.child.0 = bool
+gp.nc.3.child.1 = coord
+gp.nc.3.child.2 = coord
+gp.nc.4 = ec.gp.GPNodeConstraints
+gp.nc.4.name = crd-crd-rets-bl
+gp.nc.4.returns = bool
+gp.nc.4.size = 2
+gp.nc.4.child.0 = coord
+gp.nc.4.child.1 = coord
+gp.nc.5 = ec.gp.GPNodeConstraints
+gp.nc.5.name = crd-rets-bl
+gp.nc.5.returns = bool
+gp.nc.5.size = 1
+gp.nc.5.child.0 = coord
+gp.nc.6 = ec.gp.GPNodeConstraints
+gp.nc.6.name = rets-crd
+gp.nc.6.returns = coord
+gp.nc.6.size = 0
+gp.nc.7 = ec.gp.GPNodeConstraints
+gp.nc.7.name = rets-bl
+gp.nc.7.returns = bool
+gp.nc.7.size = 0
+gp.nc.8 = ec.gp.GPNodeConstraints
+gp.nc.8.name = rets-bl-crd
+gp.nc.8.returns = bl-and-crd
+gp.nc.8.size = 0
+gp.nc.9 = ec.gp.GPNodeConstraints
+gp.nc.9.name = bl-crd-rets-bl-crd
+gp.nc.9.returns = bl-and-crd
+gp.nc.9.size = 1
+gp.nc.9.child.0 = bl-and-crd
+
+gp.fs.size = 3
+
+gp.fs.0.name = f0
+gp.fs.0.info = ec.gp.GPFuncInfo
+gp.fs.0.size = 14
+gp.fs.0.func.0 = poppitplayer.ecj.func.And
+gp.fs.0.func.0.nc = bl-bl-rets-bl
+gp.fs.0.func.1 = poppitplayer.ecj.func.GoDownPct
+gp.fs.0.func.1.nc = crd-rets-crd
+gp.fs.0.func.2 = poppitplayer.ecj.func.GoLeftPct
+gp.fs.0.func.2.nc = crd-rets-crd
+gp.fs.0.func.3 = poppitplayer.ecj.func.GoRightPct
+gp.fs.0.func.3.nc = crd-rets-crd
+gp.fs.0.func.4 = poppitplayer.ecj.func.GoUpPct
+gp.fs.0.func.4.nc = crd-rets-crd
+gp.fs.0.func.5 = poppitplayer.ecj.func.If
+gp.fs.0.func.5.nc = bl-crd-crd-rets-crd
+gp.fs.0.func.6 = poppitplayer.ecj.func.Not
+gp.fs.0.func.6.nc = bl-rets-bl
+gp.fs.0.func.7 = poppitplayer.ecj.func.Or
+gp.fs.0.func.7.nc = bl-bl-rets-bl
+gp.fs.0.func.8 = poppitplayer.ecj.func.Pop
+gp.fs.0.func.8.nc = crd-rets-bl
+gp.fs.0.func.9 = poppitplayer.ecj.func.SameColor
+gp.fs.0.func.9.nc = crd-crd-rets-bl
+gp.fs.0.func.10 = poppitplayer.ecj.func.CoordERC
+gp.fs.0.func.10.nc = rets-crd
+gp.fs.0.func.11 = poppitplayer.ecj.func.BoolERC
+gp.fs.0.func.11.nc = rets-bl
+gp.fs.0.func.12 = ec.gp.ADF
+gp.fs.0.func.12.nc = rets-bl-crd
+# tree 1 (the "ADF0 body")
+gp.fs.0.func.12.tree = 1
+gp.fs.0.func.12.name = 0
+gp.fs.0.func.13 = ec.gp.ADF
+gp.fs.0.func.13.nc = bl-crd-rets-bl-crd
+# tree 1 (the "ADF1 body")
+gp.fs.0.func.13.tree = 2
+gp.fs.0.func.13.name = 1
+
+gp.fs.1 = ec.gp.GPFunctionSet
+gp.fs.1.name = f1
+gp.fs.1.info = ec.gp.GPFuncInfo
+gp.fs.1.size = 12
+gp.fs.1.func.0 = poppitplayer.ecj.func.And
+gp.fs.1.func.0.nc = bl-bl-rets-bl
+gp.fs.1.func.1 = poppitplayer.ecj.func.GoDownPct
+gp.fs.1.func.1.nc = crd-rets-crd
+gp.fs.1.func.2 = poppitplayer.ecj.func.GoLeftPct
+gp.fs.1.func.2.nc = crd-rets-crd
+gp.fs.1.func.3 = poppitplayer.ecj.func.GoRightPct
+gp.fs.1.func.3.nc = crd-rets-crd
+gp.fs.1.func.4 = poppitplayer.ecj.func.GoUpPct
+gp.fs.1.func.4.nc = crd-rets-crd
+gp.fs.1.func.5 = poppitplayer.ecj.func.If
+gp.fs.1.func.5.nc = bl-crd-crd-rets-crd
+gp.fs.1.func.6 = poppitplayer.ecj.func.Not
+gp.fs.1.func.6.nc = bl-rets-bl
+gp.fs.1.func.7 = poppitplayer.ecj.func.Or
+gp.fs.1.func.7.nc = bl-bl-rets-bl
+gp.fs.1.func.8 = poppitplayer.ecj.func.Pop
+gp.fs.1.func.8.nc = crd-rets-bl
+gp.fs.1.func.9 = poppitplayer.ecj.func.SameColor
+gp.fs.1.func.9.nc = crd-crd-rets-bl
+gp.fs.1.func.10 = poppitplayer.ecj.func.CoordERC
+gp.fs.1.func.10.nc = rets-crd
+gp.fs.1.func.11 = poppitplayer.ecj.func.BoolERC
+gp.fs.1.func.11.nc = rets-bl
+
+gp.fs.2 = ec.gp.GPFunctionSet
+gp.fs.2.name = f2
+gp.fs.2.info = ec.gp.GPFuncInfo
+gp.fs.2.size = 14
+gp.fs.2.func.0 = poppitplayer.ecj.func.And
+gp.fs.2.func.0.nc = bl-bl-rets-bl
+gp.fs.2.func.1 = poppitplayer.ecj.func.GoDownPct
+gp.fs.2.func.1.nc = crd-rets-crd
+gp.fs.2.func.2 = poppitplayer.ecj.func.GoLeftPct
+gp.fs.2.func.2.nc = crd-rets-crd
+gp.fs.2.func.3 = poppitplayer.ecj.func.GoRightPct
+gp.fs.2.func.3.nc = crd-rets-crd
+gp.fs.2.func.4 = poppitplayer.ecj.func.GoUpPct
+gp.fs.2.func.4.nc = crd-rets-crd
+gp.fs.2.func.5 = poppitplayer.ecj.func.If
+gp.fs.2.func.5.nc = bl-crd-crd-rets-crd
+gp.fs.2.func.6 = poppitplayer.ecj.func.Not
+gp.fs.2.func.6.nc = bl-rets-bl
+gp.fs.2.func.7 = poppitplayer.ecj.func.Or
+gp.fs.2.func.7.nc = bl-bl-rets-bl
+gp.fs.2.func.8 = poppitplayer.ecj.func.Pop
+gp.fs.2.func.8.nc = crd-rets-bl
+gp.fs.2.func.9 = poppitplayer.ecj.func.SameColor
+gp.fs.2.func.9.nc = crd-crd-rets-bl
+gp.fs.2.func.10 = poppitplayer.ecj.func.CoordERC
+gp.fs.2.func.10.nc = rets-crd
+gp.fs.2.func.11 = poppitplayer.ecj.func.BoolERC
+gp.fs.2.func.11.nc = rets-bl
+gp.fs.2.func.12 = ec.gp.ADFArgument
+gp.fs.2.func.12.nc = rets-bl-crd
+# argument 0 of the calling ADF ("ADF1")
+gp.fs.2.func.12.arg = 0
+gp.fs.2.func.13 = ec.gp.ADF
+gp.fs.2.func.13.nc = bl-crd-rets-bl-crd
+# tree 1 (the "ADF0 body")
+gp.fs.2.func.13.tree = 1
+gp.fs.2.func.13.name = 0
+
+eval.problem = poppitplayer.ecj.PoppitProblem
+eval.problem.data = poppitplayer.ecj.PoppitData
+eval.problem.x = 6
+eval.problem.y = 6
+
+stat = poppitplayer.ecj.PoppitStatistics
+stat.gather-full = true
+
+eval.problem.stack.context.data = poppitplayer.ecj.PoppitData

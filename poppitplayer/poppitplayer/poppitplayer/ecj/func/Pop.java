@@ -28,24 +28,31 @@ public class Pop extends GPNode {
     public void eval(final EvolutionState state, final int thread,
             final GPData input, final ADFStack stack,
             final GPIndividual individual, final Problem problem) {
-        
+
         children[0].eval(state, thread, input, stack, individual, problem);
-        
-        Coord popcoord = ((PoppitData) input).point;
+
+        Coord popcoord;
+        if (((PoppitData) input).number == 0) {
+            popcoord = ((PoppitData) input).point;
+        } else {
+            popcoord = PoppitProblem
+                    .convertIntCoord(((PoppitData) input).number, state);
+        }
         PoppitProblem myproblem = (PoppitProblem) problem;
-        
+
         if (((PoppitProblem) problem).game.pop(popcoord)) {
             ((PoppitData) input).result = true;
-            if(myproblem.penalty > 2){
-                myproblem.penalty = myproblem.penalty - 2;
-            }else{
-            myproblem.penalty = 0;
-            }
+            // if(myproblem.penalty > 2){
+            // myproblem.penalty = myproblem.penalty - 2;
+            // }else{
+            // myproblem.penalty = 0;
+            // }
         } else {
             ((PoppitData) input).result = false;
-            myproblem.penalty = myproblem.penalty + 2;
+            // myproblem.penalty = myproblem.penalty + 2;
         }
-        if (((PoppitProblem) problem).game.getScore() == ((PoppitProblem) problem).game.getMaxScore() ){
+        if (((PoppitProblem) problem).game.getScore() == ((PoppitProblem) problem).game
+                .getMaxScore()) {
             myproblem.perfect++;
         }
     }

@@ -2,9 +2,9 @@ parent.0 = C:/j2sdk/ec/ec/gp/koza/koza.params
 
 generations = 50
 pop.subpop.0.size = 1000
-gp.koza.half.max-depth = 12
-#select.tournament.size = 10
-#gp.koza.xover.maxdepth = 7
+gp.koza.half.max-depth = 14
+select.tournament.size = 12
+gp.koza.xover.maxdepth = 10
 #seed.0 = 9632
 #seed.0 = time
 

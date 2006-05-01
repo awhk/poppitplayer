@@ -8,6 +8,8 @@ import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
 import java.io.IOException;
 
+import javax.swing.JFrame;
+
 import simpoppit.gui.*;
 
 /**
@@ -267,6 +269,8 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
     public void replayGame() {
         // Copy the starting board into the current one
         this.gameBoard = (GameGrid)GameInterface.startBoard.clone();
+        Queue<Coord> localMoves = this.moveList;
+        this.moveList = new LinkedList<Coord>();
         // Prepare a list of affected locations to send update messages to
         this.coordList.addAll(this.gameBoard.getGridAsList());
         // Reset score
@@ -275,13 +279,93 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
         this.action = "update";
         // Send the event
         this.fireGameEvent();
-        for (Coord item : this.moveList){
-            this.pop(item);
+//        for (Coord item : this.moveList){
+//            System.out.println("Highlighting item " + item);
+//            this.highlight(item);
+//            try {
+//                Thread.sleep(1000);
+//            } catch (Exception e) {
+//                System.out.println("Failed to sleep - " + e);
+//            }
+//            System.out.println("Popping item " + item);
+//            this.pop(item);
+//            try {
+//                Thread.sleep(1000);
+//            } catch (Exception e) {
+//                System.out.println("Failed to sleep - " + e);
+//            }
+//        }
+        while(localMoves.peek() != null){
+            this.highlight(localMoves.peek());
             try {
-                Thread.sleep(2000);
+                Thread.sleep(1000);
             } catch (Exception e) {
                 System.out.println("Failed to sleep - " + e);
             }
+            System.out.println("Popping item " + localMoves.peek());
+            this.pop(localMoves.poll());
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                System.out.println("Failed to sleep - " + e);
+            }
+        }
+    }
+    
+    /**
+     * Replays the current game from the move list.
+     * 
+     */
+    public void replayGameGUI() {
+        SimPoppitGui gamegui = new SimPoppitGui(this, false);
+        gamegui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.restartGame();
+        gamegui.setVisible(true);
+        Queue<Coord> localMoves = this.moveList;
+        this.moveList = new LinkedList<Coord>();
+        // Prepare a list of affected locations to send update messages to
+        this.coordList.addAll(this.gameBoard.getGridAsList());
+        // Reset score
+        this.score = 0;
+        // Select the "update" action
+        this.action = "update";
+        // Send the event
+        this.fireGameEvent();
+//        for (Coord item : this.moveList){
+//            System.out.println("Highlighting item " + item);
+//            this.highlight(item);
+//            try {
+//                Thread.sleep(1000);
+//            } catch (Exception e) {
+//                System.out.println("Failed to sleep - " + e);
+//            }
+//            System.out.println("Popping item " + item);
+//            this.pop(item);
+//            try {
+//                Thread.sleep(1000);
+//            } catch (Exception e) {
+//                System.out.println("Failed to sleep - " + e);
+//            }
+//        }
+        while(localMoves.peek() != null){
+            this.highlight(localMoves.peek());
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                System.out.println("Failed to sleep - " + e);
+            }
+            System.out.println("Popping item " + localMoves.peek());
+            this.pop(localMoves.poll());
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                System.out.println("Failed to sleep - " + e);
+            }
+        }
+        try {
+            Thread.sleep(10000);
+        } catch (Exception e) {
+            System.out.println("Failed to sleep - " + e);
         }
     }
 
@@ -333,11 +417,12 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
         // failure
         if (!this.isPoppable(aBalloon))
             return false;
-        moveList.offer(aBalloon);
+        // If we have a poppable balloon, add it to the move history 
+        this.moveList.offer(aBalloon);
         // Start by un-highlighting the current balloon group. This is done for
         // GUI purposes, so the highlighted locations do not linger after the
         // balloons have been popped.
-        unHighlight(aBalloon);
+        this.unHighlight(aBalloon);
         // Clear the "affected balloon" store
         this.coordList.clear();
         // Collect the group of balloons that will be popped
@@ -522,6 +607,10 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
         result += "Score is (current/max): " + this.score + "/" + GameInterface.maxScore + "\n";
         // Add the game grid's string representation to the output
         result += "Gameboard is:\n" + this.gameBoard + "\n";
+        result += "Move list is:\n";
+        for (Coord item : this.moveList){
+            result += item + ", ";
+        }
         return result;
     }
 

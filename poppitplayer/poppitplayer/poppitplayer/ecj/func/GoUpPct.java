@@ -13,6 +13,7 @@ import simpoppit.gameboard.Coord;
 public class GoUpPct extends GPNode {
     
     private int pct;
+    private boolean pctSet = false;
     
     public String toString() {
         return "GoUpPct:" + pct;
@@ -32,7 +33,10 @@ public class GoUpPct extends GPNode {
         
         children[0].eval(state, thread, input, stack, individual, problem);
         
-        pct = state.random[thread].nextInt(101);
+        if (!pctSet){
+            pct = state.random[thread].nextInt(101);
+            pctSet = true;
+        }
         int x = ((PoppitData) input).point.getX();
         int y = ((PoppitData) input).point.getY();
         int newY = y - (Math.round(((float)pct/100) * y));

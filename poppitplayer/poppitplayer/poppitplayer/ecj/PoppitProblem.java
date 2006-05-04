@@ -6,6 +6,7 @@ import ec.gp.GPIndividual;
 import ec.gp.GPProblem;
 import ec.gp.koza.KozaFitness;
 import ec.simple.SimpleProblemForm;
+import ec.util.Output;
 import ec.util.Parameter;
 import simpoppit.gameboard.GameInterface;
 import simpoppit.gameboard.Coord;
@@ -17,8 +18,10 @@ public class PoppitProblem extends GPProblem implements SimpleProblemForm {
     public PoppitData gamedata;
 
     public int perfect;
+    
+    public boolean summarize = false;
 
-    // public int penalty;
+    public int penalty;
     
     private static int x;
     private static int y;
@@ -71,27 +74,43 @@ public class PoppitProblem extends GPProblem implements SimpleProblemForm {
         if (!ind.evaluated) // don't bother reevaluating
         {
             perfect = 0;
+            penalty = 0;
+            game.fastRestartGame();
             int loopCount = 0;
             //GameInterface temp = (GameInterface) game.clone();
             //game.restartGame();
 
-            while ((!(game.isGameOver())) && loopCount < (4 * game.getMaxScore())) {
-                ((GPIndividual) ind).trees[0].child.eval(state, threadnum,
-                        gamedata, stack, ((GPIndividual) ind), this);
-                loopCount++;
-            }
+//            while ((!(game.isGameOver())) && loopCount < (4 * game.getMaxScore())) {
+//                ((GPIndividual) ind).trees[0].child.eval(state, threadnum,
+//                        gamedata, stack, ((GPIndividual) ind), this);
+//                loopCount++;
+//            }
+            ((GPIndividual) ind).trees[0].child.eval(state, threadnum,
+                  gamedata, stack, ((GPIndividual) ind), this);
 
             int max = game.getMaxScore();
             int popped = game.getScore();
+            int fitness = ((max - popped) + penalty);
+//            if (!game.isGameOver()){
+//                fitness += max;
+//            }
 
             // the fitness better be KozaFitness!
+            // System.out.println("Setting fitness to " + (max - popped));
             KozaFitness f = ((KozaFitness) ind.fitness);
-            f.setStandardizedFitness(state, (max - popped));
+            f.setStandardizedFitness(state, fitness);
             f.hits = perfect;
+//            if (fitness <= 3 ){
+//                System.out.println(game.toString());
+//                state.output.println(game.toString(), 3000, 2);
+//                ind.printIndividualForHumans(state, 2, Output.V_NO_GENERAL);
+//                game.replayGameGUI();
+//            }
+            // System.out.println("Fitness is " + ind.fitness.fitnessToStringForHumans());
             ind.evaluated = true;
             // if ((max - popped) == 0) {
             // System.out.println(temp.toString());
-            // System.out.println("Fitness now " + (max - popped) + ":");
+            // System.out.println("Fitness is " + (max - popped));
             // System.out.println(game.toString());
             // game.replayGameGUI();
             // }
@@ -107,25 +126,29 @@ public class PoppitProblem extends GPProblem implements SimpleProblemForm {
         state.output.println("\n\nBest Individual:\n", verbosity, log);
 
         state.output.println(game.toString(), verbosity, log);
+        //state.output.println(game.startBoard.toString(), verbosity, log);
+        
+        game.fastRestartGame();
+        summarize = false;
 
         int loopCount = 0;
         // evaluate the individual
-        while ((!(game.isGameOver())) && loopCount < (4 * game.getMaxScore())) {
-            ((GPIndividual) ind).trees[0].child.eval(state, threadnum,
-                    gamedata, stack, ((GPIndividual) ind), this);
-            loopCount++;
-        }
+//        while ((!(game.isGameOver())) && loopCount < (4 * game.getMaxScore())) {
+//            ((GPIndividual) ind).trees[0].child.eval(state, threadnum,
+//                    gamedata, stack, ((GPIndividual) ind), this);
+//            loopCount++;
+//        }
+        ((GPIndividual) ind).trees[0].child.eval(state, threadnum,
+              gamedata, stack, ((GPIndividual) ind), this);
 
+        // print the fitness
+        state.output.println("Fitness is: " + ind.fitness.fitnessToStringForHumans(), verbosity, log);
+        state.output.println("Individual is: ", verbosity, log);
+        ind.printIndividualForHumans(state, log, Output.V_NO_GENERAL);
         // print out the game
         state.output.println(game.toString(), verbosity, log);
 
         game.replayGameGUI();
-
-        // SimPoppitGui gamegui = new SimPoppitGui(game, false);
-        // gamegui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // game.restartGame();
-        // gamegui.setVisible(true);
-        // game.replayGame();
 
         try {
             Thread.sleep(10000);

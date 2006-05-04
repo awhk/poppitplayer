@@ -35,22 +35,35 @@ public class Pop extends GPNode {
         if (((PoppitData) input).number == 0) {
             popcoord = ((PoppitData) input).point;
         } else {
-            popcoord = PoppitProblem
-                    .convertIntCoord(((PoppitData) input).number, state);
-          System.out.println("Assuming numerical run in 'pop'");
+            popcoord = PoppitProblem.convertIntCoord(
+                    ((PoppitData) input).number, state);
+            System.out.println("Assuming numerical run in 'pop'");
         }
         PoppitProblem myproblem = (PoppitProblem) problem;
 
+        if (myproblem.summarize) {
+            // System.out.println(myproblem.game);
+            System.out.print("Trying to pop " + popcoord + "...");
+        }
+
         if (((PoppitProblem) problem).game.pop(popcoord)) {
             ((PoppitData) input).result = true;
-            // if(myproblem.penalty > 2){
-            // myproblem.penalty = myproblem.penalty - 2;
-            // }else{
-            // myproblem.penalty = 0;
-            // }
+            if (myproblem.summarize) {
+                System.out.println("succeeded.");
+                System.out.println(myproblem.game);
+            }
+//            if (myproblem.penalty > 5) {
+//                myproblem.penalty = myproblem.penalty - 5;
+//            } else {
+//                myproblem.penalty = 0;
+//            }
         } else {
             ((PoppitData) input).result = false;
-            // myproblem.penalty = myproblem.penalty + 2;
+            if (myproblem.summarize) {
+                System.out.println("failed.");
+                // System.out.println(myproblem.game);
+            }
+//            myproblem.penalty = myproblem.penalty + 5;
         }
         if (((PoppitProblem) problem).game.getScore() == ((PoppitProblem) problem).game
                 .getMaxScore()) {

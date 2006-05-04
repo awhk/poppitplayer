@@ -104,6 +104,17 @@ public class CoordERC extends ERC {
         value  = new Coord(Integer.valueOf(dret.s.charAt(1)), Integer.valueOf(dret.s.charAt(3)));
         return true;
         }
+    public Object clone() {
+        CoordERC cloneResult = (CoordERC)super.clone();
+        if (this.value == null){
+            cloneResult.value = null;
+        }else{
+            cloneResult.value = (Coord)this.value.clone();
+        }
+//        cloneResult.x = this.x;
+//        cloneResult.y = this.y;
+        return cloneResult;
+    }
 
     public String name() { return "coorderc"; }
 

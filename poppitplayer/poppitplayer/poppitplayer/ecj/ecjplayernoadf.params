@@ -1,10 +1,13 @@
 parent.0 = C:/j2sdk/ec/ec/gp/koza/koza.params
 
-generations = 50
+generations = 100
 pop.subpop.0.size = 1000
 gp.koza.half.max-depth = 14
-select.tournament.size = 12
-gp.koza.xover.maxdepth = 10
+#select.tournament.size = 12
+#gp.koza.xover.maxdepth = 10
+gp.koza.xover.tries = 5
+gp.koza.mutate.tries = 5
+#breed.elite.0 = 2
 #seed.0 = 9632
 #seed.0 = time
 
@@ -71,15 +74,6 @@ gp.nc.7 = ec.gp.GPNodeConstraints
 gp.nc.7.name = rets-bl
 gp.nc.7.returns = bool
 gp.nc.7.size = 0
-gp.nc.8 = ec.gp.GPNodeConstraints
-gp.nc.8.name = rets-bl-crd
-gp.nc.8.returns = bl-and-crd
-gp.nc.8.size = 0
-gp.nc.9 = ec.gp.GPNodeConstraints
-gp.nc.9.name = bl-crd-rets-bl-crd
-gp.nc.9.returns = bl-and-crd
-gp.nc.9.size = 1
-gp.nc.9.child.0 = bl-and-crd
 
 gp.fs.size = 1
 
@@ -110,16 +104,6 @@ gp.fs.0.func.10 = poppitplayer.ecj.func.CoordERC
 gp.fs.0.func.10.nc = rets-crd
 gp.fs.0.func.11 = poppitplayer.ecj.func.BoolERC
 gp.fs.0.func.11.nc = rets-bl
-gp.fs.0.func.12 = ec.gp.ADF
-gp.fs.0.func.12.nc = rets-bl-crd
-# tree 1 (the "ADF0 body")
-gp.fs.0.func.12.tree = 1
-gp.fs.0.func.12.name = 0
-gp.fs.0.func.13 = ec.gp.ADF
-gp.fs.0.func.13.nc = bl-crd-rets-bl-crd
-# tree 1 (the "ADF1 body")
-gp.fs.0.func.13.tree = 2
-gp.fs.0.func.13.name = 1
 
 eval.problem = poppitplayer.ecj.PoppitProblem
 eval.problem.data = poppitplayer.ecj.PoppitData

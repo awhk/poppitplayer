@@ -9,6 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.IOException;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import simpoppit.gui.*;
 
@@ -57,8 +58,6 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
     public GameInterface(int aX, int aY) {
         // Inititalize the game grid to the given size
         this.gameBoard = new GameGrid(aX, aY);
-        // Store the starting layout for replay purposes
-        GameInterface.startBoard = (GameGrid)this.gameBoard.clone();
         // Set the default event action
         this.action = "none";
         // Init the coordinate list, used to identify event recipients
@@ -71,6 +70,8 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
         GameInterface.maxScore = aX * aY;
         // Init the starting accumulated score for this game session
         this.score = 0;
+        // Store the starting layout for replay purposes
+        this.startBoard = (GameGrid)this.gameBoard.clone();
         //System.out.println("New game created.");
     }
 
@@ -85,8 +86,9 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
      *            an existing game grid to use for this new game instance
      * @param aScore
      */
-    private GameInterface(GameGrid newGrid, int aScore, Queue<Coord>moves) {
+    private GameInterface(GameGrid newGrid, GameGrid startGrid, int aScore, Queue<Coord>moves) {
         this.gameBoard = newGrid;
+        this.startBoard = startGrid;
         this.coordList = new ArrayList<Coord>();
         this.moveList = new LinkedList<Coord>();
         for (Coord item : moves){
@@ -207,6 +209,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
         this.fireGameEvent();
     }
     
+    
     /**
      * Returns the game state to initial settings. Reverts to
      * original game grid layout.
@@ -214,16 +217,45 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
      * 
      */
     public void restartGame() {
+        this.restartGame(true);
+    }
+    
+    /**
+     * Returns the game state to initial settings. Reverts to
+     * original game grid layout.
+     * Sends an "update" event to all registered listeners.
+     * 
+     */
+    public void restartGame(boolean resetmoves) {
         // Copy the starting board into the current one
-        this.gameBoard = (GameGrid)GameInterface.startBoard.clone();
+        this.gameBoard = (GameGrid)this.startBoard.clone();
         // Prepare a list of affected locations to send update messages to
         this.coordList.addAll(this.gameBoard.getGridAsList());
         // Reset score
         this.score = 0;
         // Select the "update" action
         this.action = "update";
+        // Clear move list maybe
+        if (resetmoves){
+            this.moveList.clear();
+        }
         // Send the event
         this.fireGameEvent();
+    }
+    
+    /**
+     * Returns the game state to initial settings. Reverts to
+     * original game grid layout.
+     * Sends an "update" event to all registered listeners.
+     * 
+     */
+    public void fastRestartGame() {
+        // Copy the starting board into the current one
+        this.gameBoard = (GameGrid)this.startBoard.clone();
+        // Reset score
+        this.score = 0;
+        // Clear move list maybe
+        this.moveList.clear();
     }
     
     /**
@@ -249,6 +281,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
             FileInputStream f_in = new FileInputStream(filename);
             ObjectInputStream obj_in = new ObjectInputStream (f_in);
             GameInterface loaded = (GameInterface)obj_in.readObject();
+            this.startBoard = loaded.startBoard;
             this.gameBoard = loaded.getGrid();
             this.score = loaded.getScore();
             this.moveList = loaded.moveList;
@@ -268,7 +301,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
      */
     public void replayGame() {
         // Copy the starting board into the current one
-        this.gameBoard = (GameGrid)GameInterface.startBoard.clone();
+        this.gameBoard = (GameGrid)this.startBoard.clone();
         Queue<Coord> localMoves = this.moveList;
         this.moveList = new LinkedList<Coord>();
         // Prepare a list of affected locations to send update messages to
@@ -319,8 +352,10 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
     public void replayGameGUI() {
         SimPoppitGui gamegui = new SimPoppitGui(this, false);
         gamegui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.restartGame();
+        this.restartGame(false);
         gamegui.setVisible(true);
+        JOptionPane.showMessageDialog(gamegui, "Click OK to watch playback",
+                "Game Solved", JOptionPane.DEFAULT_OPTION);
         Queue<Coord> localMoves = this.moveList;
         this.moveList = new LinkedList<Coord>();
         // Prepare a list of affected locations to send update messages to
@@ -584,6 +619,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
         // class are either transient or static, so they are of no concern when
         // cloning.
         GameInterface result = new GameInterface((GameGrid) this.gameBoard
+                .clone(), (GameGrid) this.startBoard
                 .clone(), this.score, this.moveList);
         return result;
     }
@@ -628,7 +664,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
     
     private Queue<Coord> moveList;
     
-    private static GameGrid startBoard;
+    private GameGrid startBoard;
     
     static final long serialVersionUID = 123456;
 

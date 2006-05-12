@@ -25,7 +25,7 @@ public class PoppitData extends GPData {
         return cloneResult;
     }
 
-    public Coord point = new Coord(0,0);
+    public Coord point = new Coord(-1,-1);
     public boolean result = false;
     public int number = 0;
 }

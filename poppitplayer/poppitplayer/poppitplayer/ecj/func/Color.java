@@ -31,7 +31,7 @@ public class Color extends GPNode {
 
         children[0].eval(state, thread, input, stack, individual, problem);
 
-        Coord coord1 = PoppitProblem.convertIntCoord(((PoppitData) input).number, state);
+        Coord coord1 = PoppitProblem.convertIntCoord(((PoppitData) input).number, state, problem);
         ((PoppitData) input).number = ((PoppitProblem) problem).game.getColor(coord1);
 
     }

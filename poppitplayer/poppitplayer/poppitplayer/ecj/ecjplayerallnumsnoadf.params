@@ -1,12 +1,15 @@
 parent.0 = C:/j2sdk/ec/ec/gp/koza/koza.params
 
-generations = 500
-pop.subpop.0.size = 5000
-#gp.koza.half.max-depth = 14
+generations = 10000
+pop.subpop.0.size = 1024
+#gp.koza.half.max-depth = 12
 #select.tournament.size = 10
 #gp.koza.xover.maxdepth = 9
+gp.koza.xover.tries = 5
+gp.koza.mutate.tries = 5
 #seed.0 = 9632
 #seed.0 = time
+breed.elite.0 = 2
 
 gp.type.a.size = 2
 gp.type.a.0.name = bool
@@ -82,7 +85,7 @@ gp.fs.size = 1
 
 gp.fs.0.name = f0
 gp.fs.0.info = ec.gp.GPFuncInfo
-gp.fs.0.size = 11
+gp.fs.0.size = 12
 gp.fs.0.func.0 = poppitplayer.ecj.func.And
 gp.fs.0.func.0.nc = bl-bl-rets-bl
 gp.fs.0.func.1 = poppitplayer.ecj.func.Add
@@ -99,12 +102,14 @@ gp.fs.0.func.6 = poppitplayer.ecj.func.Not
 gp.fs.0.func.6.nc = bl-rets-bl
 gp.fs.0.func.7 = poppitplayer.ecj.func.Or
 gp.fs.0.func.7.nc = bl-bl-rets-bl
-gp.fs.0.func.8 = poppitplayer.ecj.func.Pop
+gp.fs.0.func.8 = poppitplayer.ecj.func.PopNums
 gp.fs.0.func.8.nc = int-rets-bl
 gp.fs.0.func.9 = poppitplayer.ecj.func.Equals
 gp.fs.0.func.9.nc = int-int-rets-bl
 gp.fs.0.func.10 = poppitplayer.ecj.func.BoolERC
 gp.fs.0.func.10.nc = rets-bl
+gp.fs.0.func.11 = poppitplayer.ecj.func.Sub
+gp.fs.0.func.11.nc = int-int-rets-int
 
 eval.problem = poppitplayer.ecj.PoppitProblem
 eval.problem.data = poppitplayer.ecj.PoppitData

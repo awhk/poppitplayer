@@ -43,8 +43,8 @@ public class IntERC extends ERC {
     }
 
     public void resetNode(final EvolutionState state, final int thread)
-        {   //value = state.random[thread].nextInt(x*y) + 1;
-            value = state.random[thread].nextInt(5);
+        {   value = state.random[thread].nextInt(x*y) + 1;
+            //value = state.random[thread].nextInt(6);
         }
 
     public int nodeHashCode()

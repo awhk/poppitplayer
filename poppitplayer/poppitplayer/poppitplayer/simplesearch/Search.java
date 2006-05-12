@@ -59,6 +59,22 @@ public abstract class Search {
     public int nodeScore() {
         return this.node.getState().getScore();
     }
+    
+    public int getMaxDepth(){
+        return this.maxDepth;
+    }
+    
+    public void setMaxDepth(int aDepth){
+        this.maxDepth = aDepth;
+    }
+    
+    public int getMaxNodes(){
+        return this.maxNodes;
+    }
+    
+    public void setMaxNodes(int aCount){
+        this.maxNodes = aCount;
+    }
 
     /**
      * If another node is stored and waiting to be examined, remove it from
@@ -94,6 +110,11 @@ public abstract class Search {
             // that fact
             if (this.seenContains(t)) {
                 this.skippedBecauseSeen++;
+                continue;
+            }
+            if (t.getDepth() >= this.maxDepth){
+                //System.out.println("Max depth reached.");
+                System.out.print("!");
                 continue;
             }
             // If this node has already been queued for later exploration, skip
@@ -153,7 +174,10 @@ public abstract class Search {
                 }
             }
             // If we found a solution node, do something about it
-            if (this.goalState()) {
+            if (this.goalState() || (loopCount >= this.maxNodes)) {
+                if (loopCount >= this.maxNodes){
+                    System.out.println("Search terminated due to max nodes reached.");
+                }
                 // Output: print a summary of the details of the solution found
                 System.out.println("\nFound solution after examining "
                         + loopCount + " nodes.");
@@ -290,14 +314,13 @@ public abstract class Search {
         // replay can be run more than once. Start the gui in non-interactive
         // mode.
         GameInterface best = (GameInterface)myNode.getState().clone();
-        best.restartGame();
-        SimPoppitGui gui = new SimPoppitGui(best, false);
-        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gui.setVisible(true);
+//        SimPoppitGui gui = new SimPoppitGui(best, false);
+//        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        gui.setVisible(true);
         // Put up a dialog box to allow the start of the playback to be delayed
         // until the viewer is ready
-        JOptionPane.showMessageDialog(gui, "Click OK to watch playback",
-                "Game Solved", JOptionPane.DEFAULT_OPTION);
+//        JOptionPane.showMessageDialog(null, "Click OK to watch playback",
+//                "Game Solved", JOptionPane.DEFAULT_OPTION);
         // Iterate through the move stack
 //        while (!(moves.isEmpty())) {
             // Highlight the impending move...
@@ -311,9 +334,9 @@ public abstract class Search {
             // ...then make the move.
 //            gui.getGame().pop(moves.pop());
 //        }
-        best.replayGame();
+        best.replayGameGUI();
         // When the playback is complete, offer the option to watch it again
-        int selection = JOptionPane.showConfirmDialog(gui,
+        int selection = JOptionPane.showConfirmDialog(null,
                 "Click OK to watch playback again or cancel not to",
                 "Game Solved", JOptionPane.OK_CANCEL_OPTION);
         // If the user does not want to see it again, just wait, displaying the
@@ -321,9 +344,9 @@ public abstract class Search {
         if (selection == JOptionPane.CANCEL_OPTION) {
         } else {
             // Otherwise, annihilate the existing gui instance
-            gui.setVisible(false);
-            gui.dispose();
-            gui = null;
+//            gui.setVisible(false);
+//            gui.dispose();
+//            gui = null;
             // And start the playback process from scratch
             this.playbackSolution();
         }
@@ -525,6 +548,16 @@ public abstract class Search {
      * Boolean switch to short-circuit search if a perfect game is found
      */
     protected boolean perfect = false;
+    
+    /**
+     * Maximum depth to run the search to (nodes beneath this depth will not be expanded).
+     */
+    protected int maxDepth = Integer.MAX_VALUE;
+    
+    /**
+     * Maximum number of nodes to explore in total, at which point the search will terminate.
+     */
+    protected int maxNodes = Integer.MAX_VALUE;
 
     /**
      * Local storage for visited nodes
@@ -549,28 +582,30 @@ public abstract class Search {
                 .clone());
         DepthFirstSearch dfs = new DepthFirstSearch((GameInterface) game
                 .clone());
-//        dfs.search();
-        bfs.search();
-//        System.out.println("DFS searched " + dfs.seenSize()
-//        + " nodes total, with " + dfs.unseenSize() + " unexplored.");
-//        System.out.println("DFS skipped " + dfs.getSkippedSeen()
-//        + " nodes because it already explored them, and "
-//        + dfs.getSkippedUnseen()
-//        + " because they were already queued to explore.");
-//        System.out.println("DFS found " + dfs.getSolutionTotal()
-//        + " solutions, with the best solution having a score of "
-//        + dfs.getBestScore());
-//        dfs.playbackSolution();
-        System.out.println("BFS searched " + bfs.seenSize()
-                + " nodes total, with " + bfs.unseenSize() + " unexplored.");
-        System.out.println("BFS skipped " + bfs.getSkippedSeen()
-                + " nodes because it already explored them, and "
-                + bfs.getSkippedUnseen()
-                + " because they were already queued to explore.");
-        System.out.println("BFS found " + bfs.getSolutionTotal()
-                + " solutions, with the best solution having a score of "
-                + bfs.getBestScore());
-        bfs.playbackSolution();
+        dfs.setMaxNodes(200000);
+        dfs.search();
+        bfs.setMaxDepth(6);
+//        bfs.search();
+        System.out.println("DFS searched " + dfs.seenSize()
+        + " nodes total, with " + dfs.unseenSize() + " unexplored.");
+        System.out.println("DFS skipped " + dfs.getSkippedSeen()
+        + " nodes because it already explored them, and "
+        + dfs.getSkippedUnseen()
+        + " because they were already queued to explore.");
+        System.out.println("DFS found " + dfs.getSolutionTotal()
+        + " solutions, with the best solution having a score of "
+        + dfs.getBestScore());
+        dfs.playbackSolution();
+//        System.out.println("BFS searched " + bfs.seenSize()
+//                + " nodes total, with " + bfs.unseenSize() + " unexplored.");
+//        System.out.println("BFS skipped " + bfs.getSkippedSeen()
+//                + " nodes because it already explored them, and "
+//                + bfs.getSkippedUnseen()
+//                + " because they were already queued to explore.");
+//        System.out.println("BFS found " + bfs.getSolutionTotal()
+//                + " solutions, with the best solution having a score of "
+//                + bfs.getBestScore());
+//        bfs.playbackSolution();
     }
 
 }

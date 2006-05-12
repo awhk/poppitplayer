@@ -6,5 +6,6 @@
 	<classpathentry kind="src" path="/simpoppit"/>
 	<classpathentry kind="lib" path="/simpoppit/lib/log4j-1.2.8.jar"/>
 	<classpathentry sourcepath="C:/j2sdk/ec/" kind="lib" path="lib/ec.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/netbeans-5.0/platform6/modules/ext/swing-layout-1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

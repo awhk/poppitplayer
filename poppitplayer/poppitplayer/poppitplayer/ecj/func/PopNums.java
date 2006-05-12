@@ -11,7 +11,7 @@ import ec.util.Parameter;
 import poppitplayer.ecj.PoppitProblem;
 import simpoppit.gameboard.Coord;
 
-public class Pop extends GPNode {
+public class PopNums extends GPNode {
 
     public String toString() {
         return "pop";
@@ -32,7 +32,8 @@ public class Pop extends GPNode {
         children[0].eval(state, thread, input, stack, individual, problem);
 
         Coord popcoord;
-        popcoord = ((PoppitData) input).point;
+        popcoord = PoppitProblem.convertIntCoord(((PoppitData) input).number,
+                state, problem);
 
         PoppitProblem myproblem = (PoppitProblem) problem;
 
@@ -47,18 +48,18 @@ public class Pop extends GPNode {
                 System.out.println("succeeded.");
                 System.out.println(myproblem.game);
             }
-            if (myproblem.penalty > 5) {
-                myproblem.penalty = myproblem.penalty - 5;
-            } else {
-                myproblem.penalty = 0;
-            }
+//            if (myproblem.penalty > 5) {
+//                myproblem.penalty = myproblem.penalty - 5;
+//            } else {
+//                myproblem.penalty = 0;
+//            }
         } else {
             ((PoppitData) input).result = false;
             if (myproblem.summarize) {
                 System.out.println("failed.");
                 // System.out.println(myproblem.game);
             }
-            myproblem.penalty = myproblem.penalty + 5;
+//            myproblem.penalty = myproblem.penalty + 5;
         }
         if (((PoppitProblem) problem).game.getScore() == ((PoppitProblem) problem).game
                 .getMaxScore()) {

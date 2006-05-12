@@ -2,6 +2,7 @@ package poppitplayer.ecj.func;
 
 import ec.*;
 import poppitplayer.ecj.PoppitData;
+import poppitplayer.ecj.PoppitProblem;
 import ec.gp.*;
 import ec.util.*;
 
@@ -39,7 +40,10 @@ public class Div extends GPNode
         result = pd.number;
 
         children[1].eval(state,thread,input,stack,individual,problem);
-        if (pd.number == 0) pd.number = 1;
+        if (pd.number == 0){
+            pd.number = 1;
+            ((PoppitProblem) problem).penalty += 999;
+        }
         pd.number = result / pd.number;
         }
     }

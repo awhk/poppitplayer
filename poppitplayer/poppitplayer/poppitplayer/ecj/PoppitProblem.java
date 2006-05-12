@@ -2,12 +2,15 @@ package poppitplayer.ecj;
 
 import ec.EvolutionState;
 import ec.Individual;
+import ec.Problem;
 import ec.gp.GPIndividual;
 import ec.gp.GPProblem;
 import ec.gp.koza.KozaFitness;
 import ec.simple.SimpleProblemForm;
 import ec.util.Output;
 import ec.util.Parameter;
+import ec.simple.SimpleEvolutionState;
+import ec.Evolve;
 import simpoppit.gameboard.GameInterface;
 import simpoppit.gameboard.Coord;
 
@@ -26,14 +29,16 @@ public class PoppitProblem extends GPProblem implements SimpleProblemForm {
     private static int x;
     private static int y;
     
-    public static Coord convertIntCoord(int index, final EvolutionState state){
+    public static Coord convertIntCoord(int index, final EvolutionState state, final Problem problem){
         if (index <= 0){
-            //state.output.warning("Index can't be zero!  Setting to 1.");
+            //state.output.warning("Index can't be zero or less!  Setting to 1.");
             index = 1;
+            ((PoppitProblem) problem).penalty += 99;
         }
         if (index > (x*y)){
             //state.output.warning("Index can't exceed board size!  Setting to maximum.");
             index = (x*y);
+            ((PoppitProblem) problem).penalty += 99;
         }
         int myIndex = index;
         int myY = 0;
@@ -91,9 +96,9 @@ public class PoppitProblem extends GPProblem implements SimpleProblemForm {
             int max = game.getMaxScore();
             int popped = game.getScore();
             int fitness = ((max - popped) + penalty);
-//            if (!game.isGameOver()){
-//                fitness += max;
-//            }
+            if (!game.isGameOver()){
+                fitness += max;
+            }
 
             // the fitness better be KozaFitness!
             // System.out.println("Setting fitness to " + (max - popped));
@@ -129,6 +134,8 @@ public class PoppitProblem extends GPProblem implements SimpleProblemForm {
         //state.output.println(game.startBoard.toString(), verbosity, log);
         
         game.fastRestartGame();
+//        game.resetGame();
+//        state.output.println(game.toString(), verbosity, log);
         summarize = false;
 
         int loopCount = 0;
@@ -156,6 +163,13 @@ public class PoppitProblem extends GPProblem implements SimpleProblemForm {
             System.out.println("Failed to sleep - " + e);
         }
 
+    }
+    
+    public static void main(String[] args) {
+        SimpleEvolutionState state = (SimpleEvolutionState)(Evolve.initialize(Evolve.loadParameterDatabase( new String[] {"-file", "C:\\Documents and Settings\\Andrew\\workspace\\poppitplayer\\poppitplayer\\ecj\\ecjplayernoadf.params"}), 0));
+        state.parameters.setProperty("generations", "25");
+        state.startFresh();
+        while(state.evolve() == EvolutionState.R_NOTDONE){}
     }
 
 }

@@ -1,6 +1,7 @@
 package simpoppit.gameboard;
 
 import java.util.*;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -19,7 +20,7 @@ import java.util.*;
  * @author Andrew W. Henry
  * @version 1.0
  */
-public class Coord implements Cloneable, Comparable {
+public class Coord implements Cloneable, Comparable, Serializable {
 
     /**
      * Generate a new coordinate object with the given X and Y values
@@ -89,6 +90,8 @@ public class Coord implements Cloneable, Comparable {
     private int x;
 
     private int y;
+    
+    static final long serialVersionUID = 1234;
 
     /**
      * @param args

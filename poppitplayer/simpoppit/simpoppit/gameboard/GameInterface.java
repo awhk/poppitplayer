@@ -67,7 +67,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
         // Init the event listener list
         GameInterface.gameListeners = new LinkedList<GameListener>();
         // Init the static maximum score value for this game
-        GameInterface.maxScore = aX * aY;
+        this.maxScore = aX * aY;
         // Init the starting accumulated score for this game session
         this.score = 0;
         // Store the starting layout for replay purposes
@@ -91,6 +91,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
         this.startBoard = startGrid;
         this.coordList = new ArrayList<Coord>();
         this.moveList = new LinkedList<Coord>();
+        this.maxScore = (this.gameBoard.gridSize().getX() + 1) * (this.gameBoard.gridSize().getY() + 1);
         for (Coord item : moves){
             this.moveList.offer(item);
         }
@@ -149,7 +150,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
      * @see GameGrid#gridSize()
      */
     public Coord getGridSize() {
-        return GameGrid.gridSize();
+        return this.gameBoard.gridSize();
     }
 
     /**
@@ -186,7 +187,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
      * @return integer maximum score
      */
     public int getMaxScore() {
-        return GameInterface.maxScore;
+        return this.maxScore;
     }
 
     /**
@@ -197,7 +198,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
      */
     public void resetGame() {
         // Generate new game grid of the same size as the current one
-        this.gameBoard = new GameGrid(GameGrid.gridSize().getX() + 1, GameGrid
+        this.gameBoard = new GameGrid(this.gameBoard.gridSize().getX() + 1, this.gameBoard
                 .gridSize().getY() + 1);
         // Prepare a list of affected locations to send update messages to
         this.coordList.addAll(this.gameBoard.getGridAsList());
@@ -277,6 +278,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
      * 
      */
     public void loadGame(String filename) {
+        //System.out.println("GameInterface trying to load file " + filename);
         try{
             FileInputStream f_in = new FileInputStream(filename);
             ObjectInputStream obj_in = new ObjectInputStream (f_in);
@@ -284,6 +286,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
             this.startBoard = loaded.startBoard;
             this.gameBoard = loaded.getGrid();
             this.score = loaded.getScore();
+            this.maxScore = (this.gameBoard.gridSize().getX() + 1) * (this.gameBoard.gridSize().getY() + 1);
             this.moveList = loaded.moveList;
             this.coordList.addAll(this.gameBoard.getGridAsList());
             this.action = "update";
@@ -640,7 +643,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
         // Initialize a result string
         String result = "";
         // Insert score information
-        result += "Score is (current/max): " + this.score + "/" + GameInterface.maxScore + "\n";
+        result += "Score is (current/max): " + this.score + "/" + this.maxScore + "\n";
         // Add the game grid's string representation to the output
         result += "Gameboard is:\n" + this.gameBoard + "\n";
         result += "Move list is:\n";
@@ -652,7 +655,7 @@ public class GameInterface implements Cloneable, Comparable, Serializable {
 
     private int score;
 
-    private static int maxScore;
+    private int maxScore;
 
     private GameGrid gameBoard;
 

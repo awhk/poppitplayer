@@ -166,7 +166,7 @@ public class PoppitProblem extends GPProblem implements SimpleProblemForm {
     }
     
     public static void main(String[] args) {
-        SimpleEvolutionState state = (SimpleEvolutionState)(Evolve.initialize(Evolve.loadParameterDatabase( new String[] {"-file", "C:\\Documents and Settings\\Andrew\\workspace\\poppitplayer\\poppitplayer\\ecj\\ecjplayernoadf.params"}), 0));
+        SimpleEvolutionState state = (SimpleEvolutionState)(Evolve.initialize(Evolve.loadParameterDatabase( new String[] {"-file", "C:\\Documents and Settings\\datacomm\\workspace\\poppitplayer\\poppitplayer\\ecj\\ecjplayernoadf.params"}), 0));
         state.parameters.setProperty("generations", "25");
         state.startFresh();
         while(state.evolve() == EvolutionState.R_NOTDONE){}

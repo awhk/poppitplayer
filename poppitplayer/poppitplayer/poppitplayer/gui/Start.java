@@ -10,8 +10,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 import simpoppit.gameboard.*;
-import ec.simple.SimpleEvolutionState;
-import ec.Evolve;
 
 /**
  *
@@ -43,28 +41,32 @@ public class Start extends javax.swing.JFrame {
      */
     // <editor-fold defaultstate="collapsed" desc=" Generated Code ">//GEN-BEGIN:initComponents
     private void initComponents() {
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jButtonMePlay = new javax.swing.JButton();
+        jButtonComputerPlay = new javax.swing.JButton();
+        jButtonMeVSComputer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Poppit Player");
         setName("startframe");
         setResizable(false);
-        jButton1.setText("Play Poppit");
-        jButton1.setActionCommand("startnew");
-        jButton1.setPreferredSize(new java.awt.Dimension(181, 23));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonMePlay.setText("Play Poppit");
+        jButtonMePlay.setActionCommand("startnew");
+        jButtonMePlay.setPreferredSize(new java.awt.Dimension(181, 23));
+        jButtonMePlay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonMePlayActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Have the computer play Poppit");
-        jButton2.setPreferredSize(new java.awt.Dimension(181, 23));
+        jButtonComputerPlay.setText("Have the computer play Poppit");
+        jButtonComputerPlay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonComputerPlayActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Play against the computer");
-        jButton3.setPreferredSize(new java.awt.Dimension(181, 23));
+        jButtonMeVSComputer.setText("Play against the computer");
+        jButtonMeVSComputer.setPreferredSize(new java.awt.Dimension(181, 23));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,35 +75,41 @@ public class Start extends javax.swing.JFrame {
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, jButtonMeVSComputer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButtonComputerPlay)
+                    .add(jButtonMePlay, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
-        layout.linkSize(new java.awt.Component[] {jButton1, jButton2, jButton3}, org.jdesktop.layout.GroupLayout.HORIZONTAL);
+        layout.linkSize(new java.awt.Component[] {jButtonComputerPlay, jButtonMePlay, jButtonMeVSComputer}, org.jdesktop.layout.GroupLayout.HORIZONTAL);
 
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .add(20, 20, 20)
-                .add(jButton1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jButtonMePlay, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jButtonComputerPlay)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(jButtonMeVSComputer, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        layout.linkSize(new java.awt.Component[] {jButton2, jButton3}, org.jdesktop.layout.GroupLayout.VERTICAL);
+        layout.linkSize(new java.awt.Component[] {jButtonComputerPlay, jButtonMeVSComputer}, org.jdesktop.layout.GroupLayout.VERTICAL);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonComputerPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComputerPlayActionPerformed
         this.setVisible(false);
-        gameType.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        this.playerType.setVisible(true);
+    }//GEN-LAST:event_jButtonComputerPlayActionPerformed
+
+    private void jButtonMePlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMePlayActionPerformed
+        this.gameType.gameType = "human";
+        this.setVisible(false);
+        this.gameType.setVisible(true);
+    }//GEN-LAST:event_jButtonMePlayActionPerformed
     
     /**
      * @param args the command line arguments
@@ -115,17 +123,15 @@ public class Start extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButtonComputerPlay;
+    private javax.swing.JButton jButtonMePlay;
+    private javax.swing.JButton jButtonMeVSComputer;
     // End of variables declaration//GEN-END:variables
     public GameType gameType = new GameType(this);
     public Game gameForm = new Game(this);
     public GameInterface aGame = new GameInterface();
-    public SimpleEvolutionState state;
-    public Integer gpGenerations = 50;
-    public Integer subPopSize = 1024;
-    public Boolean elitism = false;
-    public Boolean timeSeed = false;
-    public String player = "noadf";
+    public NewGPPlayer gpPlayer = new NewGPPlayer(this);
+    public NewSearchPlayer searchPlayer = new NewSearchPlayer(this);
+    public PlayerType playerType = new PlayerType(this);
+    
 }

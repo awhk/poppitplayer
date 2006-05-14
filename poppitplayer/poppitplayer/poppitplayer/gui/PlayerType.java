@@ -14,6 +14,13 @@ public class PlayerType extends javax.swing.JFrame {
     
     /** Creates new form PlayerType */
     public PlayerType() {
+        this.startForm = new Start();
+        initComponents();
+    }
+    
+    /** Creates new form PlayerType */
+    public PlayerType(Start aForm) {
+        this.startForm = aForm;
         initComponents();
     }
     
@@ -29,11 +36,27 @@ public class PlayerType extends javax.swing.JFrame {
         jButtonNewSearch = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Choose Player Type");
         jButtonNewGP.setText("New GP Player");
+        jButtonNewGP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNewGPActionPerformed(evt);
+            }
+        });
 
         jButtonLoadGP.setText("Load GP Player");
+        jButtonLoadGP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLoadGPActionPerformed(evt);
+            }
+        });
 
         jButtonNewSearch.setText("New Undirected Search Player");
+        jButtonNewSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNewSearchActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -63,6 +86,25 @@ public class PlayerType extends javax.swing.JFrame {
         );
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonLoadGPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoadGPActionPerformed
+        this.startForm.gameType.gameType = "gp";
+        this.startForm.gpPlayer.loadPlayer();
+        this.setVisible(false);
+        this.startForm.gameType.setVisible(true);
+    }//GEN-LAST:event_jButtonLoadGPActionPerformed
+
+    private void jButtonNewGPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewGPActionPerformed
+        this.startForm.gameType.gameType = "gp";
+        this.setVisible(false);
+        this.startForm.gpPlayer.setVisible(true);
+    }//GEN-LAST:event_jButtonNewGPActionPerformed
+
+    private void jButtonNewSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNewSearchActionPerformed
+        this.startForm.gameType.gameType = "search";
+        this.setVisible(false);
+        this.startForm.searchPlayer.setVisible(true);
+    }//GEN-LAST:event_jButtonNewSearchActionPerformed
     
     /**
      * @param args the command line arguments
@@ -80,5 +122,5 @@ public class PlayerType extends javax.swing.JFrame {
     private javax.swing.JButton jButtonNewGP;
     private javax.swing.JButton jButtonNewSearch;
     // End of variables declaration//GEN-END:variables
-    
+    private Start startForm;
 }

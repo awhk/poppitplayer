@@ -23,9 +23,9 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButton3" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton1" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonMeVSComputer" linkSize="1" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonComputerPlay" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonMePlay" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -35,18 +35,18 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="jButtonMePlay" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton2" linkSize="2" min="-2" max="-2" attributes="0"/>
+              <Component id="jButtonComputerPlay" linkSize="2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton3" linkSize="2" min="-2" max="-2" attributes="0"/>
+              <Component id="jButtonMeVSComputer" linkSize="2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="jButtonMePlay">
       <Properties>
         <Property name="text" type="java.lang.String" value="Play Poppit"/>
         <Property name="actionCommand" type="java.lang.String" value="startnew"/>
@@ -55,15 +55,18 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMePlayActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="jButtonComputerPlay">
       <Properties>
         <Property name="text" type="java.lang.String" value="Have the computer play Poppit"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonComputerPlayActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="jButtonMeVSComputer">
       <Properties>
         <Property name="text" type="java.lang.String" value="Play against the computer"/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">

@@ -241,4 +241,5 @@ public class GameType extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldYVal;
     // End of variables declaration//GEN-END:variables
     private Start startForm;
+    public String gameType = "human";
 }
